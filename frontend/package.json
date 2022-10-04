@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "description": "Code base for the Alice Thornton's Books research project",
+  "description": "Code base for the My Default Site research project",
   "homepage": "https://thornton.kdl.kcl.ac.uk",
   "main": "index.js",
   "author": "King's Digital Lab",
