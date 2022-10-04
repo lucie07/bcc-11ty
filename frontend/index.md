@@ -1,5 +1,5 @@
 ---
-title: This is the home page
+title: This is the home page template
 permalink: /
 eleventyNavigation:
   key: Home
