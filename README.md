@@ -1,17 +1,6 @@
-# Alice Thornton Digital Edition (edition branch)
+# Brightening the Covenant Chain (develop branch)
 
-![TEI Validation](https://github.com/kingsdigitallab/alice-thornton/actions/workflows/validate-tei.yml/badge.svg?branch=edition)
-
-This branch holds the source files of the digital edition.
-
-Conventions:
-
-- please use only digits, lowercase letters and underscore for file names. No space, dash or other characters;
-- to reduce risks of conflicts (i.e. same portion of a file modified by two different editors), please pull, commit and push often;
-- please avoid pushing breaking changes;
-- when you revert changes, be mindful of not losing work done by others;
-
-# Alice Thornton project code (other branches)
+# Brightening the Covenant Chain (other branches)
 
 [![Build Site](https://github.com/kingsdigitallab/alice-thornton/actions/workflows/build.yml/badge.svg)](https://github.com/kingsdigitallab/alice-thornton/actions/workflows/build.yml)
 [![TEI Validation](https://github.com/kingsdigitallab/alice-thornton/actions/workflows/validate-tei.yml/badge.svg?branch=edition)](https://github.com/kingsdigitallab/alice-thornton/actions/workflows/validate-tei.yml)
@@ -20,6 +9,8 @@ The web site is developed using a Static Site Generator called [11ty](https://ww
 
 - [Documentation for editors](https://github.com/kingsdigitallab/vault-101/blob/main/docs/howto/editing-markdown-files-on-github.rst)
 - [Documentation for developers](https://github.com/kingsdigitallab/vault-101/blob/main/docs/howto/11ty.rst)
+
+## To be added:
 
 Site deployment:
 
