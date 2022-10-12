@@ -1,16 +1,16 @@
 {
-  "name": "thornton",
+  "name": "bcc",
   "version": "0.1.0",
-  "description": "Alice Thornton's Books research project",
-  "homepage": "https://github.com/kingsdigitallab/thornton#readme",
+  "description": "Brightening the Covenant Chain",
+  "homepage": "https://github.com/kingsdigitallab/bcc-11ty/#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kingsdigitallab/thornton.git"
+    "url": "git+https://github.com/kingsdigitallab/bcc-11ty.git"
   },
   "author": "King's Digital Lab",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/kingsdigitallab/thornton/issues"
+    "url": "https://github.com/kingsdigitallab/bcc-11ty/issues"
   },
   "//scripts": {
     "compose": "trap 'echo Stopped; exit 0' SIGINT; docker-compose",
