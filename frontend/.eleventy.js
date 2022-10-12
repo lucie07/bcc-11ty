@@ -64,4 +64,7 @@ module.exports = function (config) {
     "excerpt",
     (s) => stripHtml.stripHtml(s).result.substring(0, 200) + "..."
   );
+  return {
+    pathPrefix: "/bcc-11ty/",
+  };
 };
