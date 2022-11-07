@@ -1,5 +1,5 @@
 ---
-title: "Story 1"
+title: "Story 2"
 feature: /assets/img/logos/UKRI_AHR_Council-Logo_Square-RGB.png
 layout: stories.liquid
 sections:
@@ -7,7 +7,7 @@ sections:
   - Second part
 ---
 
-## And now, a thrilling story
+## Our thrilling story continues
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In fermentum et sollicitudin ac. Aliquam id diam maecenas ultricies mi eget. Ultricies integer quis auctor elit sed vulputate mi sit amet. Dui faucibus in ornare quam viverra. Mauris ultrices eros in cursus turpis. Orci eu lobortis elementum nibh tellus. Volutpat sed cras ornare arcu. Semper quis lectus nulla at. Blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada. Sit amet commodo nulla facilisi nullam vehicula ipsum a.
 

@@ -1,32 +1,31 @@
 ---
-# index of posts
 layout: base.liquid
-eleventyComputed:
-    title: "Stories"
 ---
 
-{{ content }}
 
-{% assign stories = collections.stories %}
-
-
-{% for story in stories %}
-  <div class="post-summary">
-    <h2 class="index-page-titles">
-      <a href="{{ post.url }}">
-        {{ post.data.title }}
-      </a>
-    </h2>
-
-    {% include "post_meta.md", post: post.data %}
-
-    <div class="post-excerpt index-page-w-images">
-      <a href="{{ post.url }}"><img src="{{ post.data.feature | url }}" alt="TODO"></a>
-      <div>
-        <p>{{ post.templateContent | excerpt }}</p>
-        <a href="{{ post.url }}" class="button">Read more</a>
-      </div>
-    </div>
-  </div>
-
-{% endfor %}
+<input id="pagenav-toggle" type="checkbox"/>
+<nav id="pagenav" tabindex="0">
+    <ol>
+        <li><a href="overview">Overview</a></li>
+        <li><a href="stories">Stories</a></li>
+        <ol>
+            <li><a href="intro">Introduction</a></li>
+            {% for story in collections.stories %}
+                <li><a href="{{ story.url | url }}">{{ story.data.title }}</a></li>
+                <ol>
+                    {% for section in story.data.sections %}
+                        <li><a href="{{ story.url | url }}#{{ section }}">{{ section }}</a></li>
+                    {% endfor %}
+                </ol>
+            {% endfor %}
+        </ol>
+        <li><a href="explore">Explore</a></li>
+    </ol>
+</nav>
+<main>
+    <label role="region" aria-label="pagenavigation" for="pagenav-toggle" id="pagenav-label">Page Navigation</label>
+    <article tabindex="0">
+        <h2>{{ title }}</h2>
+        {{ content }}
+      </article>
+</main>

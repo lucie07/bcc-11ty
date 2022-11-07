@@ -4,6 +4,7 @@ const inspect = require("util").inspect;
 const path = require("node:path");
 const debug = require("debug")("Eleventy:KDL");
 const stripHtml = require("string-strip-html");
+const markdownIt = require("markdown-it");
 
 module.exports = function (config) {
   utils.configureMarkdown(config);
@@ -34,6 +35,17 @@ module.exports = function (config) {
       return utils.lookup(collection, property_path, accepted_values);
     }
   );
+
+  const md = new markdownIt({
+    html: true,
+  });
+  md.use(require("markdown-it-front-matter"), function (fm) {
+    console.log(fm);
+  });
+
+  config.addPairedShortcode("markdown", (content) => {
+    return md.render(content);
+  });
 
   config.addFilter(
     "exclude",

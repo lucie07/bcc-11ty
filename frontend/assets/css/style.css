@@ -1,0 +1,199 @@
+@charset "UTF-8";
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  background-color: black;
+}
+
+/* HEADER and SITE NAVIGATION*/
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: black;
+  height: 1.5em;
+  padding: 0.7rem;
+  z-index: 1;
+  /* SITE NAVIGATION*/
+  /* end nav */
+}
+header a {
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+}
+header nav {
+  /* end ul */
+}
+header nav ul {
+  list-style: none;
+  background: #939393;
+  position: fixed;
+  top: 2.9em;
+  right: 0;
+  height: 100%;
+  margin: 0 -17em 0 0;
+  -moz-transition: all 0.4s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  overflow: scroll;
+  /* end li */
+}
+header nav ul li {
+  margin-left: -40px;
+  background: #939393;
+  /* end a */
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 1rem 2rem 1rem 3rem;
+  display: block;
+}
+header nav ul li:last-child {
+  border-bottom: 1px solid white;
+}
+header nav ul li:hover {
+  background: #676767;
+}
+header nav label {
+  display: block;
+  -moz-transition: all 0.4s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  z-index: 2;
+  cursor: pointer;
+}
+header nav label.sitenav-label {
+  position: absolute;
+  top: 0.9em;
+  right: 5.5em;
+  font-size: 1.05em;
+  color: white;
+}
+header nav label.sitenav-label:before {
+  content: "MENU";
+  position: absolute;
+}
+header nav label.sitenav-label:hover {
+  color: #d9d9d9;
+}
+header nav input#sitenav[type="checkbox"] {
+  display: none;
+}
+header nav input#sitenav[type="checkbox"]:checked ~ ul {
+  margin: 0;
+}
+header nav input#sitenav[type="checkbox"]:checked ~ label.sitenav-label {
+  /* cross icon */
+}
+header nav input#sitenav[type="checkbox"]:checked ~ label.sitenav-label:before {
+  content: "✕";
+  right: -3.5rem;
+  color: white;
+  font-size: 2rem;
+  top: -0.3rem;
+}
+header
+  nav
+  input#sitenav[type="checkbox"]:checked
+  ~ label.sitenav-label:hover:before {
+  color: #d9d9d9;
+}
+
+/* PAGE NAVIGATION */
+#pagenav-toggle:checked ~ #pagenav {
+  left: -17em;
+  z-index: 1;
+}
+
+#pagenav-toggle:checked ~ main {
+  margin-left: 0;
+}
+
+#pagenav-toggle:checked ~ main #pagenav-label {
+  background: black;
+  left: 3.5em;
+}
+
+/* MENU TOGGLE ICON */
+#pagenav-label {
+  display: inline-block;
+  position: fixed;
+  top: 3em;
+  left: 3em;
+  width: 8em;
+  height: 1.3em;
+  font-size: 0.9em;
+  text-align: center;
+  cursor: pointer;
+  background: #595959;
+  border: none;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+#pagenav-label:focus {
+  outline: none;
+}
+
+/* PAGE NAVIGATION */
+#pagenav {
+  position: fixed;
+  top: 2.9em;
+  left: 0;
+  width: 17em;
+  height: 100%;
+  overflow: scroll;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+#pagenav a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
+}
+#pagenav a:hover {
+  opacity: 0.7;
+}
+
+/* MAIN PAGE */
+main {
+  margin-left: 17em;
+  background: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F39%2Fdd%2F37%2F39dd376c7e694b4b2c8f4e230167675e.png&f=1&nofb=1&ipt=fa6e8359a277af934c1196a92d66d9532c9f36b8b4048bdee5dbc6c4969b6b56&ipo=images);
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  background-color: black;
+}
+main article {
+  color: black;
+  width: 40%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2em;
+  overflow: scroll;
+  margin-top: 1.7em;
+  line-height: 1.5;
+  height: 100vh;
+}
