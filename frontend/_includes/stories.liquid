@@ -9,7 +9,7 @@ layout: base.liquid
         <li><a href="overview">Overview</a></li>
         <li><a href="stories">Stories</a></li>
         <ol>
-            <li><a href="intro">Introduction</a></li>
+            <li><a href="{{ "../" | url }}">Introduction</a></li>
             {% for story in collections.stories %}
                 <li><a href="{{ story.url | url }}">{{ story.data.title }}</a></li>
                 <ol>
