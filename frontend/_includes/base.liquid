@@ -3,7 +3,6 @@ description: "This AHRC-funded research project will create an online digital ed
 pageImageWebPath: "/assets/img/logos/alice-thornton-logo-img.jpeg"
 title: BCC
 ---
-<!DOCTYPE html>
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
@@ -26,21 +25,13 @@ title: BCC
     <title>{{ title }} | {{ metadata.title }}</title>
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}?ts={{ "now" | date: "%s" }}">
+    <link rel="stylesheet" href="{{ '/assets/node_modules/leaflet/dist/leaflet.css' | url }}"  />
     <script src="{{ '/assets/js/navbar-toggle.js' | url }}?ts={{ "now" | date: "%s" }}"></script>
   </head>
   <body class="{{ body_class }}">
     {% include "header.html" %}
 
-    <section class="section">
-      <div class="container">
-        <h1 class="title">
-          {{ title }}
-        </h1>
-        <div class="content {{ tags }}">
-          {{ content }}
-        </div>
-      </div>
-    </section>
+    {{ content }}
     {% include "footer.html" %}
   </body>
 </html>

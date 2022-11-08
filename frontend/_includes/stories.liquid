@@ -24,8 +24,20 @@ layout: base.liquid
 </nav>
 <main>
     <label role="region" aria-label="pagenavigation" for="pagenav-toggle" id="pagenav-label">Page Navigation</label>
+    <div id="basemap" class="basemap">
+
+    </div>
     <article tabindex="0">
         <h2>{{ title }}</h2>
         {{ content }}
-      </article>
+    </article>
+    <script src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
+    <script src="{{ '/assets/js/leaflet/plugins/L.Control.Appearance.js' | url }}"></script>
+
+    <script>
+        let map = L.map("basemap");
+        let osm = new L.TileLayer(
+            "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        ).addTo(map);
+    </script>
 </main>
