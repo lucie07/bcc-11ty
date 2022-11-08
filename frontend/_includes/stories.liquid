@@ -35,9 +35,22 @@ layout: base.liquid
     <script src="{{ '/assets/js/leaflet/plugins/L.Control.Appearance.js' | url }}"></script>
 
     <script>
-        let map = L.map("basemap");
-        let osm = new L.TileLayer(
-            "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        ).addTo(map);
+        var overlay;
+
+        function init() {
+            var mapBounds = new L.LatLngBounds(
+                new L.LatLng(-85.051129, -180),
+                new L.LatLng(85.051129, 180));
+            var mapMinZoom = 1;
+            var mapMaxZoom = 11;
+            var map = L.map('basemap').setView([28.297178, 99.84375], 1);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+            overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
+                minZoom: mapMinZoom, maxZoom: mapMaxZoom,
+                bounds: mapBounds,
+                opacity: 0.85
+            }).addTo(map);
+        }
+        init();
     </script>
 </main>
