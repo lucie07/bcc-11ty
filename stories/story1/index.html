@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2022-11-07 14:33 -->
+    <!-- Built with 11ty - 2022-11-08 18:11 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="This AHRC-funded research project will create an online digital edition of all four of Alice Wandesford Thornton's autobiographical manuscripts.">
@@ -17,8 +16,9 @@
     <link rel="icon" href="/bcc-11ty/assets/img/logos/alice-thornton-logo-img.jpeg" type="image/x-icon">
     <title>Story 1 | Alice Thornton</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1667831615">
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1667831615"></script>
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1667931093">
+    <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1667931093"></script>
   </head>
   <body class="type-stories slug-story1">
     <header>
@@ -48,13 +48,7 @@
 </header>
 
 
-    <section class="section">
-      <div class="container">
-        <h1 class="title">
-          Story 1
-        </h1>
-        <div class="content stories">
-          
+    
 
 <input id="pagenav-toggle" type="checkbox"/>
 <nav id="pagenav" tabindex="0">
@@ -88,6 +82,9 @@
 </nav>
 <main>
     <label role="region" aria-label="pagenavigation" for="pagenav-toggle" id="pagenav-label">Page Navigation</label>
+    <div id="basemap" class="basemap">
+
+    </div>
     <article tabindex="0">
         <h2>Story 1</h2>
         <h2>And now, a thrilling story</h2>
@@ -96,12 +93,18 @@
 <h4><a name="second-part"></a>Second part</h4>
 <p>Eget nullam non nisi est sit amet facilisis magna. Sed blandit libero volutpat sed cras. Quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Euismod in pellentesque massa placerat duis. Ut aliquam purus sit amet. Sed euismod nisi porta lorem. Facilisis gravida neque convallis a cras. Pretium aenean pharetra magna ac placerat vestibulum lectus. Tortor at risus viverra adipiscing at in tellus. Pretium vulputate sapien nec sagittis aliquam malesuada. Felis eget nunc lobortis mattis aliquam faucibus purus in. Praesent tristique magna sit amet purus gravida quis blandit. Consectetur a erat nam at lectus urna duis. Ut enim blandit volutpat maecenas volutpat blandit aliquam. Vestibulum rhoncus est pellentesque elit ullamcorper. Orci ac auctor augue mauris augue neque gravida. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Eget gravida cum sociis natoque penatibus et magnis.</p>
 
-      </article>
+    </article>
+    <script src="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="/bcc-11ty/assets/js/leaflet/plugins/L.Control.Appearance.js"></script>
+
+    <script>
+        let map = L.map("basemap");
+        let osm = new L.TileLayer(
+            "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        ).addTo(map);
+    </script>
 </main>
 
-        </div>
-      </div>
-    </section>
     <footer class="footer">
   <div class="has-text-centered">
     <h2 class="small-heading">Partners and Funders</h2>

@@ -90,6 +90,7 @@ header nav input#sitenav[type=checkbox] {
 }
 header nav input#sitenav[type=checkbox]:checked ~ ul {
   margin: 0;
+  width: 20em;
 }
 header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label {
   /* cross icon */
@@ -172,7 +173,6 @@ header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label:hover:befo
 /* MAIN PAGE */
 main {
   margin-left: 17em;
-  background: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F39%2Fdd%2F37%2F39dd376c7e694b4b2c8f4e230167675e.png&f=1&nofb=1&ipt=fa6e8359a277af934c1196a92d66d9532c9f36b8b4048bdee5dbc6c4969b6b56&ipo=images);
   height: 100vh;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -181,7 +181,6 @@ main {
   -moz-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
-  background-color: black;
 }
 main article {
   color: black;
@@ -192,4 +191,8 @@ main article {
   margin-top: 1.7em;
   line-height: 1.5;
   height: 100vh;
+}
+main .basemap {
+  z-index: -1;
+  position: absolute;
 }
