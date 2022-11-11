@@ -14,7 +14,3 @@ In the process of creating this digital edition, we aim to answer three key ques
 3. Also, Ipsum
 
 ## The Project Team
-
-{% include 'team.md', team: 'research' %}
-
-{% include 'team.md', team: 'sdt' %}
