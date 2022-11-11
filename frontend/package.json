@@ -24,8 +24,7 @@
     "rebuild:full": "npm run assets:download && npm run build && npm run tweets",
     "serve": "npx @11ty/eleventy --serve",
     "serve:debug": "DEBUG=Eleventy* npm run serve",
-    "serve:debug:kdl": "DEBUG=Eleventy:KDL npm run serve",
-    "tweets": "node _includes/js/tweets.js"
+    "serve:debug:kdl": "DEBUG=Eleventy:KDL npm run serve"
   },
   "keywords": [],
   "devDependencies": {
@@ -37,7 +36,6 @@
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-image-figures": "^2.1.0",
     "sass": "^1.50.0",
-    "string-strip-html": "^8.3.0",
-    "twitter": "^1.7.1"
+    "string-strip-html": "^8.3.0"
   }
 }
