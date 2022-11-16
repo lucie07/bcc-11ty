@@ -2,7 +2,7 @@ tasks:
   - name: "Set up and run frontend"
     init: |
       npm install
-      npm install ./frontend/assets/
+      cd frontend/assets && npm install
     command: npm run serve
 
 ports:
