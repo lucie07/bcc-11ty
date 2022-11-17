@@ -275,6 +275,8 @@ main #basemap {
   position: relative;
   height: 100%;
   outline: 0;
+}
+main #basemap .leaflet-map-pane {
   filter: saturate(0.6);
 }
 
