@@ -21,6 +21,7 @@ module.exports = function (config) {
   config.addPassthroughCopy("assets/fonts");
   config.addPassthroughCopy("assets/img");
   config.addPassthroughCopy("assets/js");
+  config.addPassthroughCopy("assets/json");
 
   // just copy the admin folder as is to the static site _site
   // config.addPassthroughCopy("admin");
