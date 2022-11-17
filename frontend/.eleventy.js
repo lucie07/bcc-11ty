@@ -1,8 +1,10 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const utils = require("./_includes/js/utils.js");
+const Image = require("@11ty/eleventy-img");
 const inspect = require("util").inspect;
 const path = require("node:path");
 const debug = require("debug")("Eleventy:KDL");
+const markdownItEleventyImg = require("markdown-it-eleventy-img");
 const stripHtml = require("string-strip-html");
 const markdownIt = require("markdown-it");
 
@@ -38,10 +40,27 @@ module.exports = function (config) {
 
   const md = new markdownIt({
     html: true,
-  });
-  md.use(require("markdown-it-front-matter"), function (fm) {
-    console.log(fm);
-  });
+    breaks: true,
+    linkify: true,
+  })
+    .use(require("markdown-it-front-matter"), function (fm) {
+      console.log(fm);
+    })
+    .use(markdownItEleventyImg, {
+      imgOptions: {
+        widths: [800, 500, 300],
+        urlPath: "/assets/img/",
+        outputDir: "./assets/img/",
+        formats: ["avif", "webp", "jpeg"],
+      },
+      globalAttributes: {
+        class: "markdown-image",
+        decoding: "async",
+        // If you use multiple widths,
+        // don't forget to add a `sizes` attribute.
+        sizes: "100vw",
+      },
+    });
 
   config.addPairedShortcode("markdown", (content) => {
     return md.render(content);

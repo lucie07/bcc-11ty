@@ -25,10 +25,8 @@ layout: base.liquid
 <main>
     <label role="region" aria-label="pagenavigation" for="pagenav-toggle" id="pagenav-label">Page Navigation</label>
     <div id="basemap" class="basemap">
-        <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 319px, 0px) scale(1);"><img alt="" src="https://b.tile.openstreetmap.org/1/1/0.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(77px, 0px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/1/0/0.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-179px, 0px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/1/0/0.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(333px, 0px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/1/1/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(77px, 256px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/1/0/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-179px, 256px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/1/0/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(333px, 256px, 0px); opacity: 1;"></div></div><div class="leaflet-layer " style="z-index: 1; opacity: 0.85;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 11; transform: translate3d(0px, 319px, 0px) scale(1);"><img alt="" src="https://cawm.lib.uiowa.edu/tiles/1/1/0.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(77px, 0px, 0px); opacity: 1;"><img alt="" src="https://cawm.lib.uiowa.edu/tiles/1/0/0.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-179px, 0px, 0px); opacity: 1;"><img alt="" src="https://cawm.lib.uiowa.edu/tiles/1/0/0.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(333px, 0px, 0px); opacity: 1;"><img alt="" src="https://cawm.lib.uiowa.edu/tiles/1/1/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(77px, 256px, 0px); opacity: 1;"><img alt="" src="https://cawm.lib.uiowa.edu/tiles/1/0/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-179px, 256px, 0px); opacity: 1;"><img alt="" src="https://cawm.lib.uiowa.edu/tiles/1/0/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(333px, 256px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(398px, 214.012px, 0px) scale(1);"></div></div>
-
     </div>
-    <article  tabindex="0">
+    <article tabindex="0">
         <h2>{{ title }}</h2>
         {{ content }}
     </article>
@@ -37,22 +35,133 @@ layout: base.liquid
     <script type="text/javascript" src="{{ '/assets/js/leaflet/plugins/L.Control.Appearance.js' | url }}"></script>
 
     <script>
-        var overlay;
+        let overlay;
+        let geojson_uri = ["{{ '/assets/json/BCC_combined.json' | url }}"];
+        let shapeLayers = null;
+        let shapesByFrameLink = {};
+        let story_id = {{ story_id }};
+        let map;
 
-        function init() {
-            var mapBounds = new L.LatLngBounds(
-                new L.LatLng(-85.051129, -180),
-                new L.LatLng(85.051129, 180));
-            var mapMinZoom = 1;
-            var mapMaxZoom = 11;
-            var map = L.map('basemap').setView([28.297178, 99.84375], 1);
+        // fillColor: '#ff7800', fill: true
+        let highlightLineStyle = {
+            stroke: true,
+            color: '#0000ff',
+            weight: 5,
+            opacity: 0.6,
+        };
+
+        // color: 'rgba(0,0,0,0)',
+        let defaultLineStyle = {
+            stroke: true,
+            color: '#0000ff',
+            weight: 5,
+
+            fill: false,
+        };
+
+        async function loadShapeFile(shape_url) {
+            let response = await fetch(shape_url);
+            let data = await response.json();
+            return data;
+        }
+
+        function onEachFeature(feature, layer) {
+            // does this feature have a property named popupContent?
+            if (feature.properties && (feature.properties.map_text || feature.properties.norm_text)) {
+                if (feature.properties.map_text) {
+                    layer.bindPopup(feature.properties.map_text);
+                } else {
+                    layer.bindPopup(feature.properties.norm_text);
+                }
+            }
+
+        }
+
+        /**
+         * Load all shape files asynchronously
+         */
+        async function loadShapes(shape_urls) {
+            let shapePromises = [];
+            let shapeGeoJSON = [];
+            let storyFeatures = [];
+
+            let shapeLayer = {};
+            for (let u = 0; u < shape_urls.length; u++) {
+                shapePromises.push(loadShapeFile(shape_urls[u]));
+            }
+            await Promise.all(shapePromises).then((values) => {
+                for (let v = 0; v < values.length; v++) {
+                    shapeGeoJSON.push(...values[v].features);
+                }
+            });
+            let unlinkedShapes = [];
+            // Arrange into stories and default layer
+
+            for (let s = 0; s < shapeGeoJSON.length; s++) {
+                let feature = shapeGeoJSON[s];
+                if (feature.properties) {
+                    if (feature.properties.story_link === story_id) {
+                        storyFeatures.push(feature);
+                    }
+                    if (feature.properties.frame_link) {
+
+                    }
+                    /*let frame_link = feature.properties.frame_link;
+                    if (shapesByFrameLink[frame_link]) {
+                        shapesByFrameLink[frame_link].push(feature);
+                    } else {
+                        shapesByFrameLink[frame_link] = [feature]
+                    }*/
+                }
+            }
+
+            console.log(storyFeatures);
+
+            return storyFeatures;
+        }
+
+
+        async function init() {
+            let mapMinZoom = 1;
+            let mapMaxZoom = 11;
+            map = L.map('basemap');
+
             //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
             overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
                 minZoom: mapMinZoom, maxZoom: mapMaxZoom,
-                bounds: mapBounds,
                 opacity: 1
             }).addTo(map);
+
+            // Initial view
+            // This could be changed based on get string etc.
+            map.setView([{{ bounds[0].lat }}, {{ bounds[0].lng }}], {{ bounds[0].zoom }});
+
+            await loadFeatures();
+
+            /*
+            let baseMaps = {};
+            let uneditableOverlays = {};
+            let overlayMaps = {};
+
+            let appearanceControl = L.control.appearance(baseMaps, overlayMaps, uneditableOverlays, {
+                opacity: true,
+                remove: true,
+                color: true,
+            });
+            appearanceControl.addTo(map);*/
         }
+
+        async function loadFeatures() {
+            storyFeatures = await loadShapes(geojson_uri);
+            shapeLayer = L.geoJSON(storyFeatures, {
+                style: defaultLineStyle,
+                onEachFeature: onEachFeature,
+            }).addTo(map);
+
+
+        };
+
+
         init();
     </script>
 </main>

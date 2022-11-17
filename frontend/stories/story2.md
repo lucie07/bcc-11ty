@@ -5,6 +5,7 @@ layout: stories.liquid
 sections:
   - First Part
   - Second part
+story_id: 2
 ---
 
 ## Our thrilling story continues
