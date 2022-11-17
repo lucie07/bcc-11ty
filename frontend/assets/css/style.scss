@@ -217,7 +217,7 @@ header {
   color: white;
   left: 0;
   top: 4.6em;
-  z-index: 999;
+  z-index: 9999;
   -webkit-transition: all 0.3s ease-in;
   -moz-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
@@ -279,7 +279,10 @@ main {
     overflow: scroll;
     margin-top: 1.7em;
     line-height: 1.5;
-    height: 100vh;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 999;
     p {
     } //p
   } //article
