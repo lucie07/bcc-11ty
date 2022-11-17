@@ -271,7 +271,7 @@ main article {
   z-index: 999;
 }
 main .basemap {
-  z-index: -1;
+  width: 100%;
   position: relative;
   height: 100%;
   outline: 0;
