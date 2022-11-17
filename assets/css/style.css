@@ -248,7 +248,7 @@ header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label:hover:befo
 main {
   margin-left: 17em;
   margin-top: 2.3em;
-  height: 100vh;
+  height: calc(100% - 3.4em);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -259,20 +259,25 @@ main {
 }
 main article {
   color: black;
-  width: 40%;
+  width: 20%;
   background: rgba(255, 255, 255, 0.8);
   padding: 2em;
   overflow: scroll;
-  margin-top: 1.7em;
+  margin-top: 1.75em;
   line-height: 1.5;
-  height: 100%;
+  height: calc(100% - 7.4em);
   position: absolute;
   top: 1.7em;
   z-index: 999;
 }
-main .basemap {
+main #basemap {
   width: 100%;
   position: relative;
   height: 100%;
   outline: 0;
+  filter: saturate(0.6);
+}
+
+footer {
+  display: none;
 }
