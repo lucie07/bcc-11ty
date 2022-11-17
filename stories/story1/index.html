@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2022-11-17 11:51 -->
+    <!-- Built with 11ty - 2022-11-17 11:53 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="This AHRC-funded research project will create an online digital edition of all four of Alice Wandesford Thornton's autobiographical manuscripts.">
@@ -13,9 +13,9 @@
     <link rel="icon" href="/bcc-11ty/assets/img/logos/alice-thornton-logo-img.jpeg" type="image/x-icon">
     <title>Story 1 | Alice Thornton</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1668685897">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1668686016">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1668685897"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1668686016"></script>
   </head>
   <body class="type-stories slug-story1">
     <header>
@@ -106,11 +106,11 @@
             var mapMinZoom = 1;
             var mapMaxZoom = 11;
             var map = L.map('basemap').setView([28.297178, 99.84375], 1);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+            //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
             overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
                 minZoom: mapMinZoom, maxZoom: mapMaxZoom,
                 bounds: mapBounds,
-                opacity: 0.85
+                opacity: 1
             }).addTo(map);
         }
         init();
