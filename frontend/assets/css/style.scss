@@ -22,8 +22,8 @@ header {
   width: 100%;
   top: 0;
   background: $darkgreen;
-  height: 2.4em;
-  padding: 0.9em 0.8em;
+  height: 1.4em;
+  padding: 1em 0.7em;
   z-index: 1;
 
   a {
@@ -31,7 +31,7 @@ header {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    line-height: 0.4;
+    line-height: 0.5;
 
     span {
       font-size: 0.6em;
@@ -131,7 +131,7 @@ header {
 /* PAGE NAVIGATION */
 #pagenav {
   position: fixed;
-  top: 4.2em;
+  top: 3.4em;
   padding: 3em 0 5em 0;
   left: 0;
   width: 17em;
@@ -210,7 +210,23 @@ header {
   } //&:checked ~ #menu
   &:checked ~ main {
     margin-left: 0;
+    article{
+      left:0;
+      -webkit-transition: all 0.3s ease-in;
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
   } //&:checked ~ main
+  ~ main{
+    article{
+      left:17em;
+      -webkit-transition: all 0.3s ease-in;
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+  }
 } //#menu-switch
 #pagenav-toggle:checked ~ main #pagenav-label {
   background: $midgreen;
@@ -263,6 +279,7 @@ header {
 /* MAIN PAGE */
 main {
   margin-left: 17em;
+  margin-top: 2.3em;
   height: 100vh;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -281,8 +298,9 @@ main {
     line-height: 1.5;
     height: 100%;
     position: absolute;
-    top: 0;
+    top: 1.7em;
     z-index: 999;
+    
     p {
     } //p
   } //article
