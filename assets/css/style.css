@@ -189,6 +189,7 @@ header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label:hover:befo
   color: white;
   left: 0;
   top: 4.6em;
+  z-index: 999;
   -webkit-transition: all 0.3s ease-in;
   -moz-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
