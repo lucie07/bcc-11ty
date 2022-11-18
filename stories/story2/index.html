@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2022-11-17 19:30 -->
+    <!-- Built with 11ty - 2022-11-18 12:47 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="This AHRC-funded research project will create an online digital edition of all four of Alice Wandesford Thornton's autobiographical manuscripts.">
@@ -13,9 +13,9 @@
 
     <title>Story 2 | Alice Thornton</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1668713423">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1668775631">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1668713423"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1668775631"></script>
   </head>
   <body class="type-stories slug-story2">
     <header>
@@ -49,156 +49,287 @@
 
 <input id="pagenav-toggle" type="checkbox"/>
 <nav id="pagenav" tabindex="0">
-    <ol>
-        <li><a href="overview">Overview</a></li>
-        <li><a href="stories">Stories</a></li>
+  <ol>
+    <li>
+      <a href="overview">Overview</a>
+    </li>
+    <li>
+      <a href="stories">Stories</a>
         <ol>
-            <li><a href="../">Introduction</a></li>
+            <li>
+                <a href="../">Introduction</a>
+            </li>
             
-                <li><a href="/bcc-11ty/stories/story1/">Story 1: Homelands</a></li>
+                <li>
+                <a href="/bcc-11ty/stories/story1/">Story 1: Homelands</a>
+                </li>
                 <ol>
-                    
-                        <li><a href="/bcc-11ty/stories/story1/#first-part">First Part</a></li>
-                    
-                        <li><a href="/bcc-11ty/stories/story1/#second-part">Second part</a></li>
-                    
-                        <li><a href="/bcc-11ty/stories/story1/#third-part">Third part</a></li>
-                    
+                
+                    <li>
+                    <a href="/bcc-11ty/stories/story1/#first-part">First Part</a>
+                    </li>
+                
+                    <li>
+                    <a href="/bcc-11ty/stories/story1/#second-part">Second part</a>
+                    </li>
+                
+                    <li>
+                    <a href="/bcc-11ty/stories/story1/#third-part">Third part</a>
+                    </li>
+                
                 </ol>
             
-                <li><a href="/bcc-11ty/stories/story2/">Story 2</a></li>
+                <li>
+                <a href="/bcc-11ty/stories/story2/">Story 2</a>
+                </li>
                 <ol>
-                    
-                        <li><a href="/bcc-11ty/stories/story2/#first-part">First Part</a></li>
-                    
-                        <li><a href="/bcc-11ty/stories/story2/#second-part">Second part</a></li>
-                    
+                
+                    <li>
+                    <a href="/bcc-11ty/stories/story2/#first-part">First Part</a>
+                    </li>
+                
+                    <li>
+                    <a href="/bcc-11ty/stories/story2/#second-part">Second part</a>
+                    </li>
+                
                 </ol>
             
-        </ol>
-        <li><a href="explore">Explore</a></li>
-    </ol>
+            </ol>
+    </li>
+
+    <li>
+      <a href="explore">Explore</a>
+      <ol>
+        <li>Overview</li>
+        <li>
+          <a href="filter">Filter</a>
+          <table>
+            <tr>
+              <th>Features</th>
+              <th>People</th>
+            </tr>
+            <tr>
+              <td>
+                <legend>Border</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="border-i" type="checkbox" name="border" value="indigenous"/>
+                    <label for="border-i">Indigenous</label>
+                    <input id="border-e" type="checkbox" name="border" value="european"/>
+                    <label for="border-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <legend>Settlement</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="settlement-i" type="checkbox" name="border2" value="indigenous"/>
+                    <label for="settlement-i">Indigenous</label>
+                    <input id="settlement-e" type="checkbox" name="border2" value="european"/>
+                    <label for="settlement-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <legend>Land Route</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="land-i" type="checkbox" name="border2" value="indigenous"/>
+                    <label for="land-i">Indigenous</label>
+                    <input id="land-e" type="checkbox" name="border2" value="european"/>
+                    <label for="land-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <legend>Sea Route</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="sea-i" type="checkbox" name="border2" value="indigenous"/>
+                    <label for="sea-i">Indigenous</label>
+                    <input id="sea-e" type="checkbox" name="border2" value="european"/>
+                    <label for="sea-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <legend>River Route</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="river-i" type="checkbox" name="border2" value="indigenous"/>
+                    <label for="river-i">Indigenous</label>
+                    <input id="river-e" type="checkbox" name="border2" value="european"/>
+                    <label for="river-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <legend>All features</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="all-i" type="checkbox" name="border2" value="indigenous"/>
+                    <label for="all-i">Indigenous</label>
+                    <input id="all-e" type="checkbox" name="border2" value="european"/>
+                    <label for="all-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+          </table>
+        </li>
+      </ol>
+
+    </li>
+  </ol>
 </nav>
 <main>
-    <label role="region" aria-label="pagenavigation" for="pagenav-toggle" id="pagenav-label">Page Navigation</label>
-    <div id="basemap" class="basemap">
-    </div>
-    <article tabindex="0">
-        <h2>Story 2</h2>
-        <h2>Our thrilling story continues</h2>
+  <label role="region" aria-label="pagenavigation" for="pagenav-toggle" id="pagenav-label">Page Navigation</label>
+  <div id="basemap" class="basemap"></div>
+  <article tabindex="0">
+    <h2>Story 2</h2>
+    <h2>Our thrilling story continues</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In fermentum et sollicitudin ac. Aliquam id diam maecenas ultricies mi eget. Ultricies integer quis auctor elit sed vulputate mi sit amet. Dui faucibus in ornare quam viverra. Mauris ultrices eros in cursus turpis. Orci eu lobortis elementum nibh tellus. Volutpat sed cras ornare arcu. Semper quis lectus nulla at. Blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada. Sit amet commodo nulla facilisi nullam vehicula ipsum a.</p>
 <p>Eget nullam non nisi est sit amet facilisis magna. Sed blandit libero volutpat sed cras. Quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Euismod in pellentesque massa placerat duis. Ut aliquam purus sit amet. Sed euismod nisi porta lorem. Facilisis gravida neque convallis a cras. Pretium aenean pharetra magna ac placerat vestibulum lectus. Tortor at risus viverra adipiscing at in tellus. Pretium vulputate sapien nec sagittis aliquam malesuada. Felis eget nunc lobortis mattis aliquam faucibus purus in. Praesent tristique magna sit amet purus gravida quis blandit. Consectetur a erat nam at lectus urna duis. Ut enim blandit volutpat maecenas volutpat blandit aliquam. Vestibulum rhoncus est pellentesque elit ullamcorper. Orci ac auctor augue mauris augue neque gravida. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Eget gravida cum sociis natoque penatibus et magnis.</p>
 
-    </article>
+  </article>
 
-    <script type="text/javascript" src="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.js"></script>
-    <script type="text/javascript" src="/bcc-11ty/assets/js/leaflet/plugins/L.Control.Appearance.js"></script>
+  <script type="text/javascript" src="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.js"></script>
+  <script type="text/javascript" src="/bcc-11ty/assets/js/leaflet/plugins/L.Control.Appearance.js"></script>
 
-    <script>
-        let overlay;
-        let geojson_uri = ["/bcc-11ty/assets/json/BCC_combined.json"];
-        let shapeLayers = null;
-        let shapesByFrameLink = {};
-        let story_id = 2;
-        let map;
+  <script>
+    let overlay;
+    let geojson_uri = ["/bcc-11ty/assets/json/BCC_combined.json"];
+    let shapeLayers = null;
+    let shapesByFrameLink = {};
+    let story_id = 2;
+    let map;
 
-        // fillColor: '#ff7800', fill: true
-        let highlightLineStyle = {
-            stroke: true,
-            color: '#0000ff',
-            weight: 5,
-            opacity: 0.6,
-        };
+// fillColor: '#ff7800', fill: true
+    let highlightLineStyle = {
+      stroke: true,
+      color: '#0000ff',
+      weight: 5,
+      opacity: 0.6
+    };
 
-        // color: 'rgba(0,0,0,0)',
-        let defaultLineStyle = {
-            stroke: true,
-            color: '#0000ff',
-            weight: 5,
+// color: 'rgba(0,0,0,0)',
+    let defaultLineStyle = {
+      stroke: true,
+      color: '#0000ff',
+      weight: 5,
 
-            fill: false,
-        };
+      fill: false
+    };
 
-        async function loadShapeFile(shape_url) {
-            let response = await fetch(shape_url);
-            let data = await response.json();
-            return data;
+    async function loadShapeFile(shape_url) {
+      let response = await fetch(shape_url);
+      let data = await response.json();
+      return data;
+    }
+
+    function onEachFeature(feature, layer) {
+
+// does this feature have a property named popupContent?
+      if (feature.properties && (feature.properties.map_text || feature.properties.norm_text)) {
+        if (feature.properties.map_text) {
+          layer.bindPopup(feature.properties.map_text);
+        } else {
+          layer.bindPopup(feature.properties.norm_text);
         }
+      }
 
-        function onEachFeature(feature, layer) {
-            // does this feature have a property named popupContent?
-            if (feature.properties && (feature.properties.map_text || feature.properties.norm_text)) {
-                if (feature.properties.map_text) {
-                    layer.bindPopup(feature.properties.map_text);
-                } else {
-                    layer.bindPopup(feature.properties.norm_text);
-                }
-            }
+    }
 
-        }
-
-        /**
+/**
          * Load all shape files asynchronously
          */
-        async function loadShapes(shape_urls) {
-            let shapePromises = [];
-            let shapeGeoJSON = [];
-            let storyFeatures = [];
+    async function loadShapes(shape_urls) {
+      let shapePromises = [];
+      let shapeGeoJSON = [];
+      let storyFeatures = [];
 
-            let shapeLayer = {};
-            for (let u = 0; u < shape_urls.length; u++) {
-                shapePromises.push(loadShapeFile(shape_urls[u]));
-            }
-            await Promise.all(shapePromises).then((values) => {
-                for (let v = 0; v < values.length; v++) {
-                    shapeGeoJSON.push(...values[v].features);
-                }
-            });
-            let unlinkedShapes = [];
-            // Arrange into stories and default layer
+      let shapeLayer = {};
+      for (let u = 0; u < shape_urls.length; u++) {
+        shapePromises.push(loadShapeFile(shape_urls[u]));
+      }
+      await Promise.all(shapePromises).then((values) => {
+        for (let v = 0; v < values.length; v++) {
+          shapeGeoJSON.push(...values[v].features);
+        }
+      });
+      let unlinkedShapes = [];
 
-            for (let s = 0; s < shapeGeoJSON.length; s++) {
-                let feature = shapeGeoJSON[s];
-                if (feature.properties) {
-                    if (feature.properties.story_link === story_id) {
-                        storyFeatures.push(feature);
-                    }
-                    if (feature.properties.frame_link) {
+// Arrange into stories and default layer
 
-                    }
-                    /*let frame_link = feature.properties.frame_link;
+      for (let s = 0; s < shapeGeoJSON.length; s++) {
+        let feature = shapeGeoJSON[s];
+        if (feature.properties) {
+          if (feature.properties.story_link === story_id) {
+            storyFeatures.push(feature);
+          }
+          if (feature.properties.frame_link) {}
+
+/*let frame_link = feature.properties.frame_link;
                     if (shapesByFrameLink[frame_link]) {
                         shapesByFrameLink[frame_link].push(feature);
                     } else {
                         shapesByFrameLink[frame_link] = [feature]
                     }*/
-                }
-            }
-
-            console.log(storyFeatures);
-
-            return storyFeatures;
         }
+      }
+
+      console.log(storyFeatures);
+
+      return storyFeatures;
+    }
 
 
-        async function init() {
-            let mapMinZoom = 1;
-            let mapMaxZoom = 11;
-            map = L.map('basemap');
+    async function init() {
+      let mapMinZoom = 1;
+      let mapMaxZoom = 11;
+      map = L.map('basemap');
 
-            //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-            overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
-                minZoom: mapMinZoom, maxZoom: mapMaxZoom,
-                opacity: 1
-            }).addTo(map);
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+      overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
+        minZoom: mapMinZoom,
+        maxZoom: mapMaxZoom,
+        opacity: 1
+      }).addTo(map);
 
-            // Initial view
-            // This could be changed based on get string etc.
-            map.setView([, ], );
+// Initial view
+// This could be changed based on get string etc.
+      map.setView([
+        , 
+      ], );
 
-            await loadFeatures();
+      await loadFeatures();
 
-            /*
+/*
             let baseMaps = {};
             let uneditableOverlays = {};
             let overlayMaps = {};
@@ -209,23 +340,22 @@
                 color: true,
             });
             appearanceControl.addTo(map);*/
-        }
+    }
 
-        async function loadFeatures() {
-            storyFeatures = await loadShapes(geojson_uri);
-            shapeLayer = L.geoJSON(storyFeatures, {
-                style: defaultLineStyle,
-                onEachFeature: onEachFeature,
-            }).addTo(map);
-
-
-        };
+    async function loadFeatures() {
+      storyFeatures = await loadShapes(geojson_uri);
+      shapeLayer = L.geoJSON(storyFeatures, {
+        style: defaultLineStyle,
+        onEachFeature: onEachFeature
+      }).addTo(map);
 
 
-        init();
-    </script>
+    };
+
+
+    init();
+  </script>
 </main>
-
     <footer class="footer">
   <div class="has-text-centered">
     <h2 class="small-heading">Partners and Funders</h2>

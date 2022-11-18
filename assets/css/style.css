@@ -173,6 +173,47 @@ header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label:hover:befo
 #pagenav > ol > li > ol {
   list-style-type: none;
 }
+#pagenav > ol > li > ol > li table {
+  margin: 0.5em;
+  border-collapse: collapse;
+}
+#pagenav > ol > li > ol > li table tr:nth-child(1) {
+  border-bottom: 1px solid black;
+}
+#pagenav > ol > li > ol > li table tr:nth-child(7) {
+  border-top: 1px solid lightgray;
+}
+#pagenav > ol > li > ol > li table tr th {
+  padding: 0.5em 0;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+#pagenav > ol > li > ol > li table tr td fieldset {
+  border: none;
+}
+#pagenav > ol > li > ol > li table tr td input[type=checkbox] {
+  display: none;
+}
+#pagenav > ol > li > ol > li table tr td input[type=checkbox][type=checkbox] + label {
+  display: inline-block;
+  position: relative;
+  border-radius: 4em;
+  padding: 0.5em;
+  width: 5em;
+  background: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444;
+  cursor: pointer;
+  float: left;
+  font-size: 0.8em;
+}
+#pagenav > ol > li > ol > li table tr td input[type=checkbox][type=checkbox] + label:hover {
+  background: #bababa;
+}
+#pagenav > ol > li > ol > li table tr td input[type=checkbox][type=checkbox]:checked + label {
+  background: black;
+  color: white;
+}
 #pagenav > ol > li > ol > li > ol {
   list-style-type: none;
 }
