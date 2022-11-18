@@ -5,140 +5,261 @@ layout: base.liquid
 
 <input id="pagenav-toggle" type="checkbox"/>
 <nav id="pagenav" tabindex="0">
-    <ol>
-        <li><a href="overview">Overview</a></li>
-        <li><a href="stories">Stories</a></li>
+  <ol>
+    <li>
+      <a href="overview">Overview</a>
+    </li>
+    <li>
+      <a href="stories">Stories</a>
         <ol>
-            <li><a href="{{ "../" | url }}">Introduction</a></li>
+            <li>
+                <a href="{{ "../" | url }}">Introduction</a>
+            </li>
             {% for story in collections.stories %}
-                <li><a href="{{ story.url | url }}">{{ story.data.title }}</a></li>
+                <li>
+                <a href="{{ story.url | url }}">{{ story.data.title }}</a>
+                </li>
                 <ol>
-                    {% for section in story.data.sections %}
-                        <li><a href="{{ story.url | url }}#{{ section | slugify }}">{{ section }}</a></li>
-                    {% endfor %}
+                {% for section in story.data.sections %}
+                    <li>
+                    <a href="{{ story.url | url }}#{{ section | slugify }}">{{ section }}</a>
+                    </li>
+                {% endfor %}
                 </ol>
             {% endfor %}
-        </ol>
-        <li><a href="explore">Explore</a></li>
-    </ol>
+            </ol>
+    </li>
+
+    <li>
+      <a href="explore">Explore</a>
+      <ol>
+        <li>Overview</li>
+        <li>
+          <a href="filter">Filter</a>
+          <table>
+            <tr>
+              <th>Features</th>
+              <th>People</th>
+            </tr>
+            <tr>
+              <td>
+                <legend>Border</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="border-i" type="checkbox" name="border" value="indigenous"/>
+                    <label for="border-i">Indigenous</label>
+                    <input id="border-e" type="checkbox" name="border" value="european"/>
+                    <label for="border-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <legend>Settlement</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="settlement-i" type="checkbox" name="border2" value="indigenous"/>
+                    <label for="settlement-i">Indigenous</label>
+                    <input id="settlement-e" type="checkbox" name="border2" value="european"/>
+                    <label for="settlement-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <legend>Land Route</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="land-i" type="checkbox" name="border2" value="indigenous"/>
+                    <label for="land-i">Indigenous</label>
+                    <input id="land-e" type="checkbox" name="border2" value="european"/>
+                    <label for="land-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <legend>Sea Route</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="sea-i" type="checkbox" name="border2" value="indigenous"/>
+                    <label for="sea-i">Indigenous</label>
+                    <input id="sea-e" type="checkbox" name="border2" value="european"/>
+                    <label for="sea-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <legend>River Route</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="river-i" type="checkbox" name="border2" value="indigenous"/>
+                    <label for="river-i">Indigenous</label>
+                    <input id="river-e" type="checkbox" name="border2" value="european"/>
+                    <label for="river-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <legend>All features</legend>
+              </td>
+              <td>
+                <fieldset>
+                  <div class="checkbox column">
+                    <input id="all-i" type="checkbox" name="border2" value="indigenous"/>
+                    <label for="all-i">Indigenous</label>
+                    <input id="all-e" type="checkbox" name="border2" value="european"/>
+                    <label for="all-e">European</label>
+                  </div>
+                </fieldset>
+              </td>
+            </tr>
+          </table>
+        </li>
+      </ol>
+
+    </li>
+  </ol>
 </nav>
 <main>
-    <label role="region" aria-label="pagenavigation" for="pagenav-toggle" id="pagenav-label">Page Navigation</label>
-    <div id="basemap" class="basemap">
-    </div>
-    <article tabindex="0">
-        <h2>{{ title }}</h2>
-        {{ content }}
-    </article>
+  <label role="region" aria-label="pagenavigation" for="pagenav-toggle" id="pagenav-label">Page Navigation</label>
+  <div id="basemap" class="basemap"></div>
+  <article tabindex="0">
+    <h2>{{ title }}</h2>
+    {{ content }}
+  </article>
 
-    <script type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/leaflet/plugins/L.Control.Appearance.js' | url }}"></script>
+  <script type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
+  <script type="text/javascript" src="{{ '/assets/js/leaflet/plugins/L.Control.Appearance.js' | url }}"></script>
 
-    <script>
-        let overlay;
-        let geojson_uri = ["{{ '/assets/json/BCC_combined.json' | url }}"];
-        let shapeLayers = null;
-        let shapesByFrameLink = {};
-        let story_id = {{ story_id }};
-        let map;
+  <script>
+    let overlay;
+    let geojson_uri = ["{{ '/assets/json/BCC_combined.json' | url }}"];
+    let shapeLayers = null;
+    let shapesByFrameLink = {};
+    let story_id = {{ story_id }};
+    let map;
 
-        // fillColor: '#ff7800', fill: true
-        let highlightLineStyle = {
-            stroke: true,
-            color: '#0000ff',
-            weight: 5,
-            opacity: 0.6,
-        };
+// fillColor: '#ff7800', fill: true
+    let highlightLineStyle = {
+      stroke: true,
+      color: '#0000ff',
+      weight: 5,
+      opacity: 0.6
+    };
 
-        // color: 'rgba(0,0,0,0)',
-        let defaultLineStyle = {
-            stroke: true,
-            color: '#0000ff',
-            weight: 5,
+// color: 'rgba(0,0,0,0)',
+    let defaultLineStyle = {
+      stroke: true,
+      color: '#0000ff',
+      weight: 5,
 
-            fill: false,
-        };
+      fill: false
+    };
 
-        async function loadShapeFile(shape_url) {
-            let response = await fetch(shape_url);
-            let data = await response.json();
-            return data;
+    async function loadShapeFile(shape_url) {
+      let response = await fetch(shape_url);
+      let data = await response.json();
+      return data;
+    }
+
+    function onEachFeature(feature, layer) {
+
+// does this feature have a property named popupContent?
+      if (feature.properties && (feature.properties.map_text || feature.properties.norm_text)) {
+        if (feature.properties.map_text) {
+          layer.bindPopup(feature.properties.map_text);
+        } else {
+          layer.bindPopup(feature.properties.norm_text);
         }
+      }
 
-        function onEachFeature(feature, layer) {
-            // does this feature have a property named popupContent?
-            if (feature.properties && (feature.properties.map_text || feature.properties.norm_text)) {
-                if (feature.properties.map_text) {
-                    layer.bindPopup(feature.properties.map_text);
-                } else {
-                    layer.bindPopup(feature.properties.norm_text);
-                }
-            }
+    }
 
-        }
-
-        /**
+/**
          * Load all shape files asynchronously
          */
-        async function loadShapes(shape_urls) {
-            let shapePromises = [];
-            let shapeGeoJSON = [];
-            let storyFeatures = [];
+    async function loadShapes(shape_urls) {
+      let shapePromises = [];
+      let shapeGeoJSON = [];
+      let storyFeatures = [];
 
-            let shapeLayer = {};
-            for (let u = 0; u < shape_urls.length; u++) {
-                shapePromises.push(loadShapeFile(shape_urls[u]));
-            }
-            await Promise.all(shapePromises).then((values) => {
-                for (let v = 0; v < values.length; v++) {
-                    shapeGeoJSON.push(...values[v].features);
-                }
-            });
-            let unlinkedShapes = [];
-            // Arrange into stories and default layer
+      let shapeLayer = {};
+      for (let u = 0; u < shape_urls.length; u++) {
+        shapePromises.push(loadShapeFile(shape_urls[u]));
+      }
+      await Promise.all(shapePromises).then((values) => {
+        for (let v = 0; v < values.length; v++) {
+          shapeGeoJSON.push(...values[v].features);
+        }
+      });
+      let unlinkedShapes = [];
 
-            for (let s = 0; s < shapeGeoJSON.length; s++) {
-                let feature = shapeGeoJSON[s];
-                if (feature.properties) {
-                    if (feature.properties.story_link === story_id) {
-                        storyFeatures.push(feature);
-                    }
-                    if (feature.properties.frame_link) {
+// Arrange into stories and default layer
 
-                    }
-                    /*let frame_link = feature.properties.frame_link;
+      for (let s = 0; s < shapeGeoJSON.length; s++) {
+        let feature = shapeGeoJSON[s];
+        if (feature.properties) {
+          if (feature.properties.story_link === story_id) {
+            storyFeatures.push(feature);
+          }
+          if (feature.properties.frame_link) {}
+
+/*let frame_link = feature.properties.frame_link;
                     if (shapesByFrameLink[frame_link]) {
                         shapesByFrameLink[frame_link].push(feature);
                     } else {
                         shapesByFrameLink[frame_link] = [feature]
                     }*/
-                }
-            }
-
-            console.log(storyFeatures);
-
-            return storyFeatures;
         }
+      }
+
+      console.log(storyFeatures);
+
+      return storyFeatures;
+    }
 
 
-        async function init() {
-            let mapMinZoom = 1;
-            let mapMaxZoom = 11;
-            map = L.map('basemap');
+    async function init() {
+      let mapMinZoom = 1;
+      let mapMaxZoom = 11;
+      map = L.map('basemap');
 
-            //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-            overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
-                minZoom: mapMinZoom, maxZoom: mapMaxZoom,
-                opacity: 1
-            }).addTo(map);
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+      overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
+        minZoom: mapMinZoom,
+        maxZoom: mapMaxZoom,
+        opacity: 1
+      }).addTo(map);
 
-            // Initial view
-            // This could be changed based on get string etc.
-            map.setView([{{ bounds[0].lat }}, {{ bounds[0].lng }}], {{ bounds[0].zoom }});
+// Initial view
+// This could be changed based on get string etc.
+      map.setView([
+        {{ bounds[0].lat }}, {{ bounds[0].lng }}
+      ], {{ bounds[0].zoom }});
 
-            await loadFeatures();
+      await loadFeatures();
 
-            /*
+/*
             let baseMaps = {};
             let uneditableOverlays = {};
             let overlayMaps = {};
@@ -149,19 +270,19 @@ layout: base.liquid
                 color: true,
             });
             appearanceControl.addTo(map);*/
-        }
+    }
 
-        async function loadFeatures() {
-            storyFeatures = await loadShapes(geojson_uri);
-            shapeLayer = L.geoJSON(storyFeatures, {
-                style: defaultLineStyle,
-                onEachFeature: onEachFeature,
-            }).addTo(map);
-
-
-        };
+    async function loadFeatures() {
+      storyFeatures = await loadShapes(geojson_uri);
+      shapeLayer = L.geoJSON(storyFeatures, {
+        style: defaultLineStyle,
+        onEachFeature: onEachFeature
+      }).addTo(map);
 
 
-        init();
-    </script>
+    };
+
+
+    init();
+  </script>
 </main>
