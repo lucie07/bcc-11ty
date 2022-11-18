@@ -174,8 +174,10 @@ header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label:hover:befo
   list-style-type: none;
 }
 #pagenav > ol > li > ol > li table {
-  margin: 0.5em;
+  margin: 0.5em 0;
   border-collapse: collapse;
+  border: 2px solid #124d20;
+  font-size: 0.7em;
 }
 #pagenav > ol > li > ol > li table tr:nth-child(1) {
   border-bottom: 1px solid black;
@@ -187,9 +189,15 @@ header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label:hover:befo
   padding: 0.5em 0;
   text-transform: uppercase;
   font-size: 0.8em;
+  background: #124d20;
 }
 #pagenav > ol > li > ol > li table tr td fieldset {
   border: none;
+  padding: 0.3em 0 0.3em 0.7em;
+}
+#pagenav > ol > li > ol > li table tr td > legend {
+  font-family: "Corben", cursive;
+  padding-left: 0.5em;
 }
 #pagenav > ol > li > ol > li table tr td input[type=checkbox] {
   display: none;
@@ -199,20 +207,30 @@ header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label:hover:befo
   position: relative;
   border-radius: 4em;
   padding: 0.5em;
-  width: 5em;
-  background: lightgray;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #444;
+  width: 6em;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #676767;
+  color: #ededed;
   cursor: pointer;
   float: left;
   font-size: 0.8em;
 }
+#pagenav > ol > li > ol > li table tr td input[type=checkbox][type=checkbox] + label:first-of-type {
+  border-radius: 4em 0 0 4em;
+  border-right: 1px solid gray;
+}
+#pagenav > ol > li > ol > li table tr td input[type=checkbox][type=checkbox] + label:last-of-type {
+  border-radius: 0 4em 4em 0;
+}
 #pagenav > ol > li > ol > li table tr td input[type=checkbox][type=checkbox] + label:hover {
-  background: #bababa;
+  background: gray;
+  color: lightgray;
 }
 #pagenav > ol > li > ol > li table tr td input[type=checkbox][type=checkbox]:checked + label {
-  background: black;
-  color: white;
+  background: white;
+  color: black;
 }
 #pagenav > ol > li > ol > li > ol {
   list-style-type: none;
