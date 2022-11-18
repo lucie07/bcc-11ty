@@ -191,8 +191,10 @@ header {
         list-style-type: none;
         > li {
           table{
-            margin:0.5em;
+            margin:0.5em 0;
             border-collapse:collapse;
+            border:2px solid $midgreen;
+            font-size:0.7em;
             tr{
               &:nth-child(1){
                 border-bottom:1px solid black;
@@ -204,35 +206,53 @@ header {
                 padding:0.5em 0;
                 text-transform:uppercase;
                 font-size:0.8em;
+                background:$midgreen;
               }
               td{
                 fieldset{
                   border:none;
-                  
+                  padding:0.3em 0 0.3em 0.7em;
                 }
-        
+                >legend{
+                  font-family: "Corben", cursive;
+                  padding-left:0.5em;
+                }
                 input[type=checkbox] {
         display: none;
-                &[type=checkbox] + label {
+    
+                &[type=checkbox] + label { // People labels
                   
         display: inline-block;
         position: relative;
         border-radius: 4em;
         padding: 0.5em;
-        width: 5em;
-        background: lightgray;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #444;
+        width: 6em;
+        text-align: center;
+        font-weight:bold;
+        text-transform: uppercase;
+        background: darken(gray,10%);
+        color:lighten(lightgray,10%);
         cursor: pointer;
         float:left;
         font-size:0.8em;
+
+        &:first-of-type{
+          border-radius: 4em 0 0 4em ;
+          border-right:1px solid gray;
+        }
+        &:last-of-type{
+          border-radius: 0 4em 4em 0;
+        }
                   &:hover {
-        background: darken(lightgray,10%);
+                    background: gray;
+                    color: lightgray;
       }// &:hover
       }// + label
+  
+
       &[type=checkbox]:checked + label {
-        background: black;
-        color: white;
+        background: white;
+        color: black;
       }//[type=checkbox]:checked + label    
       }//input
               }//td
