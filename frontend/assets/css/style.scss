@@ -70,10 +70,7 @@ header {
       right: 0;
       height: 100%;
       margin: 0 -17em 0 0;
-      -moz-transition: all 0.4s ease-in;
-      -webkit-transition: all 0.4s ease-in;
-      -o-transition: all 0.4s ease-in;
-      transition: all 0.4s ease-in;
+      @include transition(all 400ms ease-in); 
       overflow: scroll;
       li {
         margin-left: -40px;
@@ -100,10 +97,7 @@ header {
 
     label {
       display: block;
-      -moz-transition: all 0.4s ease-in;
-      -webkit-transition: all 0.4s ease-in;
-      -o-transition: all 0.4s ease-in;
-      transition: all 0.4s ease-in;
+      @include transition(all 400ms ease-in); 
       z-index: 2;
       cursor: pointer;
       &.sitenav-label {
@@ -160,16 +154,10 @@ header {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  @include transition(all 300ms ease-in); 
 
   a {
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    @include transition(all 300ms ease-in); 
     color: white;
     text-decoration: none;
     &:hover {
@@ -284,11 +272,7 @@ header {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all 600ms ease-in;
-  -moz-transition: all 600ms ease-in;
-  -ms-transition: all 600ms ease-in;
-  -o-transition: all 600ms ease-in;
-  transition: all 600ms ease-in;
+  @include transition(all 600ms ease-in); 
   background-color: #fff;
   z-index: 99999;
   right:30em;
@@ -467,19 +451,13 @@ label {
     margin-left: 0;
     article {
       left: 0;
-      -webkit-transition: all 0.3s ease-in;
-      -moz-transition: all 0.3s ease-in;
-      -o-transition: all 0.3s ease-in;
-      transition: all 0.3s ease-in;
+      @include transition(all 300ms ease-in); 
     }
   } //&:checked ~ main
   ~ main {
     article {
       left: 17em;
-      -webkit-transition: all 0.3s ease-in;
-      -moz-transition: all 0.3s ease-in;
-      -o-transition: all 0.3s ease-in;
-      transition: all 0.3s ease-in;
+      @include transition(all 300ms ease-in); 
     }
   }
 } //#menu-switch
@@ -489,10 +467,7 @@ label {
   left: 0;
   top: 4.6em;
   z-index: 9999;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  @include transition(all 300ms ease-in); 
   &:before {
     content: "";
   }
@@ -514,10 +489,7 @@ label {
   font-size: 0.9em;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  @include transition(all 300ms ease-in); 
   color: white;
   background: $midgreen;
   font-family: "Corben", cursive;
@@ -539,10 +511,7 @@ main {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  @include transition(all 300ms ease-in); 
   position:relative;
   article {
     color: black;
