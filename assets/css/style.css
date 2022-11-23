@@ -48,10 +48,11 @@ header nav ul {
   right: 0;
   height: 100%;
   margin: 0 -17em 0 0;
-  -moz-transition: all 0.4s ease-in;
-  -webkit-transition: all 0.4s ease-in;
-  -o-transition: all 0.4s ease-in;
-  transition: all 0.4s ease-in;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
   overflow: scroll;
   /* end li */
 }
@@ -73,10 +74,11 @@ header nav ul li:hover {
 }
 header nav label {
   display: block;
-  -moz-transition: all 0.4s ease-in;
-  -webkit-transition: all 0.4s ease-in;
-  -o-transition: all 0.4s ease-in;
-  transition: all 0.4s ease-in;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
   z-index: 2;
   cursor: pointer;
 }
@@ -129,16 +131,18 @@ header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label:hover:befo
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
 }
 #pagenav a {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
   color: white;
   text-decoration: none;
 }
@@ -395,17 +399,19 @@ header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label:hover:befo
 }
 #pagenav-toggle:checked ~ main article {
   left: 0;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
 }
 #pagenav-toggle ~ main article {
   left: 17em;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
 }
 
 #pagenav-toggle:checked ~ main #pagenav-label {
@@ -414,10 +420,11 @@ header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label:hover:befo
   left: 0;
   top: 4.6em;
   z-index: 9999;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
 }
 #pagenav-toggle:checked ~ main #pagenav-label:before {
   content: "";
@@ -438,10 +445,11 @@ header nav input#sitenav[type=checkbox]:checked ~ label.sitenav-label:hover:befo
   font-size: 0.9em;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
   color: white;
   background: #124d20;
   font-family: "Corben", cursive;
@@ -462,10 +470,11 @@ main {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
   position: relative;
 }
 main article {
