@@ -7,6 +7,24 @@ $lightgreen: #9abf08;
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap");
+
+//MIXINS
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -258,6 +276,173 @@ header {
               }//td
             }//tr
           }//table
+          ////TIMELINE
+
+#timeline-maps {
+  position: absolute;
+  bottom: calc(100% - 70em);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 600ms ease-in;
+  -moz-transition: all 600ms ease-in;
+  -ms-transition: all 600ms ease-in;
+  -o-transition: all 600ms ease-in;
+  transition: all 600ms ease-in;
+  background-color: #fff;
+  z-index: 99999;
+  right:30em;
+  ul {
+  list-style-type: none;
+  li {
+  display: inline-block;
+    
+  input[type="checkbox"][id^="myCheckbox"] {
+  display: none;
+}
+
+label {
+  border: 1px solid #fff;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+  &:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}//before
+  img {
+  height: 100px;
+  width: 100px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}//img
+  
+}//label
+
+
+:checked + label {
+  border-color: #ddd;
+  &:before {
+  content: "✓";
+  background-color: grey;
+  transform: scale(1);
+}//before
+ img {
+  transform: scale(0.9);
+  /* box-shadow: 0 0 5px #333; */
+  z-index: -1;
+}  //img
+    
+
+}//:checked + label 
+  }//li
+}//ul
+}//#timeline-maps
+
+
+
+
+
+
+/* Timeline Switch */
+
+.switch-wrapper{
+    position:relative;
+   height:9em;
+  text-align:left;
+  margin-top:3em;
+  border-top:1px dotted black;
+  padding:0.5em;
+  label.toggle{
+      width: 3.6em;
+      display:inline-block;
+    position: absolute;
+    top:-5em;
+    left:5em;
+    height: 1.6em;
+    text-align:center;
+    cursor: pointer;
+    @include transition(all 300ms ease-in); 
+    span{
+      position:absolute;
+      top:1.1em;
+      text-transform:uppercase;
+      font-size:0.75em;
+      &:nth-child(1){ //on
+        left:1.9em;
+      }//&:nth-child(1)
+      &:nth-child(2){ //off
+        left:3.8em;
+        letter-spacing:-0.05em;
+      }//&:nth-child(2)
+    }//span
+     &:before,&:after{
+        content: "";
+        display: block;
+        position: absolute;
+        cursor: pointer;
+    }//&:before,&:after
+    &:before{
+        width: 100%;
+        height: 1.8em;
+        background: #999;
+        border-radius: 2em;
+        top: 0.4em;
+        left: 1em;
+    }//&:before
+    &:after{
+        top: 0.55em;
+        left: 1.2em;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.6);  
+        transition: all 400ms ease
+    }//&:after    
+  }//label.toggle
+}//switch-wrapper
+  
+#timeline-switch{
+  display:none;
+&:checked ~ #timeline-maps {
+    right: 0;
+}//&:checked ~ #timeline
+&:checked ~ .switch-wrapper {
+    //margin-left: 300px;
+}//&:checked ~ .switch-wrapper
+}//#pagenav-toggle
+#timeline-switch:checked ~ .switch-wrapper .toggle {
+  &:after{
+    left:2.9em;
+  }//&:after
+  &:before{
+    background:lighten(lightgray,10%);
+    @include transition(all 500ms ease-in); 
+  }//&:before
+  span{
+    color: black;
+  }//span
+}//#timeline-switch
+
+
+
+          
 
           
           > ol {
@@ -358,6 +543,7 @@ main {
   -moz-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+  position:relative;
   article {
     color: black;
     width: 20%;
@@ -367,9 +553,9 @@ main {
     margin-top: 1.75em;
     line-height: 1.5;
     height: calc(100% - 7.4em);
-    position: absolute;
+  position: absolute;
     top: 1.7em;
-    z-index: 999;
+   z-index: 999;
     p {
     } //p
   } //article
@@ -387,3 +573,5 @@ main {
 footer {
   display: none;
 }
+
+
