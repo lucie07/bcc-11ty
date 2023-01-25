@@ -224,11 +224,30 @@ nav{
               color:white;
             }//active
       }// a   
-      > ol {
-        //2nd level
+      > ol {//2nd level
+        display:flex;
+        width:300%;
+        margin-left:calc(-100% - 40px);
         list-style-type: none;
+        background:darkgray;
         > li {
+          width:25%;
+          margin-right:0.05em;
           
+          
+          text-align:center;
+          a{
+            text-decoration:none;
+            color:black;
+            background:rgba(0,0,0,0.4);
+            width:100%;
+            display:block;
+            padding:0.3em 0;
+                &.active{
+              background:rgba(0,0,0,0.8);
+              color:white;
+            }//active
+          }//a
         } //li
       } //ol
     } //li
