@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2022-11-24 18:41 -->
+    <!-- Built with 11ty - 2023-01-25 13:00 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="This AHRC-funded research project will create an online digital edition of all four of Alice Wandesford Thornton's autobiographical manuscripts.">
@@ -13,19 +13,29 @@
 
     <title>Accessibility Statement for My Default Site | Alice Thornton</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1669315284">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1674651613">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1669315284"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1674651613"></script>
   </head>
   <body class="type-page slug-accessibility">
     <header>
 
-
-      <a href="/">Movement and Common World in Early America</a>
-      <nav>
-        <input id="sitenav" type="checkbox" />
-        <label aria-label="Menu" class="sitenav-label" for="sitenav"> </label>
-        <ul>
+<nav>
+  <a id="sitetitle" href="/">Movement and Common World in Early America</a>
+  <div id="menu">
+    <input id="legend" type="checkbox"/>
+    <label class="legend" role="button" for="legend">Menu</label>
+    <ol>
+      <li> <a href="#overview">Overview</a></li>
+      <li> <a href="#stories">Stories  </a></li>
+      <li> <a href="#filters">Filters </a></li>
+      <li> <a href="#about">About</a></li>
+      <li> <a href="#team">Team</a></li>
+      <li> <a href="#mappage">Maps</a></li>
+      <li> <a href="#resources">Resources</a></li>
+    </ol>
+    <!--            
+      <ul>
           
           <li class="is-active">
             <a href="/bcc-11ty/">Home</a>
@@ -39,9 +49,9 @@
             <a href="/bcc-11ty/stories/">Stories</a>
           </li>
           
-
-        </ul>
-      </nav>
+      </ul>-->
+  </div>
+</nav>
 </header>
 
 
@@ -112,4 +122,40 @@ In particular we plan to fix the images issue by the end of October 2022.</p>
 </footer>
 
   </body>
+  <script>
+//*** Active class on menu when in section ***//
+// Get all sections that have an ID defined
+const sections = document.querySelectorAll("[id]");
+
+// Add an event listener listening for scroll
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter() {
+  // Get current scroll position
+  let scrollY = window.pageYOffset;
+
+  // Now we loop through sections to get height, top and ID values for each
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 150;
+    sectionId = current.getAttribute("id");
+
+    /*
+    - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
+    - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
+    */
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document
+        .querySelectorAll("ol a[href*=" + sectionId + "]")
+        .forEach((el) => el.classList.add("active"));
+    } else { 
+      document //*** END Active class on menu when in section ***//
+        .querySelectorAll("ol a[href*=" + sectionId + "]")
+        .forEach((el) => el.classList.remove("active"));
+    }
+  });
+}
+
+
+  </script>
 </html>
