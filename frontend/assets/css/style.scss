@@ -68,7 +68,8 @@ a#sitetitle{
   position:fixed;
   width: 100%;
   background: black;
-  height: 3em;
+  height: 2em;
+  z-index: 9;
 }// a#sitetitle
 
 // NAV 
@@ -278,7 +279,7 @@ nav{
     }//h1 a
     article{
       width:40%;
-      background:rgba(255,255,255,0.7);
+      background:rgba(255,255,255,0.9);
       padding:1em;
       margin-bottom:100vh;
       
@@ -289,16 +290,15 @@ nav{
         width:95%;
         padding:2.5% 2.5% 0 2.5%;
         margin:0;
-        background:rgba(0,0,0,0.5);
+        background:lighten(black,15%);
         img{
           width:100%;
         }
         figcaption{
          width:95%;
-          margin-top:-0.35em;
          margin-left:-2.5%; 
-          padding:1% 5%;
- background:black;
+          padding:1% 2%;
+ background:lighten(black,15%);
           color:white;
           font-size:0.9em;
           a{
