@@ -2,207 +2,68 @@
 layout: base.liquid
 ---
 
+<div id="basemap"></div>
+<div class="map">
+ 
 
-<input id="pagenav-toggle" type="checkbox"/>
-<nav id="pagenav" tabindex="0">
+  <nav>
     <ol>
-        <li>
-            <a href="overview">Overview</a>
-        </li>
-        <li>
-            <a href="stories">Stories</a>
-            <ol>
-                <li>
-                    <a href="{{ "../" | url }}">Introduction</a>
-                </li>
-                {% for story in collections.stories %}
-                    <li>
-                        <a href="{{ story.url | url }}">{{ story.data.title }}</a>
-                    </li>
-                    <ol>
-                        {% for section in story.data.sections %}
-                            <li>
-                                <a href="{{ story.url | url }}#{{ section | slugify }}">{{ section }}</a>
-                            </li>
-                        {% endfor %}
-                    </ol>
-                {% endfor %}
-            </ol>
-        </li>
-
-        <li>
-            <a href="explore">Explore</a>
-            <ol>
-                <li>Overview</li>
-                <li>
-                    <a href="filter">Filter</a>
-                    <table>
-                        <tr>
-                            <th>Features</th>
-                            <th>People</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <legend>Border</legend>
-                            </td>
-                            <td>
-                                <fieldset>
-                                    <div class="checkbox column">
-                                        <input id="border-i" type="checkbox" name="border" value="indigenous"/>
-                                        <label for="border-i">Indigenous</label>
-                                        <input id="border-e" type="checkbox" name="border" value="european"/>
-                                        <label for="border-e">European</label>
-                                    </div>
-                                </fieldset>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <legend>Settlement</legend>
-                            </td>
-                            <td>
-                                <fieldset>
-                                    <div class="checkbox column">
-                                        <input id="settlement-i" type="checkbox" name="border2" value="indigenous"/>
-                                        <label for="settlement-i">Indigenous</label>
-                                        <input id="settlement-e" type="checkbox" name="border2" value="european"/>
-                                        <label for="settlement-e">European</label>
-                                    </div>
-                                </fieldset>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <legend>Land Route</legend>
-                            </td>
-                            <td>
-                                <fieldset>
-                                    <div class="checkbox column">
-                                        <input id="land-i" type="checkbox" name="border2" value="indigenous"/>
-                                        <label for="land-i">Indigenous</label>
-                                        <input id="land-e" type="checkbox" name="border2" value="european"/>
-                                        <label for="land-e">European</label>
-                                    </div>
-                                </fieldset>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <legend>Sea Route</legend>
-                            </td>
-                            <td>
-                                <fieldset>
-                                    <div class="checkbox column">
-                                        <input id="sea-i" type="checkbox" name="border2" value="indigenous"/>
-                                        <label for="sea-i">Indigenous</label>
-                                        <input id="sea-e" type="checkbox" name="border2" value="european"/>
-                                        <label for="sea-e">European</label>
-                                    </div>
-                                </fieldset>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <legend>River Route</legend>
-                            </td>
-                            <td>
-                                <fieldset>
-                                    <div class="checkbox column">
-                                        <input id="river-i" type="checkbox" name="border2" value="indigenous"/>
-                                        <label for="river-i">Indigenous</label>
-                                        <input id="river-e" type="checkbox" name="border2" value="european"/>
-                                        <label for="river-e">European</label>
-                                    </div>
-                                </fieldset>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <legend>All features</legend>
-                            </td>
-                            <td>
-                                <fieldset>
-                                    <div class="checkbox column">
-                                        <input id="all-i" type="checkbox" name="border2" value="indigenous"/>
-                                        <label for="all-i">Indigenous</label>
-                                        <input id="all-e" type="checkbox" name="border2" value="european"/>
-                                        <label for="all-e">European</label>
-                                    </div>
-                                </fieldset>
-                            </td>
-                        </tr>
-                    </table>
-                </li>
-                <li>
-          <a href="timeline">
-          Timeline
-          </a>
-            
-               
-<input id="timeline-switch" type="checkbox" />    
-    
-  <div class="switch-wrapper"> 
-      <label for="timeline-switch" class="toggle">
-        <span>On</span>
-        <span>Off</span>
-      </label>
-  </div>          
-          
-          
- <div id="timeline-maps">      
-<ul>
-  <li>
-    <input type="checkbox" id="myCheckbox1" />
-    <label for="myCheckbox1"><img src="https://i.ebayimg.com/images/g/ojsAAOSwNEVdXw0v/s-l1600.jpg" /></label>
-  </li>
-  <li>
-
-    <input type="checkbox" id="myCheckbox2" />
-    <label for="myCheckbox2"><img src="https://i5.walmartimages.com/asr/a38e5625-1031-479a-9b35-266e586ecd52_3.bbdfa3a052b52f8616bc011236bc4f31.jpeg" /></label>
-  </li>
-  <li>
-
-    <input type="checkbox" id="myCheckbox3" />
-    <label for="myCheckbox3"><img src="https://accessgenealogy.com/wp-content/uploads/2011/07/1755-Mitchell-Map-3-1080x763.jpg" /></label>
-  </li>
-</ul>
-  </div>
-    <label role="region" aria-label="pagenavigation" for="tline-toggle" id="tline-label">Timeline Switch</label>
-        </li>
-            </ol>
-
-        </li>
+      <li> <a href="#overview">Overview</a></li>
+      <li id="stories"> <a href="#stories">Stories  </a></li>
+      <li> <a href="#filters">Filters </a></li>
     </ol>
-</nav>
-
-<input id="tline-toggle" type="checkbox">
-<nav id="tlinenav" tabindex="0">
-    <ul>
-  <li>
-    <input type="checkbox" id="myCheckbox1" />
-    <label for="myCheckbox1"><img src="https://i.ebayimg.com/images/g/ojsAAOSwNEVdXw0v/s-l1600.jpg" /></label>
-  </li>
-  <li>
-
-    <input type="checkbox" id="myCheckbox2" />
-    <label for="myCheckbox2"><img src="https://i5.walmartimages.com/asr/a38e5625-1031-479a-9b35-266e586ecd52_3.bbdfa3a052b52f8616bc011236bc4f31.jpeg" /></label>
-  </li>
-  <li>
-
-    <input type="checkbox" id="myCheckbox3" />
-    <label for="myCheckbox3"><img src="https://accessgenealogy.com/wp-content/uploads/2011/07/1755-Mitchell-Map-3-1080x763.jpg" /></label>
-  </li>
-</ul>
-</nav>
-<main>
-    <label role="region" aria-label="pagenavigation" for="pagenav-toggle" id="pagenav-label">Page Navigation</label>
-    <div id="basemap" class="basemap"></div>
-    <article tabindex="0">
-        <h2>{{ title }}</h2>
-        {{ content }}
+  </nav>
+  <section id="overview" > 
+    <h1><a href="overview">Overview</a></h1>
+    <article>
+      <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus perspiciatis qui deserunt porro.</p>
     </article>
+    <article>
+      <p>At dolor distinctio aut omnis beatae ut numquam omnis qui voluptatem iure. Sit minus similique eum internos modi a velit eaque et fugiat aliquid ut iste quia qui accusantium tempora in harum sunt. Non repellat consequatur qui nostrum excepturi et earum error. Qui obcaecati dolor in quae voluptas quo voluptas distinctio sit delectus assumenda non sint autem.</p>
+      <p>Ut voluptatem quae qui reprehenderit rerum eos numquam saepe sit exercitationem animi sit repellat dicta. Ut error voluptatem qui eveniet quibusdam eos unde assumenda aut dolor accusantium est iure aliquam eos eligendi expedita aut minima voluptatem.</p>
+    </article>
+  </section>
+  <section id="stories"> 
+    <h1><a href="stories">Stories</a></h1>
+    <h2><a href="{{ "../" | url }}">Introduction</a></h2>
+    <article>
+      <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus perspiciatis qui deserunt porro.</p>
+    </article>
+    <h2>Story 1</h2>
+    <article>
+      <p>At dolor distinctio aut omnis beatae ut numquam omnis qui voluptatem iure. Sit minus similique eum internos modi a velit eaque et fugiat aliquid ut iste quia qui accusantium tempora in harum sunt. Non repellat consequatur qui nostrum excepturi et earum error. Qui obcaecati dolor in quae voluptas quo voluptas distinctio sit delectus assumenda non sint autem.</p>
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Janssen_%26_schmilinsky2.jpg" alt="Detail of map"/>
+        <figcaption>Close up of the Jassen map, Hamburg and Altona, Germany, 1910. Image credits:  <a href="https://commons.wikimedia.org/wiki/File:Janssen_%26_schmilinsky2.jpg">Wikimedia.      </a></figcaption>
+      </figure>
+    </article>
+    <article>     
+      <p>Ut voluptatem quae qui reprehenderit rerum eos numquam saepe sit exercitationem animi sit repellat dicta. Ut error voluptatem qui eveniet quibusdam eos unde assumenda aut dolor accusantium est iure aliquam eos eligendi expedita aut minima voluptatem.</p>
+    </article>
+    <article>     
+      <p>Ut voluptatem quae qui reprehenderit rerum eos numquam saepe sit exercitationem animi sit repellat dicta. Ut error voluptatem qui eveniet quibusdam eos unde assumenda aut dolor accusantium est iure aliquam eos eligendi expedita aut minima voluptatem.</p>
+    </article>
+    <article>     
+      <p>Ut voluptatem quae qui reprehenderit rerum eos numquam saepe sit exercitationem animi sit repellat dicta. Ut error voluptatem qui eveniet quibusdam eos unde assumenda aut dolor accusantium est iure aliquam eos eligendi expedita aut minima voluptatem.</p>
+    </article>
+  </section>
+  <section id="filters">
+    <h1><a href="filter">Filters</a></h1>
+    <article>
+      <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus perspiciatis qui deserunt porro.</p>
+    </article>
+    <article>
+      <p>At dolor distinctio aut omnis beatae ut numquam omnis qui voluptatem iure. Sit minus similique eum internos modi a velit eaque et fugiat aliquid ut iste quia qui accusantium tempora in harum sunt. Non repellat consequatur qui nostrum excepturi et earum error. Qui obcaecati dolor in quae voluptas quo voluptas distinctio sit delectus assumenda non sint autem.</p>
+      <p>Ut voluptatem quae qui reprehenderit rerum eos numquam saepe sit exercitationem animi sit repellat dicta. Ut error voluptatem qui eveniet quibusdam eos unde assumenda aut dolor accusantium est iure aliquam eos eligendi expedita aut minima voluptatem.</p>
+    </article>
+  </section>
+  </div>
+
+
+
+
+
+<main>
+    <!--<div id="basemap" class="basemap"></div>-->
 
     <script type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
     <script type="text/javascript" src="{{ '/assets/js/leaflet/plugins/L.Control.Appearance.js' | url }}"></script>

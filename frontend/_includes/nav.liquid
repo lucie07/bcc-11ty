@@ -1,16 +1,26 @@
 {% assign navPages = collections.all | eleventyNavigation %}
 
-
-      <a href="/">Movement and Common World in Early America</a>
-      <nav>
-        <input id="sitenav" type="checkbox" />
-        <label aria-label="Menu" class="sitenav-label" for="sitenav"> </label>
-        <ul>
+<nav>
+  <a id="sitetitle" href="/">Movement and Common World in Early America</a>
+  <div id="menu">
+    <input id="legend" type="checkbox"/>
+    <label class="legend" role="button" for="legend">Menu</label>
+    <ol>
+      <li> <a href="#overview">Overview</a></li>
+      <li> <a href="#stories">Stories  </a></li>
+      <li> <a href="#filters">Filters </a></li>
+      <li> <a href="#about">About</a></li>
+      <li> <a href="#team">Team</a></li>
+      <li> <a href="#mappage">Maps</a></li>
+      <li> <a href="#resources">Resources</a></li>
+    </ol>
+    <!--            
+      <ul>
           {% for entry in navPages %}
           <li class="{% if page.url | contains: entry.url %}is-active{% endif %}">
             <a href="{{ entry.url | url}}">{{ entry.title }}</a>
           </li>
           {% endfor %}
-
-        </ul>
-      </nav>
+      </ul>-->
+  </div>
+</nav>
