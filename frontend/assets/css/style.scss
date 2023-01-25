@@ -60,20 +60,25 @@ a{
   }//&hover
 }//a
 
+a#sitetitle{
+  color:white;
+  text-decoration:none;
+  padding:1em 0 0 2em;
+  display:block;
+  position:fixed;
+  width: 100%;
+  background: black;
+  height: 3em;
+}// a#sitetitle
+
 // NAV 
 nav{
   height:3em;
-  position:fixed;
-  width:100%;
+
   top:0;
   background:lighten(black,10%);
   //border-bottom:0.1em solid gray;
-  a#sitetitle{
-    color:white;
-    text-decoration:none;
-    padding:1em 0 0 2em;
-    display:block;
-  }// a#sitetitle
+
 }//nav
 
 //  .level1-list, /* Hide nested lists */
@@ -301,20 +306,18 @@ nav{
   top:6em;
   height: calc(100% - 6em);
   width: 100%;
-  display: none;
 }
 //MAP
-.map{   
-  background:url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F39%2Fdd%2F37%2F39dd376c7e694b4b2c8f4e230167675e.png&f=1&nofb=1&ipt=fa6e8359a277af934c1196a92d66d9532c9f36b8b4048bdee5dbc6c4969b6b56&ipo=images) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.map{  
+  z-index: 1 !important;
+  position: absolute; 
   nav{
     background:darkgray;
     height:2.4em;
     top:3em;
     border-bottom:0;
+    position:fixed;
+    width: 100%;
       > ol {
     //1st level
   width: 100%;
