@@ -57,6 +57,7 @@
     "tests"
   ],
   "dependencies": {
-    "assets": "file:frontend/assets"
+    "assets": "file:frontend/assets",
+    "markdown-it-container": "^3.0.0"
   }
 }

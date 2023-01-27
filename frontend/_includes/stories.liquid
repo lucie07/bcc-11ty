@@ -31,12 +31,8 @@ layout: base.liquid
   </section>
   <section id="stories"> 
     <h1><a href="stories">Stories</a></h1>
-    <h2><a href="{{ "../" | url }}">Introduction</a></h2>
-    <article id="s-intro">
-      <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus perspiciatis qui deserunt porro.</p>
-      <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus perspiciatis qui deserunt porro.</p>
-    <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus perspiciatis qui deserunt porro.</p>
-    </article>
+    <h2 id="s-intro"><a href="{{ "../" | url }}">Introduction</a></h2>
+    {% renderFile "./stories/introduction.md", "liquid" %}
     <h2>Homelands</h2>
     <article id="s-1">
       <p>At dolor distinctio aut omnis beatae ut numquam omnis qui voluptatem iure. Sit minus similique eum internos modi a velit eaque et fugiat aliquid ut iste quia qui accusantium tempora in harum sunt. Non repellat consequatur qui nostrum excepturi et earum error. Qui obcaecati dolor in quae voluptas quo voluptas distinctio sit delectus assumenda non sint autem.</p>
@@ -91,8 +87,6 @@ layout: base.liquid
     </article>
   </section>
   </div>
-
-
 
 
     <script type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>

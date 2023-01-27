@@ -5,6 +5,8 @@ const inspect = require("util").inspect;
 const path = require("node:path");
 const debug = require("debug")("Eleventy:KDL");
 const markdownItEleventyImg = require("markdown-it-eleventy-img");
+const markdownItContainer = require("markdown-it-container");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const stripHtml = require("string-strip-html");
 const markdownIt = require("markdown-it");
 
@@ -39,33 +41,32 @@ module.exports = function (config) {
     }
   );
 
-  const md = new markdownIt({
+  let options = {
     html: true,
-    breaks: true,
-    linkify: true,
-  })
-    .use(require("markdown-it-front-matter"), function (fm) {
-      console.log(fm);
-    })
-    .use(markdownItEleventyImg, {
-      imgOptions: {
-        widths: [800, 500, 300],
-        urlPath: "/assets/img/",
-        outputDir: "./assets/img/",
-        formats: ["avif", "webp", "jpeg"],
-      },
-      globalAttributes: {
-        class: "markdown-image",
-        decoding: "async",
-        // If you use multiple widths,
-        // don't forget to add a `sizes` attribute.
-        sizes: "100vw",
-      },
-    });
+  };
 
-  config.addPairedShortcode("markdown", (content) => {
-    return md.render(content);
+  const md = new markdownIt(options).use(markdownItContainer, "slide", {
+    validate: function (params) {
+      //return params.trim().match(/^slide\s+(.*)$/);
+      return true;
+    },
+    render: function (tokens, idx) {
+      var m = tokens[idx].info.trim().match(/^slide\s+(.*)$/);
+
+      if (tokens[idx].nesting === 1) {
+        // opening tag
+        //return '<details><summary>' + md.utils.escapeHtml(m[1]) + '</summary>\n';
+        return "<article>";
+      } else {
+        // closing tag
+        return "</article>\n";
+      }
+    },
+    marker: ":",
   });
+
+  config.setLibrary("md", md);
+  config.addPlugin(EleventyRenderPlugin);
 
   config.addFilter(
     "exclude",

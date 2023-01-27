@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "description": "Code base for the My Default Site research project",
-  "homepage": "https://thornton.kdl.kcl.ac.uk",
+  "homepage": "",
   "main": "index.js",
   "author": "King's Digital Lab",
   "license": "MPL-2.0",
@@ -28,14 +28,18 @@
   },
   "keywords": [],
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-navigation": "^0.3.2",
     "dotenv": "^16.0.1",
     "eleventy-sass": "^1.3.1",
     "markdown-it-attrs": "^4.1.4",
+    "markdown-it-container": "^3.0.0",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-image-figures": "^2.1.0",
     "sass": "^1.50.0",
     "string-strip-html": "^8.3.0"
+  },
+  "dependencies": {
+    "markdown-it": "^13.0.1"
   }
 }
