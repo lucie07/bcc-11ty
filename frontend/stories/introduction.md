@@ -1,8 +1,3 @@
----
-title: "Stories Introduction"
-layout: story.liquid
----
-
 ::: slide
 Maps of early America do not tell the whole truth. While they frequently include scales and lines of latitude, their aim
 was not geographical accuracy. For the British – the makers of the bulk of the maps used here – the aim was to
@@ -19,4 +14,11 @@ British colonies and imposed Anglophone names over wide expanses of paper and la
 scale, and confined to a narrow strip of the Atlantic coast. Given the relative imbalance of power, colonists tended to
 resort to violence to defend claims to land, and war with neighbouring Indigenous nations was endemic. However, this
 does not mean that the Northeast was defined by two separate and antagonistic worlds.
+:::
+
+::: slide
+While the common worlds of Indigenous and British peoples were occasionally pushed apart by violence, they were also
+drawn together by pathways of connection, movement, diplomacy, alliance, and exchange. This model of inter-cultural
+relationship has been called a ‘middle ground’, and it existed in tension with a colonial impulse to establish and
+defend hard borders and boundaries, lines that demarcated exclusive territorial claims and excluded ‘outsiders’.
 :::
