@@ -4,214 +4,386 @@ layout: base.liquid
 
 <div id="basemap"></div>
 <div class="map">
-  <nav>
-    <ol>
-      <li> <a href="#overview">Overview</a></li>
-      <li id="stories"> <a href="#stories">Stories  </a>
+    <nav>
         <ol>
-          <li><a href="#s-intro">Introduction</a></li>
-          <li><a href="#s-1">Homelands</a></li>
-          <li><a href="#s-2">Villagers, Settlers</a></li>
-          <li><a href="#s-3">Pathways</a></li>
-          <li><a href="#s-4">Borders</a></li>
-        </ol>  
-      </li>
-      <li> <a href="#filters">Filters </a></li>
-    </ol>
-  </nav>
-  <section id="overview" > 
-    <h1><a href="overview">Overview</a></h1>
-    <article>
-      <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus perspiciatis qui deserunt porro.</p>
-    </article>
-    <article>
-      <p>At dolor distinctio aut omnis beatae ut numquam omnis qui voluptatem iure. Sit minus similique eum internos modi a velit eaque et fugiat aliquid ut iste quia qui accusantium tempora in harum sunt. Non repellat consequatur qui nostrum excepturi et earum error. Qui obcaecati dolor in quae voluptas quo voluptas distinctio sit delectus assumenda non sint autem.</p>
-      <p>Ut voluptatem quae qui reprehenderit rerum eos numquam saepe sit exercitationem animi sit repellat dicta. Ut error voluptatem qui eveniet quibusdam eos unde assumenda aut dolor accusantium est iure aliquam eos eligendi expedita aut minima voluptatem.</p>
-    </article>
-  </section>
-  <section id="stories"> 
-    <h1><a href="stories">Stories</a></h1>
-    <div id="s-intro"></div>
-    <h2><a href="{{ "../" | url }}">Introduction</a></h2>
-    {% renderFile "./stories/introduction.md", "liquid" %}
-    <h2 id="s-1">Homelands</h2>
-    {% renderFile "./stories/homelands.md", "liquid" %}
-    <h2>Pathways</h2>
-    <article id="s-3">
-      <p>At dolor distinctio aut omnis beatae ut numquam omnis qui voluptatem iure. Sit minus similique eum internos modi a velit eaque et fugiat aliquid ut iste quia qui accusantium tempora in harum sunt. Non repellat consequatur qui nostrum excepturi et earum error. Qui obcaecati dolor in quae voluptas quo voluptas distinctio sit delectus assumenda non sint autem.</p>
-      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Janssen_%26_schmilinsky2.jpg" alt="Detail of map"/>
-        <figcaption>Close up of the Jassen map, Hamburg and Altona, Germany, 1910. Image credits:  <a href="https://commons.wikimedia.org/wiki/File:Janssen_%26_schmilinsky2.jpg">Wikimedia.      </a></figcaption>
-      </figure>
-    </article>
-    <article>     
-      <p>Ut voluptatem quae qui reprehenderit rerum eos numquam saepe sit exercitationem animi sit repellat dicta. Ut error voluptatem qui eveniet quibusdam eos unde assumenda aut dolor accusantium est iure aliquam eos eligendi expedita aut minima voluptatem.</p>
-    </article>
-    <h2>Borders</h2>
-    <article id="s-4">
-      <p>At dolor distinctio aut omnis beatae ut numquam omnis qui voluptatem iure. Sit minus similique eum internos modi a velit eaque et fugiat aliquid ut iste quia qui accusantium tempora in harum sunt. Non repellat consequatur qui nostrum excepturi et earum error. Qui obcaecati dolor in quae voluptas quo voluptas distinctio sit delectus assumenda non sint autem.</p>
-      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Janssen_%26_schmilinsky2.jpg" alt="Detail of map"/>
-        <figcaption>Close up of the Jassen map, Hamburg and Altona, Germany, 1910. Image credits:  <a href="https://commons.wikimedia.org/wiki/File:Janssen_%26_schmilinsky2.jpg">Wikimedia.      </a></figcaption>
-      </figure>
-    </article>
-    <article>     
-      <p>Ut voluptatem quae qui reprehenderit rerum eos numquam saepe sit exercitationem animi sit repellat dicta. Ut error voluptatem qui eveniet quibusdam eos unde assumenda aut dolor accusantium est iure aliquam eos eligendi expedita aut minima voluptatem.</p>
-    </article>
-  </section>
-  <section id="filters">
-    <h1><a href="filter">Filters</a></h1>
-    <article>
-      <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus perspiciatis qui deserunt porro.</p>
-    </article>
-  </section>
-  </div>
+            <li><a href="#overview">Overview</a></li>
+            <li id="stories"><a href="#stories">Stories </a>
+                <ol>
+                    <li><a href="#s-intro">Introduction</a></li>
+                    <li><a href="#s-1">Homelands</a></li>
+                    <li><a href="#s-2">Villagers, Settlers</a></li>
+                    <li><a href="#s-3">Pathways</a></li>
+                    <li><a href="#s-4">Borders</a></li>
+                </ol>
+            </li>
+            <li><a href="#filters">Filters </a></li>
+        </ol>
+    </nav>
+    <section id="overview">
+        <h1><a href="overview">Overview</a></h1>
+        <article>
+            <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui
+                possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos
+                nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus
+                perspiciatis qui deserunt porro.</p>
+        </article>
+        <article>
+            <p>At dolor distinctio aut omnis beatae ut numquam omnis qui voluptatem iure. Sit minus similique eum
+                internos modi a velit eaque et fugiat aliquid ut iste quia qui accusantium tempora in harum sunt. Non
+                repellat consequatur qui nostrum excepturi et earum error. Qui obcaecati dolor in quae voluptas quo
+                voluptas distinctio sit delectus assumenda non sint autem.</p>
+            <p>Ut voluptatem quae qui reprehenderit rerum eos numquam saepe sit exercitationem animi sit repellat dicta.
+                Ut error voluptatem qui eveniet quibusdam eos unde assumenda aut dolor accusantium est iure aliquam eos
+                eligendi expedita aut minima voluptatem.</p>
+        </article>
+    </section>
+    <section id="stories">
+        <h1><a href="stories">Stories</a></h1>
+        <div id="s-intro"></div>
+        <h2><a href="{{ "../" | url }}">Introduction</a></h2>
+        {% renderFile "./stories/introduction.md", "liquid" %}
+        <h2 id="s-1">Homelands</h2>
+        {% renderFile "./stories/homelands.md", "liquid" %}
+        <h2>Pathways</h2>
+        <article id="s-3">
+            <p>At dolor distinctio aut omnis beatae ut numquam omnis qui voluptatem iure. Sit minus similique eum
+                internos modi a velit eaque et fugiat aliquid ut iste quia qui accusantium tempora in harum sunt. Non
+                repellat consequatur qui nostrum excepturi et earum error. Qui obcaecati dolor in quae voluptas quo
+                voluptas distinctio sit delectus assumenda non sint autem.</p>
+            <figure><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Janssen_%26_schmilinsky2.jpg"
+                         alt="Detail of map"/>
+                <figcaption>Close up of the Jassen map, Hamburg and Altona, Germany, 1910. Image credits: <a
+                            href="https://commons.wikimedia.org/wiki/File:Janssen_%26_schmilinsky2.jpg">Wikimedia. </a>
+                </figcaption>
+            </figure>
+        </article>
+        <article>
+            <p>Ut voluptatem quae qui reprehenderit rerum eos numquam saepe sit exercitationem animi sit repellat dicta.
+                Ut error voluptatem qui eveniet quibusdam eos unde assumenda aut dolor accusantium est iure aliquam eos
+                eligendi expedita aut minima voluptatem.</p>
+        </article>
+        <h2>Borders</h2>
+        <article id="s-4">
+            <p>At dolor distinctio aut omnis beatae ut numquam omnis qui voluptatem iure. Sit minus similique eum
+                internos modi a velit eaque et fugiat aliquid ut iste quia qui accusantium tempora in harum sunt. Non
+                repellat consequatur qui nostrum excepturi et earum error. Qui obcaecati dolor in quae voluptas quo
+                voluptas distinctio sit delectus assumenda non sint autem.</p>
+            <figure><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Janssen_%26_schmilinsky2.jpg"
+                         alt="Detail of map"/>
+                <figcaption>Close up of the Jassen map, Hamburg and Altona, Germany, 1910. Image credits: <a
+                            href="https://commons.wikimedia.org/wiki/File:Janssen_%26_schmilinsky2.jpg">Wikimedia. </a>
+                </figcaption>
+            </figure>
+        </article>
+        <article>
+            <p>Ut voluptatem quae qui reprehenderit rerum eos numquam saepe sit exercitationem animi sit repellat dicta.
+                Ut error voluptatem qui eveniet quibusdam eos unde assumenda aut dolor accusantium est iure aliquam eos
+                eligendi expedita aut minima voluptatem.</p>
+        </article>
+    </section>
+    <section id="filters">
+        <h1><a href="filter">Filters</a></h1>
+        <article>
+            <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui
+                possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos
+                nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus
+                perspiciatis qui deserunt porro.</p>
+        </article>
+    </section>
+</div>
 
 
-    <script type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
-    <script type="text/javascript" src="{{ '/assets/js/leaflet/plugins/L.Control.Appearance.js' | url }}"></script>
+<script type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
+<script type="text/javascript" src="{{ '/assets/js/leaflet/plugins/L.Control.Appearance.js' | url }}"></script>
 
-    <script>
+<script>
 
-        class StoryMap {
-            constructor(geojson_uri, story_id) {
-                this.overlay = null;
+    class StoryMap {
+        constructor(L, storyFrame_uri, geojson_uri, story_id) {
+            this.overlay = null;
+            this.L = L;
+            // Data parameters
+            this.storyFrame_uri = storyFrame_uri;
+            this.geojson_uri = geojson_uri;
+            this.map = null;
+            this.story_id = story_id;
+            this.layerGroups = {};
 
-                // Data parameters
-                this.geojson_uri =
-                    this.map = null;
-                this.story_id = story_id;
-                this.layerGroups = {};
+            this.storyFrames = [];
 
-                // Map parameters
-                this.mapMinZoom = 1;
-                this.mapMaxZoom = 11;
+            // Map parameters
+            this.mapMinZoom = 1;
+            this.mapMaxZoom = 11;
 
-                // Styles for Features
-                // fillColor: '#ff7800', fill: true
-                this.highlightLineStyle = {
-                    stroke: true,
-                    color: '#0000ff',
-                    weight: 5,
-                    opacity: 0.6
-                };
-
-                // color: 'rgba(0,0,0,0)',
-                this.defaultLineStyle = {
-                    stroke: true,
-                    color: '#0000ff',
-                    weight: 5,
-
-                    fill: false
-                };
-
-
-            }
-
-            async loadShapeFile(shape_url) {
-                let response = await fetch(shape_url);
-                return await response.json();
-            }
-
-
-
-            /**
-             * Load all shape files asynchronously
-             */
-            async loadShapes(shape_urls) {
-                let shapePromises = [];
-                let shapeGeoJSON = [];
-                let storyFeatures = [];
-
-                let shapeLayer = {};
-                for (let u = 0; u < shape_urls.length; u++) {
-                    shapePromises.push(this.loadShapeFile(shape_urls[u]));
-                }
-                await Promise.all(shapePromises).then((values) => {
-                    for (let v = 0; v < values.length; v++) {
-                        shapeGeoJSON.push(...values[v].features);
-                    }
-                });
-                let unlinkedShapes = [];
-
-                // Arrange into stories and default layer
-                for (let s = 0; s < shapeGeoJSON.length; s++) {
-                    let feature = shapeGeoJSON[s];
-                    if (feature.properties) {
-                        if (feature.properties.story_link === story_id) {
-                            storyFeatures.push(feature);
-                        }
-                        if (feature.properties.frame_link) {
-                        }
-
-                        /*let frame_link = feature.properties.frame_link;
-                                            if (shapesByFrameLink[frame_link]) {
-                                                shapesByFrameLink[frame_link].push(feature);
-                                            } else {
-                                                shapesByFrameLink[frame_link] = [feature]
-                                            }*/
-                    }
-                }
-
-                return storyFeatures;
-            }
-
-            async initMap() {
-
-                this.map = L.map('basemap');
-                this.overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
-                    minZoom: this.mapMinZoom,
-                    maxZoom: this.mapMaxZoom,
-                    opacity: 1
-                }).addTo(this.map);
-                // Initial view
-                // This could be changed based on get string etc.
-                this.map.setView([
-                    {{ bounds[0].lat }}, {{ bounds[0].lng }}
-                ], {{ bounds[0].zoom }});
-
-                await this.loadFeatures();
-
-            }
-
-
-
-            onEachFeature(feature, layer) {
-                // does this feature have a property named popupContent?
-                if (feature.properties && (feature.properties.map_text || feature.properties.norm_text)) {
-                    if (feature.properties.map_text) {
-                        layer.bindPopup(feature.properties.map_text);
-                    } else {
-                        layer.bindPopup(feature.properties.norm_text);
-                    }
-                }
-                this.addFeatureToGroups(feature);
-            }
-
-            /**
-                Add a feature into several overlapping layer groups:
-             https://leafletjs.com/examples/layers-control/
-            Then we canadd/remove groups based on section and filter choices
-            */
-            addFeatureToGroups(feature){
-
-            }
-
-            async loadFeatures() {
-                let storyFeatures = await this.loadShapes(geojson_uri);
-                this.layerGroups.all = L.geoJSON(storyFeatures, {
-                    style: this.defaultLineStyle,
-                    onEachFeature: this.onEachFeature.bind(this)
-                }).addTo(this.map);
+            // Styles for Features
+            // fillColor: '#ff7800', fill: true
+            this.highlightLineStyle = {
+                stroke: true,
+                color: '#0000ff',
+                weight: 5,
+                opacity: 0.6
             };
+
+            // color: 'rgba(0,0,0,0)',
+            this.defaultLineStyle = {
+                stroke: true,
+                color: '#0000ff',
+                weight: 5,
+
+                fill: false
+            };
+
+            this.slideRules = {
+                '5': {
+                    poly_include: {
+                        feat_type: [],
+                        sub_type: [],
+                        map_source: [],
+                    }
+                }
+            }
 
 
         }
 
-        let geojson_uri = ["{{ '/assets/json/BCC_combined.json' | url }}"];
-        let shapeLayers = null;
-        let shapesByFrameLink = {};
-        let story_id = {{ story_id }};
+        async loadShapeFile(shape_url) {
+            let response = await fetch(shape_url);
+            return await response.json();
+        }
 
-        storyMap = new StoryMap(geojson_uri, story_id);
-        storyMap.initMap();
 
-    </script>
+        /**
+         * Load all shape files asynchronously
+         */
+        async loadShapes(shape_urls) {
+            let shapePromises = [];
+            let shapeGeoJSON = [];
+            let storyFeatures = [];
+            console.log(shape_urls);
+            let shapeLayer = {};
+            for (let u = 0; u < shape_urls.length; u++) {
+                shapePromises.push(this.loadShapeFile(shape_urls[u]));
+            }
+            await Promise.all(shapePromises).then((values) => {
+                // console.log(values);
+                for (let v = 0; v < values.length; v++) {
+                    shapeGeoJSON.push(...values[v].features);
+                }
+            });
+            let unlinkedShapes = [];
+
+            // Arrange into stories and default layer
+            for (let s = 0; s < shapeGeoJSON.length; s++) {
+                let feature = shapeGeoJSON[s];
+                if (feature.properties) {
+                    if (feature.properties.story_link === story_id) {
+                        storyFeatures.push(feature);
+                    }
+                    if (feature.properties.frame_link) {
+                    }
+
+                    /*let frame_link = feature.properties.frame_link;
+                                        if (shapesByFrameLink[frame_link]) {
+                                            shapesByFrameLink[frame_link].push(feature);
+                                        } else {
+                                            shapesByFrameLink[frame_link] = [feature]
+                                        }*/
+                }
+            }
+
+            return storyFeatures;
+        }
+
+        async initMap() {
+
+            this.map = L.map('basemap');
+            this.overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
+                minZoom: this.mapMinZoom,
+                maxZoom: this.mapMaxZoom,
+                opacity: 1
+            }).addTo(this.map);
+            // Initial view
+            // This could be changed based on get string etc.
+            this.map.setView([
+                {{ bounds[0].lat }}, {{ bounds[0].lng }}
+            ], {{ bounds[0].zoom }});
+
+            await this.loadStoryFrames();
+            await this.loadFeatures();
+            await this.slide5();
+
+        }
+
+
+        onEachFeature(feature, layer) {
+            // does this feature have a property named popupContent?
+            if (feature.properties && (feature.properties.map_text || feature.properties.norm_text)) {
+                if (feature.properties.map_text) {
+                    layer.bindPopup(feature.properties.map_text);
+                } else {
+                    layer.bindPopup(feature.properties.norm_text);
+                }
+            }
+            this.addFeatureToGroups(feature);
+        }
+
+        /**
+         Add a feature into several overlapping layer groups:
+         https://leafletjs.com/examples/layers-control/
+         Then we canadd/remove groups based on section and filter choices
+         */
+        addFeatureToGroups(feature) {
+
+        }
+
+        getStoryFrameBounds(fid) {
+            for (let f = 0; f < this.storyFrames.length; f++) {
+                if (this.storyFrames[f].FID == fid) {
+                    return this.storyFrames[f].feature;
+                }
+            }
+        }
+
+        async loadStoryFrames() {
+            let storyFeatures = await this.loadShapeFile(this.storyFrame_uri); // loadShapes([this.storyFrame_uri]);
+
+            /*for (let s = 0; s < storyFeatures.features.length; s++) {
+                this.storyFrames.push(storyFeatures.features[s]);
+            }
+            console.log(this.storyFrames);*/
+            let storyFrames = this.storyFrames;
+            this.layerGroups.all = L.geoJSON(storyFeatures, {
+                style: this.defaultLineStyle,
+                onEachFeature: function (feature, layer) {
+                    storyFrames.push({
+                        FID: feature.properties.FID, feature: feature
+                    });
+                }
+            }).addTo(this.map);
+            console.log(storyFrames);
+            /*
+            await Promise.all(shapePromises).then((values) => {
+                // console.log(values);
+                for (let v = 0; v < values.length; v++) {
+                    shapeGeoJSON.push(...values[v].features);
+                }
+            });
+            let unlinkedShapes = [];
+
+            // Arrange into stories and default layer
+            for (let s = 0; s < shapeGeoJSON.length; s++) {
+                let feature = shapeGeoJSON[s];
+                if (feature.properties) {
+
+                }
+            }*/
+
+            //console.log(storyFeatures);
+        }
+
+        async loadFeatures() {
+            let storyFeatures = await this.loadShapes(this.geojson_uri);
+            this.layerGroups.all = L.geoJSON(storyFeatures, {
+                style: this.defaultLineStyle,
+                onEachFeature: this.onEachFeature.bind(this)
+            }).addTo(this.map);
+        };
+
+        /**
+         * Add the feature to as many slide groups
+         * as pass the conditions in slideRules.
+         *
+         * @param featureType point, poly, line
+         * @param feature the feature to assign
+         */
+        addFeatureToSlideGroups(featureType, feature){
+            switch (featureType) {
+                case "POINT":
+                    // Foreach slide rule
+                        // If they match ANY include rule, set to include
+                        // If there are excludes
+                        // If there is an exclude with no matching include
+                            // And it passes the exclude
+                            // Include
+
+                    break;
+                case "POLY":
+                    break;
+                case "LINE":
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+        async slide5() {
+            /*
+                        Slide 5
+            - Zoom Map to extent of object FID = 10 from BCC_storyframe
+            - Hide all object from Points, Lines and Poly
+            - Show objects from Points where:
+                sub_type in (4,5) and identity != 1
+            - Show objects from Lines where:
+                sub_type= 8 and map_source = 12
+             */
+
+            let testCoordinates = [
+                [
+                    [
+                        [
+
+                            40.1315543,
+                            -75.8809841
+                        ],
+                        [
+
+                            39.538245,
+                            -75.8724307
+                        ],
+                        [
+                            39.5470396,
+                            -74.6207891
+
+                        ],
+                        [
+                            40.1293743,
+                            -74.6207891
+
+                        ],
+                        [
+                            40.1315543,
+                            -75.8809841
+
+                        ]
+                    ]
+                ]
+            ];
+            console.log(this.getStoryFrameBounds(7));
+            this.map.flyToBounds(testCoordinates);//this.getStoryFrameBounds(10).geometry.coordinates);
+            return true;
+        }
+
+    }
+
+    /*
+
+
+        "{{ '/assets/json/BCC_points.json' | url }}",
+        "{{ '/assets/json/BCC_polys.json' | url }}",
+
+     */
+    let geojson_uri = [
+        "{{ '/assets/json/BCC_lines.json' | url }}",
+    ];
+    let shapeLayers = null;
+    let shapesByFrameLink = {};
+    let story_id = {{ story_id }};
+
+    storyMap = new StoryMap(L,
+        "{{ '/assets/json/BCC_storyframe.json' | url }}",
+        geojson_uri, story_id
+    );
+    storyMap.initMap();
+
+</script>
