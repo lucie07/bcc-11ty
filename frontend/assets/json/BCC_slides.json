@@ -1,0 +1,31 @@
+{
+  "slides": [
+    {
+      "id": 5,
+      "bounds": [],
+      "lines": {
+        "includes": {
+          "sub_type": [
+            8
+          ],
+          "map_source": [
+            12
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4, 10
+          ]
+        },
+        "excludes": {
+          "identity": [
+            1
+          ]
+        }
+      },
+      "features": []
+    }
+  ]
+}

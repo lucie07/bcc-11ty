@@ -98,15 +98,46 @@ layout: base.liquid
 
 <script>
 
+    /* A single slide in the story
+     storyframe is from the json file
+     slideBounds is the bounding box we fly to when we reach the story
+     includes/excludes are in the format:
+     this.includes = {
+        lines: {
+            feat_type: [4],
+            sub_type: [6, 7],
+            map_source: [12],
+        },
+        points: {
+            feat_type: [4],
+            sub_type: [6, 7],
+            map_source: [12],
+        },
+        polys: lines: {
+            feat_type: [4],
+            sub_type: [6, 7],
+            map_source: [12],
+        }
+    }
+
+    class StorySlide {
+        constructor() {
+            this.storyFrame = null;
+            this.slideBounds = null;
+            this.includes = {};
+            this.excludes = {};
+        }
+
+    }*/
+
     class StoryMap {
-        constructor(L, storyFrame_uri, geojson_uri, story_id) {
+        constructor(L, storyUris) {
             this.overlay = null;
             this.L = L;
             // Data parameters
-            this.storyFrame_uri = storyFrame_uri;
-            this.geojson_uri = geojson_uri;
+            this.storyUris = storyUris
             this.map = null;
-            this.story_id = story_id;
+
             this.layerGroups = {};
 
             this.storyFrames = [];
@@ -133,15 +164,7 @@ layout: base.liquid
                 fill: false
             };
 
-            this.slideRules = {
-                '5': {
-                    poly_include: {
-                        feat_type: [],
-                        sub_type: [],
-                        map_source: [],
-                    }
-                }
-            }
+            this.slides = {};
 
 
         }
@@ -159,13 +182,13 @@ layout: base.liquid
             let shapePromises = [];
             let shapeGeoJSON = [];
             let storyFeatures = [];
-            console.log(shape_urls);
+
             let shapeLayer = {};
             for (let u = 0; u < shape_urls.length; u++) {
                 shapePromises.push(this.loadShapeFile(shape_urls[u]));
             }
             await Promise.all(shapePromises).then((values) => {
-                // console.log(values);
+
                 for (let v = 0; v < values.length; v++) {
                     shapeGeoJSON.push(...values[v].features);
                 }
@@ -194,6 +217,26 @@ layout: base.liquid
             return storyFeatures;
         }
 
+        async loadSlides() {
+            if (this.storyUris && this.storyUris.slides) {
+                let storySlides = await this.loadShapeFile(this.storyUris.slides);
+                this.slides = storySlides.slides;
+                // console.log(this.slides);
+            }
+        }
+
+        initStoryFeatureLayers() {
+            for (let s = 0; s < this.slides.length; s++) {
+                let slide = this.slides[s];
+                slide.layer = L.geoJSON(
+                    slide.features, {
+                        style: this.defaultLineStyle,
+                        onEachFeature: this.onEachFeature.bind(this)
+                    });
+
+            }
+        }
+
         async initMap() {
 
             this.map = L.map('basemap');
@@ -209,11 +252,11 @@ layout: base.liquid
             ], {{ bounds[0].zoom }});
 
             await this.loadStoryFrames();
+            await this.loadSlides();
             await this.loadFeatures();
-            await this.slide5();
-
+            this.initStoryFeatureLayers();
+            console.log(this.slides);
         }
-
 
         onEachFeature(feature, layer) {
             // does this feature have a property named popupContent?
@@ -244,23 +287,35 @@ layout: base.liquid
             }
         }
 
+        /**
+         * Load the story frame objects from json, convert the feature to bounds and
+         * store to be added to slides later
+         * @returns {Promise<void>}
+         */
         async loadStoryFrames() {
-            let storyFeatures = await this.loadShapeFile(this.storyFrame_uri); // loadShapes([this.storyFrame_uri]);
+            if (this.storyUris && this.storyUris.storyFrame) {
+                let storyFrames = await this.loadShapeFile(this.storyUris.storyFrame); // loadShapes([this.storyFrame_uri]);
 
-            /*for (let s = 0; s < storyFeatures.features.length; s++) {
-                this.storyFrames.push(storyFeatures.features[s]);
-            }
-            console.log(this.storyFrames);*/
-            let storyFrames = this.storyFrames;
-            this.layerGroups.all = L.geoJSON(storyFeatures, {
-                style: this.defaultLineStyle,
-                onEachFeature: function (feature, layer) {
-                    storyFrames.push({
-                        FID: feature.properties.FID, feature: feature
+                for (let s = 0; s < storyFrames.features.length; s++) {
+                    let feature = storyFrames.features[s];
+                    this.storyFrames.push({
+                        FID: feature.properties.FID, feature: feature,
+                        bounds: L.geoJson(feature.geometry).getBounds()
                     });
                 }
+            }
+
+
+            //let storyFrames = this.storyFrames;
+
+            /*this.layerGroups.all = L.geoJSON(storyFeatures, {
+                style: this.defaultLineStyle,
+                onEachFeature: function (feature, layer) {
+
+
+                }
             }).addTo(this.map);
-            console.log(storyFrames);
+            console.log(storyFrames);*/
             /*
             await Promise.all(shapePromises).then((values) => {
                 // console.log(values);
@@ -281,13 +336,49 @@ layout: base.liquid
             //console.log(storyFeatures);
         }
 
+        /** Load separate feature files and assign to slides
+         *
+         * @returns {Promise<void>}
+         */
         async loadFeatures() {
-            let storyFeatures = await this.loadShapes(this.geojson_uri);
-            this.layerGroups.all = L.geoJSON(storyFeatures, {
-                style: this.defaultLineStyle,
-                onEachFeature: this.onEachFeature.bind(this)
-            }).addTo(this.map);
+            if (this.storyUris && this.storyUris.lines) {
+                // console.log(storyFeatures);
+                let storyFeatures = await this.loadShapes([this.storyUris.lines]);
+                for (let f = 0; f < storyFeatures.length; f++) {
+                    this.addFeatureToSlideGroups("LINE", storyFeatures[f]);
+                }
+
+                storyFeatures = await this.loadShapes([this.storyUris.points]);
+                for (let f = 0; f < storyFeatures.length; f++) {
+                    this.addFeatureToSlideGroups("POINT", storyFeatures[f]);
+                }
+
+                /*storyFeatures = await this.loadShapes([this.storyUris.polys]);
+                for (let f = 0; f < storyFeatures.length; f++) {
+                    this.addFeatureToSlideGroups("POLY", storyFeatures[f])
+                }
+                */
+            }
+
         };
+
+
+        filterFeature(feature, filters) {
+            let result = false;
+            for (const [field, includeValues] of Object.entries(filters)) {
+                // If they match ALL include rules, set to include
+                if (
+                    field in feature.properties && includeValues.includes(feature.properties[field])
+                ) {
+                    //console.log(field + " : "+feature.properties[field]+" :: "+includeValues);
+                    result = true;
+                } else {
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
 
         /**
          * Add the feature to as many slide groups
@@ -296,72 +387,67 @@ layout: base.liquid
          * @param featureType point, poly, line
          * @param feature the feature to assign
          */
-        addFeatureToSlideGroups(featureType, feature){
-            switch (featureType) {
-                case "POINT":
-                    // Foreach slide rule
-                        // If they match ANY include rule, set to include
-                        // If there are excludes
-                        // If there is an exclude with no matching include
-                            // And it passes the exclude
-                            // Include
+        addFeatureToSlideGroups(featureType, feature) {
+            for (let s = 0; s < this.slides.length; s++) {
+                // Foreach slide rule
+                let slide = this.slides[s];
 
-                    break;
-                case "POLY":
-                    break;
-                case "LINE":
-                    break;
-                default:
-                    break;
+                let includeFeature = false;
+                switch (featureType) {
+                    case "LINE":
+                        if (slide.lines.includes) {
+                            includeFeature = this.filterFeature(feature, slide.lines.includes);
+                            /*for (const [field, includeValues] of Object.entries(slide.lines.includes)) {
+                                // If they match ALL include rules, set to include
+                                if (
+                                    field in feature.properties && includeValues.includes(feature.properties[field])
+                                ) {
+                                    //console.log(field + " : "+feature.properties[field]+" :: "+includeValues);
+                                    includeFeature = true;
+                                } else {
+                                    includeFeature = false;
+                                    break;
+                                }
+                            }*/
+
+                            /*for (const [field, value] of Object.entries(feature.properties)) {
+                                if (field in slide.lines.includes && slide.lines.includes[field].includes(value)) {
+                                    includeFeature = true;
+                                    break;
+                                }
+                            }*/
+                        }
+                        if (slide.lines.excludes && includeFeature === true) {
+                            includeFeature = !this.filterFeature(feature, slide.lines.excludes);
+                        }
+                        break;
+
+                    case "POLY":
+                        break;
+                    case "POINT":
+                        if (slide.points.includes) {
+                            includeFeature = this.filterFeature(feature, slide.points.includes);
+                        }
+                        if (slide.points.excludes && includeFeature === true) {
+                            includeFeature = !this.filterFeature(feature, slide.points.excludes);
+                            /*for (const [field, value] of Object.entries(feature.properties)) {
+                                if (
+                                    field in slide.points.excludes &&
+                                    slide.points.excludes[field].includes(value)
+                                ) {
+                                    includeFeature = false;
+                                    break;
+                                }
+                            }*/
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                if (includeFeature) {
+                    slide.features.push(feature);
+                }
             }
-        }
-
-
-        async slide5() {
-            /*
-                        Slide 5
-            - Zoom Map to extent of object FID = 10 from BCC_storyframe
-            - Hide all object from Points, Lines and Poly
-            - Show objects from Points where:
-                sub_type in (4,5) and identity != 1
-            - Show objects from Lines where:
-                sub_type= 8 and map_source = 12
-             */
-
-            let testCoordinates = [
-                [
-                    [
-                        [
-
-                            40.1315543,
-                            -75.8809841
-                        ],
-                        [
-
-                            39.538245,
-                            -75.8724307
-                        ],
-                        [
-                            39.5470396,
-                            -74.6207891
-
-                        ],
-                        [
-                            40.1293743,
-                            -74.6207891
-
-                        ],
-                        [
-                            40.1315543,
-                            -75.8809841
-
-                        ]
-                    ]
-                ]
-            ];
-            console.log(this.getStoryFrameBounds(7));
-            this.map.flyToBounds(testCoordinates);//this.getStoryFrameBounds(10).geometry.coordinates);
-            return true;
         }
 
     }
@@ -369,20 +455,23 @@ layout: base.liquid
     /*
 
 
-        "{{ '/assets/json/BCC_points.json' | url }}",
-        "{{ '/assets/json/BCC_polys.json' | url }}",
+
+        ,
 
      */
-    let geojson_uri = [
-        "{{ '/assets/json/BCC_lines.json' | url }}",
-    ];
+    let geojson_uri = [];
     let shapeLayers = null;
     let shapesByFrameLink = {};
     let story_id = {{ story_id }};
 
     storyMap = new StoryMap(L,
-        "{{ '/assets/json/BCC_storyframe.json' | url }}",
-        geojson_uri, story_id
+        {
+            storyFrame: "{{ '/assets/json/BCC_storyframe.json' | url }}",
+            slides: "{{ '/assets/json/BCC_slides.json' | url }}",
+            lines: "{{ '/assets/json/BCC_lines.json' | url }}",
+            points: "{{ '/assets/json/BCC_points.json' | url }}",
+            polys: "{{ '/assets/json/BCC_polys.json' | url }}"
+        }
     );
     storyMap.initMap();
 
