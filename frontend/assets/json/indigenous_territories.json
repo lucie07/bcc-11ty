@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "name": "BCC_data_storyframe",
+  "name": "BCC_data_indigenous",
   "crs": {
     "type": "name",
     "properties": {
@@ -359,7 +359,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "06633c52a75ad79a0542c084e5708d97",
+
         "Name": "Onöndowa’ga:’ (Seneca)",
         "ID": 34083,
         "Slug": "onondowaga-seneca",
