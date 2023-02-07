@@ -98,38 +98,6 @@ layout: base.liquid
 
 <script>
 
-    /* A single slide in the story
-     storyframe is from the json file
-     slideBounds is the bounding box we fly to when we reach the story
-     includes/excludes are in the format:
-     this.includes = {
-        lines: {
-            feat_type: [4],
-            sub_type: [6, 7],
-            map_source: [12],
-        },
-        points: {
-            feat_type: [4],
-            sub_type: [6, 7],
-            map_source: [12],
-        },
-        polys: lines: {
-            feat_type: [4],
-            sub_type: [6, 7],
-            map_source: [12],
-        }
-    }
-
-    class StorySlide {
-        constructor() {
-            this.storyFrame = null;
-            this.slideBounds = null;
-            this.includes = {};
-            this.excludes = {};
-        }
-
-    }*/
-
     class StoryMap {
         constructor(L, storyUris) {
             this.overlay = null;
@@ -145,6 +113,9 @@ layout: base.liquid
             // Map parameters
             this.mapMinZoom = 1;
             this.mapMaxZoom = 11;
+
+            this.slideElementTagName = 'article';
+            this.topSlideElement = null;
 
             // Styles for Features
             // fillColor: '#ff7800', fill: true
@@ -164,7 +135,12 @@ layout: base.liquid
                 fill: false
             };
 
+            // Slides for map features with include
+            // rules, features, and frame
             this.slides = {};
+
+            // <article elements> on page
+            this.slideElements = {};
 
 
         }
@@ -225,7 +201,16 @@ layout: base.liquid
             }
         }
 
+        getSlideById(slideid) {
+            for (let s = 0; s < this.slides.length; s++) {
+                if (this.slides[s].id == slideid) {
+                    return this.slides[s];
+                }
+            }
+        }
+
         initStoryFeatureLayers() {
+
             for (let s = 0; s < this.slides.length; s++) {
                 let slide = this.slides[s];
                 slide.layer = L.geoJSON(
@@ -235,6 +220,41 @@ layout: base.liquid
                     });
 
             }
+        }
+
+        /**
+         * Get all the slide html elements and sort them by their offset top
+         * So we can track user scrolling and trigger map events
+         */
+        getSlideElements() {
+            this.slideElements = Array.from(document.getElementsByTagName(this.slideElementTagName));
+            this.slideElements.sort(function (a, b) {
+                if (a.offsetTop < 0) {
+                    return 1;
+                }
+                if (b.offsetTop < 0) {
+                    return -1;
+                }
+                return a.offsetTop - b.offsetTop;
+            });
+
+        }
+
+        /**
+         * Fly the map to the slide's storyframe
+         * clear existing layers
+         * add this slide's layer
+         *
+         * @param slideid slide to display
+         */
+        triggerSlideMapEvents(slideid) {
+            let slide = this.getSlideById(slideid);
+            if (slide && slide.layer) {
+                this.storyFeatureLayerGroup.clearLayers();
+                this.storyFeatureLayerGroup.addLayer(slide.layer);
+            }
+
+            this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
         }
 
         async initMap() {
@@ -251,11 +271,25 @@ layout: base.liquid
                 {{ bounds[0].lat }}, {{ bounds[0].lng }}
             ], {{ bounds[0].zoom }});
 
-            await this.loadStoryFrames();
+            this.storyFeatureLayerGroup = L.layerGroup().addTo(this.map);
+
             await this.loadSlides();
+            await this.loadStoryFrames();
             await this.loadFeatures();
             this.initStoryFeatureLayers();
             console.log(this.slides);
+            this.getSlideElements();
+            let observer = new IntersectionObserver(function (entries) {
+                if (entries[0].isIntersecting === true)
+                    this.triggerSlideMapEvents(entries[0].target.dataset.slideid);
+
+            }.bind(this), {threshold: [1]});
+
+            observer.observe(document.querySelector("#slide_5"));
+            /*document.addEventListener(
+                "scroll", this.triggerSlideEvents.bind(this),
+            );*/
+
         }
 
         onEachFeature(feature, layer) {
@@ -267,22 +301,13 @@ layout: base.liquid
                     layer.bindPopup(feature.properties.norm_text);
                 }
             }
-            this.addFeatureToGroups(feature);
         }
 
-        /**
-         Add a feature into several overlapping layer groups:
-         https://leafletjs.com/examples/layers-control/
-         Then we canadd/remove groups based on section and filter choices
-         */
-        addFeatureToGroups(feature) {
-
-        }
 
         getStoryFrameBounds(fid) {
             for (let f = 0; f < this.storyFrames.length; f++) {
                 if (this.storyFrames[f].FID == fid) {
-                    return this.storyFrames[f].feature;
+                    return this.storyFrames[f].bounds;
                 }
             }
         }
@@ -298,42 +323,14 @@ layout: base.liquid
 
                 for (let s = 0; s < storyFrames.features.length; s++) {
                     let feature = storyFrames.features[s];
+                    let bounds = L.geoJson(feature.geometry).getBounds();
                     this.storyFrames.push({
                         FID: feature.properties.FID, feature: feature,
-                        bounds: L.geoJson(feature.geometry).getBounds()
+                        bounds: bounds
                     });
                 }
             }
 
-
-            //let storyFrames = this.storyFrames;
-
-            /*this.layerGroups.all = L.geoJSON(storyFeatures, {
-                style: this.defaultLineStyle,
-                onEachFeature: function (feature, layer) {
-
-
-                }
-            }).addTo(this.map);
-            console.log(storyFrames);*/
-            /*
-            await Promise.all(shapePromises).then((values) => {
-                // console.log(values);
-                for (let v = 0; v < values.length; v++) {
-                    shapeGeoJSON.push(...values[v].features);
-                }
-            });
-            let unlinkedShapes = [];
-
-            // Arrange into stories and default layer
-            for (let s = 0; s < shapeGeoJSON.length; s++) {
-                let feature = shapeGeoJSON[s];
-                if (feature.properties) {
-
-                }
-            }*/
-
-            //console.log(storyFeatures);
         }
 
         /** Load separate feature files and assign to slides
@@ -353,11 +350,6 @@ layout: base.liquid
                     this.addFeatureToSlideGroups("POINT", storyFeatures[f]);
                 }
 
-                /*storyFeatures = await this.loadShapes([this.storyUris.polys]);
-                for (let f = 0; f < storyFeatures.length; f++) {
-                    this.addFeatureToSlideGroups("POLY", storyFeatures[f])
-                }
-                */
             }
 
         };

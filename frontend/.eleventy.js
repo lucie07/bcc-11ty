@@ -51,12 +51,21 @@ module.exports = function (config) {
       return true;
     },
     render: function (tokens, idx) {
-      var m = tokens[idx].info.trim().match(/^slide\s+(.*)$/);
-
+      let m = tokens[idx].info.trim().match(/^slide\s+(\d*).*$/);
       if (tokens[idx].nesting === 1) {
         // opening tag
         //return '<details><summary>' + md.utils.escapeHtml(m[1]) + '</summary>\n';
-        return "<article>";
+        if (m) {
+          return (
+            '<article id="slide_' +
+            md.utils.escapeHtml(m[1]) +
+            '" data-slideId="' +
+            md.utils.escapeHtml(m[1]) +
+            '">'
+          );
+        } else {
+          return "<article>";
+        }
       } else {
         // closing tag
         return "</article>\n";
