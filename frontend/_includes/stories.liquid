@@ -249,13 +249,14 @@ layout: base.liquid
          */
         triggerSlideMapEvents(slideid) {
             let slide = this.getSlideById(slideid);
-            console.log(slideid);
-            if (slide && slide.layer) {
-                this.storyFeatureLayerGroup.clearLayers();
-                this.storyFeatureLayerGroup.addLayer(slide.layer);
+            if (slide) {
+                if (slide.layer) {
+                    this.storyFeatureLayerGroup.clearLayers();
+                    this.storyFeatureLayerGroup.addLayer(slide.layer);
+                }
+                this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
             }
 
-            this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
         }
 
         async initMap() {
@@ -281,12 +282,16 @@ layout: base.liquid
             console.log(this.slides);
             this.getSlideElements();
             let observer = new IntersectionObserver(function (entries) {
+                console.log(entries[0].target.dataset.slideid);
                 if (entries[0].isIntersecting === true)
                     this.triggerSlideMapEvents(entries[0].target.dataset.slideid);
-
             }.bind(this), {threshold: [1]});
 
-            observer.observe(this.slideElements);
+
+            for (let s = 0; s < this.slideElements.length; s++) {
+                observer.observe(this.slideElements[s]);
+            }
+
             /*document.addEventListener(
                 "scroll", this.triggerSlideEvents.bind(this),
             );*/
