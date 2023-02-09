@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pontano+Sans&display=swap");
 /*** MIXINS ***/
 html {
   scroll-behavior: smooth;
@@ -7,6 +12,7 @@ body {
   width: 100%;
   padding: 0;
   margin: 0 auto;
+  font-family: "Manrope", sans-serif;
 }
 
 a:hover {
@@ -16,13 +22,18 @@ a:hover {
 a#sitetitle {
   color: white;
   text-decoration: none;
-  padding: 1em 0 0 2em;
+  padding: 0.2em 0 0 1em;
   display: block;
   position: fixed;
   width: 100%;
-  background: black;
-  height: 2em;
+  background: #132b19;
+  height: 1.8em;
   z-index: 9;
+  font-family: "Corben", cursive;
+  font-size: 1.5em;
+  border-bottom: 0.1em solid #4b5d04;
+  font-family: "Playfair Display", serif;
+  font-family: "EB Garamond", serif;
 }
 
 nav {
@@ -35,7 +46,9 @@ nav {
   /* end ol*/
 }
 #menu .active {
-  color: green;
+  color: #86a707;
+  border-left: 0.1em solid #86a707;
+  padding-left: 0.5em;
 }
 #menu > ol {
   position: fixed;
@@ -61,7 +74,7 @@ nav {
   margin-bottom: 1em;
 }
 #menu > ol > li > a {
-  font-size: 1.5em;
+  font-size: 1.6em;
   text-decoration: none;
   display: block;
   line-height: 1;
@@ -90,7 +103,7 @@ nav {
   cursor: pointer;
   position: fixed;
   padding: 0.5em 1em;
-  background: black;
+  background: transparent;
   top: 0;
   right: 0;
   font-size: 1.2em;
@@ -149,12 +162,13 @@ nav {
   position: absolute;
 }
 .map nav {
-  background: darkgray;
-  height: 2.4em;
+  background: #132b19;
+  height: 3.8em;
   top: 3em;
   border-bottom: 0;
   position: fixed;
   width: 100%;
+  font-family: "Pontano Sans", sans-serif;
 }
 .map nav > ol {
   width: 100%;
@@ -170,12 +184,16 @@ nav {
 }
 .map nav > ol > li > a {
   text-decoration: none;
-  color: black;
+  color: darkgray;
   display: block;
   padding: 0.2em 0 0 2em;
-  margin-top: -1em;
-  margin-right: 0.1em;
-  background: rgba(0, 0, 0, 0.2);
+  margin-top: -0.9em;
+  border-right: 0.1em solid #124d20;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0.8;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2em;
 }
 .map nav > ol > li > a:before {
   counter-increment: li;
@@ -184,21 +202,30 @@ nav {
   padding-right: 0.3em;
   opacity: 0.4;
   vertical-align: middle;
-  top: 0;
+  top: -0.1em;
   left: -0.2em;
   position: relative;
   font-weight: 800;
+  font-family: "Manrope", sans-serif;
+}
+.map nav > ol > li > a:hover {
+  background: #132b19;
+  color: white;
 }
 .map nav > ol > li > a.active {
-  background: rgba(0, 0, 0, 0.8);
+  background: #132b19;
   color: white;
+}
+.map nav > ol > li > a.active:before {
+  color: #9abf08;
+  opacity: 0.7;
 }
 .map nav > ol > li > ol {
   display: flex;
   width: 300%;
   margin-left: calc(-100% - 40px);
   list-style-type: none;
-  background: darkgray;
+  background: #132b19;
 }
 .map nav > ol > li > ol > li {
   width: 25%;
@@ -207,15 +234,24 @@ nav {
 }
 .map nav > ol > li > ol > li a {
   text-decoration: none;
-  color: black;
-  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  background: rgba(255, 255, 255, 0.4);
   width: 100%;
   display: block;
   padding: 0.3em 0;
+  opacity: 0.4;
+  border-top: 0.1em solid transparent;
+}
+.map nav > ol > li > ol > li a:hover {
+  background: #132b19;
+  color: white;
+  opacity: 1;
 }
 .map nav > ol > li > ol > li a.active {
-  background: rgba(0, 0, 0, 0.8);
+  background: #132b19;
   color: white;
+  opacity: 1;
+  border-top: 0.1em solid #5f7605;
 }
 .map nav > ol input[type=checkbox]:checked + label.check {
   /*** Minus icon ***/
@@ -235,12 +271,14 @@ nav {
 }
 .map section h1 a {
   margin-top: 10em;
+  font-size: 1.7em;
 }
 .map section article {
   width: 40%;
   background: rgba(255, 255, 255, 0.9);
-  padding: 1em;
+  padding: 2em;
   margin-bottom: 100vh;
+  text-align: justify;
 }
 .map section article figure {
   width: 95%;
