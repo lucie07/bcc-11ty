@@ -163,8 +163,8 @@ nav {
 }
 .map nav {
   background: #132b19;
-  height: 3.8em;
-  top: 3em;
+  height: 3.2em;
+  top: 2.8em;
   border-bottom: 0;
   position: fixed;
   width: 100%;
@@ -186,12 +186,12 @@ nav {
   text-decoration: none;
   color: darkgray;
   display: block;
-  padding: 0.2em 0 0 2em;
+  padding: 0.5em 0 0 2em;
+  line-height: 1;
   margin-top: -0.9em;
   border-right: 0.1em solid #124d20;
   background: rgba(255, 255, 255, 0.2);
   opacity: 0.8;
-  font-weight: bold;
   text-transform: uppercase;
   font-size: 1.2em;
 }
