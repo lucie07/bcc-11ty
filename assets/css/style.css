@@ -140,6 +140,9 @@ nav {
   height: calc(100% - 6em);
   width: 100%;
 }
+#basemap .leaflet-map-pane {
+  filter: grayscale(22%) sepia(10%) saturate(92%) contrast(92%);
+}
 
 .map {
   z-index: 1 !important;
