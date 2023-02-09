@@ -7,8 +7,10 @@ $lightgreen: #9abf08;
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
 
-
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans&display=swap');
 /*** MIXINS ***/
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -69,16 +71,18 @@ a {
 a#sitetitle {
   color: white;
   text-decoration: none;
-  padding: 0 0 0 1em;
+  padding: 0.2em 0 0 1em;
   display: block;
   position: fixed;
   width: 100%;
   background: $darkgreen;
-  height: 2em;
+  height: 1.8em;
   z-index: 9;
   font-family: "Corben", cursive;
   font-size:1.5em;
   border-bottom:0.1em solid darken($lightgreen,20%);
+  font-family: 'Playfair Display', serif;
+  font-family: 'EB Garamond', serif;
 } // a#sitetitle
 
 // NAV
@@ -90,6 +94,7 @@ nav {
   //border-bottom:0.1em solid gray;
 } //nav
 #menu {
+
   .active {
     color: darken($lightgreen,5%);
     border-left:0.1em solid darken($lightgreen,5%);
@@ -114,11 +119,12 @@ nav {
       display: block;
       margin-bottom: 1em;
       > a {
-        font-size: 1.5em;
+        font-size: 1.6em;
         text-decoration: none;
         display: block;
         line-height: 1;
         color: white;
+  
       } //a
       &:last-of-type {
         padding-bottom: 50vh;
@@ -194,13 +200,15 @@ nav {
 .map {
   z-index: 1 !important;
   position: absolute;
+
   nav {
     background: $darkgreen;
-    height: 3.4em;
+    height: 3.8em;
     top: 3em;
     border-bottom: 0;
     position: fixed;
     width: 100%;
+    font-family: 'Pontano Sans', sans-serif;
     > ol {
       //1st level
       width: 100%;
@@ -217,10 +225,13 @@ nav {
           color: darkgray;
           display: block;
           padding: 0.2em 0 0 2em;
-          margin-top: -1em;
+          margin-top: -0.9em;
           border-right: 0.1em solid $midgreen;
           background: rgba(255,255,255,0.2);
           opacity:0.8;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size:1.2em;
           &:before {
             counter-increment: li;
             content: counter(li);
@@ -228,10 +239,11 @@ nav {
             padding-right: 0.3em;
             opacity: 0.4;
             vertical-align: middle;
-            top: 0;
+            top: -0.1em;
             left: -0.2em;
             position: relative;
             font-weight: 800;
+            font-family: "Manrope", sans-serif;
           } //before
           &:hover{
             background: $darkgreen;
