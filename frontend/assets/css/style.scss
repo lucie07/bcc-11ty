@@ -3,6 +3,12 @@ $darkgreen: #132b19;
 $midgreen: #124d20;
 $lightgreen: #9abf08;
 
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap");
+
+
 /*** MIXINS ***/
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -51,6 +57,7 @@ body {
   width: 100%;
   padding: 0;
   margin: 0 auto;
+  font-family: "Manrope", sans-serif;
 }
 
 a {
@@ -62,13 +69,16 @@ a {
 a#sitetitle {
   color: white;
   text-decoration: none;
-  padding: 1em 0 0 2em;
+  padding: 0 0 0 1em;
   display: block;
   position: fixed;
   width: 100%;
-  background: black;
+  background: $darkgreen;
   height: 2em;
   z-index: 9;
+  font-family: "Corben", cursive;
+  font-size:1.5em;
+  border-bottom:0.1em solid darken($lightgreen,20%);
 } // a#sitetitle
 
 // NAV
@@ -81,7 +91,9 @@ nav {
 } //nav
 #menu {
   .active {
-    color: green;
+    color: darken($lightgreen,5%);
+    border-left:0.1em solid darken($lightgreen,5%);
+    padding-left:0.5em;
   }
   > ol {
     //1st level
@@ -130,7 +142,7 @@ nav {
     cursor: pointer;
     position: fixed;
     padding: 0.5em 1em;
-    background: black;
+    background: transparent;
     top: 0;
     right: 0;
     font-size: 1.2em;
@@ -183,8 +195,8 @@ nav {
   z-index: 1 !important;
   position: absolute;
   nav {
-    background: darkgray;
-    height: 2.4em;
+    background: $darkgreen;
+    height: 3.4em;
     top: 3em;
     border-bottom: 0;
     position: fixed;
@@ -202,12 +214,13 @@ nav {
         list-style-type: none;
         > a {
           text-decoration: none;
-          color: black;
+          color: darkgray;
           display: block;
           padding: 0.2em 0 0 2em;
           margin-top: -1em;
-          margin-right: 0.1em;
-          background: rgba(0, 0, 0, 0.2);
+          border-right: 0.1em solid $midgreen;
+          background: rgba(255,255,255,0.2);
+          opacity:0.8;
           &:before {
             counter-increment: li;
             content: counter(li);
@@ -220,9 +233,17 @@ nav {
             position: relative;
             font-weight: 800;
           } //before
-          &.active {
-            background: rgba(0, 0, 0, 0.8);
+          &:hover{
+            background: $darkgreen;
             color: white;
+          }
+          &.active {
+            background: $darkgreen;
+            color: white;
+            &:before{
+              color: $lightgreen;
+              opacity:0.7;
+            } //active
           } //active
         } // a
         > ol {
@@ -231,7 +252,7 @@ nav {
           width: 300%;
           margin-left: calc(-100% - 40px);
           list-style-type: none;
-          background: darkgray;
+          background: $darkgreen;
           > li {
             width: 25%;
             margin-right: 0.05em;
@@ -239,14 +260,23 @@ nav {
             text-align: center;
             a {
               text-decoration: none;
-              color: black;
-              background: rgba(0, 0, 0, 0.4);
+              color: white;
+              background: rgba(255,255,255,0.4);
               width: 100%;
               display: block;
               padding: 0.3em 0;
-              &.active {
-                background: rgba(0, 0, 0, 0.8);
+              opacity:0.4;
+              border-top:0.1em solid transparent;
+              &:hover{
+                background: $darkgreen;
                 color: white;
+                opacity: 1;
+              }
+              &.active {
+                background: $darkgreen;
+                color: white;
+                opacity:1;
+                border-top:0.1em solid darken($lightgreen,15%);
               } //active
             } //a
           } //li
@@ -275,12 +305,14 @@ nav {
     padding: 5em 1em;
     h1 a {
       margin-top: 10em;
+      font-size:1.7em;
     } //h1 a
     article {
       width: 40%;
       background: rgba(255, 255, 255, 0.9);
-      padding: 1em;
+      padding: 2em;
       margin-bottom: 100vh;
+      text-align: justify;
 
       p {
       }
