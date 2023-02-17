@@ -175,10 +175,14 @@ nav {
   width: 100%;
 }
 //MAP
-.map {
+.mapOverlay {
   z-index: 1 !important;
   position: absolute;
+  // Added by EH to allow click events to go through to basemap
+  pointer-events: none;
   nav {
+    // We still want clicks on the nav though
+    pointer-events: auto;
     background: darkgray;
     height: 2.4em;
     top: 3em;

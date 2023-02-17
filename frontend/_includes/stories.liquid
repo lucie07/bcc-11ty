@@ -3,7 +3,7 @@ layout: base.liquid
 ---
 
 <div id="basemap"></div>
-<div class="map">
+<div class="mapOverlay">
     <nav>
         <ol>
             <li><a href="#overview">Overview</a></li>
@@ -261,7 +261,10 @@ layout: base.liquid
 
         async initMap() {
 
-            this.map = L.map('basemap');
+            this.map = L.map(
+                'basemap',
+                {scrollWheelZoom: false}
+            );
             this.overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
