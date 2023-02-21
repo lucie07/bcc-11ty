@@ -94,7 +94,6 @@ layout: base.liquid
 
 
 <script type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
-<script type="text/javascript" src="{{ '/assets/js/leaflet/plugins/L.Control.Appearance.js' | url }}"></script>
 
 <script>
 
@@ -299,8 +298,7 @@ layout: base.liquid
             await this.loadFeatures();
             this.initStoryFeatureLayers();
             this.initAllFeaturesLayer();
-            console.log(this.slides);
-            console.log(this.allFeaturesLayer);
+            
             this.getSlideElements();
             let observer = new IntersectionObserver(function (entries) {
                 //console.log(entries[0].target.dataset.slideid);
