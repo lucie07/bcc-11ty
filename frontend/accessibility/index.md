@@ -2,7 +2,7 @@
 title: Accessibility Statement for My Default Site
 ---
 
-This statement applies to the My Default Site site (https://thornton.kdl.kcl.ac.uk/).
+This statement applies to the My Default Site site ().
 
 This website is run by [King's Digital Lab, King's College London (KDL)](https://kdl.kcl.ac.uk) in collaboration with the [University of Edinburgh](https://www.ed.ac.uk/). We want as many people as possible to be able to use this website. For example, that means you should be able to:
 
