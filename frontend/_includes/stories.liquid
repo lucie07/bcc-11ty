@@ -225,9 +225,9 @@ layout: base.liquid
             }
         }
 
-        initAllFeatureLayer() {
+        initAllFeaturesLayer() {
 
-            this.allFeatureLayer = L.geoJSON(
+            this.allFeaturesLayer = L.geoJSON(
                     this.allFeatures, {
                         style: this.defaultLineStyle,
                         onEachFeature: this.onEachFeature.bind(this)
@@ -298,9 +298,9 @@ layout: base.liquid
             await this.loadStoryFrames();
             await this.loadFeatures();
             this.initStoryFeatureLayers();
-            this.initAllFeatureLayer();
+            this.initAllFeaturesLayer();
             console.log(this.slides);
-            console.log(this.allFeatureLayer);
+            console.log(this.allFeaturesLayer);
             this.getSlideElements();
             let observer = new IntersectionObserver(function (entries) {
                 //console.log(entries[0].target.dataset.slideid);
@@ -308,7 +308,8 @@ layout: base.liquid
                     this.triggerSlideMapEvents(entries[0].target.dataset.slideid);
             }.bind(this), {threshold: [1]});
 
-
+            // Add for temporary debugging, will be used for filter
+            this.storyFeatureLayerGroup.addLayer(this.allFeaturesLayer);
             for (let s = 0; s < this.slideElements.length; s++) {
                 observer.observe(this.slideElements[s]);
             }
