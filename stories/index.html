@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-02-21 12:45 -->
+    <!-- Built with 11ty - 2023-02-21 12:46 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,9 +13,9 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1676983507">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1676983567">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1676983507"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1676983567"></script>
   </head>
   <body class="type-page slug-stories">
     <header>
@@ -343,9 +343,9 @@ Onondaga.</p>
             }
         }
 
-        initAllFeaturesLayer() {
+        initAllFeatureLayer() {
 
-            this.allFeaturesLayer = L.geoJSON(
+            this.allFeatureLayer = L.geoJSON(
                     this.allFeatures, {
                         style: this.defaultLineStyle,
                         onEachFeature: this.onEachFeature.bind(this)
@@ -416,9 +416,9 @@ Onondaga.</p>
             await this.loadStoryFrames();
             await this.loadFeatures();
             this.initStoryFeatureLayers();
-            this.initAllFeaturesLayer();
+            this.initAllFeatureLayer();
             console.log(this.slides);
-            console.log(this.allFeaturesLayer);
+            console.log(this.allFeatureLayer);
             this.getSlideElements();
             let observer = new IntersectionObserver(function (entries) {
                 //console.log(entries[0].target.dataset.slideid);
@@ -426,8 +426,7 @@ Onondaga.</p>
                     this.triggerSlideMapEvents(entries[0].target.dataset.slideid);
             }.bind(this), {threshold: [1]});
 
-            // Add for temporary debugging, will be used for filter
-            this.storyFeatureLayerGroup.addLayer(this.allFeaturesLayer);
+
             for (let s = 0; s < this.slideElements.length; s++) {
                 observer.observe(this.slideElements[s]);
             }
