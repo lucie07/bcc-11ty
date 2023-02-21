@@ -228,10 +228,10 @@ layout: base.liquid
         initAllFeaturesLayer() {
 
             this.allFeaturesLayer = L.geoJSON(
-                    this.allFeatures, {
-                        style: this.defaultLineStyle,
-                        onEachFeature: this.onEachFeature.bind(this)
-                    });
+                this.allFeatures, {
+                    style: this.defaultLineStyle,
+                    onEachFeature: this.onEachFeature.bind(this)
+                });
         }
 
         /**
@@ -270,10 +270,10 @@ layout: base.liquid
                     this.storyFeatureLayerGroup.addLayer(slide.layer);
                 }
                 let bounds = this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
-                if (bounds != null){
+                if (bounds != null) {
                     this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
                 }
-                 this.lastSlideDisplayed = slide;
+                this.lastSlideDisplayed = slide;
 
             }
 
@@ -283,8 +283,16 @@ layout: base.liquid
 
             this.map = L.map(
                 'basemap',
-                {scrollWheelZoom: false}
+                {
+                    scrollWheelZoom: false,
+                    zoomControl: false
+                }
             );
+
+            L.control.zoom({
+                position: 'bottomright'
+            }).addTo(this.map);
+
             this.overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
@@ -442,7 +450,7 @@ layout: base.liquid
                         break;
 
                     case "POLY":
-                        if (slide.polys){
+                        if (slide.polys) {
                             if (slide.polys.includes) {
                                 includeFeature = this.filterFeature(feature, slide.polys.includes);
                             }
