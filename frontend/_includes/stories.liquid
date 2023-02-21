@@ -142,6 +142,9 @@ layout: base.liquid
             // <article elements> on page
             this.slideElements = {};
 
+            this.allFeatures = [];
+            this.allFeaturesLayer = null;
+
 
         }
 
@@ -175,12 +178,13 @@ layout: base.liquid
             for (let s = 0; s < shapeGeoJSON.length; s++) {
                 let feature = shapeGeoJSON[s];
                 if (feature.properties) {
+                    // add to all features
+                    this.allFeatures.push(feature);
                     if (feature.properties.story_link === story_id) {
                         storyFeatures.push(feature);
                     }
                     if (feature.properties.frame_link) {
                     }
-
                     /*let frame_link = feature.properties.frame_link;
                                         if (shapesByFrameLink[frame_link]) {
                                             shapesByFrameLink[frame_link].push(feature);
@@ -219,6 +223,15 @@ layout: base.liquid
                     });
 
             }
+        }
+
+        initAllFeatureLayer() {
+
+            this.allFeatureLayer = L.geoJSON(
+                    this.allFeatures, {
+                        style: this.defaultLineStyle,
+                        onEachFeature: this.onEachFeature.bind(this)
+                    });
         }
 
         /**
@@ -285,7 +298,9 @@ layout: base.liquid
             await this.loadStoryFrames();
             await this.loadFeatures();
             this.initStoryFeatureLayers();
+            this.initAllFeatureLayer();
             console.log(this.slides);
+            console.log(this.allFeatureLayer);
             this.getSlideElements();
             let observer = new IntersectionObserver(function (entries) {
                 //console.log(entries[0].target.dataset.slideid);
@@ -414,25 +429,7 @@ layout: base.liquid
                         if (slide.lines) {
                             if (slide.lines.includes) {
                                 includeFeature = this.filterFeature(feature, slide.lines.includes);
-                                /*for (const [field, includeValues] of Object.entries(slide.lines.includes)) {
-                                    // If they match ALL include rules, set to include
-                                    if (
-                                        field in feature.properties && includeValues.includes(feature.properties[field])
-                                    ) {
-                                        //console.log(field + " : "+feature.properties[field]+" :: "+includeValues);
-                                        includeFeature = true;
-                                    } else {
-                                        includeFeature = false;
-                                        break;
-                                    }
-                                }*/
 
-                                /*for (const [field, value] of Object.entries(feature.properties)) {
-                                    if (field in slide.lines.includes && slide.lines.includes[field].includes(value)) {
-                                        includeFeature = true;
-                                        break;
-                                    }
-                                }*/
                             }
                             if (slide.lines.excludes && includeFeature === true) {
                                 includeFeature = !this.filterFeature(feature, slide.lines.excludes);

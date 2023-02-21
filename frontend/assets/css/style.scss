@@ -7,10 +7,10 @@ $lightgreen: #9abf08;
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pontano+Sans&display=swap");
 /*** MIXINS ***/
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -79,10 +79,10 @@ a#sitetitle {
   height: 1.8em;
   z-index: 9;
   font-family: "Corben", cursive;
-  font-size:1.5em;
-  border-bottom:0.1em solid darken($lightgreen,20%);
-  font-family: 'Playfair Display', serif;
-  font-family: 'EB Garamond', serif;
+  font-size: 1.5em;
+  border-bottom: 0.1em solid darken($lightgreen, 20%);
+  font-family: "Playfair Display", serif;
+  font-family: "EB Garamond", serif;
 } // a#sitetitle
 
 // NAV
@@ -94,11 +94,10 @@ nav {
   //border-bottom:0.1em solid gray;
 } //nav
 #menu {
-
   .active {
-    color: darken($lightgreen,5%);
-    border-left:0.1em solid darken($lightgreen,5%);
-    padding-left:0.5em;
+    color: darken($lightgreen, 5%);
+    border-left: 0.1em solid darken($lightgreen, 5%);
+    padding-left: 0.5em;
   }
   > ol {
     //1st level
@@ -124,7 +123,6 @@ nav {
         display: block;
         line-height: 1;
         color: white;
-
       } //a
       &:last-of-type {
         padding-bottom: 50vh;
@@ -194,7 +192,6 @@ nav {
   .leaflet-map-pane {
     filter: grayscale(22%) sepia(10%) saturate(92%) contrast(92%);
   } //.leaflet-map-pane
-
 }
 //MAP
 .mapOverlay {
@@ -215,7 +212,7 @@ nav {
     border-bottom: 0;
     position: fixed;
     width: 100%;
-    font-family: 'Pontano Sans', sans-serif;
+    font-family: "Pontano Sans", sans-serif;
     > ol {
       //1st level
       width: 100%;
@@ -235,10 +232,10 @@ nav {
           line-height: 1;
           margin-top: -0.9em;
           border-right: 0.1em solid $midgreen;
-          background: rgba(255,255,255,0.2);
-          opacity:0.8;
+          background: rgba(255, 255, 255, 0.2);
+          opacity: 0.8;
           text-transform: uppercase;
-          font-size:1.2em;
+          font-size: 1.2em;
           &:before {
             counter-increment: li;
             content: counter(li);
@@ -252,16 +249,16 @@ nav {
             font-weight: 800;
             font-family: "Manrope", sans-serif;
           } //before
-          &:hover{
+          &:hover {
             background: $darkgreen;
             color: white;
           }
           &.active {
             background: $darkgreen;
             color: white;
-            &:before{
+            &:before {
               color: $lightgreen;
-              opacity:0.7;
+              opacity: 0.7;
             } //active
           } //active
         } // a
@@ -280,13 +277,13 @@ nav {
             a {
               text-decoration: none;
               color: white;
-              background: rgba(255,255,255,0.4);
+              background: rgba(255, 255, 255, 0.4);
               width: 100%;
               display: block;
               padding: 0.3em 0;
-              opacity:0.4;
-              border-top:0.1em solid transparent;
-              &:hover{
+              opacity: 0.4;
+              border-top: 0.1em solid transparent;
+              &:hover {
                 background: $darkgreen;
                 color: white;
                 opacity: 1;
@@ -294,8 +291,8 @@ nav {
               &.active {
                 background: $darkgreen;
                 color: white;
-                opacity:1;
-                border-top:0.1em solid darken($lightgreen,15%);
+                opacity: 1;
+                border-top: 0.1em solid darken($lightgreen, 15%);
               } //active
             } //a
           } //li
@@ -324,7 +321,7 @@ nav {
     padding: 5em 1em;
     h1 a {
       margin-top: 10em;
-      font-size:1.7em;
+      font-size: 1.7em;
     } //h1 a
     article {
       width: 40%;
