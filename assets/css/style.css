@@ -157,11 +157,16 @@ nav {
   filter: grayscale(22%) sepia(10%) saturate(92%) contrast(92%);
 }
 
-.map {
+.mapOverlay {
   z-index: 1 !important;
   position: absolute;
+  pointer-events: none;
 }
-.map nav {
+.mapOverlay nav {
+  pointer-events: auto;
+  background: darkgray;
+  height: 2.4em;
+  top: 3em;
   background: #132b19;
   height: 3.2em;
   top: 2.8em;
@@ -170,19 +175,19 @@ nav {
   width: 100%;
   font-family: "Pontano Sans", sans-serif;
 }
-.map nav > ol {
+.mapOverlay nav > ol {
   width: 100%;
   counter-reset: li;
   display: flex;
   margin-left: -40px;
   height: 2em;
 }
-.map nav > ol > li {
+.mapOverlay nav > ol > li {
   width: 33.33%;
   cursor: pointer;
   list-style-type: none;
 }
-.map nav > ol > li > a {
+.mapOverlay nav > ol > li > a {
   text-decoration: none;
   color: darkgray;
   display: block;
@@ -195,7 +200,7 @@ nav {
   text-transform: uppercase;
   font-size: 1.2em;
 }
-.map nav > ol > li > a:before {
+.mapOverlay nav > ol > li > a:before {
   counter-increment: li;
   content: counter(li);
   font-size: 2.2em;
@@ -208,31 +213,31 @@ nav {
   font-weight: 800;
   font-family: "Manrope", sans-serif;
 }
-.map nav > ol > li > a:hover {
+.mapOverlay nav > ol > li > a:hover {
   background: #132b19;
   color: white;
 }
-.map nav > ol > li > a.active {
+.mapOverlay nav > ol > li > a.active {
   background: #132b19;
   color: white;
 }
-.map nav > ol > li > a.active:before {
+.mapOverlay nav > ol > li > a.active:before {
   color: #9abf08;
   opacity: 0.7;
 }
-.map nav > ol > li > ol {
+.mapOverlay nav > ol > li > ol {
   display: flex;
   width: 300%;
   margin-left: calc(-100% - 40px);
   list-style-type: none;
   background: #132b19;
 }
-.map nav > ol > li > ol > li {
+.mapOverlay nav > ol > li > ol > li {
   width: 25%;
   margin-right: 0.05em;
   text-align: center;
 }
-.map nav > ol > li > ol > li a {
+.mapOverlay nav > ol > li > ol > li a {
   text-decoration: none;
   color: white;
   background: rgba(255, 255, 255, 0.4);
@@ -242,54 +247,54 @@ nav {
   opacity: 0.4;
   border-top: 0.1em solid transparent;
 }
-.map nav > ol > li > ol > li a:hover {
+.mapOverlay nav > ol > li > ol > li a:hover {
   background: #132b19;
   color: white;
   opacity: 1;
 }
-.map nav > ol > li > ol > li a.active {
+.mapOverlay nav > ol > li > ol > li a.active {
   background: #132b19;
   color: white;
   opacity: 1;
   border-top: 0.1em solid #5f7605;
 }
-.map nav > ol input[type=checkbox]:checked + label.check {
+.mapOverlay nav > ol input[type=checkbox]:checked + label.check {
   /*** Minus icon ***/
 }
-.map nav > ol input[type=checkbox]:checked + label.check:before, .map nav > ol input[type=checkbox]:checked + label.check:after {
+.mapOverlay nav > ol input[type=checkbox]:checked + label.check:before, .mapOverlay nav > ol input[type=checkbox]:checked + label.check:after {
   transform: rotate(90deg);
 }
-.map nav > ol input[type=checkbox]:checked + label.check:before {
+.mapOverlay nav > ol input[type=checkbox]:checked + label.check:before {
   display: none;
 }
-.map nav > ol input[type=checkbox]:checked + label + ol {
+.mapOverlay nav > ol input[type=checkbox]:checked + label + ol {
   /* reset the height when checkbox is checked */
   max-height: 1000px;
 }
-.map section {
+.mapOverlay section {
   padding: 5em 1em;
 }
-.map section h1 a {
+.mapOverlay section h1 a {
   margin-top: 10em;
   font-size: 1.7em;
 }
-.map section article {
+.mapOverlay section article {
   width: 40%;
   background: rgba(255, 255, 255, 0.9);
   padding: 2em;
   margin-bottom: 100vh;
   text-align: justify;
 }
-.map section article figure {
+.mapOverlay section article figure {
   width: 95%;
   padding: 2.5% 2.5% 0 2.5%;
   margin: 0;
   background: #262626;
 }
-.map section article figure img {
+.mapOverlay section article figure img {
   width: 100%;
 }
-.map section article figure figcaption {
+.mapOverlay section article figure figcaption {
   width: 95%;
   margin-left: -2.5%;
   padding: 1% 2%;
@@ -297,6 +302,6 @@ nav {
   color: white;
   font-size: 0.9em;
 }
-.map section article figure figcaption a {
+.mapOverlay section article figure figcaption a {
   color: white;
 }
