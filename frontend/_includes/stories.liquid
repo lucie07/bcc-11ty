@@ -197,7 +197,6 @@ layout: base.liquid
             if (this.storyUris && this.storyUris.slides) {
                 let storySlides = await this.loadShapeFile(this.storyUris.slides);
                 this.slides = storySlides.slides;
-                // console.log(this.slides);
             }
         }
 
@@ -254,7 +253,11 @@ layout: base.liquid
                     this.storyFeatureLayerGroup.clearLayers();
                     this.storyFeatureLayerGroup.addLayer(slide.layer);
                 }
-                this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
+                let bounds = this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
+                if (bounds != null){
+                    this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
+                }
+
             }
 
         }
@@ -285,7 +288,7 @@ layout: base.liquid
             console.log(this.slides);
             this.getSlideElements();
             let observer = new IntersectionObserver(function (entries) {
-                console.log(entries[0].target.dataset.slideid);
+                //console.log(entries[0].target.dataset.slideid);
                 if (entries[0].isIntersecting === true)
                     this.triggerSlideMapEvents(entries[0].target.dataset.slideid);
             }.bind(this), {threshold: [1]});
@@ -319,6 +322,7 @@ layout: base.liquid
                     return this.storyFrames[f].bounds;
                 }
             }
+            return null;
         }
 
         /**
@@ -357,6 +361,11 @@ layout: base.liquid
                 storyFeatures = await this.loadShapes([this.storyUris.points]);
                 for (let f = 0; f < storyFeatures.length; f++) {
                     this.addFeatureToSlideGroups("POINT", storyFeatures[f]);
+                }
+
+                storyFeatures = await this.loadShapes([this.storyUris.polys]);
+                for (let f = 0; f < storyFeatures.length; f++) {
+                    this.addFeatureToSlideGroups("POLY", storyFeatures[f]);
                 }
 
                 storyFeatures = await this.loadShapeFile([this.storyUris.indigenous]);
@@ -399,7 +408,6 @@ layout: base.liquid
             for (let s = 0; s < this.slides.length; s++) {
                 // Foreach slide rule
                 let slide = this.slides[s];
-
                 let includeFeature = false;
                 switch (featureType) {
                     case "LINE":
@@ -433,6 +441,14 @@ layout: base.liquid
                         break;
 
                     case "POLY":
+                        if (slide.polys){
+                            if (slide.polys.includes) {
+                                includeFeature = this.filterFeature(feature, slide.polys.includes);
+                            }
+                            if (slide.polys.excludes && includeFeature === true) {
+                                includeFeature = !this.filterFeature(feature, slide.polys.excludes);
+                            }
+                        }
                         break;
                     case "POINT":
                         if (slide.points) {

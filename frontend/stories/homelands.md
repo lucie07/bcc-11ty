@@ -39,3 +39,11 @@ of the actual position of the homeland of each nation in relation to the others.
 symbolises the tree of peace around which the nations are gather, and the location of the central council fire at
 Onondaga.
 :::
+
+::: slide 9
+British mapmakers took care in noting the positions of each nation and territorial extent of the Confederacy as a whole. In John Mitchell’s map of the British and French territories in North America, the label ‘Six Nations or Iroquois’ cuts across Virginia, Pennsylvania, New York, and north of the Great Lakes. Mitchell also identified the Haudenosaunee’s much smaller original homeland Irocoisia, centred on Lake Champlain.
+:::
+
+::: slide 10
+Yet this was not a wholly peaceful landscape: in the early seventeenth century the Haudenosaunee carried out campaigns against neighbouring nations, seeking captives and access to new hunting lands. In 1657, a missionary observed that the Iroquois homelands contained ‘more foreigners than natives of the country’. For the British, the Haudenosaunee were like themselves: an expanding commercial and military power that brought other nations under their control and, as allies of the Crown, into Britain’s imperial network. This myth of ‘Iroquois empire’ was used by the British to bolster their own power in interior spaces where Indigenous nations were fully sovereign.
+:::
