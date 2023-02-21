@@ -137,6 +137,7 @@ layout: base.liquid
             // Slides for map features with include
             // rules, features, and frame
             this.slides = {};
+            this.lastSlideDisplayed = null;
 
             // <article elements> on page
             this.slideElements = {};
@@ -261,7 +262,9 @@ layout: base.liquid
         triggerSlideMapEvents(slideid) {
             let slide = this.getSlideById(slideid);
             if (slide) {
-
+                /*if (this.lastSlideDisplayed){
+                    console.log(this.lastSlideDisplayed.points == slide.points);
+                }*/
                 if (slide.layer) {
                     this.storyFeatureLayerGroup.clearLayers();
                     this.storyFeatureLayerGroup.addLayer(slide.layer);
@@ -270,6 +273,7 @@ layout: base.liquid
                 if (bounds != null){
                     this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
                 }
+                 this.lastSlideDisplayed = slide;
 
             }
 
