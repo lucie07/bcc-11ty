@@ -261,6 +261,7 @@ layout: base.liquid
         triggerSlideMapEvents(slideid) {
             let slide = this.getSlideById(slideid);
             if (slide) {
+
                 if (slide.layer) {
                     this.storyFeatureLayerGroup.clearLayers();
                     this.storyFeatureLayerGroup.addLayer(slide.layer);
@@ -298,7 +299,7 @@ layout: base.liquid
             await this.loadFeatures();
             this.initStoryFeatureLayers();
             this.initAllFeaturesLayer();
-            
+
             this.getSlideElements();
             let observer = new IntersectionObserver(function (entries) {
                 //console.log(entries[0].target.dataset.slideid);

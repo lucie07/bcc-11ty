@@ -22,15 +22,39 @@
     {
       "id": 6,
       "fid": 10,
-      "lines": {},
-      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [8],
+          "map_source": [12]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [4, 10]
+        },
+        "excludes": {
+          "identity": [1]
+        }
+      },
       "features": []
     },
     {
       "id": 7,
       "fid": 10,
-      "lines": {},
-      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [8],
+          "map_source": [12]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [4, 10]
+        },
+        "excludes": {
+          "identity": [1]
+        }
+      },
       "features": []
     },
     {
