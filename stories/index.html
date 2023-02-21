@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-02-21 11:42 -->
+    <!-- Built with 11ty - 2023-02-21 12:45 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,9 +13,9 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1676979744">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1676983507">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1676979744"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1676983507"></script>
   </head>
   <body class="type-page slug-stories">
     <header>
@@ -260,6 +260,9 @@ Onondaga.</p>
             // <article elements> on page
             this.slideElements = {};
 
+            this.allFeatures = [];
+            this.allFeaturesLayer = null;
+
 
         }
 
@@ -293,12 +296,13 @@ Onondaga.</p>
             for (let s = 0; s < shapeGeoJSON.length; s++) {
                 let feature = shapeGeoJSON[s];
                 if (feature.properties) {
+                    // add to all features
+                    this.allFeatures.push(feature);
                     if (feature.properties.story_link === story_id) {
                         storyFeatures.push(feature);
                     }
                     if (feature.properties.frame_link) {
                     }
-
                     /*let frame_link = feature.properties.frame_link;
                                         if (shapesByFrameLink[frame_link]) {
                                             shapesByFrameLink[frame_link].push(feature);
@@ -337,6 +341,15 @@ Onondaga.</p>
                     });
 
             }
+        }
+
+        initAllFeaturesLayer() {
+
+            this.allFeaturesLayer = L.geoJSON(
+                    this.allFeatures, {
+                        style: this.defaultLineStyle,
+                        onEachFeature: this.onEachFeature.bind(this)
+                    });
         }
 
         /**
@@ -403,7 +416,9 @@ Onondaga.</p>
             await this.loadStoryFrames();
             await this.loadFeatures();
             this.initStoryFeatureLayers();
+            this.initAllFeaturesLayer();
             console.log(this.slides);
+            console.log(this.allFeaturesLayer);
             this.getSlideElements();
             let observer = new IntersectionObserver(function (entries) {
                 //console.log(entries[0].target.dataset.slideid);
@@ -411,7 +426,8 @@ Onondaga.</p>
                     this.triggerSlideMapEvents(entries[0].target.dataset.slideid);
             }.bind(this), {threshold: [1]});
 
-
+            // Add for temporary debugging, will be used for filter
+            this.storyFeatureLayerGroup.addLayer(this.allFeaturesLayer);
             for (let s = 0; s < this.slideElements.length; s++) {
                 observer.observe(this.slideElements[s]);
             }
@@ -532,25 +548,7 @@ Onondaga.</p>
                         if (slide.lines) {
                             if (slide.lines.includes) {
                                 includeFeature = this.filterFeature(feature, slide.lines.includes);
-                                /*for (const [field, includeValues] of Object.entries(slide.lines.includes)) {
-                                    // If they match ALL include rules, set to include
-                                    if (
-                                        field in feature.properties && includeValues.includes(feature.properties[field])
-                                    ) {
-                                        //console.log(field + " : "+feature.properties[field]+" :: "+includeValues);
-                                        includeFeature = true;
-                                    } else {
-                                        includeFeature = false;
-                                        break;
-                                    }
-                                }*/
 
-                                /*for (const [field, value] of Object.entries(feature.properties)) {
-                                    if (field in slide.lines.includes && slide.lines.includes[field].includes(value)) {
-                                        includeFeature = true;
-                                        break;
-                                    }
-                                }*/
                             }
                             if (slide.lines.excludes && includeFeature === true) {
                                 includeFeature = !this.filterFeature(feature, slide.lines.excludes);
