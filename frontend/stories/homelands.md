@@ -47,3 +47,11 @@ British mapmakers took care in noting the positions of each nation and territori
 ::: slide 10
 Yet this was not a wholly peaceful landscape: in the early seventeenth century the Haudenosaunee carried out campaigns against neighbouring nations, seeking captives and access to new hunting lands. In 1657, a missionary observed that the Iroquois homelands contained ‘more foreigners than natives of the country’. For the British, the Haudenosaunee were like themselves: an expanding commercial and military power that brought other nations under their control and, as allies of the Crown, into Britain’s imperial network. This myth of ‘Iroquois empire’ was used by the British to bolster their own power in interior spaces where Indigenous nations were fully sovereign.
 :::
+
+::: slide 11
+The United Colonies emerged as a new power in 1775 and sought diplomatic relations with the Haudenosaunee. However, the peoples of the longhouse divided over the conflict between Britain and her colonies: the Mohawk, Seneca, Onondaga, and the Cayuga remained allied to the Crown via the Covenant Chain. In 1779, George Washington planned a massive military operation ‘directed against the hostile tribes of the six nations of Indians, with their associated and adherents’. He continued that it was necessary to complete ‘the total destruction and devastation of their settlements’.
+:::
+
+::: slide 12
+The village worlds of the Haudenosaunee were broken apart. Thousands fled to the British stronghold at Fort Niagara, and the nations as whole experienced famine and displacement, their lands seized by the United States by the Treaty of Fort Stanwix (1784). But the Iroquois did not vanish. Early American maps positioned them on the western edges expanded colonial spaces, not in reserved lands but in homelands that remain within the borders of New York state.
+:::
