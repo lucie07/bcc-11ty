@@ -5,15 +5,13 @@
       "fid": 12,
       "lines": {
         "includes": {
-          "sub_type": [8, 6],
-         
+          "sub_type": [8, 6]
         }
       },
       "points": {
         "includes": {
           "sub_type": [4, 10]
-        },
-
+        }
       },
       "features": []
     },
