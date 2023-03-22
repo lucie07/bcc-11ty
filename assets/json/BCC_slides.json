@@ -155,7 +155,7 @@
 	  "fid": 11,
        "lines": {
         "includes": {
-          "sub_type": [11],
+          "sub_type": [11]
         },
         "excludes": {
           "identity": [1]
@@ -455,12 +455,8 @@
     {
       "id": 30,
       "fid": 11,
-      "lines": {
-        }
-      },
-      "points": {
-        }
-      },
+      "lines": {  },
+      "points": {  },
       "polys": {
         "includes": {
           "id": [],
