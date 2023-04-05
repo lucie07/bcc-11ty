@@ -66,6 +66,33 @@ layout: base.liquid
 <script type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
 
 <script>
+// Styles in here so can be moved out easily into separate file
+
+// line Styles
+
+lineBorderStyle = {stroke: true, color: '#ff0000', weight: 5, fill: false};
+lineLandRouteStyle = {stroke: true, color: '#00ff00', weight: 5, fill: false};
+lineSeaRouteStyle = {stroke: true, color: '#0000ff', weight: 5, fill: false};
+lineRiverRouteStyle = {stroke: true, color: '#ff00ff', weight: 5, fill: false};
+lineMiscStyle = {stroke: true, color: '#ffff00', weight: 5, fill: false};
+lineToponymStyle = {stroke: true, color: '#ffff00', weight: 5, fill: false};
+
+// Poly Styles
+polyBorderStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
+polySettlementStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
+polySeaRouteStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
+polyDescriptiveStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
+polyRiverRouteStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
+polyMiscStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
+polyToponymStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
+polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opacity: 1 };
+						
+// Harry Styles
+
+</script>
+
+
+<script>
 
     class StoryMap {
         constructor(L, storyUris) {
@@ -188,8 +215,40 @@ layout: base.liquid
                 let slide = this.slides[s];
                 slide.layer = L.geoJSON(
                     slide.features, {
-                        style: this.defaultLineStyle,
-                        onEachFeature: this.onEachFeature.bind(this)
+					// Stopping style override here
+                        //style: this.defaultLineStyle,				
+						pointToLayer: function (feature, latlng) {
+							switch (feature.properties.sub_type) {
+								case 1:
+									return L.circleMarker(latlng, {radius: 8, fillColor: "#ff0000", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									break;							
+								case 4:
+									return L.circleMarker(latlng, {radius: 8, fillColor: "#00ff00", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									break;
+								case 5:
+									return L.circleMarker(latlng, {radius: 8, fillColor: "#0000ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									break;
+								case 6:
+									return L.circleMarker(latlng, {radius: 8, fillColor: "#ffff00", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									break;	
+								case 7:
+									return L.circleMarker(latlng, {radius: 8, fillColor: "#00ffff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									break;
+								case 8:
+									return L.circleMarker(latlng, {radius: 8, fillColor: "#ff00ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									break;
+								case 9:
+									return L.circleMarker(latlng, {radius: 8, fillColor: "#000000", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									break;
+								case 10:
+									return L.circleMarker(latlng, {radius: 8, fillColor: "#ffffff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									break;	
+								default:
+									return L.circleMarker(latlng, {radius: 8, fillColor: "#787878", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+							}
+						},		
+						
+	                    onEachFeature: this.onEachFeature.bind(this)
                     });
 
             }
@@ -199,7 +258,7 @@ layout: base.liquid
 
             this.allFeaturesLayer = L.geoJSON(
                 this.allFeatures, {
-                    style: this.defaultLineStyle,
+                    //style: this.defaultLineStyle,
                     onEachFeature: this.onEachFeature.bind(this)
                 });
         }
@@ -303,13 +362,78 @@ layout: base.liquid
 
         onEachFeature(feature, layer) {
             // does this feature have a property named popupContent?
-            if (feature.properties && (feature.properties.map_text || feature.properties.norm_text)) {
+            if (feature.properties && (feature.properties.map_text || feature.properties.norm_text) || feature.properties.Name) {
                 if (feature.properties.map_text) {
                     layer.bindPopup(feature.properties.map_text);
-                } else {
+                } 
+				else if (feature.properties.norm_text) {
                     layer.bindPopup(feature.properties.norm_text);
                 }
+				else {
+					layer.bindPopup(feature.properties.Name);
+				}
+				
             }
+			switch (feature.geometry.type){
+				case "Point":
+				    // Do nothing - point styles are defined in pointToFeature					
+					break;
+				// If polys
+				case "MultiPolygon":
+				    switch (feature.properties.sub_type) {
+						case 3: 
+							layer.setStyle(polyBorderStyle);
+						break;
+						case 4: 
+							layer.setStyle(polySettlementStyle);
+						break;	
+						case 6: 
+							layer.setStyle(polySeaRouteStyle);
+						break;
+						case 7: 
+							layer.setStyle(polyDescriptiveStyle);
+						break;	
+						case 8: 
+							layer.setStyle(polyRiverRouteStyle);
+						break;
+						case 9: 
+							layer.setStyle(polyMiscStyle);
+						break;	
+						case 10: 
+							layer.setStyle(polyToponymStyle);
+						break;
+						case 11: 
+							layer.setStyle(polyAnnoStyle);
+						break;							
+					}
+				break;
+				// If lines
+				case "MultiLineString":
+				    switch (feature.properties.sub_type) {
+						case 3: 
+							layer.setStyle(lineBorderStyle);
+						break;
+						case 5: 
+							layer.setStyle(lineLandRouteStyle);
+						break;	
+						case 6: 
+							layer.setStyle(lineSeaRouteStyle);
+						break;
+						case 8: 
+							layer.setStyle(lineRiverRouteStyle);
+						break;	
+						case 9: 
+							layer.setStyle(lineMiscStyle);
+						break;
+						case 10: 
+							layer.setStyle(lineToponymStyle);
+						break;	
+					}
+				break;
+				default:
+					layer.setStyle(this.defaultLineStyle);
+				
+			}
         }
 
 
@@ -487,5 +611,8 @@ layout: base.liquid
         }
     );
     storyMap.initMap();
+	
+	
+	
 
 </script>
