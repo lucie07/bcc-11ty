@@ -150,15 +150,14 @@
     },
     {
       "id": 12,
-	  "fid": 11,
-       "lines": {
+      "fid": 11,
+      "lines": {
         "includes": {
           "sub_type": [11]
         },
         "excludes": {
           "identity": [1]
         }
-		
       },
       "points": {
         "includes": {
@@ -174,7 +173,7 @@
       "id": 13,
       "fid": 10,
       "lines": {},
-	  
+
       "points": {
         "includes": {
           "sub_type": [4]
@@ -193,7 +192,7 @@
       "id": 14,
       "fid": 10,
       "lines": {},
-	  
+
       "points": {
         "includes": {
           "sub_type": [4]
@@ -217,7 +216,6 @@
           "sub_type": [4],
           "map_source": [5]
         }
-
       },
       "polys": {
         "includes": {
@@ -226,7 +224,7 @@
         },
         "excludes": {
           "identity": [1]
-		}
+        }
       },
       "features": []
     },
@@ -453,13 +451,13 @@
     {
       "id": 30,
       "fid": 11,
-      "lines": {  },
-      "points": {  },
+      "lines": {},
+      "points": {},
       "polys": {
         "includes": {
           "id": [],
           "map_source": [7]
-		},
+        },
         "excludes": {}
       },
       "features": []
@@ -469,11 +467,11 @@
       "fid": 12,
       "lines": {},
       "points": {},
-     "polys": {
+      "polys": {
         "includes": {
           "sub_type": [11],
           "map_source": [7]
-		},
+        },
         "excludes": {}
       },
       "features": []
@@ -483,11 +481,11 @@
       "fid": 12,
       "lines": {},
       "points": {},
-     "polys": {
+      "polys": {
         "includes": {
           "sub_type": [11],
           "map_source": [7]
-		},
+        },
         "excludes": {}
       },
       "features": []
@@ -500,17 +498,17 @@
         "includes": {
           "sub_type": [4, 10],
           "map_source": [10]
-		},
+        },
         "excludes": {
-          "identity": [1]			
-		}
-	  },
-     "polys": {
+          "identity": [1]
+        }
+      },
+      "polys": {
         "includes": {
           "sub_type": [11],
           "map_source": [10],
-		  "identity": [1]
-		},
+          "identity": [1]
+        },
         "excludes": {}
       },
       "features": []
