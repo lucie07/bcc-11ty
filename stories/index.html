@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-04-11 10:08 -->
+    <!-- Built with 11ty - 2023-04-11 10:20 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,9 +13,9 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1681207685">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1681208437">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1681207685"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1681208437"></script>
   </head>
   <body class="type-page slug-stories">
     <header>
@@ -343,15 +343,15 @@ English spaces are demarcated by charter lines of property, indicated by dotted 
 
 // line Styles
 
-lineBorderStyle = {stroke: true, color: '#ff0000', weight: 5, fill: false};
-lineLandRouteStyle = {stroke: true, color: '#00ff00', weight: 5, fill: false};
-lineSeaRouteStyle = {stroke: true, color: '#0000ff', weight: 5, fill: false};
-lineRiverRouteStyle = {stroke: true, color: '#ff00ff', weight: 5, fill: false};
+lineBorderStyle = {stroke: true, dashArray: "3 6", lineCap: "square", color: '#000000', weight: 2.5, fill: false};
+lineLandRouteStyle = {stroke: true, dashArray: "3 6", lineCap: "square", color: '#808080', weight: 4, fill: false};
+lineSeaRouteStyle = {stroke: true, dashArray: "3 6", lineCap: "square", ccolor: '#00aa99', weight: 4, fill: false};
+lineRiverRouteStyle = {stroke: true, color: '#3e8090', weight: 3, fill: false};
 lineMiscStyle = {stroke: true, color: '#ffff00', weight: 5, fill: false};
 lineToponymStyle = {stroke: true, color: '#ffff00', weight: 5, fill: false};
 
 // Poly Styles
-polyBorderStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
+polyBorderStyle = {stroke: true, dashArray: '4 2', fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
 polySettlementStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
 polySeaRouteStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
 polyDescriptiveStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
