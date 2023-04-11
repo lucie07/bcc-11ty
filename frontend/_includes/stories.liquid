@@ -58,6 +58,107 @@ layout: base.liquid
                 possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos
                 nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus
                 perspiciatis qui deserunt porro.</p>
+             <div class="filter">
+    <h2>Filter</h2>
+    <table>
+        <tbody><tr>
+            <th>Features</th>
+            <th>People</th>
+        </tr>
+        <tr>
+            <td>
+                <legend>Border</legend>
+            </td>
+            <td>
+                <fieldset>
+                    <div class="checkbox column">
+                        <input id="border-i" type="checkbox" name="border" value="indigenous">
+                        <label for="border-i">Indigenous</label>
+                        <input id="border-e" type="checkbox" name="border" value="european">
+                        <label for="border-e">European</label>
+                    </div>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <legend>Settlement</legend>
+            </td>
+            <td>
+                <fieldset>
+                    <div class="checkbox column">
+                        <input id="settlement-i" type="checkbox" name="border2" value="indigenous">
+                        <label for="settlement-i">Indigenous</label>
+                        <input id="settlement-e" type="checkbox" name="border2" value="european">
+                        <label for="settlement-e">European</label>
+                    </div>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <legend>Land Route</legend>
+            </td>
+            <td>
+                <fieldset>
+                    <div class="checkbox column">
+                        <input id="land-i" type="checkbox" name="border2" value="indigenous">
+                        <label for="land-i">Indigenous</label>
+                        <input id="land-e" type="checkbox" name="border2" value="european">
+                        <label for="land-e">European</label>
+                    </div>
+                </fieldset>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <legend>Sea Route</legend>
+            </td>
+            <td>
+                <fieldset>
+                    <div class="checkbox column">
+                        <input id="sea-i" type="checkbox" name="border2" value="indigenous">
+                        <label for="sea-i">Indigenous</label>
+                        <input id="sea-e" type="checkbox" name="border2" value="european">
+                        <label for="sea-e">European</label>
+                    </div>
+                </fieldset>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <legend>River Route</legend>
+            </td>
+            <td>
+                <fieldset>
+                    <div class="checkbox column">
+                        <input id="river-i" type="checkbox" name="border2" value="indigenous">
+                        <label for="river-i">Indigenous</label>
+                        <input id="river-e" type="checkbox" name="border2" value="european">
+                        <label for="river-e">European</label>
+                    </div>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <legend>All features</legend>
+            </td>
+            <td>
+                <fieldset>
+                    <div class="checkbox column">
+                        <input id="all-i" type="checkbox" name="border2" value="indigenous">
+                        <label for="all-i">Indigenous</label>
+                        <input id="all-e" type="checkbox" name="border2" value="european">
+                        <label for="all-e">European</label>
+                    </div>
+                </fieldset>
+            </td>
+        </tr>
+    </tbody></table>
+</div>
         </article>
     </section>
 </div>
@@ -147,7 +248,8 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
 
         async loadShapeFile(shape_url) {
             let response = await fetch(shape_url);
-            return await response.json();
+            let json = await response.json();
+            return json;
         }
 
 
@@ -164,7 +266,6 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
                 shapePromises.push(this.loadShapeFile(shape_urls[u]));
             }
             await Promise.all(shapePromises).then((values) => {
-
                 for (let v = 0; v < values.length; v++) {
                     shapeGeoJSON.push(...values[v].features);
                 }
@@ -177,9 +278,9 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
                 if (feature.properties) {
                     // add to all features
                     this.allFeatures.push(feature);
-                    if (feature.properties.story_link === story_id) {
+                    //if (feature.properties.story_link === story_id) {
                         storyFeatures.push(feature);
-                    }
+                    //}
                     if (feature.properties.frame_link) {
                     }
                     /*let frame_link = feature.properties.frame_link;
@@ -475,6 +576,7 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
             if (this.storyUris && this.storyUris.lines) {
                 // console.log(storyFeatures);
                 let storyFeatures = await this.loadShapes([this.storyUris.lines]);
+
                 for (let f = 0; f < storyFeatures.length; f++) {
                     this.addFeatureToSlideGroups("LINE", storyFeatures[f]);
                 }
@@ -508,7 +610,7 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
                 if (
                     field in feature.properties && includeValues.includes(feature.properties[field])
                 ) {
-                    //console.log(field + " : "+feature.properties[field]+" :: "+includeValues);
+
                     result = true;
                 } else {
                     result = false;
@@ -610,6 +712,14 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
             indigenous: "{{ '/assets/json/indigenous_territories.json' | url }}"
         }
     );
+
+    /*storyMap = new StoryMap(L,
+        {
+            storyFrame: "{{ '/assets/json/BCC_storyframe.json' | url }}",
+            slides: "{{ '/assets/json/BCC_slides.json' | url }}",
+            lines: "{{ '/assets/json/BCC_lines.json' | url }}"
+        }
+    );*/
     storyMap.initMap();
 	
 	
