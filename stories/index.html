@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-04-11 10:20 -->
+    <!-- Built with 11ty - 2023-04-11 11:33 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,9 +13,9 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1681208437">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1681212814">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1681208437"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1681212814"></script>
   </head>
   <body class="type-page slug-stories">
     <header>
@@ -344,22 +344,21 @@ English spaces are demarcated by charter lines of property, indicated by dotted 
 // line Styles
 
 lineBorderStyle = {stroke: true, dashArray: "3 6", lineCap: "square", color: '#000000', weight: 2.5, fill: false};
-lineLandRouteStyle = {stroke: true, dashArray: "3 6", lineCap: "square", color: '#808080', weight: 4, fill: false};
-lineSeaRouteStyle = {stroke: true, dashArray: "3 6", lineCap: "square", ccolor: '#00aa99', weight: 4, fill: false};
-lineRiverRouteStyle = {stroke: true, color: '#3e8090', weight: 3, fill: false};
-lineMiscStyle = {stroke: true, color: '#ffff00', weight: 5, fill: false};
-lineToponymStyle = {stroke: true, color: '#ffff00', weight: 5, fill: false};
+lineLandRouteStyle = {stroke: true, dashArray: "7 6", lineCap: "square", lineJoin: "arcs", color: '#808080', weight: 3, fill: false};
+lineSeaRouteStyle = {stroke: true, dashArray: "7 6", lineCap: "square", lineJoin: "arcs", color: '#ffbd59', weight: 3, fill: false};
+lineRiverRouteStyle = {stroke: true, dashArray: "7 9", color: '#00c2cb', lineCap: "square", lineJoin: "round", weight: 2, fill: false};
+lineMiscStyle = {stroke: true, color:'#ffff00', weight: 4, fill: false};
+lineToponymStyle = {stroke: true, color: '#ff0000', weight: 5, fill: false};
 
 // Poly Styles
-polyBorderStyle = {stroke: true, dashArray: '4 2', fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
-polySettlementStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
-polySeaRouteStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
-polyDescriptiveStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
-polyRiverRouteStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
-polyMiscStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
-polyToponymStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
-polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opacity: 1 };
-						
+polyBorderStyle = {stroke: true, dashArray: '4 6', color: "#000000", fillColor: '#000000', lineCap:"square", weight: 2, fill: true, opacity: 0.5, fillOpacity: 0.25};
+polySettlementStyle = {stroke: true,  dashArray: "2 6", lineCap: "square", lineJoin: "arcs", color:"#ff0000", fillColor: '#ff0000', weight: 2, fill: true, opacity:0.75, fillOpacity: 0.5};
+polySeaRouteStyle = {stroke: true, dashArray: "7 6", lineCap: "square", lineJoin: "arcs",color: "#ffbd59", fillColor: '#ffbd59', weight: 2, fill: true, opacity: 0.75, fillOpacity: 0.5};
+polyDescriptiveStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5,fillOpacity: 0.5};
+polyRiverRouteStyle = {stroke: true, dashArray: "7 6", lineCap: "square", lineJoin: "arcs", color: "#00c2cb", fillColor: '#00c2cb', weight: 2, fill: true, opacity: 0.75,fillOpacity: 0.5};
+polyMiscStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5,fillOpacity: 0.5};
+polyAnnoStyle = {stroke: true,  dashArray: "10 10", lineCap: "square", lineJoin: "arcs", color:"#808080", fillColor: '#808080', weight: 1, fill: true, opacity: 1,fillOpacity: 0.5 };
+polyToponymStyle = {stroke: true, dashArray: "7 6", lineCap: "square", lineJoin: "arcs",color: "#ff0000", fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5,fillOpacity: 0.5};
 // Harry Styles
 
 </script>
@@ -392,7 +391,7 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
                 stroke: true,
                 color: '#0000ff',
                 weight: 5,
-                opacity: 0.6
+                opacity: 1
             };
 
             // color: 'rgba(0,0,0,0)',
@@ -496,13 +495,13 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
 									return L.circleMarker(latlng, {radius: 8, fillColor: "#ff0000", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 									break;							
 								case 4:
-									return L.circleMarker(latlng, {radius: 8, fillColor: "#00ff00", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									return L.circleMarker(latlng, {radius: 6, fillColor: "#124d20", color: "#124d20", weight: 1, opacity: 1, fillOpacity: 0.75})
 									break;
 								case 5:
 									return L.circleMarker(latlng, {radius: 8, fillColor: "#0000ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 									break;
 								case 6:
-									return L.circleMarker(latlng, {radius: 8, fillColor: "#ffff00", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									return L.circleMarker(latlng, {radius: 8, color:"", fillColor: "#ffbd59", color: "#ffbd59", weight: 0.5, opacity: 1, fillOpacity: 0.9})
 									break;	
 								case 7:
 									return L.circleMarker(latlng, {radius: 8, fillColor: "#00ffff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
@@ -514,7 +513,7 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
 									return L.circleMarker(latlng, {radius: 8, fillColor: "#000000", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 									break;
 								case 10:
-									return L.circleMarker(latlng, {radius: 8, fillColor: "#ffffff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									return L.circleMarker(latlng, {radius: 6, fillColor: "#ff0000", color: "#ff0000", weight: 1, opacity: 1, fillOpacity: 0.6})
 									break;	
 								default:
 									return L.circleMarker(latlng, {radius: 8, fillColor: "#787878", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
@@ -637,13 +636,19 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
             // does this feature have a property named popupContent?
             if (feature.properties && (feature.properties.map_text || feature.properties.norm_text) || feature.properties.Name) {
                 if (feature.properties.map_text) {
-                    layer.bindPopup(feature.properties.map_text);
+                    layer.bindPopup(feature.properties.map_text )
+					if (feature.properties.date_yr) {
+						layer.bindPopup(feature.properties.map_text + "</br><strong>" + feature.properties.date_yr.toString() + "</stong>" )
+					}
                 } 
 				else if (feature.properties.norm_text) {
                     layer.bindPopup(feature.properties.norm_text);
+					if (feature.properties.date_yr) {
+						layer.bindPopup(feature.properties.norm_text + "</br><strong>" + feature.properties.date_yr.toString() + "</stong>" )
+					}					
                 }
 				else {
-					layer.bindPopup(feature.properties.Name);
+					layer.bindPopup(feature.properties.Name + "</br><strong>Native Land Data API</strong>" );
 				}
 				
             }
