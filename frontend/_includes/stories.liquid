@@ -70,15 +70,15 @@ layout: base.liquid
 
 // line Styles
 
-lineBorderStyle = {stroke: true, color: '#ff0000', weight: 5, fill: false};
-lineLandRouteStyle = {stroke: true, color: '#00ff00', weight: 5, fill: false};
-lineSeaRouteStyle = {stroke: true, color: '#0000ff', weight: 5, fill: false};
-lineRiverRouteStyle = {stroke: true, color: '#ff00ff', weight: 5, fill: false};
+lineBorderStyle = {stroke: true, dashArray: "3 6", lineCap: "square", color: '#000000', weight: 2.5, fill: false};
+lineLandRouteStyle = {stroke: true, dashArray: "3 6", lineCap: "square", color: '#808080', weight: 4, fill: false};
+lineSeaRouteStyle = {stroke: true, dashArray: "3 6", lineCap: "square", ccolor: '#00aa99', weight: 4, fill: false};
+lineRiverRouteStyle = {stroke: true, color: '#3e8090', weight: 3, fill: false};
 lineMiscStyle = {stroke: true, color: '#ffff00', weight: 5, fill: false};
 lineToponymStyle = {stroke: true, color: '#ffff00', weight: 5, fill: false};
 
 // Poly Styles
-polyBorderStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
+polyBorderStyle = {stroke: true, dashArray: '4 2', fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
 polySettlementStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
 polySeaRouteStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
 polyDescriptiveStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5};
