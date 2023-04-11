@@ -1,12 +1,12 @@
 ::: slide 29  
 What was a border? The Royal Charters that created colonies out of undefined expanses of territory that were claimed on the basis of discovery included expansive and unbounded descriptions of colonial space. The second Charter of Virginia (1609) stipulated that the colony included,
 
->all those Lands, Countries, and Territories, situate, lying, and being in that Part of America, called Virginia, from the Point of Land, called Cape or Point Comfort, all along the Sea Coast to the Northward, two hundred miles, and from the said Point of Cape Comfort, all along the Sea Coast to the Southward, two hundred Miles, and all that Space and Circuit of Land, lying from the Sea Coast of the Precinct aforesaid, up into the Land throughout from Sea to Sea, West and Northwest;
-  
+> all those Lands, Countries, and Territories, situate, lying, and being in that Part of America, called Virginia, from the Point of Land, called Cape or Point Comfort, all along the Sea Coast to the Northward, two hundred miles, and from the said Point of Cape Comfort, all along the Sea Coast to the Southward, two hundred Miles, and all that Space and Circuit of Land, lying from the Sea Coast of the Precinct aforesaid, up into the Land throughout from Sea to Sea, West and Northwest;
+
 The ‘sea to sea’ clause was later taken to mean that Virginia extended to the South Sea, an imagined body of water that colonial officials were still searching for in the 1670s. The Charter of Massachusetts Bay (1629) was similarly extensive, consisting of:
 
 > that Parte of America, lyeing and being in Bredth, from Forty Degrees of Northerly Latitude from the Equinoctiall Lyne, to forty eight Degrees Of the saide Northerly Latitude inclusively, and in Length, of and within all the Breadth aforesaid, throughout the Maine Landes from Sea to Sea;  
-:::
+> :::
 
 ::: slide 30  
 As additional colonies were established, the most certain lines of demarcation were those that separated one colonial territory from its northern or southern neighbour, and these lines remained moveable beyond the American Revolution. Regardless, all territory was understood to be part of the ‘dominion’ rather than the ‘realm of England, which meant that the Crown was the ultimate sovereign. From a legal standpoint within Britain’s unwritten constitution, this meant that North American territory was the property of the Crown and could be released to individuals through an array of legal forms.
@@ -34,7 +34,7 @@ The Royal Proclamation of 1763 created the largest border in North America. In o
 :::
 
 ::: slide 36  
-A letter in the *St James Chronicle* (1764) used strongly racialised language to condemn the Proclamation for having ‘given up all the Country, West of the Alleganey Mountains, to the Savages’. For settlers, the Crown’s policy gave land and sovereign recognition to the historic enemies of the colonies. Where the Crown, operating with the Covenant Chain, recognised the sovereignty and territorial possession of Indigenous nations, colonial officials looked back to instances of violence that consumed dozens of colonial towns in the seventeenth century. For them, diplomacy achieved nothing, since Indigenous polities acted ‘contrary to the Faith of Treaties, subsisting between them and the Crown, invaded our Colonies East of the Alleganey Mountains, laying waste all the Country before them with Fire and Sword’.
+A letter in the _St James Chronicle_ (1764) used strongly racialised language to condemn the Proclamation for having ‘given up all the Country, West of the Alleganey Mountains, to the Savages’. For settlers, the Crown’s policy gave land and sovereign recognition to the historic enemies of the colonies. Where the Crown, operating with the Covenant Chain, recognised the sovereignty and territorial possession of Indigenous nations, colonial officials looked back to instances of violence that consumed dozens of colonial towns in the seventeenth century. For them, diplomacy achieved nothing, since Indigenous polities acted ‘contrary to the Faith of Treaties, subsisting between them and the Crown, invaded our Colonies East of the Alleganey Mountains, laying waste all the Country before them with Fire and Sword’.
 :::
 
 ::: slide 37  
@@ -51,7 +51,8 @@ The transition between British empire and the American territorial republic was 
 
 ::: slide 40  
 The names and location of Indigenous sovereigns appeared on all these maps. In its early years, the United States sought to carry on diplomatic relations in the manner of the British. Following the formalisation of the boundary set out in the Treaty of Paris (1783), the United States employed the Treaty of Fort Stanwix to push further west into the former village worlds of the Haudenosaunee. The Congress informed them that
+
 > all the Tribes and Nations of Indians who live to the Southward and Westward of the line agreed on... must no longer look to the King beyond the water, but they must now look to the Great Council, the Congress of the United States at Philadelphia.
-  
+
 They meant that the United States would relate to Indigenous nations as independent sovereigns. Occupying less than a third of the Continent, and surrounded by the imperial claims of Britain and Spain, and facing an interior controlled by wide-ranging equestrian societies who controlled the trans-Mississippian West, American politicians were fully aware of the spatial complexitis that would influence the future development of the state. As Henry Knox, the Secretary of War, put in in 1791, ‘The United States have come into existence, as a nation, embarrassed with a frontier of immense extent, which is attended with all the peculiar circumstances’.
 :::
