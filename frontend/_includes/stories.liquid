@@ -291,7 +291,7 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
                                         }*/
                 }
             }
-            console.log("Length: "+storyFeatures.length);
+
             return storyFeatures;
         }
 
@@ -576,7 +576,7 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
             if (this.storyUris && this.storyUris.lines) {
                 // console.log(storyFeatures);
                 let storyFeatures = await this.loadShapes([this.storyUris.lines]);
-                console.log(storyFeatures);
+
                 for (let f = 0; f < storyFeatures.length; f++) {
                     this.addFeatureToSlideGroups("LINE", storyFeatures[f]);
                 }
@@ -610,7 +610,7 @@ polyAnnoStyle = {stroke: false, fillColor: '#ff0000', weight: 1, fill: true, opa
                 if (
                     field in feature.properties && includeValues.includes(feature.properties[field])
                 ) {
-                    console.log(field + " : "+feature.properties[field]+" :: "+includeValues);
+
                     result = true;
                 } else {
                     result = false;
