@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-04-11 13:20 -->
+    <!-- Built with 11ty - 2023-04-12 08:33 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,9 +13,9 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1681219236">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1681288394">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1681219236"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1681288394"></script>
   </head>
   <body class="type-page slug-stories">
     <header>
@@ -506,15 +506,7 @@ mapLookup = {
             }
         }
 
-        initStoryFeatureLayers() {
-
-            for (let s = 0; s < this.slides.length; s++) {
-                let slide = this.slides[s];
-                slide.layer = L.geoJSON(
-                    slide.features, {
-					// Stopping style override here
-                        //style: this.defaultLineStyle,				
-						pointToLayer: function (feature, latlng) {
+        pointToLayer (feature, latlng) {
 							switch (feature.properties.sub_type) {
 								// Indigenous
 								case 1:
@@ -536,7 +528,7 @@ mapLookup = {
 								case 7:
 									return L.circleMarker(latlng, {radius: 8, fillColor: "#00ffff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 									break;
-								//River route 
+								//River route
 								case 8:
 									return L.circleMarker(latlng, {radius: 8, fillColor: "#ff00ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 									break;
@@ -547,11 +539,21 @@ mapLookup = {
 								// Toponym
 								case 10:
 									return L.circleMarker(latlng, {radius: 6, fillColor: "#ff0000", color: "#ff0000", weight: 1, opacity: 1, fillOpacity: 0.6})
-									break;	
+									break;
 								default:
 									return L.circleMarker(latlng, {radius: 8, fillColor: "#787878", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 							}
-						},		
+						}
+
+        initStoryFeatureLayers() {
+
+            for (let s = 0; s < this.slides.length; s++) {
+                let slide = this.slides[s];
+                slide.layer = L.geoJSON(
+                    slide.features, {
+					// Stopping style override here
+                        //style: this.defaultLineStyle,				
+						pointToLayer: this.pointToLayer,
 						
 	                    onEachFeature: this.onEachFeature.bind(this)
                     });
@@ -564,6 +566,7 @@ mapLookup = {
             this.allFeaturesLayer = L.geoJSON(
                 this.allFeatures, {
                     //style: this.defaultLineStyle,
+                    pointToLayer: this.pointToLayer,
                     onEachFeature: this.onEachFeature.bind(this)
                 });
         }
@@ -644,6 +647,7 @@ mapLookup = {
             await this.loadStoryFrames();
             await this.loadFeatures();
             this.initStoryFeatureLayers();
+
             this.initAllFeaturesLayer();
 
             this.getSlideElements();
@@ -923,13 +927,7 @@ mapLookup = {
         }
     );
 
-    /*storyMap = new StoryMap(L,
-        {
-            storyFrame: "/bcc-11ty/assets/json/BCC_storyframe.json",
-            slides: "/bcc-11ty/assets/json/BCC_slides.json",
-            lines: "/bcc-11ty/assets/json/BCC_lines.json"
-        }
-    );*/
+
     storyMap.initMap();
 	
 	
