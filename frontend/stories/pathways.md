@@ -10,7 +10,8 @@ Pathways were conduits of communication, which were vital to the British as they
 > Addressing the Seneca, Johnson used the metaphor of the longhouse as an integrated pathway across long distances, and facing in several directions in order to stress the importance of swift pathways of communication:
 >
 > As you have aleays been looked upon as the door of the Six Nations where all news, especially from the Westward and Southward must enter and go out, we don’t hear this door open as we used to do formerly, and believe it to be worn out, & think it necessary to hang on a new one of such wood as will never decay; the noise of which when it opens should alarm all the Confederacy.
-> :::
+> 
+:::
 
 ::: slide 25  
 For the geographer Lewis Evans, the Northeast was an ‘ocean of woods’. As a twenty-one-year-old officer, George Washington experienced the difficulties of movement as he carried out a mission to deliver an official dispatch to French commanders, telling them that the British Crown had exclusive right to territories in the Ohio country. Washington understood that travel required Indigenous permission and assistance. Along the way, he dispatched gifts, a ‘String of Wampum, and a Twist of Tobacco’ ahead by runner to the Six Nations. To find his route, he consulted Tanaghrisson, a Catawba adopted by the Seneca who served as an emissary between the Haudenosaunee and the nations of the Ohio. Washington ‘desire’d him to relate some of the Particulars of his Journey to the French Commandant, and Reception there; and to give me an Account of the Ways and Distance’. He received an account of speeches between the French and the Delaware nation of the Ohio, words that were represented on a ‘very large String of black and white Wampum, which was to be sent up immediately to the Six Nations’.
