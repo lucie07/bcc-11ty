@@ -6,7 +6,8 @@ What was a border? The Royal Charters that created colonies out of undefined exp
 The ‘sea to sea’ clause was later taken to mean that Virginia extended to the South Sea, an imagined body of water that colonial officials were still searching for in the 1670s. The Charter of Massachusetts Bay (1629) was similarly extensive, consisting of:
 
 > that Parte of America, lyeing and being in Bredth, from Forty Degrees of Northerly Latitude from the Equinoctiall Lyne, to forty eight Degrees Of the saide Northerly Latitude inclusively, and in Length, of and within all the Breadth aforesaid, throughout the Maine Landes from Sea to Sea;  
-> :::
+> 
+:::
 
 ::: slide 30  
 As additional colonies were established, the most certain lines of demarcation were those that separated one colonial territory from its northern or southern neighbour, and these lines remained moveable beyond the American Revolution. Regardless, all territory was understood to be part of the ‘dominion’ rather than the ‘realm of England, which meant that the Crown was the ultimate sovereign. From a legal standpoint within Britain’s unwritten constitution, this meant that North American territory was the property of the Crown and could be released to individuals through an array of legal forms.
