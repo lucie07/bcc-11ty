@@ -163,7 +163,9 @@ nav {
   pointer-events: none;
 }
 .mapOverlay img {
-  max-width: 50%;
+  max-width: 100%;
+  display: block;
+  float: none;
 }
 .mapOverlay nav {
   pointer-events: auto;
