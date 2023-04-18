@@ -199,6 +199,15 @@ nav {
   position: absolute;
   // Added by EH to allow click events to go through to basemap
   pointer-events: none;
+  
+  img {
+    max-width: 100%;
+    display: block;
+    float: none;
+    padding: 10;
+    margin: 10;
+    
+  }
 
   nav {
     // We still want clicks on the nav though

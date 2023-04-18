@@ -477,7 +477,8 @@
         "includes": {
           "sub_type": [3],
           "map_source": [19]
-	  },
+	  }
+      },
       "points": {},
       "polys": {
         "includes": {
@@ -549,10 +550,10 @@
       "polys": {
         "includes": {
           "sub_type": [7],
-          "map_source": [7],
-		},
-        "excludes": {}
+          "map_source": [7]
+	}
       },
+        "excludes": {},
       "features": []
     },
     {
