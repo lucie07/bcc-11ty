@@ -9,7 +9,7 @@ The experience of colonisation shaped British claims to the possession of territ
 ::: slide 14  
 The English settled among Indigenous nations and were drawn into networks of trade and diplomacy – they entered these circuits of power as minor players, far fewer in number and faced with challenges of basic survival. Weakness, rather than strength, shaped their interactions with Indigenous nations. The maps that they produced sought to portray mastery of the landscape, but they also depicted Indigenous peoples as actors, living on and in the land and seemingly untroubled by the presence of the English.
 John White’s _America Pars_ (1590) of Virginia employs a symbolic language to denote English power and the potential for mastery of the landscape. The first is the label of Virginia ‘now called for the first time in English’, that is superimposed on a map that, with one exception, contains exclusively Indigenous places. Each settlement is positioned and represented by a name and the figure of a palisade. White's map also sought to convey English technological mastery and military supremacy, showing the coast is lined with eight English ships that dwarf the four dugout canoes that ply the rivers.
-![Detail from White map of 1590](../assets/img/stories/14-White 1590c.jpg)
+![Detail from White map of 1590](../assets/img/stories/14-White-1590c.jpg)
 :::
 
 ::: slide 15  
