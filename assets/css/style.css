@@ -162,6 +162,9 @@ nav {
   position: absolute;
   pointer-events: none;
 }
+.mapOverlay img {
+  max-width: 50%;
+}
 .mapOverlay nav {
   pointer-events: auto;
   background: darkgray;
@@ -292,7 +295,7 @@ nav {
   background: #262626;
 }
 .mapOverlay section article figure img {
-  width: 50%;
+  width: 100%;
 }
 .mapOverlay section article figure figcaption {
   width: 95%;
