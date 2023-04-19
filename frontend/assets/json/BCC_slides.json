@@ -21,10 +21,16 @@
       "lines": {
         "includes": {
           "sub_type": [3],
-          "map_source": [12]
+          "map_source": [17]
         }
       },
-
+      "points": {
+        "includes": {
+          "sub_type": [4, 10],
+		  "map_source": [19], 
+		  "identity": [1]
+        }
+      },	
       "features": []
     },
     {
@@ -232,9 +238,18 @@
       "id": 16,
       "fid": 14,
       "lines": {},
-      "points": {},
+      "points": {
+        "includes": {		  
+		  "sub_type": [4, 10]
+        },
+        "excludes": {
+          "identity": [1]
+        }		 
+	  },
       "polys": {
-        "includes": {},
+        "includes": {
+			"id": [4226]
+		},
         "excludes": {}
       },
       "indigenous": {
@@ -247,8 +262,18 @@
     {
       "id": 17,
       "fid": 14,
-      "lines": {},
-      "points": {},
+      "lines": {
+          "sub_type": [3],
+          "map_source": [19]		  
+	  },
+      "points": {
+        "includes": {		  
+		  "sub_type": [4, 10]
+        },
+        "excludes": {
+          "identity": [1]
+        }		 
+	  },
       "polys": {
         "includes": {},
         "excludes": {}
@@ -262,9 +287,20 @@
     },
     {
       "id": 18,
-      "fid": 12,
-      "lines": {},
-      "points": {},
+      "fid": 15,
+      "lines": {
+        "includes": {
+          "sub_type": [3],
+          "map_source": [19]
+        }		  
+	  },
+      "points": {
+        "includes": {
+          "sub_type": [4],
+          "map_source": [19],
+		  "identity": [1]
+        }	
+	  },
       "polys": {
         "includes": {},
         "excludes": {}
@@ -273,9 +309,22 @@
     },
     {
       "id": 19,
-      "fid": 12,
-      "lines": {},
-      "points": {},
+      "fid": 15,
+      "lines": {
+        "includes": {
+          "sub_type": [3],
+          "map_source": [19]
+        }		  
+	  },
+      "points": {
+        "includes": {
+          "sub_type": [4],
+          "map_source": [19]
+        },	
+        "excludes": {
+		  "identity": [1]			
+		}		
+	  },
       "polys": {
         "includes": {},
         "excludes": {}
@@ -440,11 +489,16 @@
     {
       "id": 29,
       "fid": 12,
-      "lines": {},
+      "lines": {
+          "sub_type": [3],
+          "map_source": [19]		  
+	  },
       "points": {},
       "polys": {
-        "includes": {},
-        "excludes": {}
+        "includes": {
+          "sub_type": [7],
+          "map_source": [7]
+        }
       },
       "features": []
     },
@@ -455,7 +509,7 @@
       "points": {},
       "polys": {
         "includes": {
-          "id": [],
+          "sub_type": [7],
           "map_source": [7]
         },
         "excludes": {}
@@ -465,14 +519,21 @@
     {
       "id": 31,
       "fid": 12,
-      "lines": {},
+      "lines": {
+        "includes": {
+          "sub_type": [3],
+          "map_source": [19]
+	  }
+      },
       "points": {},
       "polys": {
         "includes": {
           "sub_type": [11],
-          "map_source": [7]
+          "map_source": [12]
         },
-        "excludes": {}
+        "excludes": {
+          "identity": [1]			
+		}
       },
       "features": []
     },
@@ -492,12 +553,15 @@
     },
     {
       "id": 33,
-      "fid": 12,
-      "lines": {},
+      "fid": 15,
+      "lines": {
+          "sub_type": [3],
+          "map_source": [19]
+	  },
       "points": {
         "includes": {
-          "sub_type": [4, 10],
-          "map_source": [10]
+          "sub_type": [4],
+          "map_source": [19]
         },
         "excludes": {
           "identity": [1]
@@ -515,79 +579,118 @@
     },
     {
       "id": 34,
-      "fid": 12,
-      "lines": {},
-      "points": {},
+      "fid": 15,
+      "lines": {
+          "sub_type": [3],
+          "map_source": [19]
+	  },
+      "points": {
+        "includes": {
+          "sub_type": [4],
+          "map_source": [19]
+        },
+        "excludes": {
+          "identity": [1]
+        }
+      },
       "polys": {
-        "includes": {},
+        "includes": {
+          "sub_type": [11],
+          "map_source": [10],
+          "identity": [1]
+        },
         "excludes": {}
       },
       "features": []
     },
     {
       "id": 35,
-      "fid": 12,
-      "lines": {},
+      "fid": 15,
+      "lines": {
+        "includes": {
+          "id": [1]
+		}
+	  },
       "points": {},
       "polys": {
-        "includes": {},
-        "excludes": {}
+        "includes": {
+          "sub_type": [7],
+          "map_source": [7]
+	}
       },
+        "excludes": {},
       "features": []
     },
     {
       "id": 36,
-      "fid": 12,
-      "lines": {},
+      "fid": 15,
+      "lines": {
+        "includes": {
+          "id": [1]
+		}
+	  },
       "points": {},
       "polys": {
-        "includes": {},
-        "excludes": {}
+        "includes": {
+          "sub_type": [7],
+          "map_source": [7]
+	}
       },
+        "excludes": {},
       "features": []
     },
     {
       "id": 37,
-      "fid": 12,
-      "lines": {},
+      "fid": 15,
+      "lines": {
+        "includes": {
+          "id": [1]
+		}
+	  },
       "points": {},
       "polys": {
-        "includes": {},
-        "excludes": {}
+        "includes": {
+          "sub_type": [7],
+          "map_source": [7]
+	}
       },
-      "features": []
-    },
-    {
-      "id": 38,
-      "fid": 12,
-      "lines": {},
-      "points": {},
-      "polys": {
-        "includes": {},
-        "excludes": {}
-      },
+        "excludes": {},
       "features": []
     },
     {
       "id": 39,
-      "fid": 12,
-      "lines": {},
+      "fid": 15,
+      "lines": {
+        "includes": {
+          "id": [1]
+		}
+	  },
       "points": {},
       "polys": {
-        "includes": {},
-        "excludes": {}
+        "includes": {
+          "sub_type": [7],
+          "map_source": [7]
+	}
       },
+        "excludes": {},
       "features": []
     },
     {
       "id": 40,
-      "fid": 12,
-      "lines": {},
+      "fid": 15,
+      "lines": {
+        "includes": {
+          "id": [1]
+		}
+	  },
       "points": {},
       "polys": {
-        "includes": {},
-        "excludes": {}
+        "includes": {
+          "sub_type": [7],
+          "map_source": [7]
+	}
       },
+        "excludes": {},
       "features": []
     }
   ]

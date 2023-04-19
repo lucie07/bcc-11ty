@@ -10,8 +10,9 @@ Pathways were conduits of communication, which were vital to the British as they
 > Addressing the Seneca, Johnson used the metaphor of the longhouse as an integrated pathway across long distances, and facing in several directions in order to stress the importance of swift pathways of communication:
 >
 > As you have aleays been looked upon as the door of the Six Nations where all news, especially from the Westward and Southward must enter and go out, we don’t hear this door open as we used to do formerly, and believe it to be worn out, & think it necessary to hang on a new one of such wood as will never decay; the noise of which when it opens should alarm all the Confederacy.
-> 
-:::
+>
+> ![Two-Row wampum belt, reproduction by Jake Thomas](../assets/img/stories/24-jake-thomas-two-row-wampum-belt-reproduction-1993.jpg)
+> :::
 
 ::: slide 25  
 For the geographer Lewis Evans, the Northeast was an ‘ocean of woods’. As a twenty-one-year-old officer, George Washington experienced the difficulties of movement as he carried out a mission to deliver an official dispatch to French commanders, telling them that the British Crown had exclusive right to territories in the Ohio country. Washington understood that travel required Indigenous permission and assistance. Along the way, he dispatched gifts, a ‘String of Wampum, and a Twist of Tobacco’ ahead by runner to the Six Nations. To find his route, he consulted Tanaghrisson, a Catawba adopted by the Seneca who served as an emissary between the Haudenosaunee and the nations of the Ohio. Washington ‘desire’d him to relate some of the Particulars of his Journey to the French Commandant, and Reception there; and to give me an Account of the Ways and Distance’. He received an account of speeches between the French and the Delaware nation of the Ohio, words that were represented on a ‘very large String of black and white Wampum, which was to be sent up immediately to the Six Nations’.
@@ -27,6 +28,8 @@ Finding open water, Washington decided to try travel by canoe:
 > We had a tedious and very fatiguing Passage down the Creek, several Times we had like to have been staved against Rocks, and many Times were obliged all Hands to get out and remain in the Water Half an Hour or more, getting over the Shoals; at one Place the Ice had lodged and made it impassable by Water; therefore we were obliged to carry our Canoe across a Neck of Land.
 
 Washington eventually abandoned his bulky British uniform, and ‘put myself in an Indian walking Dress’. Transposed onto John Mitchell’s map, Washington’s journey could be measured in inches. In this short distance, he was never in ‘British’ or French territory, but instead moved through unseen diplomatic and kinship pathways that carried wampum, information and gifts of tribute along multiple pathways.
+
+![Map attached to George Washington's journal to the Ohio](../assets/img/stories/26-GeorgeWashingtonmapaccompanyinghisjournalttotheOhio-1754.jpg)
 :::
 
 ::: slide 27  
@@ -35,4 +38,5 @@ As Washington learned, rivers were the highways of early America. Contemporary m
 
 ::: slide 28  
 Europeans found their way along single file Indigenous pathways. Movement, rather than rootedness in one location, was a key expression of power. The Northeast was animated and alive with multiple forms of connection, from kinscapes, trade paths, war paths (or ‘force roads’) and traditional routes to council fires and key locales in the diplomatic landscape. The difficulty of travelling over distance meant that riverine and maritime systems were the principal conduits of connection, and contemporary maps give prominence to these. At the same time, the assumptions that underpinned a world conceived as paths clashed with concepts of borders as hard boundaries that could not be crossed at will.
+![Detail from Fry map of 1754](../assets/img/stories/28a-Fry-1754a.jpg)
 :::
