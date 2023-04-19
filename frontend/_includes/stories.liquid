@@ -338,38 +338,38 @@ mapLookup = {
 							switch (feature.properties.sub_type) {
 								// Indigenous
 								case 1:
-									return L.circleMarker(latlng, {radius: 8, fillColor: "#ff0000", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									return L.circleMarker(latlng, {radius: 4, fillColor: "#ff0000", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 									break;
 								// Settlement
 								case 4:
-									return L.circleMarker(latlng, {radius: 6, fillColor: "#124d20", color: "#124d20", weight: 1, opacity: 1, fillOpacity: 0.75})
+									return L.circleMarker(latlng, {radius: 4, fillColor: "#124d20", color: "#124d20", weight: 1, opacity: 1, fillOpacity: 0.75})
 									break;
 								// Land route
 								case 5:
-									return L.circleMarker(latlng, {radius: 8, fillColor: "#0000ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									return L.circleMarker(latlng, {radius: 4, fillColor: "#0000ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 									break;
 								// Sea route
 								case 6:
-									return L.circleMarker(latlng, {radius: 8, color:"", fillColor: "#ffbd59", color: "#ffbd59", weight: 0.5, opacity: 1, fillOpacity: 0.9})
+									return L.circleMarker(latlng, {radius: 4, color:"", fillColor: "#ffbd59", color: "#ffbd59", weight: 0.5, opacity: 1, fillOpacity: 0.9})
 									break;
 								// Descriptive
 								case 7:
-									return L.circleMarker(latlng, {radius: 8, fillColor: "#00ffff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									return L.circleMarker(latlng, {radius: 4, fillColor: "#00ffff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 									break;
 								//River route
 								case 8:
-									return L.circleMarker(latlng, {radius: 8, fillColor: "#ff00ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									return L.circleMarker(latlng, {radius: 4, fillColor: "#ff00ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 									break;
 								// Miscellaneous
 								case 9:
-									return L.circleMarker(latlng, {radius: 8, fillColor: "#000000", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									return L.circleMarker(latlng, {radius: 4, fillColor: "#000000", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 									break;
 								// Toponym
 								case 10:
-									return L.circleMarker(latlng, {radius: 6, fillColor: "#ff0000", color: "#ff0000", weight: 1, opacity: 1, fillOpacity: 0.6})
+									return L.circleMarker(latlng, {radius: 4, fillColor: "#ff0000", color: "#ff0000", weight: 1, opacity: 1, fillOpacity: 0.6})
 									break;
 								default:
-									return L.circleMarker(latlng, {radius: 8, fillColor: "#787878", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
+									return L.circleMarker(latlng, {radius: 4, fillColor: "#787878", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 							}
 						}
 
