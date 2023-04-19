@@ -1,6 +1,6 @@
 {
 "type": "FeatureCollection",
-"name": "KM18apraft_poly",
+"name": "BCC_polys",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "id": 2, "feat_type": 3, "sub_type": 7, "map_source": 12, "date_yr": 1755, "accuracy": 4, "map_text": "By the several Conquests here mentioned, the Territories of the Six Nations extend to the Limits here laid down; which they have been in Possession of about 100 Years.", "norm_text": "By the several Conquests here mentioned, the Territories of the Six Nations extend to the Limits here laid down; which they have been in Possession of about 100 Years.", "story_link": null, "frame_link": null, "identity": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -79.332482024304724, 46.004877827061158 ], [ -78.166575738309987, 45.880709975707013 ], [ -77.893480572221122, 45.418133207853771 ], [ -78.880824634234699, 45.535974943869782 ], [ -79.332482024304724, 46.004877827061158 ] ] ] ] } },
