@@ -1,6 +1,6 @@
 {
 "type": "FeatureCollection",
-"name": "KM18apraft_points",
+"name": "BCC_points",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "id": 53414, "feat_type": 1, "sub_type": 10, "map_source": 1, "date_yr": 179, "map_text": "Noo York", "norm_text": "New York", "accuracy": 1, "story_link": null, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -73.806975078231048, 40.901800182986982 ] } },
