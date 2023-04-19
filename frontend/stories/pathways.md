@@ -10,8 +10,8 @@ Pathways were conduits of communication, which were vital to the British as they
 > Addressing the Seneca, Johnson used the metaphor of the longhouse as an integrated pathway across long distances, and facing in several directions in order to stress the importance of swift pathways of communication:
 >
 > As you have aleays been looked upon as the door of the Six Nations where all news, especially from the Westward and Southward must enter and go out, we don’t hear this door open as we used to do formerly, and believe it to be worn out, & think it necessary to hang on a new one of such wood as will never decay; the noise of which when it opens should alarm all the Confederacy.
->
-> ![Two-Row wampum belt, reproduction by Jake Thomas](../assets/img/stories/24-jake-thomas-two-row-wampum-belt-reproduction-1993.jpg)
+
+![Two-Row wampum belt, reproduction by Jake Thomas](../assets/img/stories/24-jake-thomas-two-row-wampum-belt-reproduction-1993.jpg)
 
 :::
 
