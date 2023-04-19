@@ -27,10 +27,10 @@
       "points": {
         "includes": {
           "sub_type": [4, 10],
-		  "map_source": [19], 
-		  "identity": [1]
+          "map_source": [19],
+          "identity": [1]
         }
-      },	
+      },
       "features": []
     },
     {
@@ -239,17 +239,17 @@
       "fid": 14,
       "lines": {},
       "points": {
-        "includes": {		  
-		  "sub_type": [4, 10]
+        "includes": {
+          "sub_type": [4, 10]
         },
         "excludes": {
           "identity": [1]
-        }		 
-	  },
+        }
+      },
       "polys": {
         "includes": {
-			"id": [4226]
-		},
+          "id": [4226]
+        },
         "excludes": {}
       },
       "indigenous": {
@@ -263,17 +263,17 @@
       "id": 17,
       "fid": 14,
       "lines": {
-          "sub_type": [3],
-          "map_source": [19]		  
-	  },
+        "sub_type": [3],
+        "map_source": [19]
+      },
       "points": {
-        "includes": {		  
-		  "sub_type": [4, 10]
+        "includes": {
+          "sub_type": [4, 10]
         },
         "excludes": {
           "identity": [1]
-        }		 
-	  },
+        }
+      },
       "polys": {
         "includes": {},
         "excludes": {}
@@ -292,15 +292,15 @@
         "includes": {
           "sub_type": [3],
           "map_source": [19]
-        }		  
-	  },
+        }
+      },
       "points": {
         "includes": {
           "sub_type": [4],
           "map_source": [19],
-		  "identity": [1]
-        }	
-	  },
+          "identity": [1]
+        }
+      },
       "polys": {
         "includes": {},
         "excludes": {}
@@ -314,17 +314,17 @@
         "includes": {
           "sub_type": [3],
           "map_source": [19]
-        }		  
-	  },
+        }
+      },
       "points": {
         "includes": {
           "sub_type": [4],
           "map_source": [19]
-        },	
+        },
         "excludes": {
-		  "identity": [1]			
-		}		
-	  },
+          "identity": [1]
+        }
+      },
       "polys": {
         "includes": {},
         "excludes": {}
@@ -490,9 +490,9 @@
       "id": 29,
       "fid": 12,
       "lines": {
-          "sub_type": [3],
-          "map_source": [19]		  
-	  },
+        "sub_type": [3],
+        "map_source": [19]
+      },
       "points": {},
       "polys": {
         "includes": {
@@ -523,7 +523,7 @@
         "includes": {
           "sub_type": [3],
           "map_source": [19]
-	  }
+        }
       },
       "points": {},
       "polys": {
@@ -532,8 +532,8 @@
           "map_source": [12]
         },
         "excludes": {
-          "identity": [1]			
-		}
+          "identity": [1]
+        }
       },
       "features": []
     },
@@ -555,9 +555,9 @@
       "id": 33,
       "fid": 15,
       "lines": {
-          "sub_type": [3],
-          "map_source": [19]
-	  },
+        "sub_type": [3],
+        "map_source": [19]
+      },
       "points": {
         "includes": {
           "sub_type": [4],
@@ -581,9 +581,9 @@
       "id": 34,
       "fid": 15,
       "lines": {
-          "sub_type": [3],
-          "map_source": [19]
-	  },
+        "sub_type": [3],
+        "map_source": [19]
+      },
       "points": {
         "includes": {
           "sub_type": [4],
@@ -609,16 +609,16 @@
       "lines": {
         "includes": {
           "id": [1]
-		}
-	  },
+        }
+      },
       "points": {},
       "polys": {
         "includes": {
           "sub_type": [7],
           "map_source": [7]
-	}
+        }
       },
-        "excludes": {},
+      "excludes": {},
       "features": []
     },
     {
@@ -627,16 +627,16 @@
       "lines": {
         "includes": {
           "id": [1]
-		}
-	  },
+        }
+      },
       "points": {},
       "polys": {
         "includes": {
           "sub_type": [7],
           "map_source": [7]
-	}
+        }
       },
-        "excludes": {},
+      "excludes": {},
       "features": []
     },
     {
@@ -645,16 +645,16 @@
       "lines": {
         "includes": {
           "id": [1]
-		}
-	  },
+        }
+      },
       "points": {},
       "polys": {
         "includes": {
           "sub_type": [7],
           "map_source": [7]
-	}
+        }
       },
-        "excludes": {},
+      "excludes": {},
       "features": []
     },
     {
@@ -663,16 +663,16 @@
       "lines": {
         "includes": {
           "id": [1]
-		}
-	  },
+        }
+      },
       "points": {},
       "polys": {
         "includes": {
           "sub_type": [7],
           "map_source": [7]
-	}
+        }
       },
-        "excludes": {},
+      "excludes": {},
       "features": []
     },
     {
@@ -681,16 +681,16 @@
       "lines": {
         "includes": {
           "id": [1]
-		}
-	  },
+        }
+      },
       "points": {},
       "polys": {
         "includes": {
           "sub_type": [7],
           "map_source": [7]
-	}
+        }
       },
-        "excludes": {},
+      "excludes": {},
       "features": []
     }
   ]
