@@ -232,9 +232,18 @@
       "id": 16,
       "fid": 14,
       "lines": {},
-      "points": {},
+      "points": {
+        "includes": {		  
+		  "sub_type": [4, 10]
+        },
+        "excludes": {
+          "identity": [1]
+        }		 
+	  },
       "polys": {
-        "includes": {},
+        "includes": {
+			"id": [4226]
+		},
         "excludes": {}
       },
       "indigenous": {
@@ -251,7 +260,14 @@
           "sub_type": [3],
           "map_source": [19]		  
 	  },
-      "points": {},
+      "points": {
+        "includes": {		  
+		  "sub_type": [4, 10]
+        },
+        "excludes": {
+          "identity": [1]
+        }		 
+	  },
       "polys": {
         "includes": {},
         "excludes": {}
