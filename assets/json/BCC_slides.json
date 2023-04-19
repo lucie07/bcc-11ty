@@ -21,10 +21,16 @@
       "lines": {
         "includes": {
           "sub_type": [3],
-          "map_source": [12]
+          "map_source": [17]
         }
       },
-
+      "points": {
+        "includes": {
+          "sub_type": [4, 10],
+		  "map_source": [19], 
+		  "identity": [1]
+        }
+      },	
       "features": []
     },
     {
