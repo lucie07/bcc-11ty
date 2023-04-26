@@ -139,7 +139,7 @@
           "map_source": [12]
         },
         "excludes": {
-          "identity": [3]
+          "identity": [1, 3]
         }
       },
       "features": []
