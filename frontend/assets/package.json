@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "leaflet": "^1.9.2"
+    "leaflet": "^1.9.2",
+    "leaflet-dvf": "^0.3.1"
   }
 }
