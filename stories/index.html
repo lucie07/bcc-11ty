@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-05-02 14:34 -->
+    <!-- Built with 11ty - 2023-05-15 13:15 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,9 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1683038063">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1684156521">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1683038063"></script>
+    <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1684156521"></script>
   </head>
   <body class="type-page slug-stories">
     <header>
@@ -366,6 +367,7 @@ English spaces are demarcated by charter lines of property, indicated by dotted 
 
 
 <script type="text/javascript" src="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.js"></script>
+<script type="text/javascript" src="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/leaflet-dvf.js"></script>
 
 <script>
 // Styles in here so can be moved out easily into separate file
@@ -389,6 +391,8 @@ polyMiscStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opac
 polyAnnoStyle = {stroke: true,  dashArray: "10 10", lineCap: "square", lineJoin: "arcs", color:"#808080", fillColor: '#808080', weight: 1, fill: true, opacity: 1,fillOpacity: 0.5 };
 polyToponymStyle = {stroke: true, dashArray: "7 6", lineCap: "square", lineJoin: "arcs",color: "#ff0000", fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5,fillOpacity: 0.5};
 // Harry Styles
+
+// 
 
 // Map lookup
 mapLookup = {
@@ -537,16 +541,35 @@ mapLookup = {
         }
 
         pointToLayer (feature, latlng) {
+                            //console.log(latlng);
 							switch (feature.properties.sub_type) {
-								// Indigenous
+								// Indigenous : Triangle - Red - point down
 								case 1:
-									return L.circleMarker(latlng, {radius: 4, fillColor: "#ff0000", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
-									break;
-								// Settlement
+                                    return new L.RegularPolygonMarker(latlng, {numberOfSides: 3,
+                                    rotation: 90,
+                                    radius: 5,
+                                    //L.Path style options
+                                    fill: true,
+                                    fillColor: '#ff0000',
+                                    color: 'black',
+                                    weight: 0.5,
+                                    fillOpacity: 1,
+                                    stroke: true})
+                                    break;
+								// Settlement : Triangle - dark green - point up
 								case 4:
-									return L.circleMarker(latlng, {radius: 4, fillColor: "#124d20", color: "#124d20", weight: 1, opacity: 1, fillOpacity: 0.75})
-									break;
-								// Land route
+                                    return new L.RegularPolygonMarker(latlng, {numberOfSides: 3,
+                                    rotation: -90,
+                                    radius: 5,
+                                    //L.Path style options
+                                    fill: true,
+                                    fillColor: '#124d20',
+                                    color: '#124d20',
+                                    weight: 0.5,
+                                    fillOpacity: 1,
+                                    stroke: true})
+                                    break;                                    
+								// Land route - 
 								case 5:
 									return L.circleMarker(latlng, {radius: 4, fillColor: "#0000ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
 									break;
@@ -554,10 +577,19 @@ mapLookup = {
 								case 6:
 									return L.circleMarker(latlng, {radius: 4, color:"", fillColor: "#ffbd59", color: "#ffbd59", weight: 0.5, opacity: 1, fillOpacity: 0.9})
 									break;
-								// Descriptive
+								// Descriptive - white squares
 								case 7:
-									return L.circleMarker(latlng, {radius: 4, fillColor: "#00ffff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
-									break;
+                                    return new L.RegularPolygonMarker(latlng, {numberOfSides: 4,
+                                    rotation: -45,
+                                    radius: 5,
+                                    //L.Path style options
+                                    fill: true,
+                                    fillColor: '#ffffff',
+                                    color: '#000000',
+                                    weight: 0.5,
+                                    fillOpacity: 1,
+                                    stroke: true})
+                                    break;
 								//River route
 								case 8:
 									return L.circleMarker(latlng, {radius: 4, fillColor: "#ff00ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
