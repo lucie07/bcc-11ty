@@ -58,6 +58,7 @@
   ],
   "dependencies": {
     "assets": "file:frontend/assets",
+    "leaflet-dvf": "^0.3.1",
     "markdown-it-container": "^3.0.0"
   }
 }
