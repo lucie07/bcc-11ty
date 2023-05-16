@@ -376,7 +376,7 @@ mapLookup = {
                                     color: '#124d20',
                                     weight: 0.5,
                                     fillOpacity: 1,
-                                    stroke: true})
+                                    stroke: true}).bindTooltip('Text',{permanent:true,className:'map-label'}).openTooltip()
                                     break;                                    
 								// Land route - 
 								case 5:
@@ -650,14 +650,15 @@ mapLookup = {
 						case 8: 
 							layer.setStyle(lineRiverRouteStyle);
                             layer.setText(feature.properties.norm_text,
-                                {orientation:'flip',offset:25, below:false,center:true,
+                                {orientation: testDirection(feature) ,offset:5,center:true, 
                                     attributes:{
-                                        fill:'black',
+                                        'fill':'black',
                                         'font-family': 'EB Garamond, serif',
                                         'font-weight': 'bold',
-                                        'font-size': 16,
-                                        'textLength': 300,
-                                        'lengthAdjust': 'spacing'
+                                        'font-size': 18,
+                                        //'textLength': 300,
+                                        //'lengthAdjust': 'spacing',
+                                        'dx': '15%',
                                     }
                                 }
                             );
@@ -831,13 +832,6 @@ mapLookup = {
 
     }
 
-    /*
-
-
-
-        ,
-
-     */
     let geojson_uri = [];
     let shapeLayers = null;
     let shapesByFrameLink = {};
@@ -857,7 +851,17 @@ mapLookup = {
 
     storyMap.initMap() //Custom Canvas Renderer);
 	
-	
+    // Rough tests whether line is east-west or west-east for purposes of text orintation
+	function testDirection(geom){
+        var orientation;
+        if (geom.geometry.coordinates[0][0][0] > geom.geometry.coordinates[0][(geom.geometry.coordinates[0].length-1)][0]) {
+            orientation = 180;
+            return orientation;
+        } else {
+            orientation = 0;
+            return orientation;
+        }
+    }
 	
 
 </script>
