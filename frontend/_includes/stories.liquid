@@ -166,10 +166,9 @@ layout: base.liquid
 
 <script type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
 <script type="text/javascript" src="{{ '/assets/node_modules/leaflet-dvf/dist/leaflet-dvf.js' | url }}"></script>
-
 <script type="text/javascript" src="{{ '/assets/js/leaflet/plugins/leaflet.textpath.js' | url }}"></script>
 
--->
+
 
 <script>
 // Styles in here so can be moved out easily into separate file
@@ -363,7 +362,7 @@ mapLookup = {
                                     color: 'black',
                                     weight: 0.5,
                                     fillOpacity: 1,
-                                    stroke: true})
+                                    stroke: true}).bindTooltip(feature.properties.map_text,{permanent:true,className:'map-label'}).openTooltip()
                                     break;
 								// Settlement : Triangle - dark green - point up
 								case 4:
@@ -376,7 +375,7 @@ mapLookup = {
                                     color: '#124d20',
                                     weight: 0.5,
                                     fillOpacity: 1,
-                                    stroke: true}).bindTooltip('Text',{permanent:true,className:'map-label'}).openTooltip()
+                                    stroke: true})
                                     break;                                    
 								// Land route - 
 								case 5:
@@ -507,19 +506,20 @@ mapLookup = {
             
             // Establish baselayers group
             
-            this.overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
+            this.overlay = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
+                attribution: "ESRI World Terrain",           
                 opacity: 1
             }).addTo(this.map);
-            
+            /*
             var awmc = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
                 opacity: 1,
                 attribution: "Consortium of Ancient World Mappers",
             }).addTo(this.map);
-            
+            */
             var worldTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
@@ -536,9 +536,9 @@ mapLookup = {
             });    
             
             var baseLayers = {
-                "Ancient World Mapping": awmc,
-                "Terrain": worldTerrain,
-                "Street Map": worldStreet
+                //"Ancient World Mapping": awmc,
+                "Clean Terrain": worldTerrain,
+                "Modern Open Street Map": worldStreet
             };
             
             // Create Layer Switcher
