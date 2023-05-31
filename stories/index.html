@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-05-16 14:15 -->
+    <!-- Built with 11ty - 2023-05-31 08:34 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1684246506">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1685522091">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1684246506"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1685522091"></script>
     
     <style>
     .map-label {
@@ -385,10 +385,9 @@ English spaces are demarcated by charter lines of property, indicated by dotted 
 
 <script type="text/javascript" src="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.js"></script>
 <script type="text/javascript" src="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/leaflet-dvf.js"></script>
-
 <script type="text/javascript" src="/bcc-11ty/assets/js/leaflet/plugins/leaflet.textpath.js"></script>
 
--->
+
 
 <script>
 // Styles in here so can be moved out easily into separate file
@@ -582,7 +581,7 @@ mapLookup = {
                                     color: 'black',
                                     weight: 0.5,
                                     fillOpacity: 1,
-                                    stroke: true})
+                                    stroke: true}).bindTooltip(feature.properties.map_text,{permanent:true,className:'map-label'}).openTooltip()
                                     break;
 								// Settlement : Triangle - dark green - point up
 								case 4:
@@ -595,7 +594,7 @@ mapLookup = {
                                     color: '#124d20',
                                     weight: 0.5,
                                     fillOpacity: 1,
-                                    stroke: true}).bindTooltip('Text',{permanent:true,className:'map-label'}).openTooltip()
+                                    stroke: true})
                                     break;                                    
 								// Land route - 
 								case 5:
@@ -726,19 +725,20 @@ mapLookup = {
             
             // Establish baselayers group
             
-            this.overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
+            this.overlay = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
+                attribution: "ESRI World Terrain",           
                 opacity: 1
             }).addTo(this.map);
-            
+            /*
             var awmc = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
                 opacity: 1,
                 attribution: "Consortium of Ancient World Mappers",
             }).addTo(this.map);
-            
+            */
             var worldTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
@@ -755,9 +755,9 @@ mapLookup = {
             });    
             
             var baseLayers = {
-                "Ancient World Mapping": awmc,
-                "Terrain": worldTerrain,
-                "Street Map": worldStreet
+                //"Ancient World Mapping": awmc,
+                "Clean Terrain": worldTerrain,
+                "Modern Open Street Map": worldStreet
             };
             
             // Create Layer Switcher
