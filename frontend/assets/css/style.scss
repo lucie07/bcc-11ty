@@ -327,6 +327,7 @@ nav {
 
   section {
     padding: 5em 1em;
+    float: right;
     h1 a {
       margin-top: 10em;
       font-size: 1.7em;
@@ -337,8 +338,11 @@ nav {
       padding: 2em;
       margin-bottom: 100vh;
       text-align: justify;
+      float:right;
+      margin-left: 40%;
 
       p {
+        float: left;
       }
       figure {
         width: 95%;
@@ -360,6 +364,12 @@ nav {
           } //a
         } //figcaption
       } //figure
+    }
+    // Story Heading
+    article.storyTitle{
+      padding: 2em;
+      text-align: center;
+      margin-bottom: 5vh;
     }
   } //section
 } //#map

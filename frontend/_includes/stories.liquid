@@ -20,7 +20,9 @@ layout: base.liquid
         </ol>
     </nav>
     <section id="overview">
+         <article class="storyTitle">
         <h1><a href="overview">Overview</a></h1>
+         </article>
         <article>
             <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui
                 possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos
@@ -38,21 +40,35 @@ layout: base.liquid
         </article>
     </section>
     <section id="stories">
+        <article class="storyTitle">
         <h1><a href="stories">Stories</a></h1>
+        </article>
         <div id="s-intro"></div>
+        <article class="storyTitle">
         <h2><a href="{{ "../" | url }}">Introduction</a></h2>
+        </article>
         {% renderFile "./stories/introduction.md", "liquid" %}
+        <article class="storyTitle">
         <h2 id="s-1">Homelands</h2>
+            </article>
         {% renderFile "./stories/homelands.md", "liquid" %}
+        <article class="storyTitle">
         <h2 id="s-2">Villagers, Settlers</h2>
+        </article>
         {% renderFile "./stories/villagers_settlers.md", "liquid" %}
+        <article class="storyTitle">
         <h2 id="s-3">Pathways</h2>
+        </article>
         {% renderFile "./stories/pathways.md", "liquid" %}
+        <article class="storyTitle">
         <h2 id="s-4">Borders</h2>
+        </article>
         {% renderFile "./stories/borders.md", "liquid" %}
     </section>
     <section id="filters">
+         <article class="storyTitle">
         <h1><a href="filter">Filters</a></h1>
+         </article>
         <article>
             <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui
                 possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos
@@ -237,10 +253,7 @@ mapLookup = {
             // Data parameters
             this.storyUris = storyUris
             this.map = null;
-
-
             this.layerGroups = {};
-
             this.storyFrames = [];
 
             // Map parameters
@@ -497,7 +510,7 @@ mapLookup = {
             );
 
             L.control.zoom({
-                position: 'bottomright'
+                position: 'bottomleft'
             }).addTo(this.map);
             
 
@@ -543,7 +556,7 @@ mapLookup = {
             
             // Create Layer Switcher
             
-            L.control.layers(baseLayers,{},{position:"bottomright",collapsed:false}).addTo(this.map);
+            L.control.layers(baseLayers,{},{position:"bottomleft",collapsed:false}).addTo(this.map);
             
             // Initial view
             // This could be changed based on get string etc.
@@ -558,7 +571,8 @@ mapLookup = {
             await this.loadFeatures();
             this.initStoryFeatureLayers();
 
-            this.initAllFeaturesLayer();
+            // Disabled will be used for testing later before final removal on launch
+            //this.initAllFeaturesLayer();
 
             this.getSlideElements();
             let observer = new IntersectionObserver(function (entries) {
