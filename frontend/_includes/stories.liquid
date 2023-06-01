@@ -20,9 +20,9 @@ layout: base.liquid
         </ol>
     </nav>
     <section id="overview">
-         <article class="storyTitle">
-        <h1><a href="overview">Overview</a></h1>
-         </article>
+        <article class="storyTitle">
+            <h1><a href="overview">Overview</a></h1>
+        </article>
         <article>
             <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui
                 possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos
@@ -41,140 +41,142 @@ layout: base.liquid
     </section>
     <section id="stories">
         <article class="storyTitle">
-        <h1><a href="stories">Stories</a></h1>
+            <h1><a href="stories">Stories</a></h1>
         </article>
         <div id="s-intro"></div>
         <article class="storyTitle">
-        <h2><a href="{{ "../" | url }}">Introduction</a></h2>
+            <h2><a href="{{ "../" | url }}">Introduction</a></h2>
         </article>
         {% renderFile "./stories/introduction.md", "liquid" %}
         <article class="storyTitle">
-        <h2 id="s-1">Homelands</h2>
-            </article>
+            <h2 id="s-1">Homelands</h2>
+        </article>
         {% renderFile "./stories/homelands.md", "liquid" %}
         <article class="storyTitle">
-        <h2 id="s-2">Villagers, Settlers</h2>
+            <h2 id="s-2">Villagers, Settlers</h2>
         </article>
         {% renderFile "./stories/villagers_settlers.md", "liquid" %}
         <article class="storyTitle">
-        <h2 id="s-3">Pathways</h2>
+            <h2 id="s-3">Pathways</h2>
         </article>
         {% renderFile "./stories/pathways.md", "liquid" %}
         <article class="storyTitle">
-        <h2 id="s-4">Borders</h2>
+            <h2 id="s-4">Borders</h2>
         </article>
         {% renderFile "./stories/borders.md", "liquid" %}
     </section>
     <section id="filters">
-         <article class="storyTitle">
-        <h1><a href="filter">Filters</a></h1>
-         </article>
+        <article class="storyTitle">
+            <h1><a href="filter">Filters</a></h1>
+        </article>
         <article>
             <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui
                 possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos
                 nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus
                 perspiciatis qui deserunt porro.</p>
-             <div class="filter">
-    <h2>Filter</h2>
-    <table>
-        <tbody><tr>
-            <th>Features</th>
-            <th>People</th>
-        </tr>
-        <tr>
-            <td>
-                <legend>Border</legend>
-            </td>
-            <td>
-                <fieldset>
-                    <div class="checkbox column">
-                        <input id="border-i" type="checkbox" name="border" value="indigenous">
-                        <label for="border-i">Indigenous</label>
-                        <input id="border-e" type="checkbox" name="border" value="european">
-                        <label for="border-e">European</label>
-                    </div>
-                </fieldset>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <legend>Settlement</legend>
-            </td>
-            <td>
-                <fieldset>
-                    <div class="checkbox column">
-                        <input id="settlement-i" type="checkbox" name="border2" value="indigenous">
-                        <label for="settlement-i">Indigenous</label>
-                        <input id="settlement-e" type="checkbox" name="border2" value="european">
-                        <label for="settlement-e">European</label>
-                    </div>
-                </fieldset>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <legend>Land Route</legend>
-            </td>
-            <td>
-                <fieldset>
-                    <div class="checkbox column">
-                        <input id="land-i" type="checkbox" name="border2" value="indigenous">
-                        <label for="land-i">Indigenous</label>
-                        <input id="land-e" type="checkbox" name="border2" value="european">
-                        <label for="land-e">European</label>
-                    </div>
-                </fieldset>
-            </td>
-        </tr>
+            <div class="filter">
+                <h2>Filter</h2>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Features</th>
+                        <th>People</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <legend>Border</legend>
+                        </td>
+                        <td>
+                            <fieldset>
+                                <div class="checkbox column">
+                                    <input id="border-i" type="checkbox" name="border" value="indigenous">
+                                    <label for="border-i">Indigenous</label>
+                                    <input id="border-e" type="checkbox" name="border" value="european">
+                                    <label for="border-e">European</label>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <legend>Settlement</legend>
+                        </td>
+                        <td>
+                            <fieldset>
+                                <div class="checkbox column">
+                                    <input id="settlement-i" type="checkbox" name="border2" value="indigenous">
+                                    <label for="settlement-i">Indigenous</label>
+                                    <input id="settlement-e" type="checkbox" name="border2" value="european">
+                                    <label for="settlement-e">European</label>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <legend>Land Route</legend>
+                        </td>
+                        <td>
+                            <fieldset>
+                                <div class="checkbox column">
+                                    <input id="land-i" type="checkbox" name="border2" value="indigenous">
+                                    <label for="land-i">Indigenous</label>
+                                    <input id="land-e" type="checkbox" name="border2" value="european">
+                                    <label for="land-e">European</label>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
 
-        <tr>
-            <td>
-                <legend>Sea Route</legend>
-            </td>
-            <td>
-                <fieldset>
-                    <div class="checkbox column">
-                        <input id="sea-i" type="checkbox" name="border2" value="indigenous">
-                        <label for="sea-i">Indigenous</label>
-                        <input id="sea-e" type="checkbox" name="border2" value="european">
-                        <label for="sea-e">European</label>
-                    </div>
-                </fieldset>
-            </td>
-        </tr>
+                    <tr>
+                        <td>
+                            <legend>Sea Route</legend>
+                        </td>
+                        <td>
+                            <fieldset>
+                                <div class="checkbox column">
+                                    <input id="sea-i" type="checkbox" name="border2" value="indigenous">
+                                    <label for="sea-i">Indigenous</label>
+                                    <input id="sea-e" type="checkbox" name="border2" value="european">
+                                    <label for="sea-e">European</label>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
 
-        <tr>
-            <td>
-                <legend>River Route</legend>
-            </td>
-            <td>
-                <fieldset>
-                    <div class="checkbox column">
-                        <input id="river-i" type="checkbox" name="border2" value="indigenous">
-                        <label for="river-i">Indigenous</label>
-                        <input id="river-e" type="checkbox" name="border2" value="european">
-                        <label for="river-e">European</label>
-                    </div>
-                </fieldset>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <legend>All features</legend>
-            </td>
-            <td>
-                <fieldset>
-                    <div class="checkbox column">
-                        <input id="all-i" type="checkbox" name="border2" value="indigenous">
-                        <label for="all-i">Indigenous</label>
-                        <input id="all-e" type="checkbox" name="border2" value="european">
-                        <label for="all-e">European</label>
-                    </div>
-                </fieldset>
-            </td>
-        </tr>
-    </tbody></table>
-</div>
+                    <tr>
+                        <td>
+                            <legend>River Route</legend>
+                        </td>
+                        <td>
+                            <fieldset>
+                                <div class="checkbox column">
+                                    <input id="river-i" type="checkbox" name="border2" value="indigenous">
+                                    <label for="river-i">Indigenous</label>
+                                    <input id="river-e" type="checkbox" name="border2" value="european">
+                                    <label for="river-e">European</label>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <legend>All features</legend>
+                        </td>
+                        <td>
+                            <fieldset>
+                                <div class="checkbox column">
+                                    <input id="all-i" type="checkbox" name="border2" value="indigenous">
+                                    <label for="all-i">Indigenous</label>
+                                    <input id="all-e" type="checkbox" name="border2" value="european">
+                                    <label for="all-e">European</label>
+                                </div>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </article>
     </section>
 </div>
@@ -185,63 +187,145 @@ layout: base.liquid
 <script type="text/javascript" src="{{ '/assets/js/leaflet/plugins/leaflet.textpath.js' | url }}"></script>
 
 
-
 <script>
-// Styles in here so can be moved out easily into separate file
+    // Styles in here so can be moved out easily into separate file
 
-// line Styles
+    // line Styles
 
-lineBorderStyle = {stroke: true, dashArray: "3 6", lineCap: "square", color: '#000000', weight: 2.5, fill: false};
-lineLandRouteStyle = {stroke: true, dashArray: "7 6", lineCap: "square", lineJoin: "arcs", color: '#808080', weight: 3, fill: false};
-lineSeaRouteStyle = {stroke: true, dashArray: "7 6", lineCap: "square", lineJoin: "arcs", color: '#ffbd59', weight: 3, fill: false};
-lineRiverRouteStyle = {stroke: true, dashArray: "7 9", color: '#00c2cb', lineCap: "square", lineJoin: "round", weight: 2, fill: false};
-lineMiscStyle = {stroke: true, color:'#ffff00', weight: 4, fill: false};
-lineToponymStyle = {stroke: true, color: '#ff0000', weight: 5, fill: false};
+    lineBorderStyle = {stroke: true, dashArray: "3 6", lineCap: "square", color: '#000000', weight: 2.5, fill: false};
+    lineLandRouteStyle = {
+        stroke: true,
+        dashArray: "7 6",
+        lineCap: "square",
+        lineJoin: "arcs",
+        color: '#808080',
+        weight: 3,
+        fill: false
+    };
+    lineSeaRouteStyle = {
+        stroke: true,
+        dashArray: "7 6",
+        lineCap: "square",
+        lineJoin: "arcs",
+        color: '#ffbd59',
+        weight: 3,
+        fill: false
+    };
+    lineRiverRouteStyle = {
+        stroke: true,
+        dashArray: "7 9",
+        color: '#00c2cb',
+        lineCap: "square",
+        lineJoin: "round",
+        weight: 2,
+        fill: false
+    };
+    lineMiscStyle = {stroke: true, color: '#ffff00', weight: 4, fill: false};
+    lineToponymStyle = {stroke: true, color: '#ff0000', weight: 5, fill: false};
 
-// Poly Styles
-polyBorderStyle = {stroke: true, dashArray: '4 6', color: "#000000", fillColor: '#000000', lineCap:"square", weight: 2, fill: true, opacity: 0.5, fillOpacity: 0.25};
-polySettlementStyle = {stroke: true,  dashArray: "2 6", lineCap: "square", lineJoin: "arcs", color:"#ff0000", fillColor: '#ff0000', weight: 2, fill: true, opacity:0.75, fillOpacity: 0.5};
-polySeaRouteStyle = {stroke: true, dashArray: "7 6", lineCap: "square", lineJoin: "arcs",color: "#ffbd59", fillColor: '#ffbd59', weight: 2, fill: true, opacity: 0.75, fillOpacity: 0.5};
-polyDescriptiveStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5,fillOpacity: 0.5};
-polyRiverRouteStyle = {stroke: true, dashArray: "7 6", lineCap: "square", lineJoin: "arcs", color: "#00c2cb", fillColor: '#00c2cb', weight: 2, fill: true, opacity: 0.75,fillOpacity: 0.5};
-polyMiscStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5,fillOpacity: 0.5};
-polyAnnoStyle = {stroke: true,  dashArray: "10 10", lineCap: "square", lineJoin: "arcs", color:"#808080", fillColor: '#808080', weight: 1, fill: true, opacity: 1,fillOpacity: 0.5 };
-polyToponymStyle = {stroke: true, dashArray: "7 6", lineCap: "square", lineJoin: "arcs",color: "#ff0000", fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5,fillOpacity: 0.5};
-// Harry Styles
+    // Poly Styles
+    polyBorderStyle = {
+        stroke: true,
+        dashArray: '4 6',
+        color: "#000000",
+        fillColor: '#000000',
+        lineCap: "square",
+        weight: 2,
+        fill: true,
+        opacity: 0.5,
+        fillOpacity: 0.25
+    };
+    polySettlementStyle = {
+        stroke: true,
+        dashArray: "2 6",
+        lineCap: "square",
+        lineJoin: "arcs",
+        color: "#ff0000",
+        fillColor: '#ff0000',
+        weight: 2,
+        fill: true,
+        opacity: 0.75,
+        fillOpacity: 0.5
+    };
+    polySeaRouteStyle = {
+        stroke: true,
+        dashArray: "7 6",
+        lineCap: "square",
+        lineJoin: "arcs",
+        color: "#ffbd59",
+        fillColor: '#ffbd59',
+        weight: 2,
+        fill: true,
+        opacity: 0.75,
+        fillOpacity: 0.5
+    };
+    polyDescriptiveStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5, fillOpacity: 0.5};
+    polyRiverRouteStyle = {
+        stroke: true,
+        dashArray: "7 6",
+        lineCap: "square",
+        lineJoin: "arcs",
+        color: "#00c2cb",
+        fillColor: '#00c2cb',
+        weight: 2,
+        fill: true,
+        opacity: 0.75,
+        fillOpacity: 0.5
+    };
+    polyMiscStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5, fillOpacity: 0.5};
+    polyAnnoStyle = {
+        stroke: true,
+        dashArray: "10 10",
+        lineCap: "square",
+        lineJoin: "arcs",
+        color: "#808080",
+        fillColor: '#808080',
+        weight: 1,
+        fill: true,
+        opacity: 1,
+        fillOpacity: 0.5
+    };
+    polyToponymStyle = {
+        stroke: true,
+        dashArray: "7 6",
+        lineCap: "square",
+        lineJoin: "arcs",
+        color: "#ff0000",
+        fillColor: '#ff0000',
+        weight: 1,
+        fill: true,
+        opacity: 0.5,
+        fillOpacity: 0.5
+    };
+    // Harry Styles
 
-// 
+    //
 
-// Map lookup
-mapLookup = {
-	"1":"White, 1590",
-	"2":"Bleau, 1650",
-	"3":"Seller, 1676",
-	"4":"n/a",
-	"5":"Foster, 1677",
-	"6":"Moll, 1720",
-	"7":"Burghers, 1738",
-	"8":"Evans, 1752",
-	"9":"n/a",
-	"10":"Herbert, 1755",
-	"11":"Moll, 1755",
-	"12":"Mitchell, 1755",
-	"13":"Bowen, 1772",
-	"14":"Jeffreys, 1774",
-	"15":"Hutchins, 1778",
-	"16":"Cary,  1783",
-	"17":"Buell, 1784",
-	"18":"Russell, 1794",
-	"19":"Bradley, 1796"
-	}
+    // Map lookup
+    mapLookup = {
+        "1": "White, 1590",
+        "2": "Bleau, 1650",
+        "3": "Seller, 1676",
+        "4": "n/a",
+        "5": "Foster, 1677",
+        "6": "Moll, 1720",
+        "7": "Burghers, 1738",
+        "8": "Evans, 1752",
+        "9": "n/a",
+        "10": "Herbert, 1755",
+        "11": "Moll, 1755",
+        "12": "Mitchell, 1755",
+        "13": "Bowen, 1772",
+        "14": "Jeffreys, 1774",
+        "15": "Hutchins, 1778",
+        "16": "Cary,  1783",
+        "17": "Buell, 1784",
+        "18": "Russell, 1794",
+        "19": "Bradley, 1796"
+    }
 
 
 </script>
-
-
-
-
-
-
 
 
 <script>
@@ -276,9 +360,9 @@ mapLookup = {
             this.defaultLineStyle = {
                 stroke: true,
                 color: '#ff0000',
-				fillColor:'#ff0000',
+                fillColor: '#ff0000',
                 weight: 2,
-				opacity: 0.6,
+                opacity: 0.6,
                 fill: true
             };
 
@@ -292,7 +376,6 @@ mapLookup = {
 
             this.allFeatures = [];
             this.allFeaturesLayer = null;
-           
 
 
         }
@@ -330,7 +413,7 @@ mapLookup = {
                     // add to all features
                     this.allFeatures.push(feature);
                     //if (feature.properties.story_link === story_id) {
-                        storyFeatures.push(feature);
+                    storyFeatures.push(feature);
                     //}
                     if (feature.properties.frame_link) {
                     }
@@ -361,72 +444,121 @@ mapLookup = {
             }
         }
 
-        pointToLayer (feature, latlng) {
-                            //console.log(latlng);
-							switch (feature.properties.sub_type) {
-								// Indigenous : Triangle - Red - point down
-								case 1:
-                                    return new L.RegularPolygonMarker(latlng, {numberOfSides: 3,
-                                    rotation: 90,
-                                    radius: 5,
-                                    //L.Path style options
-                                    fill: true,
-                                    fillColor: '#ff0000',
-                                    color: 'black',
-                                    weight: 0.5,
-                                    fillOpacity: 1,
-                                    stroke: true}).bindTooltip(feature.properties.map_text,{permanent:true,className:'map-label'}).openTooltip()
-                                    break;
-								// Settlement : Triangle - dark green - point up
-								case 4:
-                                    return new L.RegularPolygonMarker(latlng, {numberOfSides: 3,
-                                    rotation: -90,
-                                    radius: 5,
-                                    //L.Path style options
-                                    fill: true,
-                                    fillColor: '#124d20',
-                                    color: '#124d20',
-                                    weight: 0.5,
-                                    fillOpacity: 1,
-                                    stroke: true})
-                                    break;                                    
-								// Land route - 
-								case 5:
-									return L.circleMarker(latlng, {radius: 4, fillColor: "#0000ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
-									break;
-								// Sea route
-								case 6:
-									return L.circleMarker(latlng, {radius: 4, color:"", fillColor: "#ffbd59", color: "#ffbd59", weight: 0.5, opacity: 1, fillOpacity: 0.9})
-									break;
-								// Descriptive - white squares
-								case 7:
-                                    return new L.RegularPolygonMarker(latlng, {numberOfSides: 4,
-                                    rotation: -45,
-                                    radius: 5,
-                                    //L.Path style options
-                                    fill: true,
-                                    fillColor: '#ffffff',
-                                    color: '#000000',
-                                    weight: 0.5,
-                                    fillOpacity: 1,
-                                    stroke: true})
-                                    break;
-								//River route
-								case 8:
-									return L.circleMarker(latlng, {radius: 4, fillColor: "#ff00ff", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
-									break;
-								// Miscellaneous
-								case 9:
-									return L.circleMarker(latlng, {radius: 4, fillColor: "#000000", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
-									break;
-								// Toponym
-								case 10:
-									return L.circleMarker(latlng, {radius: 4, fillColor: "#ff0000", color: "#ff0000", weight: 1, opacity: 1, fillOpacity: 0.6})
-									break;
-								default:
-									return L.circleMarker(latlng, {radius: 4, fillColor: "#787878", color: "#000", weight: 0.5, opacity: 1, fillOpacity: 1})
-							}
-						}
+        pointToLayer(feature, latlng) {
+            //console.log(latlng);
+            switch (feature.properties.sub_type) {
+                // Indigenous : Triangle - Red - point down
+                case 1:
+                    return new L.RegularPolygonMarker(latlng, {
+                        numberOfSides: 3,
+                        rotation: 90,
+                        radius: 5,
+                        //L.Path style options
+                        fill: true,
+                        fillColor: '#ff0000',
+                        color: 'black',
+                        weight: 0.5,
+                        fillOpacity: 1,
+                        stroke: true
+                    }).bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
+                    break;
+                // Settlement : Triangle - dark green - point up
+                case 4:
+                    return new L.RegularPolygonMarker(latlng, {
+                        numberOfSides: 3,
+                        rotation: -90,
+                        radius: 5,
+                        //L.Path style options
+                        fill: true,
+                        fillColor: '#124d20',
+                        color: '#124d20',
+                        weight: 0.5,
+                        fillOpacity: 1,
+                        stroke: true
+                    })
+                    break;
+                // Land route -
+                case 5:
+                    return L.circleMarker(latlng, {
+                        radius: 4,
+                        fillColor: "#0000ff",
+                        color: "#000",
+                        weight: 0.5,
+                        opacity: 1,
+                        fillOpacity: 1
+                    })
+                    break;
+                // Sea route
+                case 6:
+                    return L.circleMarker(latlng, {
+                        radius: 4,
+                        color: "",
+                        fillColor: "#ffbd59",
+                        color: "#ffbd59",
+                        weight: 0.5,
+                        opacity: 1,
+                        fillOpacity: 0.9
+                    })
+                    break;
+                // Descriptive - white squares
+                case 7:
+                    return new L.RegularPolygonMarker(latlng, {
+                        numberOfSides: 4,
+                        rotation: -45,
+                        radius: 5,
+                        //L.Path style options
+                        fill: true,
+                        fillColor: '#ffffff',
+                        color: '#000000',
+                        weight: 0.5,
+                        fillOpacity: 1,
+                        stroke: true
+                    })
+                    break;
+                //River route
+                case 8:
+                    return L.circleMarker(latlng, {
+                        radius: 4,
+                        fillColor: "#ff00ff",
+                        color: "#000",
+                        weight: 0.5,
+                        opacity: 1,
+                        fillOpacity: 1
+                    })
+                    break;
+                // Miscellaneous
+                case 9:
+                    return L.circleMarker(latlng, {
+                        radius: 4,
+                        fillColor: "#000000",
+                        color: "#000",
+                        weight: 0.5,
+                        opacity: 1,
+                        fillOpacity: 1
+                    })
+                    break;
+                // Toponym
+                case 10:
+                    return L.circleMarker(latlng, {
+                        radius: 4,
+                        fillColor: "#ff0000",
+                        color: "#ff0000",
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.6
+                    })
+                    break;
+                default:
+                    return L.circleMarker(latlng, {
+                        radius: 4,
+                        fillColor: "#787878",
+                        color: "#000",
+                        weight: 0.5,
+                        opacity: 1,
+                        fillOpacity: 1
+                    })
+            }
+        }
 
         initStoryFeatureLayers() {
 
@@ -434,11 +566,10 @@ mapLookup = {
                 let slide = this.slides[s];
                 slide.layer = L.geoJSON(
                     slide.features, {
-					// Stopping style override here
+                        // Stopping style override here
                         //style: this.defaultLineStyle,				
-						pointToLayer: this.pointToLayer,
-						
-	                    onEachFeature: this.onEachFeature.bind(this)
+                        pointToLayer: this.pointToLayer,
+                        onEachFeature: this.onEachFeature.bind(this)
                     });
 
             }
@@ -472,6 +603,22 @@ mapLookup = {
 
         }
 
+        // Fade-in function for Leaflet
+        fadeLayerLeaflet(lyr, startOpacity, finalOpacity, opacityStep, delay) {
+            let opacity = startOpacity;
+            let timer = setTimeout(function changeOpacity() {
+                if (opacity < finalOpacity) {
+                    lyr.setStyle({
+                        opacity: opacity,
+                        fillOpacity: opacity
+                    });
+                    opacity = opacity + opacityStep
+                }
+
+                timer = setTimeout(changeOpacity, delay);
+            }, delay)
+        }
+
         /**
          * Fly the map to the slide's storyframe
          * clear existing layers
@@ -482,17 +629,32 @@ mapLookup = {
         triggerSlideMapEvents(slideid) {
             let slide = this.getSlideById(slideid);
             if (slide) {
-                /*if (this.lastSlideDisplayed){
-                    console.log(this.lastSlideDisplayed.points == slide.points);
-                }*/
+                // Clear layers
                 if (slide.layer) {
                     this.storyFeatureLayerGroup.clearLayers();
-                    this.storyFeatureLayerGroup.addLayer(slide.layer);
                 }
+                // Move to bounds
                 let bounds = this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
-                if (bounds != null) {
-                    this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
+
+                // Add new layer once move is finished
+                if (slide.layer) {
+                    let slideUpdate = function () {
+                        slide.layer.setStyle({
+                        opacity: 0,
+                        fillOpacity: 0
+                    });
+                        this.storyFeatureLayerGroup.addLayer(slide.layer);
+                        this.fadeLayerLeaflet(slide.layer, 0, 1, 0.2, 200);
+                        this.map.off('moveend', slideUpdate);
+                    }.bind(this);
+
+                    this.map.on('moveend', slideUpdate);
                 }
+
+
+                /*if (bounds != null) {
+                    this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
+                }*/
                 this.lastSlideDisplayed = slide;
 
             }
@@ -512,17 +674,14 @@ mapLookup = {
             L.control.zoom({
                 position: 'bottomleft'
             }).addTo(this.map);
-            
 
-            
-         
-            
+
             // Establish baselayers group
-            
+
             this.overlay = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
-                attribution: "ESRI World Terrain",           
+                attribution: "ESRI World Terrain",
                 opacity: 1
             }).addTo(this.map);
             /*
@@ -536,28 +695,28 @@ mapLookup = {
             var worldTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
-                attribution: "ESRI World Terrain",           
+                attribution: "ESRI World Terrain",
                 opacity: 1
-            });          
+            });
 
             var worldStreet = L.tileLayer(
-            'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-                minZoom: this.mapMinZoom,
-                maxZoom: this.mapMaxZoom,
-                attribution: "ESRI World Street Map",                 
-                opacity: 1
-            });    
-            
+                'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+                    minZoom: this.mapMinZoom,
+                    maxZoom: this.mapMaxZoom,
+                    attribution: "ESRI World Street Map",
+                    opacity: 1
+                });
+
             var baseLayers = {
                 //"Ancient World Mapping": awmc,
                 "Clean Terrain": worldTerrain,
                 "Modern Open Street Map": worldStreet
             };
-            
+
             // Create Layer Switcher
-            
-            L.control.layers(baseLayers,{},{position:"bottomleft",collapsed:false}).addTo(this.map);
-            
+
+            L.control.layers(baseLayers, {}, {position: "bottomleft", collapsed: false}).addTo(this.map);
+
             // Initial view
             // This could be changed based on get string etc.
             this.map.setView([
@@ -582,7 +741,7 @@ mapLookup = {
             }.bind(this), {threshold: [1]});
 
             // Add for temporary debugging, will be used for filter
-            this.storyFeatureLayerGroup.addLayer(this.allFeaturesLayer);
+            //this.storyFeatureLayerGroup.addLayer(this.allFeaturesLayer);
             for (let s = 0; s < this.slideElements.length; s++) {
                 observer.observe(this.slideElements[s]);
             }
@@ -597,76 +756,75 @@ mapLookup = {
             // does this feature have a property named popupContent?
             if (feature.properties && (feature.properties.map_text || feature.properties.norm_text) || feature.properties.Name) {
                 if (feature.properties.map_text) {
-                    layer.bindPopup(feature.properties.map_text )
-					if (feature.properties.date_yr) {
-						layer.bindPopup(feature.properties.map_text + "</br><strong>" + mapLookup[feature.properties.map_source] + "</stong>" )
-					}
-                } 
-				else if (feature.properties.norm_text) {
+                    layer.bindPopup(feature.properties.map_text)
+                    if (feature.properties.date_yr) {
+                        layer.bindPopup(feature.properties.map_text + "</br><strong>" + mapLookup[feature.properties.map_source] + "</stong>")
+                    }
+                } else if (feature.properties.norm_text) {
                     layer.bindPopup(feature.properties.norm_text);
-					if (feature.properties.date_yr) {
-						layer.bindPopup(feature.properties.norm_text + "</br><strong>" + mapLookup[feature.properties.map_source] + "</stong>" )
-					}					
+                    if (feature.properties.date_yr) {
+                        layer.bindPopup(feature.properties.norm_text + "</br><strong>" + mapLookup[feature.properties.map_source] + "</stong>")
+                    }
+                } else {
+                    layer.bindPopup(feature.properties.Name + "</br><strong>Native Land Data API</strong>");
                 }
-				else {
-					layer.bindPopup(feature.properties.Name + "</br><strong>Native Land Data API</strong>" );
-				}
-				
+
             }
-			switch (feature.geometry.type){
-				case "Point":
-				    // Do nothing - point styles are defined in pointToFeature					
-					break;
-				// If polys
-				case "MultiPolygon":
-				    switch (feature.properties.sub_type) {
-						case 3: 
-							layer.setStyle(polyBorderStyle);
-						break;
-						case 4: 
-							layer.setStyle(polySettlementStyle);
-						break;	
-						case 6: 
-							layer.setStyle(polySeaRouteStyle);
-						break;
-						case 7: 
-							layer.setStyle(polyDescriptiveStyle);
-						break;	
-						case 8: 
-							layer.setStyle(polyRiverRouteStyle);
-						break;
-						case 9: 
-							layer.setStyle(polyMiscStyle);
-						break;	
-						case 10: 
-							layer.setStyle(polyToponymStyle);
-						break;
-						case 11: 
-							layer.setStyle(polyAnnoStyle);
-						break;							
-					}
-				break;
-				// If lines
-				case "MultiLineString":
-				    switch (feature.properties.sub_type) {
-						case 3: 
-							layer.setStyle(lineBorderStyle);
+            switch (feature.geometry.type) {
+                case "Point":
+                    // Do nothing - point styles are defined in pointToFeature
+                    break;
+                // If polys
+                case "MultiPolygon":
+                    switch (feature.properties.sub_type) {
+                        case 3:
+                            layer.setStyle(polyBorderStyle);
+                            break;
+                        case 4:
+                            layer.setStyle(polySettlementStyle);
+                            break;
+                        case 6:
+                            layer.setStyle(polySeaRouteStyle);
+                            break;
+                        case 7:
+                            layer.setStyle(polyDescriptiveStyle);
+                            break;
+                        case 8:
+                            layer.setStyle(polyRiverRouteStyle);
+                            break;
+                        case 9:
+                            layer.setStyle(polyMiscStyle);
+                            break;
+                        case 10:
+                            layer.setStyle(polyToponymStyle);
+                            break;
+                        case 11:
+                            layer.setStyle(polyAnnoStyle);
+                            break;
+                    }
+                    break;
+                // If lines
+                case "MultiLineString":
+                    switch (feature.properties.sub_type) {
+                        case 3:
+                            layer.setStyle(lineBorderStyle);
                             layer.setText(feature.properties.norm_text);
-						break;
-						case 5: 
-							layer.setStyle(lineLandRouteStyle);
+                            break;
+                        case 5:
+                            layer.setStyle(lineLandRouteStyle);
                             layer.setText(feature.properties.norm_text);
-						break;	
-						case 6: 
-							layer.setStyle(lineSeaRouteStyle);
+                            break;
+                        case 6:
+                            layer.setStyle(lineSeaRouteStyle);
                             layer.setText(feature.properties.norm_text);
-						break;
-						case 8: 
-							layer.setStyle(lineRiverRouteStyle);
+                            break;
+                        case 8:
+                            layer.setStyle(lineRiverRouteStyle);
                             layer.setText(feature.properties.norm_text,
-                                {orientation: testDirection(feature) ,offset:5,center:true, 
-                                    attributes:{
-                                        'fill':'black',
+                                {
+                                    orientation: testDirection(feature), offset: 5, center: true,
+                                    attributes: {
+                                        'fill': 'black',
                                         'font-family': 'EB Garamond, serif',
                                         'font-weight': 'bold',
                                         'font-size': 18,
@@ -676,21 +834,21 @@ mapLookup = {
                                     }
                                 }
                             );
-						break;	
-						case 9: 
-							layer.setStyle(lineMiscStyle);
+                            break;
+                        case 9:
+                            layer.setStyle(lineMiscStyle);
                             layer.setText(feature.properties.norm_text);
-						break;
-						case 10: 
-							layer.setStyle(lineToponymStyle);
+                            break;
+                        case 10:
+                            layer.setStyle(lineToponymStyle);
                             layer.setText(feature.properties.norm_text);
-						break;	
-					}
-				break;
-				default:
-					layer.setStyle(this.defaultLineStyle);
-				
-			}
+                            break;
+                    }
+                    break;
+                default:
+                    layer.setStyle(this.defaultLineStyle);
+
+            }
         }
 
 
@@ -864,11 +1022,11 @@ mapLookup = {
 
 
     storyMap.initMap() //Custom Canvas Renderer);
-	
+
     // Rough tests whether line is east-west or west-east for purposes of text orintation
-	function testDirection(geom){
+    function testDirection(geom) {
         var orientation;
-        if (geom.geometry.coordinates[0][0][0] > geom.geometry.coordinates[0][(geom.geometry.coordinates[0].length-1)][0]) {
+        if (geom.geometry.coordinates[0][0][0] > geom.geometry.coordinates[0][(geom.geometry.coordinates[0].length - 1)][0]) {
             orientation = 180;
             return orientation;
         } else {
@@ -876,6 +1034,6 @@ mapLookup = {
             return orientation;
         }
     }
-	
+
 
 </script>
