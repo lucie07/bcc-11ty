@@ -166,6 +166,9 @@ layout: base.liquid
 
 <script type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
 <script type="text/javascript" src="{{ '/assets/node_modules/leaflet-dvf/dist/leaflet-dvf.js' | url }}"></script>
+<script type="text/javascript" src="{{ '/assets/js/leaflet/plugins/leaflet.textpath.js' | url }}"></script>
+
+
 
 <script>
 // Styles in here so can be moved out easily into separate file
@@ -216,8 +219,13 @@ mapLookup = {
 	}
 
 
-
 </script>
+
+
+
+
+
+
 
 
 <script>
@@ -229,6 +237,7 @@ mapLookup = {
             // Data parameters
             this.storyUris = storyUris
             this.map = null;
+
 
             this.layerGroups = {};
 
@@ -270,6 +279,7 @@ mapLookup = {
 
             this.allFeatures = [];
             this.allFeaturesLayer = null;
+           
 
 
         }
@@ -352,7 +362,7 @@ mapLookup = {
                                     color: 'black',
                                     weight: 0.5,
                                     fillOpacity: 1,
-                                    stroke: true})
+                                    stroke: true}).bindTooltip(feature.properties.map_text,{permanent:true,className:'map-label'}).openTooltip()
                                     break;
 								// Settlement : Triangle - dark green - point up
 								case 4:
@@ -490,22 +500,26 @@ mapLookup = {
                 position: 'bottomright'
             }).addTo(this.map);
             
+
+            
+         
             
             // Establish baselayers group
             
-            this.overlay = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
+            this.overlay = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
+                attribution: "ESRI World Terrain",           
                 opacity: 1
             }).addTo(this.map);
-            
+            /*
             var awmc = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
                 opacity: 1,
                 attribution: "Consortium of Ancient World Mappers",
             }).addTo(this.map);
-            
+            */
             var worldTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
@@ -522,9 +536,9 @@ mapLookup = {
             });    
             
             var baseLayers = {
-                "Ancient World Mapping": awmc,
-                "Terrain": worldTerrain,
-                "Street Map": worldStreet
+                //"Ancient World Mapping": awmc,
+                "Clean Terrain": worldTerrain,
+                "Modern Open Street Map": worldStreet
             };
             
             // Create Layer Switcher
@@ -623,21 +637,39 @@ mapLookup = {
 				    switch (feature.properties.sub_type) {
 						case 3: 
 							layer.setStyle(lineBorderStyle);
+                            layer.setText(feature.properties.norm_text);
 						break;
 						case 5: 
 							layer.setStyle(lineLandRouteStyle);
+                            layer.setText(feature.properties.norm_text);
 						break;	
 						case 6: 
 							layer.setStyle(lineSeaRouteStyle);
+                            layer.setText(feature.properties.norm_text);
 						break;
 						case 8: 
 							layer.setStyle(lineRiverRouteStyle);
+                            layer.setText(feature.properties.norm_text,
+                                {orientation: testDirection(feature) ,offset:5,center:true, 
+                                    attributes:{
+                                        'fill':'black',
+                                        'font-family': 'EB Garamond, serif',
+                                        'font-weight': 'bold',
+                                        'font-size': 18,
+                                        //'textLength': 300,
+                                        //'lengthAdjust': 'spacing',
+                                        'dx': '15%',
+                                    }
+                                }
+                            );
 						break;	
 						case 9: 
 							layer.setStyle(lineMiscStyle);
+                            layer.setText(feature.properties.norm_text);
 						break;
 						case 10: 
 							layer.setStyle(lineToponymStyle);
+                            layer.setText(feature.properties.norm_text);
 						break;	
 					}
 				break;
@@ -800,13 +832,6 @@ mapLookup = {
 
     }
 
-    /*
-
-
-
-        ,
-
-     */
     let geojson_uri = [];
     let shapeLayers = null;
     let shapesByFrameLink = {};
@@ -819,14 +844,24 @@ mapLookup = {
             lines: "{{ '/assets/json/BCC_lines.json' | url }}",
             points: "{{ '/assets/json/BCC_points.json' | url }}",
             polys: "{{ '/assets/json/BCC_polys.json' | url }}",
-            indigenous: "{{ '/assets/json/indigenous_territories.json' | url }}"
+            indigenous: "{{ '/assets/json/indigenous_territories.json' | url }}",
         }
     );
 
 
-    storyMap.initMap();
+    storyMap.initMap() //Custom Canvas Renderer);
 	
-	
+    // Rough tests whether line is east-west or west-east for purposes of text orintation
+	function testDirection(geom){
+        var orientation;
+        if (geom.geometry.coordinates[0][0][0] > geom.geometry.coordinates[0][(geom.geometry.coordinates[0].length-1)][0]) {
+            orientation = 180;
+            return orientation;
+        } else {
+            orientation = 0;
+            return orientation;
+        }
+    }
 	
 
 </script>
