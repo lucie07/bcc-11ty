@@ -280,6 +280,7 @@ nav {
 }
 .mapOverlay section {
   padding: 5em 1em;
+  float: right;
 }
 .mapOverlay section h1 a {
   margin-top: 10em;
@@ -291,6 +292,11 @@ nav {
   padding: 2em;
   margin-bottom: 100vh;
   text-align: justify;
+  float: right;
+  margin-left: 40%;
+}
+.mapOverlay section article p {
+  float: left;
 }
 .mapOverlay section article figure {
   width: 95%;
@@ -311,4 +317,9 @@ nav {
 }
 .mapOverlay section article figure figcaption a {
   color: white;
+}
+.mapOverlay section article.storyTitle {
+  padding: 2em;
+  text-align: center;
+  margin-bottom: 5vh;
 }
