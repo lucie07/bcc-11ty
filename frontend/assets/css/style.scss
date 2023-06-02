@@ -186,8 +186,8 @@ nav {
 #basemap {
   z-index: 0 !important;
   position: fixed;
-  top: 6em;
-  height: calc(100% - 6em);
+  top: 4em;
+  height: calc(100% - 4em);
   width: 100%;
   .leaflet-map-pane {
     filter: grayscale(22%) sepia(10%) saturate(92%) contrast(92%);
@@ -211,66 +211,68 @@ nav {
   nav {
     // We still want clicks on the nav though
     pointer-events: auto;
-    background: darkgray;
-    height: 2.4em;
-    top: 3em;
-    background: $darkgreen;
-    height: 3.2em;
+    background: lighten(lightgray,10%);
+    height: 3.5em;
     top: 2.8em;
     border-bottom: 0;
     position: fixed;
-    width: 100%;
+    width: 60%;
+    margin: 0 20%;
     font-family: "Pontano Sans", sans-serif;
     > ol {
       //1st level
       width: 100%;
-      counter-reset: li;
+      //counter-reset: li;
       display: flex;
       margin-left: -40px;
       height: 2em;
       > li {
         width: 33.33%;
         cursor: pointer;
+        text-align:center;
         list-style-type: none;
+        border-top: 0.1em solid lightgray;
+        margin:0 0.5em;
+        padding-bottom:4em;
+        @include transition(all 300ms ease-in);
+        &:hover{
+          border-top: 0.1em solid $midgreen;
+          @include transition(all 300ms ease-in);
+        }
+        &:nth-child(1), &:nth-child(6){
+          a{
+            font-size:0.9em;
+            line-height:1.5;
+          }
+        }
         > a {
           text-decoration: none;
-          color: darkgray;
+          color: gray;
           display: block;
-          padding: 0.5em 0 0 2em;
+          padding: 1em 0 1em 0;
           line-height: 1;
           margin-top: -0.9em;
-          border-right: 0.1em solid $midgreen;
-          background: rgba(255, 255, 255, 0.2);
           opacity: 0.8;
           text-transform: uppercase;
           font-size: 1.2em;
-          &:before {
-            counter-increment: li;
-            content: counter(li);
-            font-size: 2.2em;
-            padding-right: 0.3em;
-            opacity: 0.4;
-            vertical-align: middle;
-            top: -0.1em;
-            left: -0.2em;
-            position: relative;
-            font-weight: 800;
-            font-family: "Manrope", sans-serif;
-          } //before
+          @include transition(all 300ms ease-in);
+          span{
+            display:block;
+            font-size:0.6em;
+            text-transform:none;
+          }//span
           &:hover {
-            background: $darkgreen;
-            color: white;
+            color: $midgreen;
+            opacity:1;
           }
           &.active {
-            background: $darkgreen;
-            color: white;
-            &:before {
-              color: $lightgreen;
-              opacity: 0.7;
-            } //active
+            border-top: 0.9em solid $midgreen;
+            color: $midgreen;
+            font-weight:bold;
+            @include transition(all 300ms ease-in);
           } //active
         } // a
-        > ol {
+       /* > ol {
           //2nd level
           display: flex;
           width: 300%;
@@ -304,7 +306,7 @@ nav {
               } //active
             } //a
           } //li
-        } //ol
+        } //ol*/
       } //li
 
       input[type="checkbox"]:checked + label.check {
