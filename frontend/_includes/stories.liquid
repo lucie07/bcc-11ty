@@ -62,13 +62,10 @@ layout: base.liquid
     </section>
     <section id="filters">
         <article class="storyTitle">
-            <h1><a href="filter">Filters</a></h1>
+            <h1><a href="filter">Explore</a></h1>
         </article>
         <article>
-            <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui
-                possimus neque et tenetur velit eos quisquam expedita. Et maxime voluptatum eum laudantium officiis eos
-                nihil quae et sint inventore qui voluptatum consequatur? Sed consequuntur quia non accusamus
-                perspiciatis qui deserunt porro.</p>
+            <p>Explore the map using the filters below.</p>
             <div class="filter">
                 <h2>Filter</h2>
                 <table>
@@ -171,6 +168,73 @@ layout: base.liquid
                     </tr>
                     </tbody>
                 </table>
+                <h2>List of Features</h2>
+                <ul class="drawer-accordion" role="navigation">
+                    <li>
+                      <input id="group-1" type="checkbox" hidden />
+                      <label for="group-1" class="check"> Borders</label>
+                      <ul class="group-list">
+                        <li><a href="#">Border A</a></li>
+                        <li><a href="#">Border B</a></li>
+                        <li><a href="#">Border C</a></li>
+                        <li><a href="#">Border D</a></li>
+                        <li><a href="#">Border E</a></li>
+                        <li><a href="#">Border F</a></li>
+                        <li><a href="#">Border G</a></li>
+                        <li><a href="#">Border H</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <input id="group-2" type="checkbox" hidden />
+                      <label for="group-2" class="check"> Settlements</label>
+                      <ul class="group-list">
+                        <li>
+                          <li><a href="#">1st level item</a></li>
+                          <li><a href="#">1st level item</a></li>
+                          <input id="sub-group-2" type="checkbox" hidden />
+                          <label for="sub-group-2" class="check">Second level</label>
+                          <ul class="sub-group-list">
+                            <li><a href="#">2nd level nav item</a></li>
+                            <li><a href="#">2nd level nav item</a></li>
+                            <li>
+                              <input id="sub-sub-group-2" type="checkbox" hidden />
+                              <label for="sub-sub-group-2" class="check"> Third level</label>
+                              <ul class="sub-sub-group-list">
+                                <li><a href="#">3rd level nav item</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <input id="group-3" type="checkbox" hidden />
+                      <label for="group-3" class="check">Routes</label>
+                      <ul class="group-list">
+                        <li>
+                          <li><a href="#">1st level item</a></li>
+                          <li><a href="#">1st level item</a></li>
+                          <input id="sub-group-3" type="checkbox" hidden />
+                          <label for="sub-group-3" class="check"> Second level</label>
+                          <ul class="sub-group-list">
+                            <li><a href="#">2nd level nav item</a></li>
+                            <li><a href="#">2nd level nav item</a></li>
+                            <li><a href="#">2nd level nav item</a></li>
+                            <li>
+                              <input id="sub-sub-group-3" type="checkbox" hidden />
+                              <label for="sub-sub-group-3" class="check"> Third level</label>
+                              <ul class="sub-sub-group-list">
+                                <li><a href="#">3rd level nav item</a></li>
+                                <li><a href="#">3rd level nav item</a></li>
+                                <li><a href="#">3rd level nav item</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  
             </div>
         </article>
     </section>
