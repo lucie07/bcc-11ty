@@ -203,7 +203,6 @@ nav {
   img {
     max-width: 100%;
     display: block;
-    float: none;
     padding: 1em 0 0 0;
 
   }//img
@@ -328,20 +327,20 @@ nav {
   } //nav
 
   section {
-    padding: 5em 1em;
-    float: right;
+    width: 40%;
+    position: relative;
+    margin: 0 0 0 60%;
+    padding: 0;
     h1 a {
       margin-top: 10em;
       font-size: 1.7em;
     } //h1 a
     article {
-      width: 40%;
+      width: calc(95% - 4em);
       background: rgba(255, 255, 255, 0.7);
-      padding: 0 1em;
-      margin-bottom: 100vh;
+      padding: 1em 2em;
+      margin: 0 5% 100vh 0;
       text-align: justify;
-      float: right;
-      margin-left: 40%;
 
       blockquote{
         font-family: "Playfair Display", serif;
@@ -355,10 +354,6 @@ nav {
       }
     }
 
-      p {
-        float: left;
-
-      }
       figure {
         width: 95%;
         padding: 2.5% 2.5% 0 2.5%;
@@ -402,7 +397,6 @@ nav {
       
           }//&:focus,&:hover 
           > span { //* Rotating chevron icon
-        float: right;
         transition: transform .65s ease;
       }// > span
           input[type=checkbox]:checked + label > span {transform: rotate(45deg);}//input[type=checkbox]:checked + label > span 
@@ -448,25 +442,6 @@ nav {
           }  
       }//input[type=checkbox]:checked + label.check
         
-      
-      .group-list a,
-      .group-list label { //* Styling first level lists items
-        &:focus,
-        &:hover {}
-      }//.group-list a,.group-list label
-      
-      .sub-group-list a,
-      .sub-group-list label { //* Styling second level list items
-        &:focus,
-        &:hover {}
-      }// .sub-group-list a,.sub-group-list label
-      
-      .sub-sub-group-list a,
-      .sub-sub-group-list label {//* Styling third level list items
-        &:focus,
-        &:hover {}
-      }// .sub-sub-group-list a, .sub-sub-group-list label 
-      
       .group-list,
       .sub-group-list,
       .sub-sub-group-list { //* Hide nested lists
@@ -483,13 +458,14 @@ nav {
     }//article
     // Story Heading
     article.storyTitle {
-      padding: 0 1em;
+      padding: 0 2em;
       margin-top:10vh;
       margin-bottom: 0;
       background: $darkgreen;
       h2{
         color:white;
-        margin:0.4em 0;
+        margin: 0;
+        padding: 0.2em 0;
       }//h2
     }//article.storyTitle
   } //section
