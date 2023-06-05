@@ -404,11 +404,11 @@ nav {
 }
 .mapOverlay section article.storyTitle {
   padding: 0 2em;
+  margin-top: 10vh;
   margin-bottom: 0;
   background: #132b19;
 }
-.mapOverlay section article.storyTitle h2 a {
-  text-decoration: none;
+.mapOverlay section article.storyTitle h2 {
   color: white;
-  text-align: left;
+  margin: 0.4em 0;
 }
