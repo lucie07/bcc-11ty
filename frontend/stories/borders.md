@@ -52,7 +52,8 @@ Later maps used European treaties to produce a more ‘accurate’ depiction of 
 Where colonies sat near Indigenous nations, the lack of borders meant that there was no hard division between, for example, the territories of the Haudenosaunee and those of New York. Guy Johnson’s map of the Six Nations (detail below) takes the Mohawk River as the northern most point: above this, ‘The boundary of New York not being Closed this part of the country still belongs to the Mohawks’.
 
 > ![Detail from Guy Johnson's Map of the Country of the Six Nations](../assets/img/stories/38-Guy_Johnson,_Map_of_the_Country_of_the_VI_Nations_1771.jpg)
-> :::
+
+:::
 
 ::: slide 39  
 The transition between British empire and the American territorial republic was formalised by the second Treaty of Paris (1783). The United States’ new national borders were mapped in the same year by John Cary (Cary 1783) who, like Bowen, reproduced articles of the Treaty on a map with very few and faint borders between states. The text of these articles did the same work as early colonial charters, in that they described – this time on a continental scale – the agreed boundaries of the United States, ‘that all disputes which might arise in future, on the subject of the boundaries of the said UNITED STATES may be prevented’. Thicker and apparently more definite state borders appeared on Abel Buell’s ‘new and accurate’ map of the United States (1784), the first produced in the new republic. Yet Buell’s map erased New York entirely while expanding his home state of Connecticut, which reached into the Northwest Territory. Buell’s states behaved exactly like their colonial ancestors, stretching their territorial claims from sea to sea.
