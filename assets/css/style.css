@@ -324,6 +324,9 @@ nav {
 .mapOverlay section article figure figcaption a {
   color: white;
 }
+.mapOverlay section article .filter {
+  pointer-events: auto !important;
+}
 .mapOverlay section article .filter ul.drawer-accordion, .mapOverlay section article .filter ul.group-list, .mapOverlay section article .filter ul.sub-group-list, .mapOverlay section article .filter ul.sub-sub-group-list {
   margin: 0 0 0 -40px;
   list-style: none;
