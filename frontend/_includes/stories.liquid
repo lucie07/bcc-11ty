@@ -797,8 +797,8 @@ layout: base.liquid
             await this.loadFeatures();
             this.initStoryFeatureLayers();
 
-            // Disabled will be used for testing later before final removal on launch
-            //this.initAllFeaturesLayer();
+            // All features layer used for building filtered layers
+            this.initAllFeaturesLayer();
 
             this.getSlideElements();
             let observer = new IntersectionObserver(function (entries) {
