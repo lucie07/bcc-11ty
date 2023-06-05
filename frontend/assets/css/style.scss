@@ -204,7 +204,8 @@ nav {
     max-width: 100%;
     display: block;
     float: none;
-    padding: 0;
+    padding: 1em 0 0 0;
+
   }//img
 
   nav {
@@ -342,8 +343,21 @@ nav {
       float: right;
       margin-left: 40%;
 
+      blockquote{
+        font-family: "Playfair Display", serif;
+        font-family: "EB Garamond", serif;
+        p{
+          font-style:italic;
+          line-height:1.3;
+          font-size:1.1em;
+          border-left: 0.5em solid lighten($seafoam,10%);
+          padding-left:0.5em;
+      }
+    }
+
       p {
         float: left;
+
       }
       figure {
         width: 95%;
