@@ -200,14 +200,12 @@ nav {
   position: absolute;
   // Added by EH to allow click events to go through to basemap
   pointer-events: none;
-
   img {
     max-width: 100%;
     display: block;
     float: none;
-    padding: 10;
-    margin: 10;
-  }
+    padding: 0;
+  }//img
 
   nav {
     // We still want clicks on the nav though
@@ -337,8 +335,8 @@ nav {
     } //h1 a
     article {
       width: 40%;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 2em;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 0 1em;
       margin-bottom: 100vh;
       text-align: justify;
       float: right;
@@ -465,26 +463,13 @@ nav {
       }//.group-list, .sub-group-list, .sub-sub-group-list 
          
       }//ul.accordion, ul.group-list, ul.sub-group-list, ul.sub-sub-group-list
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-        
       }//filter
 
 
     }//article
     // Story Heading
     article.storyTitle {
-      padding: 0 2em;
+      padding: 0 1em;
       margin-top:10vh;
       margin-bottom: 0;
       background: $darkgreen;
