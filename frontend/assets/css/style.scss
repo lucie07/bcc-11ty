@@ -485,16 +485,14 @@ nav {
     // Story Heading
     article.storyTitle {
       padding: 0 2em;
+      margin-top:10vh;
       margin-bottom: 0;
       background: $darkgreen;
       h2{
-        a{
-          text-decoration: none;
-          color:white;
-          text-align:left;
-        }
-      }
-    }
+        color:white;
+        margin:0.4em 0;
+      }//h2
+    }//article.storyTitle
   } //section
 } //#map
 //MAP

@@ -17,7 +17,7 @@ layout: base.liquid
     </nav>
     <section id="overview">
         <article class="storyTitle">
-            <h2><a href="overview">Overview</a></h2>
+            <h2>Overview</h2>
         </article>
         <article>
             <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui
@@ -37,32 +37,37 @@ layout: base.liquid
     </section>
     <section id="s-1">
         <article class="storyTitle">
-        </article>
-        <div id="s-intro"></div>
-        <article class="storyTitle">
-            <h2><a href="{{ "../" | url }}">Introduction</a></h2>
+            <h2>Introduction</h2>
         </article>
         {% renderFile "./stories/introduction.md", "liquid" %}
+    </section>
+    <section id="s-2">
         <article class="storyTitle">
-            <h2 id="s-0">Homelands</h2>
+            <h2>Homelands</h2>
         </article>
         {% renderFile "./stories/homelands.md", "liquid" %}
+    </section>
+    <section id="s-3">
         <article class="storyTitle">
-            <h2 id="s-2">Villagers, Settlers</h2>
+            <h2>Villagers, Settlers</h2>
         </article>
         {% renderFile "./stories/villagers_settlers.md", "liquid" %}
+    </section>
+    <section id="s-4">
         <article class="storyTitle">
-            <h2 id="s-3">Pathways</h2>
+            <h2>Pathways</h2>
         </article>
         {% renderFile "./stories/pathways.md", "liquid" %}
+    </section>
+    <section id="s-5">
         <article class="storyTitle">
-            <h2 id="s-4">Borders</h2>
+            <h2>Borders</h2>
         </article>
         {% renderFile "./stories/borders.md", "liquid" %}
     </section>
     <section id="filters">
         <article class="storyTitle">
-            <h2><a href="filter">Explore</a></h2>
+            <h2>Explore</h2>
         </article>
         <article>
             <p>Explore the map using the filters below.</p>
