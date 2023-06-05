@@ -366,13 +366,16 @@ nav {
         } //figcaption
       } //figure
       .filter{
+        pointer-events: auto !important;
         ul.drawer-accordion,ul.group-list, ul.sub-group-list, ul.sub-sub-group-list{
           margin: 0 0 0 -40px;
         list-style: none;
+
         [hidden] { //* Hidden fallback
         display: none;
         visibility: hidden;
-        }//[hidden] 
+        }//[hidden]
+
         a{
           text-decoration:none;
         }//a
