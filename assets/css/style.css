@@ -181,7 +181,6 @@ nav {
   font-family: "Pontano Sans", sans-serif;
 }
 .mapOverlay nav > ol {
-  width: 100%;
   display: flex;
   margin-left: -40px;
   height: 2em;
@@ -237,19 +236,14 @@ nav {
 }
 .mapOverlay nav > ol > li:hover {
   border-top: 0.1em solid #124d20;
-  -webkit-transition: all 300ms ease-in;
-  -moz-transition: all 300ms ease-in;
-  -ms-transition: all 300ms ease-in;
-  -o-transition: all 300ms ease-in;
-  transition: all 300ms ease-in;
 }
-.mapOverlay nav > ol > li:nth-child(1) a, .mapOverlay nav > ol > li:nth-child(6) a {
+.mapOverlay nav > ol > li:nth-child(1) a, .mapOverlay nav > ol > li:nth-child(7) a {
   font-size: 0.9em;
   line-height: 1.5;
 }
 .mapOverlay nav > ol > li > a {
   text-decoration: none;
-  color: gray;
+  color: #676767;
   display: block;
   padding: 1em 0 1em 0;
   line-height: 1;
@@ -257,11 +251,6 @@ nav {
   opacity: 0.8;
   text-transform: uppercase;
   font-size: 1.2em;
-  -webkit-transition: all 300ms ease-in;
-  -moz-transition: all 300ms ease-in;
-  -ms-transition: all 300ms ease-in;
-  -o-transition: all 300ms ease-in;
-  transition: all 300ms ease-in;
 }
 .mapOverlay nav > ol > li > a span {
   display: block;
@@ -273,14 +262,15 @@ nav {
   opacity: 1;
 }
 .mapOverlay nav > ol > li > a.active {
-  border-top: 0.9em solid #124d20;
-  color: #124d20;
+  border-top: 0.9em solid #b2d2a4;
+  color: black;
   font-weight: bold;
   -webkit-transition: all 300ms ease-in;
   -moz-transition: all 300ms ease-in;
   -ms-transition: all 300ms ease-in;
   -o-transition: all 300ms ease-in;
   transition: all 300ms ease-in;
+  padding-top: 0.2em;
 }
 .mapOverlay nav > ol input[type=checkbox]:checked + label.check {
   /*** Minus icon ***/
@@ -413,7 +403,12 @@ nav {
   transition: max-height 0.5s ease-in-out;
 }
 .mapOverlay section article.storyTitle {
-  padding: 2em;
-  text-align: center;
-  margin-bottom: 5vh;
+  padding: 0 2em;
+  margin-bottom: 0;
+  background: #132b19;
+}
+.mapOverlay section article.storyTitle h2 a {
+  text-decoration: none;
+  color: white;
+  text-align: left;
 }
