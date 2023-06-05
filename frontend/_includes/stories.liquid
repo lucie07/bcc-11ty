@@ -6,17 +6,18 @@ layout: base.liquid
 <div class="mapOverlay">
     <nav>
         <ol>
-            <li><a href="#s-intro">Intro</a></li>
-            <li><a href="#s-1">1<span>Homelands</span></span></a></li>
-            <li><a href="#s-2">2<span>Villagers, Settlers</span></a></li>
-            <li><a href="#s-3">3<span>Pathways</span></a></li>
-            <li><a href="#s-4">4<span>Borders</span></a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#s-1">1<span>Introduction</span></span></a></li>
+            <li><a href="#s-2">2<span>Homelands</span></span></a></li>
+            <li><a href="#s-3">3<span>Villagers, Settlers</span></a></li>
+            <li><a href="#s-4">4<span>Pathways</span></a></li>
+            <li><a href="#s-5">5<span>Borders</span></a></li>
             <li><a href="#filters">Explore </a></li>
         </ol>
     </nav>
     <section id="overview">
         <article class="storyTitle">
-            <h1><a href="overview">Overview</a></h1>
+            <h2><a href="overview">Overview</a></h2>
         </article>
         <article>
             <p>Lorem ipsum dolor sit amet. Qui labore dolores qui dolores aperiam aut nihil tenetur qui cumque ipsa qui
@@ -34,9 +35,8 @@ layout: base.liquid
                 eligendi expedita aut minima voluptatem.</p>
         </article>
     </section>
-    <section id="stories">
+    <section id="s-1">
         <article class="storyTitle">
-            <h1><a href="stories">Stories</a></h1>
         </article>
         <div id="s-intro"></div>
         <article class="storyTitle">
@@ -44,7 +44,7 @@ layout: base.liquid
         </article>
         {% renderFile "./stories/introduction.md", "liquid" %}
         <article class="storyTitle">
-            <h2 id="s-1">Homelands</h2>
+            <h2 id="s-0">Homelands</h2>
         </article>
         {% renderFile "./stories/homelands.md", "liquid" %}
         <article class="storyTitle">
@@ -62,7 +62,7 @@ layout: base.liquid
     </section>
     <section id="filters">
         <article class="storyTitle">
-            <h1><a href="filter">Explore</a></h1>
+            <h2><a href="filter">Explore</a></h2>
         </article>
         <article>
             <p>Explore the map using the filters below.</p>

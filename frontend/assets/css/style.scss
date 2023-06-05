@@ -2,6 +2,7 @@
 $darkgreen: #132b19;
 $midgreen: #124d20;
 $lightgreen: #9abf08;
+$seafoam:  #b2d2a4;
 
 //Fonts
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
@@ -221,7 +222,6 @@ nav {
     font-family: "Pontano Sans", sans-serif;
     > ol {
       //1st level
-      width: 100%;
       //counter-reset: li;
       display: flex;
       margin-left: -40px;
@@ -237,9 +237,9 @@ nav {
         @include transition(all 300ms ease-in);
         &:hover{
           border-top: 0.1em solid $midgreen;
-          @include transition(all 300ms ease-in);
+          //@include transition(all 300ms ease-in);
         }
-        &:nth-child(1), &:nth-child(6){
+        &:nth-child(1), &:nth-child(7){
           a{
             font-size:0.9em;
             line-height:1.5;
@@ -247,7 +247,7 @@ nav {
         }
         > a {
           text-decoration: none;
-          color: gray;
+          color: darken(gray,10%);
           display: block;
           padding: 1em 0 1em 0;
           line-height: 1;
@@ -255,7 +255,7 @@ nav {
           opacity: 0.8;
           text-transform: uppercase;
           font-size: 1.2em;
-          @include transition(all 300ms ease-in);
+          //@include transition(all 300ms ease-in);
           span{
             display:block;
             font-size:0.6em;
@@ -266,10 +266,11 @@ nav {
             opacity:1;
           }
           &.active {
-            border-top: 0.9em solid $midgreen;
-            color: $midgreen;
+            border-top: 0.9em solid $seafoam;
+            color: black;
             font-weight:bold;
             @include transition(all 300ms ease-in);
+            padding-top:0.2em;
           } //active
         } // a
        /* > ol {
@@ -483,9 +484,16 @@ nav {
     }//article
     // Story Heading
     article.storyTitle {
-      padding: 2em;
-      text-align: center;
-      margin-bottom: 5vh;
+      padding: 0 2em;
+      margin-bottom: 0;
+      background: $darkgreen;
+      h2{
+        a{
+          text-decoration: none;
+          color:white;
+          text-align:left;
+        }
+      }
     }
   } //section
 } //#map
