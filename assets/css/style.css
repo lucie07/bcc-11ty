@@ -166,8 +166,7 @@ nav {
   max-width: 100%;
   display: block;
   float: none;
-  padding: 10;
-  margin: 10;
+  padding: 0;
 }
 .mapOverlay nav {
   pointer-events: auto;
@@ -295,8 +294,8 @@ nav {
 }
 .mapOverlay section article {
   width: 40%;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 2em;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0 1em;
   margin-bottom: 100vh;
   text-align: justify;
   float: right;
@@ -403,7 +402,7 @@ nav {
   transition: max-height 0.5s ease-in-out;
 }
 .mapOverlay section article.storyTitle {
-  padding: 0 2em;
+  padding: 0 1em;
   margin-top: 10vh;
   margin-bottom: 0;
   background: #132b19;
