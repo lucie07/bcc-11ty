@@ -64,14 +64,15 @@ layout: base.liquid
             <h2>Borders</h2>
         </article>
         {% renderFile "./stories/borders.md", "liquid" %}
-    </section>-->
+    </section>
+    -->
 
 
-  <section id="filters">
+    <section id="filters">
         <article class="storyTitle">
             <h2>Explore</h2>
         </article>
-        <article>
+        <article id="slide_explore" data-slideId="explore">
             <p>Explore the map using the filters below.</p>
             <div class="filter">
                 <h2>Filter</h2>
@@ -178,71 +179,71 @@ layout: base.liquid
                 <h2>List of Features</h2>
                 <ul class="drawer-accordion" role="navigation">
                     <li>
-                      <input id="group-1" type="checkbox" hidden />
-                      <label for="group-1" class="check"> Borders</label>
-                      <ul class="group-list">
-                        <li><a href="#">Border A</a></li>
-                        <li><a href="#">Border B</a></li>
-                        <li><a href="#">Border C</a></li>
-                        <li><a href="#">Border D</a></li>
-                        <li><a href="#">Border E</a></li>
-                        <li><a href="#">Border F</a></li>
-                        <li><a href="#">Border G</a></li>
-                        <li><a href="#">Border H</a></li>
-                      </ul>
+                        <input id="group-1" type="checkbox" hidden/>
+                        <label for="group-1" class="check"> Borders</label>
+                        <ul class="group-list">
+                            <li><a href="#">Border A</a></li>
+                            <li><a href="#">Border B</a></li>
+                            <li><a href="#">Border C</a></li>
+                            <li><a href="#">Border D</a></li>
+                            <li><a href="#">Border E</a></li>
+                            <li><a href="#">Border F</a></li>
+                            <li><a href="#">Border G</a></li>
+                            <li><a href="#">Border H</a></li>
+                        </ul>
                     </li>
                     <li>
-                      <input id="group-2" type="checkbox" hidden />
-                      <label for="group-2" class="check"> Settlements</label>
-                      <ul class="group-list">
+                        <input id="group-2" type="checkbox" hidden/>
+                        <label for="group-2" class="check"> Settlements</label>
+                        <ul class="group-list">
 
-                          <li><a href="#">1st level item</a></li>
-                          <li><a href="#">1st level item</a></li>
-                        <li>
-                          <input id="sub-group-2" type="checkbox" hidden />
-                          <label for="sub-group-2" class="check">Second level</label>
-                          <ul class="sub-group-list">
-                            <li><a href="#">2nd level nav item</a></li>
-                            <li><a href="#">2nd level nav item</a></li>
+                            <li><a href="#">1st level item</a></li>
+                            <li><a href="#">1st level item</a></li>
                             <li>
-                              <input id="sub-sub-group-2" type="checkbox" hidden />
-                              <label for="sub-sub-group-2" class="check"> Third level</label>
-                              <ul class="sub-sub-group-list">
-                                <li><a href="#">3rd level nav item</a></li>
-                              </ul>
+                                <input id="sub-group-2" type="checkbox" hidden/>
+                                <label for="sub-group-2" class="check">Second level</label>
+                                <ul class="sub-group-list">
+                                    <li><a href="#">2nd level nav item</a></li>
+                                    <li><a href="#">2nd level nav item</a></li>
+                                    <li>
+                                        <input id="sub-sub-group-2" type="checkbox" hidden/>
+                                        <label for="sub-sub-group-2" class="check"> Third level</label>
+                                        <ul class="sub-sub-group-list">
+                                            <li><a href="#">3rd level nav item</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </li>
-                          </ul>
-                        </li>
-                      </ul>
+                        </ul>
                     </li>
                     <li>
-                      <input id="group-3" type="checkbox" hidden />
-                      <label for="group-3" class="check">Routes</label>
-                      <ul class="group-list">
-                          <li><a href="#">1st level item</a></li>
-                          <li><a href="#">1st level item</a></li>
-                          <li>
-                          <input id="sub-group-3" type="checkbox" hidden />
-                          <label for="sub-group-3" class="check"> Second level</label>
-                          <ul class="sub-group-list">
-                            <li><a href="#">2nd level nav item</a></li>
-                            <li><a href="#">2nd level nav item</a></li>
-                            <li><a href="#">2nd level nav item</a></li>
+                        <input id="group-3" type="checkbox" hidden/>
+                        <label for="group-3" class="check">Routes</label>
+                        <ul class="group-list">
+                            <li><a href="#">1st level item</a></li>
+                            <li><a href="#">1st level item</a></li>
                             <li>
-                              <input id="sub-sub-group-3" type="checkbox" hidden />
-                              <label for="sub-sub-group-3" class="check"> Third level</label>
-                              <ul class="sub-sub-group-list">
-                                <li><a href="#">3rd level nav item</a></li>
-                                <li><a href="#">3rd level nav item</a></li>
-                                <li><a href="#">3rd level nav item</a></li>
-                              </ul>
+                                <input id="sub-group-3" type="checkbox" hidden/>
+                                <label for="sub-group-3" class="check"> Second level</label>
+                                <ul class="sub-group-list">
+                                    <li><a href="#">2nd level nav item</a></li>
+                                    <li><a href="#">2nd level nav item</a></li>
+                                    <li><a href="#">2nd level nav item</a></li>
+                                    <li>
+                                        <input id="sub-sub-group-3" type="checkbox" hidden/>
+                                        <label for="sub-sub-group-3" class="check"> Third level</label>
+                                        <ul class="sub-sub-group-list">
+                                            <li><a href="#">3rd level nav item</a></li>
+                                            <li><a href="#">3rd level nav item</a></li>
+                                            <li><a href="#">3rd level nav item</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </li>
-                          </ul>
-                          </li>
-                      </ul>
+                        </ul>
                     </li>
-                  </ul>
-                  
+                </ul>
+
             </div>
         </article>
     </section>
@@ -526,7 +527,8 @@ layout: base.liquid
                         color: 'black',
                         weight: 0.5,
                         fillOpacity: 1,
-                        stroke: true
+                        stroke: true,
+                        bubblingMouseEvents: true,
                     }).bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
                     break;
                 // Settlement : Triangle - dark green - point up
@@ -541,7 +543,8 @@ layout: base.liquid
                         color: '#124d20',
                         weight: 0.5,
                         fillOpacity: 1,
-                        stroke: true
+                        stroke: true,
+                        bubblingMouseEvents: true,
                     })
                     break;
                 // Land route -
@@ -552,19 +555,20 @@ layout: base.liquid
                         color: "#000",
                         weight: 0.5,
                         opacity: 1,
-                        fillOpacity: 1
+                        fillOpacity: 1,
+                        bubblingMouseEvents: true,
                     })
                     break;
                 // Sea route
                 case 6:
                     return L.circleMarker(latlng, {
                         radius: 4,
-                        color: "",
                         fillColor: "#ffbd59",
                         color: "#ffbd59",
                         weight: 0.5,
                         opacity: 1,
-                        fillOpacity: 0.9
+                        fillOpacity: 0.9,
+                        bubblingMouseEvents: true,
                     })
                     break;
                 // Descriptive - white squares
@@ -579,7 +583,8 @@ layout: base.liquid
                         color: '#000000',
                         weight: 0.5,
                         fillOpacity: 1,
-                        stroke: true
+                        stroke: true,
+                        bubblingMouseEvents: true,
                     })
                     break;
                 //River route
@@ -590,7 +595,8 @@ layout: base.liquid
                         color: "#000",
                         weight: 0.5,
                         opacity: 1,
-                        fillOpacity: 1
+                        fillOpacity: 1,
+                        bubblingMouseEvents: true,
                     })
                     break;
                 // Miscellaneous
@@ -601,7 +607,8 @@ layout: base.liquid
                         color: "#000",
                         weight: 0.5,
                         opacity: 1,
-                        fillOpacity: 1
+                        fillOpacity: 1,
+                        bubblingMouseEvents: true,
                     })
                     break;
                 // Toponym
@@ -612,7 +619,8 @@ layout: base.liquid
                         color: "#ff0000",
                         weight: 1,
                         opacity: 1,
-                        fillOpacity: 0.6
+                        fillOpacity: 0.6,
+                        bubblingMouseEvents: true,
                     })
                     break;
                 default:
@@ -622,7 +630,8 @@ layout: base.liquid
                         color: "#000",
                         weight: 0.5,
                         opacity: 1,
-                        fillOpacity: 1
+                        fillOpacity: 1,
+                        bubblingMouseEvents: true,
                     })
             }
         }
@@ -694,36 +703,43 @@ layout: base.liquid
          * @param slideid slide to display
          */
         triggerSlideMapEvents(slideid) {
-            let slide = this.getSlideById(slideid);
-            if (slide) {
-                // Clear layers
-                if (slide.layer) {
-                    this.storyFeatureLayerGroup.clearLayers();
+            if (slideid != "explore") {
+
+                let slide = this.getSlideById(slideid);
+                if (slide) {
+                    // Clear layers
+                    if (slide.layer) {
+                        this.storyFeatureLayerGroup.clearLayers();
+                    }
+                    // Move to bounds
+                    let bounds = this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
+
+                    // Add new layer once move is finished
+                    if (slide.layer) {
+                        let slideUpdate = function () {
+                            slide.layer.setStyle({
+                                opacity: 0,
+                                fillOpacity: 0
+                            });
+                            this.storyFeatureLayerGroup.addLayer(slide.layer);
+                            this.fadeLayerLeaflet(slide.layer, 0, 1, 0.2, 200);
+                            this.map.off('moveend', slideUpdate);
+                        }.bind(this);
+
+                        this.map.on('moveend', slideUpdate);
+                    }
+
+
+                    /*if (bounds != null) {
+                        this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
+                    }*/
+                    this.lastSlideDisplayed = slide;
+
                 }
-                // Move to bounds
-                let bounds = this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
-
-                // Add new layer once move is finished
-                if (slide.layer) {
-                    let slideUpdate = function () {
-                        slide.layer.setStyle({
-                        opacity: 0,
-                        fillOpacity: 0
-                    });
-                        this.storyFeatureLayerGroup.addLayer(slide.layer);
-                        this.fadeLayerLeaflet(slide.layer, 0, 1, 0.2, 200);
-                        this.map.off('moveend', slideUpdate);
-                    }.bind(this);
-
-                    this.map.on('moveend', slideUpdate);
-                }
-
-
-                /*if (bounds != null) {
-                    this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
-                }*/
-                this.lastSlideDisplayed = slide;
-
+            } else if (slideid == "explore") {
+                console.log('explore');
+                this.storyFeatureLayerGroup.clearLayers();
+                this.loadExploreLayer();
             }
 
         }
@@ -802,20 +818,23 @@ layout: base.liquid
 
             this.getSlideElements();
             let observer = new IntersectionObserver(function (entries) {
-                //console.log(entries[0].target.dataset.slideid);
+                //console.log(entries[0].target.dataset);
                 if (entries[0].isIntersecting === true)
                     this.triggerSlideMapEvents(entries[0].target.dataset.slideid);
             }.bind(this), {threshold: [1]});
+
 
             // Add for temporary debugging, will be used for filter
             //this.storyFeatureLayerGroup.addLayer(this.allFeaturesLayer);
             for (let s = 0; s < this.slideElements.length; s++) {
                 observer.observe(this.slideElements[s]);
             }
+            // Add intersection observer for filters
+            observer.observe(document.getElementById("filters"));
 
-            /*document.addEventListener(
-                "scroll", this.triggerSlideEvents.bind(this),
-            );*/
+            this.map.on('click', function (e){
+                console.log(e.target);
+            });
 
         }
 
@@ -1067,6 +1086,12 @@ layout: base.liquid
                     slide.features.push(feature);
                 }
             }
+        }
+
+        // Explore and filter functionality
+
+        loadExploreLayer() {
+
         }
 
     }
