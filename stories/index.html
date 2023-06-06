@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-06-06 11:52 -->
+    <!-- Built with 11ty - 2023-06-06 14:49 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1686052367">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1686062989">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1686052367"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1686062989"></script>
     
     <style>
     .map-label {
@@ -735,6 +735,7 @@ English spaces are demarcated by charter lines of property, indicated by dotted 
             switch (feature.properties.sub_type) {
                 // Indigenous : Triangle - Red - point down
                 case 1:
+
                     return new L.RegularPolygonMarker(latlng, {
                         numberOfSides: 3,
                         rotation: 90,
@@ -955,7 +956,7 @@ English spaces are demarcated by charter lines of property, indicated by dotted 
 
                 }
             } else if (slideid == "explore") {
-                console.log('explore');
+
                 this.storyFeatureLayerGroup.clearLayers();
                 this.loadExploreLayer();
             }
@@ -1050,9 +1051,9 @@ English spaces are demarcated by charter lines of property, indicated by dotted 
             // Add intersection observer for filters
             observer.observe(document.getElementById("filters"));
 
-            this.map.on('click', function (e){
+            /*this.map.on('click', function (e) {
                 console.log(e.target);
-            });
+            });*/
 
         }
 
@@ -1238,6 +1239,58 @@ English spaces are demarcated by charter lines of property, indicated by dotted 
             return result;
         }
 
+        /*
+        isFeatureIncluded(
+            featureType, feature, lineIncludes, lineExcludes, polyIncludes, polyExcludes,
+            pointIncludes, pointExcludes, indigenousIncludes
+        ) {
+            let includeFeature = false;
+            switch (featureType) {
+                case "LINE":
+
+                    if (lineIncludes) {
+                        includeFeature = this.filterFeature(feature, lineIncludes);
+
+                    }
+                    if (lineExcludes && includeFeature === true) {
+                        includeFeature = !this.filterFeature(feature, lineExcludes);
+                    }
+
+                    break;
+
+                case "POLY":
+
+                    if (pointIncludes) {
+                        includeFeature = this.filterFeature(feature, polyIncludes);
+                    }
+                    if (polyExcludes && includeFeature === true) {
+                        includeFeature = !this.filterFeature(feature, polyExcludes);
+                    }
+
+                    break;
+                case "POINT":
+
+                    if (pointIncludes) {
+                        includeFeature = this.filterFeature(feature, pointIncludes);
+                        console.log('included');
+                    }
+                    if (pointExcludes && includeFeature === true) {
+                        includeFeature = !this.filterFeature(feature, pointExcludes);
+
+                    }
+
+                    break;
+                case "INDIGENOUS":
+                    if (indigenousIncludes) {
+                        includeFeature = this.filterFeature(feature, indigenousIncludes);
+                    }
+                    break
+                default:
+                    break;
+            }
+            return includeFeature;
+        }*/
+
         /**
          * Add the feature to as many slide groups
          * as pass the conditions in slideRules.
@@ -1305,6 +1358,55 @@ English spaces are demarcated by charter lines of property, indicated by dotted 
                 }
             }
         }
+
+        /*
+        addFeatureToSlideGroups(featureType, feature) {
+            for (let s = 0; s < this.slides.length; s++) {
+                // Foreach slide rule
+                let slide = this.slides[s];
+                if (slide && feature != null) {
+                    let lineIncludes = null;
+                    let lineExcludes = null;
+                    let polyIncludes = null;
+                    let polyExcludes = null;
+                    let pointIncludes = null;
+                    let pointExcludes  = null;
+                    let indigenousIncludes = null;
+
+                    if (slide.lines) {
+                        lineIncludes = slide.lines.includes;
+                        lineExcludes = slide.lines.excludes;
+                    }
+
+                    if (slide.polys){
+                        polyIncludes = slide.polys.includes;
+                        polyExcludes = slide.polys.excludes;
+                    }
+
+                    if (slide.points != null){
+                        if (slide.points.includes !=null){
+                          pointIncludes = slide.points.includes;
+                           console.log(slide.points.includes.length);
+                        }
+                        if (slide.points.excludes !=null && slide.points.excludes.length > 0){
+                            pointExcludes = slide.points.excludes;
+                        }
+
+
+                    }
+
+                    let includeFeature = this.isFeatureIncluded(
+                        featureType, feature, lineIncludes, lineExcludes,
+                        polyIncludes, polyExcludes,
+                        pointIncludes, pointExcludes, indigenousIncludes
+                    )
+
+                    if (includeFeature) {
+                        slide.features.push(feature);
+                    }
+                }
+            }
+        }*/
 
         // Explore and filter functionality
 
