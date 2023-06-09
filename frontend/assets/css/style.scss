@@ -500,7 +500,6 @@ nav {
     &:last-child{
       width:100%;
       margin:0;
-
       article{
         width:40%;
         margin:0 30% 100vh 30%;
@@ -510,7 +509,7 @@ nav {
         &:last-child{
           width:100%;
           margin:0;
-
+          padding:0;
           .map-filters{
             ul {
             list-style-type: none;
@@ -591,12 +590,6 @@ nav {
                 transform: scale(1);
               }
           }//.map-filters
-          
-
-
-
-
-
 
         }//&:last-child
 
