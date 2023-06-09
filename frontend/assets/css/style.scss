@@ -208,6 +208,7 @@ nav {
 
   nav {
     // We still want clicks on the nav though
+    z-index: 99;
     pointer-events: auto;
     background: lighten(lightgray, 10%);
     height: 3.5em;
