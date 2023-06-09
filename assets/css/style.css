@@ -513,6 +513,7 @@ nav {
 .mapOverlay section:last-child article:last-child {
   width: 100%;
   margin: 0;
+  padding: 0;
   /**
    * Provide a border when hovered and when the input is checked
    */
