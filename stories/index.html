@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-06-12 16:12 -->
+    <!-- Built with 11ty - 2023-06-14 09:22 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1686586348">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1686734564">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1686586348"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1686734564"></script>
     
     <style>
     .map-label {
@@ -870,28 +870,23 @@ Addressing the Seneca, Johnson used the metaphor of the longhouse as an integrat
         pointToLayer(feature, latlng) {
             //console.log(latlng);
             switch (feature.properties.sub_type) {
-                // Indigenous : Triangle - Red - point down
+                // Indigenous : Circle - Red - point down
                 case 1:
-
-                    return new L.RegularPolygonMarker(latlng, {
-                        numberOfSides: 3,
-                        rotation: 90,
-                        radius: 5,
-                        //L.Path style options
-                        fill: true,
-                        fillColor: '#ff0000',
-                        color: 'black',
+                    return L.circleMarker(latlng, {
+                        radius: 4,
+                        fillColor: "#0000ff",
+                        color: "#000",
                         weight: 0.5,
+                        opacity: 1,
                         fillOpacity: 1,
-                        stroke: true,
                         bubblingMouseEvents: true,
                     }).bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
                     break;
-                // Settlement : Triangle - dark green - point up
+                // Settlement : Squares - dark green - point up
                 case 4:
                     return new L.RegularPolygonMarker(latlng, {
-                        numberOfSides: 3,
-                        rotation: -90,
+                        numberOfSides: 4,
+                        rotation: -45,
                         radius: 5,
                         //L.Path style options
                         fill: true,
@@ -1269,7 +1264,7 @@ Addressing the Seneca, Johnson used the metaphor of the longhouse as an integrat
                                         'fill': 'black',
                                         'font-family': 'EB Garamond, serif',
                                         'font-weight': 'bold',
-                                        'font-size': 18,
+                                        'font-size': (storyMap.map.getZoom() + 2),
                                         //'textLength': 300,
                                         //'lengthAdjust': 'spacing',
                                         'dx': '15%',
