@@ -645,28 +645,23 @@ layout: base.liquid
         pointToLayer(feature, latlng) {
             //console.log(latlng);
             switch (feature.properties.sub_type) {
-                // Indigenous : Triangle - Red - point down
+                // Indigenous : Circle - Red - point down
                 case 1:
-
-                    return new L.RegularPolygonMarker(latlng, {
-                        numberOfSides: 3,
-                        rotation: 90,
-                        radius: 5,
-                        //L.Path style options
-                        fill: true,
-                        fillColor: '#ff0000',
-                        color: 'black',
+                    return L.circleMarker(latlng, {
+                        radius: 4,
+                        fillColor: "#0000ff",
+                        color: "#000",
                         weight: 0.5,
+                        opacity: 1,
                         fillOpacity: 1,
-                        stroke: true,
                         bubblingMouseEvents: true,
                     }).bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
                     break;
-                // Settlement : Triangle - dark green - point up
+                // Settlement : Squares - dark green - point up
                 case 4:
                     return new L.RegularPolygonMarker(latlng, {
-                        numberOfSides: 3,
-                        rotation: -90,
+                        numberOfSides: 4,
+                        rotation: -45,
                         radius: 5,
                         //L.Path style options
                         fill: true,
@@ -1044,7 +1039,7 @@ layout: base.liquid
                                         'fill': 'black',
                                         'font-family': 'EB Garamond, serif',
                                         'font-weight': 'bold',
-                                        'font-size': 18,
+                                        'font-size': (storyMap.map.getZoom() + 2),
                                         //'textLength': 300,
                                         //'lengthAdjust': 'spacing',
                                         'dx': '15%',
