@@ -458,6 +458,7 @@ layout: base.liquid
         fillOpacity: 0.5
     };
     polyDescriptiveStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5, fillOpacity: 0.5};
+	
     polyRiverRouteStyle = {
         stroke: true,
         dashArray: "7 6",
@@ -471,6 +472,8 @@ layout: base.liquid
         fillOpacity: 0.5
     };
     polyMiscStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5, fillOpacity: 0.5};
+	polyNativeStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5, fillOpacity: 0.5};
+	polyEuroStyle = {stroke: true, fillColor: '#00ff00', weight: 1, fill: true, opacity: 0.5, fillOpacity: 0.5};
     polyAnnoStyle = {
         stroke: true,
         dashArray: "10 10",
@@ -848,7 +851,7 @@ layout: base.liquid
                                 fillOpacity: 0
                             });
                             this.storyFeatureLayerGroup.addLayer(slide.layer);
-                            this.fadeLayerLeaflet(slide.layer, 0, 1, 0.2, 200);
+                            this.fadeLayerLeaflet(slide.layer, 0, 0.8, 0.2,0.01);
                             this.map.off('moveend', slideUpdate);
                         }.bind(this);
 
@@ -893,14 +896,7 @@ layout: base.liquid
                 attribution: "ESRI World Terrain",
                 opacity: 1
             }).addTo(this.map);
-            /*
-            var awmc = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
-                minZoom: this.mapMinZoom,
-                maxZoom: this.mapMaxZoom,
-                opacity: 1,
-                attribution: "Consortium of Ancient World Mappers",
-            }).addTo(this.map);
-            */
+
             var worldTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
@@ -917,7 +913,6 @@ layout: base.liquid
                 });
 
             var baseLayers = {
-                //"Ancient World Mapping": awmc,
                 "Clean Terrain": worldTerrain,
                 "Modern Open Street Map": worldStreet
             };
@@ -1011,7 +1006,19 @@ layout: base.liquid
                             layer.setStyle(polyToponymStyle);
                             break;
                         case 11:
-                            layer.setStyle(polyAnnoStyle);
+							// Capture Indig vs Haudenasnee
+							switch (feature.properties.identity) {
+								case 2:
+								// Red poly
+									layer.setStyle(polyNativeStyle);
+									break;
+								case 3:
+								//Grey poly (Haudenasuanee)
+									layer.setStyle(polyAnnoStyle);
+									break;
+								default:
+									layer.setStyle(polyEuroStyle);
+							}
                             break;
                     }
                     break;
