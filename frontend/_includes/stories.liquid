@@ -377,7 +377,7 @@ layout: base.liquid
     </section>
 </div>
 
-</div>
+
 
 
 <script type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
@@ -577,6 +577,10 @@ layout: base.liquid
 
             this.allFeatures = [];
             this.allFeaturesLayer = null;
+
+            // Text features (e.g.) rivers info stored hers
+            // So it can be added/changed by zoom
+            this.textFeatures = {};
 
 
         }
@@ -932,6 +936,7 @@ layout: base.liquid
             await this.loadSlides();
             await this.loadStoryFrames();
             await this.loadFeatures();
+            this.attachMapEvents();
             this.initStoryFeatureLayers();
 
             // All features layer used for building filtered layers
@@ -957,6 +962,49 @@ layout: base.liquid
                 console.log(e.target);
             });*/
 
+        }
+
+        /** Map level events such as zoom, used to update text levels
+         *
+         */
+        attachMapEvents() {
+            this.map.on('zoomstart', function () {
+                this.storyFeatureLayerGroup.eachLayer(function (layer) {
+                   let features = layer._layers;
+                   let TextSize = (this.map.getZoom()+4)+'px';
+
+                   console.log(TextSize);
+                   for (let [key, feature] of Object.entries(features)){
+                       let featureId = feature.feature.properties.id;
+                       //console.log(key);
+                       if (this.textFeatures[featureId]){
+                           //console.log(feature.feature.properties);
+                           feature.setText(null);
+                           feature.setText(this.textFeatures[featureId].text,
+                           {
+                               orientation: this.textFeatures[featureId].orientation, offset: 5, center: true,
+                               attributes: {
+                                   'fill': 'black',
+                                   'font-family': 'EB Garamond, serif',
+                                   'font-weight': 'bold',
+                                   'font-size': TextSize,
+                                   //'textLength': 300,
+                                   //'lengthAdjust': 'spacing',
+                                   'dx': '15%',
+                               }
+                           }
+                       );
+
+                       }
+                   }
+
+                   /* layer.onEachFeature(function(feature){
+                       console.log(feature);
+                    });*/
+                   /**/
+                }.bind(this));
+                //for (let x=0; x< this.storyFeatureLayerGroup.getLayers());
+            }.bind(this));
         }
 
         onEachFeature(feature, layer) {
@@ -1039,6 +1087,12 @@ layout: base.liquid
                             break;
                         case 8:
                             layer.setStyle(lineRiverRouteStyle);
+                            // (storyMap.map.getZoom() + 2)
+
+                            this.textFeatures[feature.properties.id] = {
+                                orientation: testDirection(feature),
+                                text: feature.properties.norm_text
+                            }
                             layer.setText(feature.properties.norm_text,
                                 {
                                     orientation: testDirection(feature), offset: 5, center: true,
@@ -1046,7 +1100,7 @@ layout: base.liquid
                                         'fill': 'black',
                                         'font-family': 'EB Garamond, serif',
                                         'font-weight': 'bold',
-                                        'font-size': (storyMap.map.getZoom() + 2),
+                                        'font-size': '7px',
                                         //'textLength': 300,
                                         //'lengthAdjust': 'spacing',
                                         'dx': '15%',
