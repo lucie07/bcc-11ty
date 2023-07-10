@@ -515,8 +515,8 @@ nav {
   margin: 0;
   padding: 0;
   /**
-   * Provide a border when hovered and when the input is checked
-   */
+       * Provide a border when hovered and when the input is checked
+       */
 }
 .mapOverlay section:last-child article:last-child .map-filters ul {
   list-style-type: none;
