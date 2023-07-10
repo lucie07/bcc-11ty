@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-06-14 09:22 -->
+    <!-- Built with 11ty - 2023-07-10 09:37 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1686734564">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1688981834">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1686734564"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1688981834"></script>
     
     <style>
     .map-label {
@@ -683,6 +683,7 @@ Addressing the Seneca, Johnson used the metaphor of the longhouse as an integrat
         fillOpacity: 0.5
     };
     polyDescriptiveStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5, fillOpacity: 0.5};
+	
     polyRiverRouteStyle = {
         stroke: true,
         dashArray: "7 6",
@@ -696,6 +697,8 @@ Addressing the Seneca, Johnson used the metaphor of the longhouse as an integrat
         fillOpacity: 0.5
     };
     polyMiscStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5, fillOpacity: 0.5};
+	polyNativeStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5, fillOpacity: 0.5};
+	polyEuroStyle = {stroke: true, fillColor: '#00ff00', weight: 1, fill: true, opacity: 0.5, fillOpacity: 0.5};
     polyAnnoStyle = {
         stroke: true,
         dashArray: "10 10",
@@ -1073,7 +1076,7 @@ Addressing the Seneca, Johnson used the metaphor of the longhouse as an integrat
                                 fillOpacity: 0
                             });
                             this.storyFeatureLayerGroup.addLayer(slide.layer);
-                            this.fadeLayerLeaflet(slide.layer, 0, 1, 0.2, 200);
+                            this.fadeLayerLeaflet(slide.layer, 0, 0.8, 0.2,0.01);
                             this.map.off('moveend', slideUpdate);
                         }.bind(this);
 
@@ -1118,14 +1121,7 @@ Addressing the Seneca, Johnson used the metaphor of the longhouse as an integrat
                 attribution: "ESRI World Terrain",
                 opacity: 1
             }).addTo(this.map);
-            /*
-            var awmc = L.tileLayer('https://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png', {
-                minZoom: this.mapMinZoom,
-                maxZoom: this.mapMaxZoom,
-                opacity: 1,
-                attribution: "Consortium of Ancient World Mappers",
-            }).addTo(this.map);
-            */
+
             var worldTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
                 maxZoom: this.mapMaxZoom,
@@ -1142,7 +1138,6 @@ Addressing the Seneca, Johnson used the metaphor of the longhouse as an integrat
                 });
 
             var baseLayers = {
-                //"Ancient World Mapping": awmc,
                 "Clean Terrain": worldTerrain,
                 "Modern Open Street Map": worldStreet
             };
@@ -1236,7 +1231,19 @@ Addressing the Seneca, Johnson used the metaphor of the longhouse as an integrat
                             layer.setStyle(polyToponymStyle);
                             break;
                         case 11:
-                            layer.setStyle(polyAnnoStyle);
+							// Capture Indig vs Haudenasnee
+							switch (feature.properties.identity) {
+								case 2:
+								// Red poly
+									layer.setStyle(polyNativeStyle);
+									break;
+								case 3:
+								//Grey poly (Haudenasuanee)
+									layer.setStyle(polyAnnoStyle);
+									break;
+								default:
+									layer.setStyle(polyEuroStyle);
+							}
                             break;
                     }
                     break;
