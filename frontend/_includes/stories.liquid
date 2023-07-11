@@ -662,7 +662,7 @@ layout: base.liquid
                         opacity: 1,
                         fillOpacity: 1,
                         bubblingMouseEvents: true,
-                    }).bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
+                    })//.bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
                     break;
                 // Settlement : Squares - dark green - point up
                 case 4:
@@ -678,7 +678,7 @@ layout: base.liquid
                         fillOpacity: 1,
                         stroke: true,
                         bubblingMouseEvents: true,
-                    })
+                    })//.bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
                     break;
                 // Land route -
                 case 5:
@@ -754,7 +754,7 @@ layout: base.liquid
                         opacity: 1,
                         fillOpacity: 0.6,
                         bubblingMouseEvents: true,
-                    })
+                    })//.bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
                     break;
                 default:
                     return L.circleMarker(latlng, {
@@ -900,6 +900,8 @@ layout: base.liquid
                 attribution: "ESRI World Terrain",
                 opacity: 1
             }).addTo(this.map);
+			
+
 
             var worldTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
@@ -916,8 +918,21 @@ layout: base.liquid
                     opacity: 1
                 });
 
+			
+			var bcc = L.tileLayer('https://api.mapbox.com/styles/v1/fieldworks2000/cljy7bt4y004x01qrcmir8tvc/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmllbGR3b3JrczIwMDAiLCJhIjoiY2t4MDg1NzBhMDV5dzJ2cWh1bDdveWV6dyJ9._IkVMtn0Drt-VrllP7BEPA', {
+				tileSize: 512,
+				zoomOffset: -1,
+                minZoom: this.mapMinZoom,
+                maxZoom: this.mapMaxZoom,
+                attribution: "MapBox BCC",
+                opacity: 1
+            });
+
+
+
             var baseLayers = {
                 "Clean Terrain": worldTerrain,
+				"BCC": bcc,
                 "Modern Open Street Map": worldStreet
             };
 
