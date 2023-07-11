@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-07-10 15:39 -->
+    <!-- Built with 11ty - 2023-07-11 11:59 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1689003585">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1689076766">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1689003585"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1689076766"></script>
     
     <style>
     .map-label {
@@ -879,7 +879,7 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
                         opacity: 1,
                         fillOpacity: 1,
                         bubblingMouseEvents: true,
-                    }).bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
+                    })//.bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
                     break;
                 // Settlement : Squares - dark green - point up
                 case 4:
@@ -895,7 +895,7 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
                         fillOpacity: 1,
                         stroke: true,
                         bubblingMouseEvents: true,
-                    })
+                    })//.bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
                     break;
                 // Land route -
                 case 5:
@@ -971,7 +971,7 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
                         opacity: 1,
                         fillOpacity: 0.6,
                         bubblingMouseEvents: true,
-                    })
+                    })//.bindTooltip(feature.properties.map_text, {permanent: true, className: 'map-label'}).openTooltip()
                     break;
                 default:
                     return L.circleMarker(latlng, {
@@ -1117,6 +1117,8 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
                 attribution: "ESRI World Terrain",
                 opacity: 1
             }).addTo(this.map);
+			
+
 
             var worldTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}', {
                 minZoom: this.mapMinZoom,
@@ -1133,8 +1135,21 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
                     opacity: 1
                 });
 
+			
+			var bcc = L.tileLayer('https://api.mapbox.com/styles/v1/fieldworks2000/cljy7bt4y004x01qrcmir8tvc/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmllbGR3b3JrczIwMDAiLCJhIjoiY2t4MDg1NzBhMDV5dzJ2cWh1bDdveWV6dyJ9._IkVMtn0Drt-VrllP7BEPA', {
+				tileSize: 512,
+				zoomOffset: -1,
+                minZoom: this.mapMinZoom,
+                maxZoom: this.mapMaxZoom,
+                attribution: "MapBox BCC",
+                opacity: 1
+            });
+
+
+
             var baseLayers = {
                 "Clean Terrain": worldTerrain,
+				"BCC": bcc,
                 "Modern Open Street Map": worldStreet
             };
 
