@@ -9,8 +9,8 @@ layout: base.liquid
             <li><a href="#overview">Overview</a></li>
             <li><a href="#s-1">1<span>Introduction</span></a></li>
             <li><a href="#s-2">2<span>Homelands</span></a></li>
-            <li><a href="#s-3">4<span>Pathways</span></a></li>
-            <li><a href="#s-4">3<span>Villagers, Settlers</span></a></li>
+            <li><a href="#s-3">3<span>Pathways</span></a></li>
+            <li><a href="#s-4">4<span>Villagers, Settlers</span></a></li>
             <li><a href="#s-5">5<span>Lines</span></a></li>
             <li><a href="#filters">Explore </a></li>
         </ol>
@@ -75,7 +75,7 @@ layout: base.liquid
             <p>Use the filters below to customise your search. There are 3 categories; maps, feature and people. Click </p>
         </article>
         <article>
-            <div class="map-filters"> 
+            <div class="map-filters">
 <h2> Map filters</h2>
 <ul>
   <li><input type="checkbox" id="checkbox1" />
@@ -198,10 +198,10 @@ layout: base.liquid
       <p>1796</p>
     </label>
   </li>
-   
+
 </ul>
 </div>
- 
+
             <div class="filter">
                 <h2>Filter</h2>
                 <table>
@@ -458,7 +458,7 @@ layout: base.liquid
         fillOpacity: 0.5
     };
     polyDescriptiveStyle = {stroke: true, fillColor: '#ff0000', weight: 1, fill: true, opacity: 0.5, fillOpacity: 0.5};
-	
+
     polyRiverRouteStyle = {
         stroke: true,
         dashArray: "7 6",
@@ -581,7 +581,16 @@ layout: base.liquid
             // Text features (e.g.) rivers info stored hers
             // So it can be added/changed by zoom
             this.textFeatures = {};
+            this.textMinZoomLevel = 8;
+            this.defaultTextAttributes = {
+                                           'fill': 'black',
+                                           'font-family': 'EB Garamond, serif',
+                                           'font-weight': 'bold',
 
+                                           //'textLength': 300,
+                                           //'lengthAdjust': 'spacing',
+                                           'dx': '15%',
+                                       };
 
         }
 
@@ -840,10 +849,12 @@ layout: base.liquid
 
                 let slide = this.getSlideById(slideid);
                 if (slide) {
-                    // Clear layers
+                    // Clear layers and text
+                    this.clearFeatureText();
                     if (slide.layer) {
                         this.storyFeatureLayerGroup.clearLayers();
                     }
+
                     // Move to bounds
                     let bounds = this.map.flyToBounds(this.getStoryFrameBounds(slide.fid));
 
@@ -964,37 +975,46 @@ layout: base.liquid
 
         }
 
+        clearFeatureText() {
+            this.storyFeatureLayerGroup.eachLayer(function (layer) {
+                    let features = layer._layers;
+                    for (let [key, feature] of Object.entries(features)) {
+                        let featureId = feature.feature.properties.id;
+                        //console.log(key);
+                        if (this.textFeatures[featureId] && feature._text != null) {
+                            //console.log(feature);
+                            feature.setText(null);
+                        }
+                    }
+                }.bind(this));
+        }
+
         /** Map level events such as zoom, used to update text levels
          *
          */
         attachMapEvents() {
-            this.map.on('zoomstart', function () {
+
+            this.map.on('zoomend', function () {
+                let TextSize = (this.map.getZoom()+4)+'px';
+                console.log(this.map.getZoom());
                 this.storyFeatureLayerGroup.eachLayer(function (layer) {
                    let features = layer._layers;
-                   let TextSize = (this.map.getZoom()+4)+'px';
-
-                   console.log(TextSize);
                    for (let [key, feature] of Object.entries(features)){
                        let featureId = feature.feature.properties.id;
                        //console.log(key);
                        if (this.textFeatures[featureId]){
                            //console.log(feature.feature.properties);
                            feature.setText(null);
-                           feature.setText(this.textFeatures[featureId].text,
-                           {
-                               orientation: this.textFeatures[featureId].orientation, offset: 5, center: true,
-                               attributes: {
-                                   'fill': 'black',
-                                   'font-family': 'EB Garamond, serif',
-                                   'font-weight': 'bold',
-                                   'font-size': TextSize,
-                                   //'textLength': 300,
-                                   //'lengthAdjust': 'spacing',
-                                   'dx': '15%',
-                               }
+                           if (this.map.getZoom() >= this.textMinZoomLevel) {
+                               let textAttributes = this.defaultTextAttributes;
+                               textAttributes['font-size'] = TextSize;
+                               feature.setText(this.textFeatures[featureId].text,
+                                   {
+                                       orientation: this.textFeatures[featureId].orientation, offset: 5, center: true,
+                                       attributes: textAttributes
+                                   }
+                               );
                            }
-                       );
-
                        }
                    }
 
@@ -1093,7 +1113,7 @@ layout: base.liquid
                                 orientation: testDirection(feature),
                                 text: feature.properties.norm_text
                             }
-                            layer.setText(feature.properties.norm_text,
+                            /*layer.setText(feature.properties.norm_text,
                                 {
                                     orientation: testDirection(feature), offset: 5, center: true,
                                     attributes: {
@@ -1106,7 +1126,7 @@ layout: base.liquid
                                         'dx': '15%',
                                     }
                                 }
-                            );
+                            );*/
                             break;
                         case 9:
                             layer.setStyle(lineMiscStyle);
