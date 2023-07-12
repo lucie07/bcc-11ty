@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-07-11 14:36 -->
+    <!-- Built with 11ty - 2023-07-12 08:20 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1689086161">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1689150051">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1689086161"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1689150051"></script>
     
     <style>
     .map-label {
@@ -600,6 +600,7 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
 <script type="text/javascript" src="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.js"></script>
 <script type="text/javascript" src="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/leaflet-dvf.js"></script>
 <script type="text/javascript" src="/bcc-11ty/assets/js/leaflet/plugins/leaflet.textpath.js"></script>
+<script type="text/javascript" src="/bcc-11ty/assets/js/leaflet/plugins/leaflet-clone.js"></script>
 
 
 <script>
@@ -628,13 +629,25 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
     };
     lineRiverRouteStyle = {
         stroke: true,
+		//smoothFactor:10,
         dashArray: "7 9",
         color: '#00c2cb',
         lineCap: "square",
         lineJoin: "round",
         weight: 2,
-        fill: false
+        fill: false,
+		opacity: 0.1
     };
+    lineRiverRouteStyleLabel = {
+        stroke: true,
+		smoothFactor:15,
+        dashArray: "7 9",
+        color: '#000000FF',
+        lineCap: "square",
+        lineJoin: "round",
+        weight: 2,
+        fill: false
+    };	
     lineMiscStyle = {stroke: true, color: '#ffff00', weight: 4, fill: false};
     lineToponymStyle = {stroke: true, color: '#ff0000', weight: 5, fill: false};
 
@@ -1338,13 +1351,16 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
                             layer.setText(feature.properties.norm_text);
                             break;
                         case 8:
+							var cloned = cloneLayer(layer)		
+							cloned.setStyle(lineRiverRouteStyleLabel).addTo(storyMap.map);							
                             layer.setStyle(lineRiverRouteStyle);
                             // (storyMap.map.getZoom() + 2)
-
+							
                             this.textFeatures[feature.properties.id] = {
                                 orientation: testDirection(feature),
                                 text: feature.properties.norm_text
                             }
+							
                             /*layer.setText(feature.properties.norm_text,
                                 {
                                     orientation: testDirection(feature), offset: 5, center: true,
