@@ -1,5 +1,6 @@
 /*jshint esversion: 8 */
 
+
 export class StoryMap {
         constructor(storyUris) {
             this.overlay = null;
