@@ -453,6 +453,7 @@ export class StoryMap {
                 console.log(e.target);
             });*/
 
+
         }
 
         clearFeatureText() {
