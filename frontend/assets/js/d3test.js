@@ -4,6 +4,8 @@
 import 'leaflet-dvf';
 import 'leaflet-textpath';*/
 
+// https://observablehq.com/@sfu-iat355/intro-to-leaflet-d3-interactivity
+
 class StoryMap {
     constructor(storyUris) {
         this.overlay = null;
@@ -80,47 +82,178 @@ class StoryMap {
         //overlay.style.zIndex = "650";
 
 
-        const svg = overlay.select('svg').attr("pointer-events", "auto");
+        this.svg = overlay.select('svg').attr("pointer-events", "auto");
+        return true;
         //console.log(svg);
-        let pointsFile = await this.loadShapeFile(this.storyUris.points);
-        let pointsTest = {
-"type": "FeatureCollection",
-"name": "BCC_points",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "id": 51035, "feat_type": 5, "sub_type": 4, "map_source": 12, "date_yr": 1755, "map_text": "French House", "norm_text": "French House", "accuracy": 2, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -66.04009999794134, 49.507271715195415 ] } },
-{ "type": "Feature", "properties": { "id": 51038, "feat_type": 5, "sub_type": 4, "map_source": 12, "date_yr": 1755, "map_text": "English H.", "norm_text": "English House", "accuracy": 2, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -66.329719711006589, 49.286173106646224 ] } },
-{ "type": "Feature", "properties": { "id": 52772, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Ye Olde Neil's Place", "norm_text": "Neil's Place", "accuracy": 2, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -66.955994100403643, 48.844965097545895 ] } },
-{ "type": "Feature", "properties": { "id": 53416, "feat_type": 1, "sub_type": 4, "map_source": 1, "date_yr": 1590, "map_text": "Roanoac", "norm_text": "Roanoke", "accuracy": 1, "story_link": null, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -75.688308226217003, 35.92617277633596 ] } },
-{ "type": "Feature", "properties": { "id": 52774, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Leeds", "norm_text": "Leeds", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -74.444349048008235, 39.489407284905724 ] } },
-{ "type": "Feature", "properties": { "id": 52777, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Greenwich", "norm_text": "Greenwich", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.309781711551707, 39.394757262425429 ] } },
-{ "type": "Feature", "properties": { "id": 52775, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Salem", "norm_text": "Salem", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.466109866093518, 39.571397497760223 ] } },
-{ "type": "Feature", "properties": { "id": 52764, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Dover", "norm_text": "Dover", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.604929267326625, 39.093537216162069 ] } },
-{ "type": "Feature", "properties": { "id": 52763, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Salisbury", "norm_text": "Salisbury", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.651202401071004, 39.254478013267423 ] } },
-{ "type": "Feature", "properties": { "id": 52766, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "New T.", "norm_text": "New Town", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -76.085169358079071, 39.204102448677183 ] } },
-{ "type": "Feature", "properties": { "id": 52765, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "George T", "norm_text": "Georgetown", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -76.062658103825058, 39.357054644423748 ] } },
-{ "type": "Feature", "properties": { "id": 52768, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Noxontown", "norm_text": "Noxontown", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.678716156270369, 39.369624446102456 ] } },
-{ "type": "Feature", "properties": { "id": 52767, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "St. George", "norm_text": "St George", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.644949274889356, 39.500988243033909 ] } },
-{ "type": "Feature", "properties": { "id": 52770, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "New Castle", "norm_text": "Newcastle", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.548651131691585, 39.66388174599917 ] } },
-{ "type": "Feature", "properties": { "id": 51617, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Gr. Mecatina", "norm_text": "Great Mecatina", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -58.871351888108826, 50.804317767802566 ] } },
-{ "type": "Feature", "properties": { "id": 51615, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Lit. Mecatina", "norm_text": "Little Mecatina", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -59.338764768530147, 50.571409540274864 ] } },
-{ "type": "Feature", "properties": { "id": 51627, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Wataguaki Is.", "norm_text": "Wataguaki Island", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -59.96898438258134, 50.307165970881599 ] } },
-{ "type": "Feature", "properties": { "id": 51623, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Ouapitougan", "norm_text": "Ouapitougan", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -60.210568567967641, 50.209794823938672 ] } },
-{ "type": "Feature", "properties": { "id": 52761, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Channel Is.", "norm_text": "Channel Island", "accuracy": 3, "story_link": 2, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -58.661278683425088, 51.088880810407417 ] } },
-{ "type": "Feature", "properties": { "id": 51633, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Esquimaux Is.", "norm_text": "Esquimaux Island", "accuracy": 2, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -57.673934621411512, 51.433953557133329 ] } },
-{ "type": "Feature", "properties": { "id": 55396, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Mascoutens", "norm_text": "Mascoutens", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -88.70127968840805, 43.07012217698059 ] } },
-{ "type": "Feature", "properties": { "id": 55401, "feat_type": 1, "sub_type": 4, "map_source": 12, "date_yr": 1755, "map_text": "Miskouakimina", "norm_text": "Miskouakimina", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.950686926129237, 43.18452021090701 ] } },
-{ "type": "Feature", "properties": { "id": 52762, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Mission of Francis Xavier", "norm_text": "Mission of Francis Xavier", "accuracy": 3, "story_link": 2, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -88.257343784006466, 44.217781929444968 ] } },
-{ "type": "Feature", "properties": { "id": 51591, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Port Chicagou", "norm_text": "Port Chicagou", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.630933978956435, 41.85718320080619 ] } },
-]};
+        /*  let pointsFile = await this.loadShapeFile(this.storyUris.points);
+          let pointsTest = {
+  "type": "FeatureCollection",
+  "name": "BCC_points",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  "features": [
+  { "type": "Feature", "properties": { "id": 51035, "feat_type": 5, "sub_type": 4, "map_source": 12, "date_yr": 1755, "map_text": "French House", "norm_text": "French House", "accuracy": 2, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -66.04009999794134, 49.507271715195415 ] } },
+  { "type": "Feature", "properties": { "id": 51038, "feat_type": 5, "sub_type": 4, "map_source": 12, "date_yr": 1755, "map_text": "English H.", "norm_text": "English House", "accuracy": 2, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -66.329719711006589, 49.286173106646224 ] } },
+  { "type": "Feature", "properties": { "id": 52772, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Ye Olde Neil's Place", "norm_text": "Neil's Place", "accuracy": 2, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -66.955994100403643, 48.844965097545895 ] } },
+  { "type": "Feature", "properties": { "id": 53416, "feat_type": 1, "sub_type": 4, "map_source": 1, "date_yr": 1590, "map_text": "Roanoac", "norm_text": "Roanoke", "accuracy": 1, "story_link": null, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -75.688308226217003, 35.92617277633596 ] } },
+  { "type": "Feature", "properties": { "id": 52774, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Leeds", "norm_text": "Leeds", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -74.444349048008235, 39.489407284905724 ] } },
+  { "type": "Feature", "properties": { "id": 52777, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Greenwich", "norm_text": "Greenwich", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.309781711551707, 39.394757262425429 ] } },
+  { "type": "Feature", "properties": { "id": 52775, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Salem", "norm_text": "Salem", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.466109866093518, 39.571397497760223 ] } },
+  { "type": "Feature", "properties": { "id": 52764, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Dover", "norm_text": "Dover", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.604929267326625, 39.093537216162069 ] } },
+  { "type": "Feature", "properties": { "id": 52763, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Salisbury", "norm_text": "Salisbury", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.651202401071004, 39.254478013267423 ] } },
+  { "type": "Feature", "properties": { "id": 52766, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "New T.", "norm_text": "New Town", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -76.085169358079071, 39.204102448677183 ] } },
+  { "type": "Feature", "properties": { "id": 52765, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "George T", "norm_text": "Georgetown", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -76.062658103825058, 39.357054644423748 ] } },
+  { "type": "Feature", "properties": { "id": 52768, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "Noxontown", "norm_text": "Noxontown", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.678716156270369, 39.369624446102456 ] } },
+  { "type": "Feature", "properties": { "id": 52767, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "St. George", "norm_text": "St George", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.644949274889356, 39.500988243033909 ] } },
+  { "type": "Feature", "properties": { "id": 52770, "feat_type": 1, "sub_type": 10, "map_source": 8, "date_yr": 1752, "map_text": "New Castle", "norm_text": "Newcastle", "accuracy": 3, "story_link": null, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -75.548651131691585, 39.66388174599917 ] } },
+  { "type": "Feature", "properties": { "id": 51617, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Gr. Mecatina", "norm_text": "Great Mecatina", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -58.871351888108826, 50.804317767802566 ] } },
+  { "type": "Feature", "properties": { "id": 51615, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Lit. Mecatina", "norm_text": "Little Mecatina", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -59.338764768530147, 50.571409540274864 ] } },
+  { "type": "Feature", "properties": { "id": 51627, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Wataguaki Is.", "norm_text": "Wataguaki Island", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -59.96898438258134, 50.307165970881599 ] } },
+  { "type": "Feature", "properties": { "id": 51623, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Ouapitougan", "norm_text": "Ouapitougan", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -60.210568567967641, 50.209794823938672 ] } },
+  { "type": "Feature", "properties": { "id": 52761, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Channel Is.", "norm_text": "Channel Island", "accuracy": 3, "story_link": 2, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -58.661278683425088, 51.088880810407417 ] } },
+  { "type": "Feature", "properties": { "id": 51633, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Esquimaux Is.", "norm_text": "Esquimaux Island", "accuracy": 2, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -57.673934621411512, 51.433953557133329 ] } },
+  { "type": "Feature", "properties": { "id": 55396, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Mascoutens", "norm_text": "Mascoutens", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -88.70127968840805, 43.07012217698059 ] } },
+  { "type": "Feature", "properties": { "id": 55401, "feat_type": 1, "sub_type": 4, "map_source": 12, "date_yr": 1755, "map_text": "Miskouakimina", "norm_text": "Miskouakimina", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.950686926129237, 43.18452021090701 ] } },
+  { "type": "Feature", "properties": { "id": 52762, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Mission of Francis Xavier", "norm_text": "Mission of Francis Xavier", "accuracy": 3, "story_link": 2, "frame_link": null, "identity": 1 }, "geometry": { "type": "Point", "coordinates": [ -88.257343784006466, 44.217781929444968 ] } },
+  { "type": "Feature", "properties": { "id": 51591, "feat_type": 1, "sub_type": 10, "map_source": 12, "date_yr": 1755, "map_text": "Port Chicagou", "norm_text": "Port Chicagou", "accuracy": 3, "story_link": 1, "frame_link": null, "identity": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.630933978956435, 41.85718320080619 ] } },
+  ]};*/
         // This part will be done by slide
         //storyMap.getSlideById("slide_5")
-        let td = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"Name":"Vancouver"},"geometry":{"type":"Point","coordinates":[-122.34374999999999,49.32512199104001]}},{"type":"Feature","properties":{"Name":"Calgary"},"geometry":{"type":"Point","coordinates":[-114.08203125,51.09662294502995]}},{"type":"Feature","properties":{"Name":"Edmonton"},"geometry":{"type":"Point","coordinates":[-113.51074218749999,53.56641415275043]}},{"type":"Feature","properties":{"Name":"Prince George"},"geometry":{"type":"Point","coordinates":[-122.78320312499999,53.93021986394]}},{"type":"Feature","properties":{"Name":"Fort St. John"},"geometry":{"type":"Point","coordinates":[-120.80566406250001,56.24334992410525]}},{"type":"Feature","properties":{"Name":"Prince Rupert"},"geometry":{"type":"Point","coordinates":[-130.3857421875,54.34214886448341]}},{"type":"Feature","properties":{"Name":"Fort McMurray"},"geometry":{"type":"Point","coordinates":[-111.26953125,56.65622649350222]}}]}
-        this.map.fitBounds(L.geoJson(pointsTest).getBounds());
-        console.log(pointsFile.features);
-        const Dots = svg.selectAll('circle')
+        /* let td = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"Name":"Vancouver"},"geometry":{"type":"Point","coordinates":[-122.34374999999999,49.32512199104001]}},{"type":"Feature","properties":{"Name":"Calgary"},"geometry":{"type":"Point","coordinates":[-114.08203125,51.09662294502995]}},{"type":"Feature","properties":{"Name":"Edmonton"},"geometry":{"type":"Point","coordinates":[-113.51074218749999,53.56641415275043]}},{"type":"Feature","properties":{"Name":"Prince George"},"geometry":{"type":"Point","coordinates":[-122.78320312499999,53.93021986394]}},{"type":"Feature","properties":{"Name":"Fort St. John"},"geometry":{"type":"Point","coordinates":[-120.80566406250001,56.24334992410525]}},{"type":"Feature","properties":{"Name":"Prince Rupert"},"geometry":{"type":"Point","coordinates":[-130.3857421875,54.34214886448341]}},{"type":"Feature","properties":{"Name":"Fort McMurray"},"geometry":{"type":"Point","coordinates":[-111.26953125,56.65622649350222]}}]}
+         this.map.fitBounds(L.geoJson(pointsTest).getBounds());
+         console.log(pointsFile.features);
+         const Dots = svg.selectAll('circle')
+             .attr("class", "Dots")
+             .data(pointsTest.features)
+             .join('circle')
+                 .attr("id", "dotties")
+                 .attr("fill", "steelblue")
+                 .attr("stroke", "black")
+                 //Leaflet has to take control of projecting points. Here we are feeding the latitude and longitude coordinates to
+                 //leaflet so that it can project them on the coordinates of the view. Notice, we have to reverse lat and lon.
+                 //Finally, the returned conversion produces an x and y point. We have to select the the desired one using .x or .y
+                 .attr("cx", d => this.map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x)
+                 .attr("cy", d => this.map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y)
+                 .attr("r", 5)
+                 .on('mouseover', function () { //function to add mouseover event
+                     d3.select(this).transition() //D3 selects the object we have moused over in order to perform operations on it
+                         .duration('150') //how long we are transitioning between the two states (works like keyframes)
+                         .attr("fill", "red") //change the fill
+                         .attr('r', 10); //change radius
+                 })
+                 .on('mouseout', function () { //reverse the action based on when we mouse off the the circle
+                     d3.select(this).transition()
+                         .duration('150')
+                         .attr("fill", "steelblue")
+                         .attr('r', 5);
+                 });
+
+         await svg.selectAll('circle')
+             .transition()
+             .delay(function(d, i){
+                 return i* 150;
+             })
+             .attr('r', 10)
+             .on('end', function(){
+
+             });
+         console.log('done');
+
+
+         const update = () => Dots
+             .attr("cx", d => this.map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x)
+             .attr("cy", d => this.map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y);
+
+
+         this.map.on("zoomend", update);
+         return svg.node();*/
+    }
+
+    async drawHomelandsIntro() {
+
+        let lg = d3.line()
+            .x((d) => this.map.latLngToLayerPoint([d[1], d[0]]).x)
+            .y((d) => this.map.latLngToLayerPoint([d[1], d[0]]).y);
+
+        this.svg.selectAll('.homelands')
+            .data(this.pointsFile.features)
+            .join("path")
+                .attr('class', 'homelands')
+                .attr("stroke", "black")
+                .attr("fill", "red")
+                .attr("fill-opacity", "0.3")
+                .attr("stroke-width", "1")
+                .attr("d", d => lg(d.geometry.coordinates[0][0]));
+
+    }
+
+    /** Animated intro for the homelands section in D3*/
+    async playHomelandsIntro() {
+
+        this.pointsFile = await this.loadShapeFile(this.storyUris.homelands);
+
+        let coordinates = this.pointsFile.features[0].geometry.coordinates[0][0];
+
+        let points = [];
+        for (let i = 0; i < coordinates.length; i++) {
+            let point = this.map.latLngToLayerPoint([coordinates[i][1], coordinates[i][0]]);
+            points.push(point);
+        }
+        this.drawHomelandsIntro();
+        this.map.on("zoomend", function(){
+            this.drawHomelandsIntro();
+        }, this);
+
+        /*console.log(points);
+        this.svg.selectAll('path')
+            .attr("class", "testLine")
+            .attr("fill", "steelblue")
+            .attr("stroke", "black")
+            .attr("d", lg(points));*/
+        console.log(coordinates);
+        //this.map.fitBounds(L.geoJson(pointsFile).getBounds());
+        /*const Dots = this.svg.selectAll('circle')
             .attr("class", "Dots")
-            .data(pointsTest.features)
+            .data(coordinates)
+            .join('circle')
+            .attr("id", "dotties")
+            .attr("fill", "steelblue")
+            .attr("stroke", "black")
+            .attr("cx", d => this.map.latLngToLayerPoint([d[1], d[0]]).x)
+            .attr("cy", d => this.map.latLngToLayerPoint([d[1], d[0]]).y)
+            .attr("r", 5);
+
+        const update = () => Dots
+            .attr("cx", d => this.map.latLngToLayerPoint([d[1], d[0]]).x)
+            .attr("cy", d => this.map.latLngToLayerPoint([d[1], d[0]]).y);*/
+
+        //this.map.on("zoomend", update);
+
+
+
+
+        /*this.svg.selectAll('circle')
+            .attr("class", "Dots")
+            .data(coordinates)
+            .join('circle')
+                .attr("id", "dotties")
+                .attr("fill", "steelblue")
+                .attr("stroke", "black")
+                .attr("cx", d => d.x)
+                .attr("cy", d => d.y)
+                .attr("r", 5);*/
+        /*
+        this.svg.select("path")
+            .attr("fill", "steelblue")
+            .attr("stroke", "black")
+            .attr('d', lg(points));
+*/
+        /*this.svg.selectAll("path")
+             .data(coordinates)
+
+
+        /*const Dots = this.svg.selectAll('circle')
+            .attr("class", "Dots")
+            .data(pointsFile.features)
             .join('circle')
                 .attr("id", "dotties")
                 .attr("fill", "steelblue")
@@ -130,31 +263,22 @@ class StoryMap {
                 //Finally, the returned conversion produces an x and y point. We have to select the the desired one using .x or .y
                 .attr("cx", d => this.map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x)
                 .attr("cy", d => this.map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y)
-                .attr("r", 5)
-                .on('mouseover', function () { //function to add mouseover event
-                    d3.select(this).transition() //D3 selects the object we have moused over in order to perform operations on it
-                        .duration('150') //how long we are transitioning between the two states (works like keyframes)
-                        .attr("fill", "red") //change the fill
-                        .attr('r', 10); //change radius
-                })
-                .on('mouseout', function () { //reverse the action based on when we mouse off the the circle
-                    d3.select(this).transition()
-                        .duration('150')
-                        .attr("fill", "steelblue")
-                        .attr('r', 5);
-                });
-
-        console.log(Dots);
-
-        const update = () => Dots
-            .attr("cx", d => this.map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x)
-            .attr("cy", d => this.map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y);
+                .attr("r", 5);*/
 
 
-        this.map.on("zoomend", update);
-        return svg.node();
     }
 
+    async playPathways1Intro() {
+
+    }
+
+    async playPathways2Intro() {
+
+    }
+
+    async playLinesIntro() {
+
+    }
 
     /**
      * Load all shape files asynchronously
@@ -513,10 +637,11 @@ class StoryMap {
 
         //this.storyFeatureLayerGroup = L.layerGroup().addTo(this.map);
 
-       /* await this.loadSlides();
+        await this.loadSlides();
         await this.loadStoryFrames();
         await this.loadFeatures();
-        this.attachMapEvents();
+        // todo removed for d3 test
+        //this.attachMapEvents();
         this.initStoryFeatureLayers();
 
         // All features layer used for building filtered layers
@@ -536,12 +661,13 @@ class StoryMap {
             observer.observe(this.slideElements[s]);
         }
         // Add intersection observer for filters
-        observer.observe(document.getElementById("filters"));*/
+        observer.observe(document.getElementById("filters"));
 
         /*this.map.on('click', function (e) {
             console.log(e.target);
         });*/
         await this.loadD3();
+        await this.playHomelandsIntro();
     }
 
     clearFeatureText() {

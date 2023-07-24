@@ -1,0 +1,5174 @@
+{
+"type": "FeatureCollection",
+"name": "BCC_polys",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4128,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 2,
+            "map_text": "LITTLE ESQUIMAUX",
+            "norm_text": "Little Esquimaux",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -59.417542220286535,
+                            51.870575642499844
+                        ],
+                        [
+                            -56.01960813452709,
+                            51.970986708039334
+                        ],
+                        [
+                            -55.98809715382452,
+                            51.90299084920998
+                        ],
+                        [
+                            -56.89141193396459,
+                            51.68210617339293
+                        ],
+                        [
+                            -59.44380137087201,
+                            51.74393287431467
+                        ],
+                        [
+                            -59.417542220286535,
+                            51.870575642499844
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4131,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Antient Outaouacs Expelled by the Iroquois",
+            "norm_text": "Ancient Outaouacs Expelled by the Iroquois",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -78.05103547573391,
+                            45.873397323867685
+                        ],
+                        [
+                            -76.38095349849822,
+                            45.26309192612787
+                        ],
+                        [
+                            -76.4019608189666,
+                            45.03344548883106
+                        ],
+                        [
+                            -78.04053181549973,
+                            45.61684818804357
+                        ],
+                        [
+                            -78.05103547573391,
+                            45.873397323867685
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4130,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "ANTIENT ALGONQUINS Extirpated by the Iroquois",
+            "norm_text": "Ancient Algonquins Extirpated by the Iroquois",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -76.88512918973917,
+                            46.62154696242558
+                        ],
+                        [
+                            -75.02598132828811,
+                            46.455369232383795
+                        ],
+                        [
+                            -72.0849564627158,
+                            47.016866965163885
+                        ],
+                        [
+                            -72.27402234693118,
+                            46.542134108673324
+                        ],
+                        [
+                            -75.36209845578209,
+                            45.94648053839231
+                        ],
+                        [
+                            -77.05318775348618,
+                            46.33946734190942
+                        ],
+                        [
+                            -76.88512918973917,
+                            46.62154696242558
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4132,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "NICARIAGES united with the Six Nations making the 7th Nation in that League",
+            "norm_text": "Nicariages united with the Six Nations making the 7th Nation in that League",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -86.2061587360975,
+                            46.71806200055265
+                        ],
+                        [
+                            -85.28906202805035,
+                            46.56064519342284
+                        ],
+                        [
+                            -82.97175516753842,
+                            44.15025489848582
+                        ],
+                        [
+                            -85.37094566269744,
+                            43.82032234558099
+                        ],
+                        [
+                            -86.4599980035034,
+                            46.430995876115865
+                        ],
+                        [
+                            -86.2061587360975,
+                            46.71806200055265
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4135,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Miamis or Miammees",
+            "norm_text": "Miamis or Miammees",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -87.88541660932673,
+                            41.546943583346724
+                        ],
+                        [
+                            -83.77838200129779,
+                            41.66181974699161
+                        ],
+                        [
+                            -83.46088057274693,
+                            41.56993517704516
+                        ],
+                        [
+                            -84.56701458189187,
+                            41.28580076851032
+                        ],
+                        [
+                            -87.89565859089288,
+                            41.339651286115696
+                        ],
+                        [
+                            -87.88541660932673,
+                            41.546943583346724
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4133,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Sauteurs or Estiaghicks",
+            "norm_text": "Sauteurs or Estiaghicks",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -83.90128578009165,
+                            46.801219502106505
+                        ],
+                        [
+                            -82.13966495071267,
+                            46.99716830151821
+                        ],
+                        [
+                            -81.82216352216179,
+                            46.98319570548016
+                        ],
+                        [
+                            -82.37523052673428,
+                            46.61159053164175
+                        ],
+                        [
+                            -83.92176974322398,
+                            46.61862570676332
+                        ],
+                        [
+                            -83.90128578009165,
+                            46.801219502106505
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4103,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "MESSESAGUES Subdued by the Iroqois and now united with them making the 8th Nation in that League",
+            "norm_text": "Messesagues Subdued by the Iroqois and now united with them making the 8th Nation in that League",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -82.10893900601421,
+                            46.69595231531734
+                        ],
+                        [
+                            -80.52143186325988,
+                            46.42835514212033
+                        ],
+                        [
+                            -80.3678021397675,
+                            46.17362423886701
+                        ],
+                        [
+                            -81.72998568806639,
+                            46.20907440532533
+                        ],
+                        [
+                            -82.16014891384499,
+                            46.48480108006104
+                        ],
+                        [
+                            -82.10893900601421,
+                            46.69595231531734
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4101,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Nipissiriniens Extirpated by the Iroquois",
+            "norm_text": "Nipissiriniens Extirpated by the Iroquois",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -80.30635025037058,
+                            46.07424212187912
+                        ],
+                        [
+                            -80.40877006603215,
+                            46.32236129220512
+                        ],
+                        [
+                            -80.14247854531207,
+                            46.4706950808878
+                        ],
+                        [
+                            -79.99909080338587,
+                            46.10975631607794
+                        ],
+                        [
+                            -80.30635025037058,
+                            46.07424212187912
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4107,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Mataouan",
+            "norm_text": "Mataouan",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -79.95812287712124,
+                            46.54118851049257
+                        ],
+                        [
+                            -79.15924831496099,
+                            46.67487420666117
+                        ],
+                        [
+                            -79.10803840713021,
+                            46.576400946363385
+                        ],
+                        [
+                            -79.88642900615814,
+                            46.40011023099209
+                        ],
+                        [
+                            -79.95812287712124,
+                            46.54118851049257
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4104,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 2,
+            "map_text": "Chomonchouanistes",
+            "norm_text": "Chomonchouanistes",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -77.12109398329575,
+                            48.91734912252214
+                        ],
+                        [
+                            -75.52334485897524,
+                            48.18516171114094
+                        ],
+                        [
+                            -73.4647065641777,
+                            47.979894501904276
+                        ],
+                        [
+                            -73.59785232453775,
+                            47.787572493592094
+                        ],
+                        [
+                            -75.99447601101845,
+                            47.842594504293665
+                        ],
+                        [
+                            -77.45907937497893,
+                            48.802799763465565
+                        ],
+                        [
+                            -77.12109398329575,
+                            48.91734912252214
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4110,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 2,
+            "map_text": "Nekoubavistes",
+            "norm_text": "Nekoubavistes",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -76.54754301559095,
+                            48.89041991592989
+                        ],
+                        [
+                            -75.03172974379973,
+                            48.83651796578515
+                        ],
+                        [
+                            -73.92559573465476,
+                            48.95099022653403
+                        ],
+                        [
+                            -73.76172402959627,
+                            48.870213487784056
+                        ],
+                        [
+                            -74.59132453645498,
+                            48.72178352082401
+                        ],
+                        [
+                            -76.54754301559095,
+                            48.74204983347109
+                        ],
+                        [
+                            -76.54754301559095,
+                            48.89041991592989
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4109,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 2,
+            "map_text": "Little Mistassins",
+            "norm_text": "Little Mistassins",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -72.04107112648187,
+                            50.46100375166112
+                        ],
+                        [
+                            -71.56993997443865,
+                            50.630222112024214
+                        ],
+                        [
+                            -70.71985550444765,
+                            50.59772727533188
+                        ],
+                        [
+                            -71.88744140298954,
+                            50.17324966718345
+                        ],
+                        [
+                            -72.04107112648187,
+                            50.46100375166112
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4113,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 2,
+            "map_text": "Gr. Mistassins",
+            "norm_text": "Greater Mistassins",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -73.62857826923623,
+                            50.53267024770155
+                        ],
+                        [
+                            -73.00381739370064,
+                            51.09566164821141
+                        ],
+                        [
+                            -72.57365416792206,
+                            51.61373764133553
+                        ],
+                        [
+                            -72.1844588684081,
+                            51.256186887224736
+                        ],
+                        [
+                            -73.37252873008231,
+                            50.350032500010336
+                        ],
+                        [
+                            -73.62857826923623,
+                            50.53267024770155
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4111,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Papinachies",
+            "norm_text": "Papinachies",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -70.71473451366458,
+                            49.452888763355475
+                        ],
+                        [
+                            -69.8031981542766,
+                            49.863950149573974
+                        ],
+                        [
+                            -68.73803207139628,
+                            49.87055172875161
+                        ],
+                        [
+                            -68.67658018199934,
+                            49.71848707647395
+                        ],
+                        [
+                            -69.73150428331351,
+                            49.66548307063122
+                        ],
+                        [
+                            -70.48941091920912,
+                            49.25274055672971
+                        ],
+                        [
+                            -70.71473451366458,
+                            49.452888763355475
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4116,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Tadoussacs",
+            "norm_text": "Tadoussacs",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -70.32082823605879,
+                            48.0005406362257
+                        ],
+                        [
+                            -69.97532864438438,
+                            48.2652891211715
+                        ],
+                        [
+                            -69.82177327030684,
+                            48.6218045540922
+                        ],
+                        [
+                            -69.73646472915266,
+                            48.65281018218914
+                        ],
+                        [
+                            -69.79191528090287,
+                            48.2652891211715
+                        ],
+                        [
+                            -70.2269888407892,
+                            47.92342243293663
+                        ],
+                        [
+                            -70.32082823605879,
+                            48.0005406362257
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4114,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Chekoutimiens",
+            "norm_text": "Chekoutimiens",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -71.17817907465833,
+                            48.131662106307395
+                        ],
+                        [
+                            -70.70471667125261,
+                            48.517373017081226
+                        ],
+                        [
+                            -70.81988320181077,
+                            48.88053774796389
+                        ],
+                        [
+                            -70.6450006924447,
+                            48.91138408680085
+                        ],
+                        [
+                            -70.58955014069447,
+                            48.32488217049474
+                        ],
+                        [
+                            -71.13552480408124,
+                            48.02336836658909
+                        ],
+                        [
+                            -71.17817907465833,
+                            48.131662106307395
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4118,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Piekouagam",
+            "norm_text": "Piekouagam",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -72.69240568014507,
+                            47.501535898361844
+                        ],
+                        [
+                            -71.94169051798825,
+                            48.307862682357325
+                        ],
+                        [
+                            -71.86491283094949,
+                            48.916990467140955
+                        ],
+                        [
+                            -71.74548087333363,
+                            48.98981616431718
+                        ],
+                        [
+                            -71.5919254992561,
+                            48.57949343829557
+                        ],
+                        [
+                            -72.4279492025671,
+                            47.449641537947855
+                        ],
+                        [
+                            -72.69240568014507,
+                            47.501535898361844
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4121,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 2,
+            "map_text": "EASTERN SIOUX",
+            "norm_text": "Eastern Sioux",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -95.10083786590224,
+                            46.87070850599346
+                        ],
+                        [
+                            -93.12830036137768,
+                            47.09708287943683
+                        ],
+                        [
+                            -92.99925585173587,
+                            46.89590855521492
+                        ],
+                        [
+                            -95.02709814610695,
+                            46.66868190283747
+                        ],
+                        [
+                            -95.10083786590224,
+                            46.87070850599346
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4120,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 2,
+            "map_text": "SIOUX OR NADOUESSIANS",
+            "norm_text": "Sioux or Nadouessians",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -97.55268354909636,
+                            45.814460175850144
+                        ],
+                        [
+                            -95.76449534406007,
+                            46.18583052948026
+                        ],
+                        [
+                            -93.81039276948431,
+                            46.376940719499295
+                        ],
+                        [
+                            -93.62604346999603,
+                            46.08363249462799
+                        ],
+                        [
+                            -97.46050889935219,
+                            45.492312324767134
+                        ],
+                        [
+                            -97.55268354909636,
+                            45.814460175850144
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4123,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "WESTERN SIOUX",
+            "norm_text": "Western Sioux",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -97.29459452981276,
+                            44.9338826771409
+                        ],
+                        [
+                            -95.45110153492998,
+                            45.375885432414314
+                        ],
+                        [
+                            -95.19301251564639,
+                            45.14231102958035
+                        ],
+                        [
+                            -97.1102452303245,
+                            44.64605403522817
+                        ],
+                        [
+                            -97.29459452981276,
+                            44.9338826771409
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4086,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "NORTHERN IROQUOIS",
+            "norm_text": "Northern Iroquois",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -78.96063642821441,
+                            44.40333347179771
+                        ],
+                        [
+                            -77.86121068986539,
+                            45.17418761297449
+                        ],
+                        [
+                            -77.20884059813419,
+                            45.05032624538934
+                        ],
+                        [
+                            -75.81468928534822,
+                            45.08540862317316
+                        ],
+                        [
+                            -75.71203206279155,
+                            44.883977491473665
+                        ],
+                        [
+                            -76.9737224432463,
+                            44.75243254132468
+                        ],
+                        [
+                            -77.80822631693292,
+                            44.773593933673766
+                        ],
+                        [
+                            -78.80499483272526,
+                            44.130627167702286
+                        ],
+                        [
+                            -78.96063642821441,
+                            44.40333347179771
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4088,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "ANTIENT HURONS Conquer'd and expell'd by the Iroquois Ann. 1650 ever since which time they have been in Posessn of this Country",
+            "norm_text": "Ancient Hurons Conquered and expelled by the Iroquois Anno 1650 ever since which time they have been in Posession of this Country",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -82.13307575754678,
+                            42.98962241527477
+                        ],
+                        [
+                            -81.40454062972515,
+                            43.6209879966706
+                        ],
+                        [
+                            -80.25213051844366,
+                            44.21257190167766
+                        ],
+                        [
+                            -78.69571456355199,
+                            45.27564656012924
+                        ],
+                        [
+                            -78.42416965227301,
+                            45.30826149744615
+                        ],
+                        [
+                            -78.34469309287427,
+                            45.00000395443797
+                        ],
+                        [
+                            -79.23880438610992,
+                            44.293217632667385
+                        ],
+                        [
+                            -80.62302112897102,
+                            43.63536992788371
+                        ],
+                        [
+                            -81.65621640115447,
+                            42.88780146285145
+                        ],
+                        [
+                            -82.04035310491494,
+                            42.55206181276444
+                        ],
+                        [
+                            -82.13307575754678,
+                            42.98962241527477
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4089,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "IROCOISIA The Original Country of the Iqoquois and formerly so called",
+            "norm_text": "Irocoisia The Original Country of the Iqoquois and formerly so called",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -74.37583240790052,
+                            44.63708453593088
+                        ],
+                        [
+                            -72.6869555206776,
+                            44.77124305063652
+                        ],
+                        [
+                            -72.59092134473748,
+                            44.474266160125886
+                        ],
+                        [
+                            -74.34271717481771,
+                            44.32994589776118
+                        ],
+                        [
+                            -74.37583240790052,
+                            44.63708453593088
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4102,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "PANIS The Padoncas and Panis are reckoned very numerous, the Panis are said to have 60 or 70 Villages.",
+            "norm_text": "Panis The Padoucas and Panis are reckoned very numerous, the Panis are said to have 60 or 70 Villages.",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -97.4205867536539,
+                            41.980942313896065
+                        ],
+                        [
+                            -97.42896291737398,
+                            42.00273156769529
+                        ],
+                        [
+                            -96.81750296580763,
+                            41.98405552110213
+                        ],
+                        [
+                            -96.21860725982138,
+                            41.76576351152106
+                        ],
+                        [
+                            -96.22279534168142,
+                            41.64069057957375
+                        ],
+                        [
+                            -95.92544152961833,
+                            41.590593297380565
+                        ],
+                        [
+                            -95.92544152961833,
+                            41.46204143928736
+                        ],
+                        [
+                            -96.31074506074235,
+                            41.471456332808565
+                        ],
+                        [
+                            -97.42896291737398,
+                            41.681365967000765
+                        ],
+                        [
+                            -97.4205867536539,
+                            41.980942313896065
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4106,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "The Nadoussians are reckoned one of the most Populous Nations of Indians in North America, altho' the number and situation of their Villages are not known, nor laid down.",
+            "norm_text": "The Nadoussians are reckoned one of the most Populous Nations of Indians in North America, although the number and situation of their Villages are not known, nor laid down.",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -99.96041387084374,
+                            44.96696237024816
+                        ],
+                        [
+                            -97.38857606364854,
+                            45.61385146294172
+                        ],
+                        [
+                            -97.27747645249214,
+                            45.45655173242738
+                        ],
+                        [
+                            -98.36956199194452,
+                            45.12062028419704
+                        ],
+                        [
+                            -98.34355995529086,
+                            45.04551308709453
+                        ],
+                        [
+                            -99.62711503737451,
+                            44.70546875960395
+                        ],
+                        [
+                            -99.92495654813423,
+                            44.697067928220044
+                        ],
+                        [
+                            -99.96041387084374,
+                            44.96696237024816
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4112,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "COUNTRY OF THE PADOUCAS",
+            "norm_text": "Country of the Padoucas",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -100.46544994682563,
+                            41.71255725206492
+                        ],
+                        [
+                            -100.49208359723573,
+                            41.73811450497223
+                        ],
+                        [
+                            -98.28910022760039,
+                            42.01291942135449
+                        ],
+                        [
+                            -98.64294729733457,
+                            40.89224009063305
+                        ],
+                        [
+                            -100.92963642540165,
+                            40.59243798062601
+                        ],
+                        [
+                            -100.46544994682563,
+                            41.71255725206492
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4117,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "OUTAGAMIS",
+            "norm_text": "Outagamis",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -90.12231937015365,
+                            44.23418244981198
+                        ],
+                        [
+                            -89.54398867553434,
+                            44.22872994996158
+                        ],
+                        [
+                            -88.61942052558375,
+                            44.595639840426585
+                        ],
+                        [
+                            -88.5775676463679,
+                            44.462731266774455
+                        ],
+                        [
+                            -89.43745407389396,
+                            43.91984325071154
+                        ],
+                        [
+                            -90.10710014134789,
+                            43.90339711325884
+                        ],
+                        [
+                            -90.12231937015365,
+                            44.23418244981198
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4082,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "OSAGES",
+            "norm_text": "Osages",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -97.75520715058074,
+                            38.24976671030935
+                        ],
+                        [
+                            -93.37132817568137,
+                            37.66688764438935
+                        ],
+                        [
+                            -93.47482616159806,
+                            37.39133914936531
+                        ],
+                        [
+                            -97.72563629746169,
+                            37.97056209469363
+                        ],
+                        [
+                            -97.75520715058074,
+                            38.24976671030935
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4085,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Onyape 550 miles up the Missisippi",
+            "norm_text": "Onyape 550 miles up the Missisipi",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -90.9770131621979,
+                            33.87656371327032
+                        ],
+                        [
+                            -89.96051508623052,
+                            33.93791892446054
+                        ],
+                        [
+                            -89.88104341847308,
+                            33.78291204055361
+                        ],
+                        [
+                            -90.95853137899849,
+                            33.73374228774629
+                        ],
+                        [
+                            -90.9770131621979,
+                            33.87656371327032
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4084,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Caligoa Extent of Soto's march from Florida",
+            "norm_text": "Cligoa Extent of Soto's march from Florida",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -93.71635996578507,
+                            35.103547414717276
+                        ],
+                        [
+                            -93.46223544679323,
+                            35.07178879495905
+                        ],
+                        [
+                            -93.27741761479915,
+                            34.85140760374167
+                        ],
+                        [
+                            -93.92705229425832,
+                            34.909021374157625
+                        ],
+                        [
+                            -93.88546828205963,
+                            35.018830289235325
+                        ],
+                        [
+                            -93.82170613002171,
+                            35.015803052053336
+                        ],
+                        [
+                            -93.7995279901824,
+                            35.085401146228754
+                        ],
+                        [
+                            -93.71635996578507,
+                            35.103547414717276
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4087,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "CHRISTINAUX or KILISTINOS",
+            "norm_text": "Christinaux or Kilistinos",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -87.80796489922447,
+                            51.89845323301944
+                        ],
+                        [
+                            -87.51225636803397,
+                            51.93949001408196
+                        ],
+                        [
+                            -87.15740613060535,
+                            51.097685865561175
+                        ],
+                        [
+                            -86.04849913864092,
+                            50.593564822776656
+                        ],
+                        [
+                            -86.15938983783737,
+                            50.41960261569393
+                        ],
+                        [
+                            -87.37179481571846,
+                            50.95354171203861
+                        ],
+                        [
+                            -87.71925233986732,
+                            51.509031459892356
+                        ],
+                        [
+                            -87.80796489922447,
+                            51.89845323301944
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4090,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Abitibis",
+            "norm_text": "Abitibis",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -81.55927399950478,
+                            49.274542113833995
+                        ],
+                        [
+                            -80.62779212625465,
+                            49.245594025986044
+                        ],
+                        [
+                            -79.67782846980514,
+                            49.349246094877564
+                        ],
+                        [
+                            -79.53736691748962,
+                            49.19006272368482
+                        ],
+                        [
+                            -80.5575613500969,
+                            49.00127442939411
+                        ],
+                        [
+                            -81.57775578270419,
+                            49.11511745040974
+                        ],
+                        [
+                            -81.55927399950478,
+                            49.274542113833995
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4091,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "ANTIENT ERIEZ",
+            "norm_text": "Ancient Eries",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -83.4985906128475,
+                            41.38518054296236
+                        ],
+                        [
+                            -83.37291448709153,
+                            41.36229670864194
+                        ],
+                        [
+                            -82.890539945587,
+                            41.36229670864194
+                        ],
+                        [
+                            -81.634025198888,
+                            41.53371916322952
+                        ],
+                        [
+                            -80.13888894708613,
+                            41.98933936364472
+                        ],
+                        [
+                            -80.03860541800186,
+                            41.91815001134784
+                        ],
+                        [
+                            -80.95027386422251,
+                            41.5644218378924
+                        ],
+                        [
+                            -81.81635888813211,
+                            41.32181577019009
+                        ],
+                        [
+                            -82.95984663258476,
+                            41.286653507926836
+                        ],
+                        [
+                            -83.52261693100674,
+                            41.29081963747585
+                        ],
+                        [
+                            -83.4985906128475,
+                            41.38518054296236
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4093,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "The seat of War, the Mart. of Trade, & chief Hunting Grounds of the Six Nations, on the Lakes & the Ohio",
+            "norm_text": "The seat of War, the Market of Trade, & chief Hunting Grounds of the Six Nations, on the Lakes & the Ohio",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -82.64669591849976,
+                            41.412561213568644
+                        ],
+                        [
+                            -82.60049146050125,
+                            41.37443307792473
+                        ],
+                        [
+                            -82.61435279790079,
+                            41.37790019618606
+                        ],
+                        [
+                            -82.70029308977804,
+                            41.42364883539981
+                        ],
+                        [
+                            -81.71706222356958,
+                            41.480443186032474
+                        ],
+                        [
+                            -81.85844786504502,
+                            41.314075638129864
+                        ],
+                        [
+                            -82.25210984719241,
+                            41.27172269255049
+                        ],
+                        [
+                            -82.52748841686359,
+                            41.3147697196238
+                        ],
+                        [
+                            -82.64669591849976,
+                            41.412561213568644
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4092,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "SENEKA",
+            "norm_text": "Seneka",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -79.87521044540186,
+                            42.15422632133973
+                        ],
+                        [
+                            -79.47328673897667,
+                            42.43193082363419
+                        ],
+                        [
+                            -79.23772705755533,
+                            42.48189614600128
+                        ],
+                        [
+                            -77.71247812035206,
+                            42.68785214522874
+                        ],
+                        [
+                            -77.53580835928605,
+                            42.601216762010786
+                        ],
+                        [
+                            -78.34848926018971,
+                            42.42975751398817
+                        ],
+                        [
+                            -79.19061512127108,
+                            42.42541066862804
+                        ],
+                        [
+                            -79.44384177879903,
+                            42.36343537298978
+                        ],
+                        [
+                            -79.84576548522422,
+                            42.06247914892667
+                        ],
+                        [
+                            -79.87521044540186,
+                            42.15422632133973
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4097,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Minquaas or Mingos Removed from Susquehanna SenekaasT.",
+            "norm_text": "Minquaas or Mingos Removed from Susquehanna Senekaas Territory",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -79.87668269341073,
+                            41.78753897539819
+                        ],
+                        [
+                            -79.23183806551981,
+                            42.203321964495785
+                        ],
+                        [
+                            -77.75075656858304,
+                            42.33623391910811
+                        ],
+                        [
+                            -77.52697487123275,
+                            42.30139888220431
+                        ],
+                        [
+                            -77.80964648893838,
+                            42.131301977242224
+                        ],
+                        [
+                            -78.79016366285477,
+                            42.094168775756295
+                        ],
+                        [
+                            -79.2406715535731,
+                            41.92570485101825
+                        ],
+                        [
+                            -79.74418037261123,
+                            41.68206943482794
+                        ],
+                        [
+                            -79.87668269341073,
+                            41.78753897539819
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4349,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "CAYUGAES",
+            "norm_text": "Cayugas",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 3
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -77.28773456978925,
+                            42.281795699733
+                        ],
+                        [
+                            -76.36463506821933,
+                            42.887734273156426
+                        ],
+                        [
+                            -76.24979972352642,
+                            42.854285529678904
+                        ],
+                        [
+                            -76.82250419898207,
+                            42.38301313066903
+                        ],
+                        [
+                            -77.17878821713188,
+                            42.19459663608283
+                        ],
+                        [
+                            -77.28773456978925,
+                            42.281795699733
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4074,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Lower Shawnees",
+            "norm_text": "Lower Shawness",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -83.8448981385354,
+                            39.37577705317753
+                        ],
+                        [
+                            -83.32077784737363,
+                            39.235656560624975
+                        ],
+                        [
+                            -82.86879770864707,
+                            39.14779612832932
+                        ],
+                        [
+                            -82.38295586571617,
+                            39.171768958171775
+                        ],
+                        [
+                            -81.8956417747764,
+                            39.14322894889115
+                        ],
+                        [
+                            -81.0800163778561,
+                            39.084971438416424
+                        ],
+                        [
+                            -81.05351591369623,
+                            39.01293979915383
+                        ],
+                        [
+                            -81.26551962697516,
+                            39.01293979915383
+                        ],
+                        [
+                            -81.52905202056492,
+                            39.033527763165324
+                        ],
+                        [
+                            -82.80254654824735,
+                            39.05982588018925
+                        ],
+                        [
+                            -83.32077784737363,
+                            39.14779612832932
+                        ],
+                        [
+                            -83.8861210827841,
+                            39.29037110410046
+                        ],
+                        [
+                            -83.8448981385354,
+                            39.37577705317753
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4072,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Delawares",
+            "norm_text": "Delawares",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -83.41352947193319,
+                            40.02370254721568
+                        ],
+                        [
+                            -82.98068855732203,
+                            40.16335883713594
+                        ],
+                        [
+                            -82.73335089182993,
+                            40.134099813904335
+                        ],
+                        [
+                            -82.41828981792933,
+                            40.07554396178302
+                        ],
+                        [
+                            -81.8823915426965,
+                            39.8792407467711
+                        ],
+                        [
+                            -81.37593822764127,
+                            39.78653462419854
+                        ],
+                        [
+                            -80.795872512142,
+                            39.82951155448962
+                        ],
+                        [
+                            -80.74876057585779,
+                            39.74353083150587
+                        ],
+                        [
+                            -81.05204366568735,
+                            39.62343097023325
+                        ],
+                        [
+                            -81.63210938118664,
+                            39.67784169050107
+                        ],
+                        [
+                            -82.9041316608602,
+                            40.00115050490323
+                        ],
+                        [
+                            -83.36347303963122,
+                            39.86794182154772
+                        ],
+                        [
+                            -83.41352947193319,
+                            40.02370254721568
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4157,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Wauwaughtanees",
+            "norm_text": "Wauwaughtanees",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -88.47511812646744,
+                            38.29292409520354
+                        ],
+                        [
+                            -87.54760188087214,
+                            39.33223305424428
+                        ],
+                        [
+                            -86.58180718704592,
+                            39.70701312433288
+                        ],
+                        [
+                            -85.59834551711313,
+                            39.8382732877357
+                        ],
+                        [
+                            -85.41578676401184,
+                            39.772674493097554
+                        ],
+                        [
+                            -87.03231507776366,
+                            39.3367879456014
+                        ],
+                        [
+                            -87.86266295477277,
+                            38.70770980627453
+                        ],
+                        [
+                            -88.34850479770365,
+                            38.21662115402523
+                        ],
+                        [
+                            -88.47511812646744,
+                            38.29292409520354
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4156,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Pyankashees",
+            "norm_text": "Pyankashees",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -87.84794047468395,
+                            40.28223436981762
+                        ],
+                        [
+                            -87.87738543486158,
+                            40.333878704566104
+                        ],
+                        [
+                            -86.28146859323412,
+                            40.481856177328396
+                        ],
+                        [
+                            -86.14307728039928,
+                            40.35183269430195
+                        ],
+                        [
+                            -86.369803473767,
+                            40.264261867374074
+                        ],
+                        [
+                            -87.81849551450632,
+                            40.19232410000515
+                        ],
+                        [
+                            -87.84794047468395,
+                            40.28223436981762
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4159,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": null,
+            "accuracy": 1755,
+            "map_text": "TWIGHTWIES",
+            "norm_text": "Twightwies",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -87.94216434725237,
+                            39.7681481314549
+                        ],
+                        [
+                            -87.8361624906129,
+                            39.88121786731648
+                        ],
+                        [
+                            -87.25904127113138,
+                            40.02567549637185
+                        ],
+                        [
+                            -86.68192005164985,
+                            40.10454666894269
+                        ],
+                        [
+                            -85.72201434985918,
+                            40.19457331166656
+                        ],
+                        [
+                            -84.879888488779,
+                            40.167577848507534
+                        ],
+                        [
+                            -84.59132787903822,
+                            40.41687584477697
+                        ],
+                        [
+                            -84.33515672549287,
+                            40.73891789547943
+                        ],
+                        [
+                            -83.88464883477513,
+                            41.25228512964635
+                        ],
+                        [
+                            -83.49008636839491,
+                            41.515185497154945
+                        ],
+                        [
+                            -83.37525102370216,
+                            41.501955465648
+                        ],
+                        [
+                            -83.64614465733634,
+                            41.30318066029321
+                        ],
+                        [
+                            -84.3557681976172,
+                            40.07976842580212
+                        ],
+                        [
+                            -85.14194863435986,
+                            40.02793022554208
+                        ],
+                        [
+                            -86.37274796978475,
+                            39.97830897061622
+                        ],
+                        [
+                            -86.9145352370531,
+                            39.91284404283111
+                        ],
+                        [
+                            -87.83321799459515,
+                            39.54372143335131
+                        ],
+                        [
+                            -87.94216434725237,
+                            39.7681481314549
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4365,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "The Six Nations have extended their Territories to the River Illinois --ever since the \nYear 1672 when they subdued and were incorperated with the Antient Chouanona\nthe Native Proprietors of these Countries, and the River Ohio [additional text available]",
+            "norm_text": "The Six Nations have extended their Territories to the River Illinois --ever since the \nYear 1672 when they subdued and were incorperated with the Antient Chouanona\nthe Native Proprietors of these Countries, and the River Ohio [additional text available]",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -88.79993284342689,
+                            37.90058982127981
+                        ],
+                        [
+                            -89.23571825405578,
+                            38.02826783709705
+                        ],
+                        [
+                            -89.38588755096171,
+                            38.107084979584364
+                        ],
+                        [
+                            -89.28577468635778,
+                            38.30837723688189
+                        ],
+                        [
+                            -89.1886063177716,
+                            38.80802124523804
+                        ],
+                        [
+                            -89.16799484564723,
+                            39.222113821095746
+                        ],
+                        [
+                            -89.26516321423344,
+                            39.83756673777799
+                        ],
+                        [
+                            -89.04138151688343,
+                            40.35561925371474
+                        ],
+                        [
+                            -88.24636759208747,
+                            41.08979083782642
+                        ],
+                        [
+                            -87.97841845447105,
+                            40.87862782991982
+                        ],
+                        [
+                            -87.66335738057042,
+                            40.50578782484115
+                        ],
+                        [
+                            -87.99902992659538,
+                            40.146620842492325
+                        ],
+                        [
+                            -88.67920850669859,
+                            38.14877731663421
+                        ],
+                        [
+                            -88.69687548280517,
+                            37.849456474310514
+                        ],
+                        [
+                            -88.79993284342689,
+                            37.90058982127981
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4060,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Middle Cherakees",
+            "norm_text": "Middle Cherakees",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -84.29925393337452,
+                            34.64716170693854
+                        ],
+                        [
+                            -83.93779724923799,
+                            34.644031552127046
+                        ],
+                        [
+                            -83.61819344431731,
+                            34.705569567043035
+                        ],
+                        [
+                            -83.54082903122143,
+                            34.837877503715944
+                        ],
+                        [
+                            -83.18825023055497,
+                            35.014650253737656
+                        ],
+                        [
+                            -82.92064545738724,
+                            35.08732826266555
+                        ],
+                        [
+                            -82.7025031778382,
+                            35.11638135241651
+                        ],
+                        [
+                            -82.33090034116451,
+                            35.1319412477414
+                        ],
+                        [
+                            -82.31821765049307,
+                            35.06864580932538
+                        ],
+                        [
+                            -82.45519070974478,
+                            35.03646044681535
+                        ],
+                        [
+                            -82.8978166141786,
+                            35.000106892685615
+                        ],
+                        [
+                            -83.14893388947345,
+                            34.94502646753321
+                        ],
+                        [
+                            -83.32649155887383,
+                            34.846204757741276
+                        ],
+                        [
+                            -83.51800018801283,
+                            34.67219869083224
+                        ],
+                        [
+                            -83.91116359882797,
+                            34.56365048635065
+                        ],
+                        [
+                            -84.30813181684452,
+                            34.56678367256605
+                        ],
+                        [
+                            -84.29925393337452,
+                            34.64716170693854
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4063,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "The Country of the Cherakees which extends Westward to the Missisipi and Northward to the Confines of the Six Nations was formally sur-rendred to the Crown of Britain at Westminster 1729",
+            "norm_text": "The Country of the Cherakees which extends Westward to the Missisipi and Northward to the Confines of the Six Nations was formally sur-rendred to the Crown of Britain at Westminster 1729",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -86.94961036735582,
+                            36.184857799745956
+                        ],
+                        [
+                            -85.66612207140444,
+                            36.27284141585301
+                        ],
+                        [
+                            -84.9584279319372,
+                            36.18895225562627
+                        ],
+                        [
+                            -84.88740486417703,
+                            36.02090415504092
+                        ],
+                        [
+                            -84.8671125591027,
+                            35.77844875610677
+                        ],
+                        [
+                            -85.0751086861146,
+                            35.83399134849262
+                        ],
+                        [
+                            -85.11315675812897,
+                            35.73933995044203
+                        ],
+                        [
+                            -85.75997398237324,
+                            35.838104069260844
+                        ],
+                        [
+                            -85.81324128319335,
+                            35.90593317334646
+                        ],
+                        [
+                            -86.45244889303474,
+                            35.879219549160595
+                        ],
+                        [
+                            -86.76951615982115,
+                            36.07832684698336
+                        ],
+                        [
+                            -86.92424498601292,
+                            36.10497314063967
+                        ],
+                        [
+                            -86.94961036735582,
+                            36.184857799745956
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4150,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "OHIO INDIANS",
+            "norm_text": "Ohio Indians",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -83.63625742943796,
+                            40.88205168745486
+                        ],
+                        [
+                            -83.22026517541417,
+                            40.95201332020873
+                        ],
+                        [
+                            -82.57344795116992,
+                            41.02285774579979
+                        ],
+                        [
+                            -80.92723470201493,
+                            41.06685780519612
+                        ],
+                        [
+                            -79.61584448658633,
+                            41.020944032406405
+                        ],
+                        [
+                            -78.99185610555071,
+                            40.973083126735645
+                        ],
+                        [
+                            -78.26894273727771,
+                            40.91368734932113
+                        ],
+                        [
+                            -78.22835812712906,
+                            40.76016119996451
+                        ],
+                        [
+                            -80.56450974881129,
+                            40.95009754971391
+                        ],
+                        [
+                            -81.80994997274826,
+                            40.89643340933622
+                        ],
+                        [
+                            -82.76242004217463,
+                            40.90026800724253
+                        ],
+                        [
+                            -83.06807288735673,
+                            40.86287119608417
+                        ],
+                        [
+                            -83.55635647820777,
+                            40.771687993141875
+                        ],
+                        [
+                            -83.63625742943796,
+                            40.88205168745486
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4151,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "WANDRING SAVAGE INDIANS",
+            "norm_text": "Wandring savage Indians",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -94.61213897065737,
+                            30.869051295249385
+                        ],
+                        [
+                            -94.27234151823563,
+                            30.949224903445387
+                        ],
+                        [
+                            -93.95378140659025,
+                            30.96379470442544
+                        ],
+                        [
+                            -93.49080737766565,
+                            30.650055170086
+                        ],
+                        [
+                            -93.29967131067842,
+                            30.39759516421279
+                        ],
+                        [
+                            -92.55211691535061,
+                            29.890715596518
+                        ],
+                        [
+                            -92.63706627845603,
+                            29.769120422375064
+                        ],
+                        [
+                            -93.29542384252316,
+                            30.093044815474467
+                        ],
+                        [
+                            -93.60124154970272,
+                            30.48182135540133
+                        ],
+                        [
+                            -93.86033710717427,
+                            30.74866507204337
+                        ],
+                        [
+                            -94.08120545124841,
+                            30.817996775307485
+                        ],
+                        [
+                            -94.5526744164836,
+                            30.671977188329542
+                        ],
+                        [
+                            -94.61213897065737,
+                            30.869051295249385
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4152,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "COUNTRY OF THE CENIS",
+            "norm_text": "Country of the Cenis",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -97.52165465701856,
+                            32.974238033959615
+                        ],
+                        [
+                            -95.91611169432582,
+                            32.83159245183867
+                        ],
+                        [
+                            -94.62488137512324,
+                            32.652962779584314
+                        ],
+                        [
+                            -94.22561936852772,
+                            31.30917289345476
+                        ],
+                        [
+                            -94.2383617729935,
+                            31.102096874314494
+                        ],
+                        [
+                            -96.00955599374181,
+                            31.526656928296784
+                        ],
+                        [
+                            -97.52165465701856,
+                            32.974238033959615
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4153,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Antient Villages of the Illinois destroy'd by the Iroquois",
+            "norm_text": "Antient Villages of the Illinois destroy'd by the Iroquois",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -88.8390333473642,
+                            41.389677651378676
+                        ],
+                        [
+                            -88.86558002333463,
+                            41.415961611620084
+                        ],
+                        [
+                            -88.89000296522742,
+                            41.497135720156145
+                        ],
+                        [
+                            -88.8931885663439,
+                            41.73053950934017
+                        ],
+                        [
+                            -88.8347858792089,
+                            41.74321751959255
+                        ],
+                        [
+                            -88.79868239988909,
+                            41.648864912770286
+                        ],
+                        [
+                            -88.73284664348239,
+                            41.64172337165353
+                        ],
+                        [
+                            -88.69780503120141,
+                            41.50747414025584
+                        ],
+                        [
+                            -88.69461943008494,
+                            41.389677651378676
+                        ],
+                        [
+                            -88.8390333473642,
+                            41.389677651378676
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4155,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "The Antient Eriez were extirpated by the Iroquois upwards of 100 years ago, ever since which time they have been in Possession of L. Erie",
+            "norm_text": "The Antient Eriez were extirpated by the Iroquois upwards of 100 years ago, ever since which time they have been in Possession of Lake Erie",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -88.2433259385873,
+                            41.35620996367908
+                        ],
+                        [
+                            -87.30888294442757,
+                            41.02539330273682
+                        ],
+                        [
+                            -87.21331491093395,
+                            40.867389047313765
+                        ],
+                        [
+                            -87.25154212433138,
+                            40.837670957922086
+                        ],
+                        [
+                            -87.79627991524498,
+                            41.04541756715109
+                        ],
+                        [
+                            -87.80371298451668,
+                            41.01898425171877
+                        ],
+                        [
+                            -88.19554192184053,
+                            41.186215963944406
+                        ],
+                        [
+                            -88.2475734067426,
+                            41.327509670602126
+                        ],
+                        [
+                            -88.2433259385873,
+                            41.35620996367908
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4154,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Quadoghe so call'd by 15 Six Na-tions & Extent of their Territories, & Bounds of their Deed of Sale to 15 Crown of Britain 1701 renewed in 1720 & 1744.",
+            "norm_text": "Quadoghe so call'd by 15 Six Na-tions & Extent of their Territories, & Bounds of their Deed of Sale to 15 Crown of Britain 1701 renewed in 1720 & 1744.",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -87.77650264164697,
+                            41.67900935918103
+                        ],
+                        [
+                            -87.24344538816037,
+                            41.81052748119379
+                        ],
+                        [
+                            -87.22645551553929,
+                            41.76460598667686
+                        ],
+                        [
+                            -87.02257704408625,
+                            41.78519555186731
+                        ],
+                        [
+                            -86.99921596923222,
+                            41.61076754690775
+                        ],
+                        [
+                            -86.89302926535045,
+                            41.61553094886568
+                        ],
+                        [
+                            -86.88028686088461,
+                            41.56311418180022
+                        ],
+                        [
+                            -87.66394473553228,
+                            41.52814602861524
+                        ],
+                        [
+                            -87.72553302378368,
+                            41.61870635474654
+                        ],
+                        [
+                            -87.7616365031035,
+                            41.61076754690775
+                        ],
+                        [
+                            -87.77650264164697,
+                            41.67900935918103
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4141,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "The Indians on this River were in Alliance with the English for which they have been destroyed by the French",
+            "norm_text": null,
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -90.40214268995179,
+                            32.911178525525344
+                        ],
+                        [
+                            -89.97922019869468,
+                            33.44376493108056
+                        ],
+                        [
+                            -89.63971819883237,
+                            33.30930070049812
+                        ],
+                        [
+                            -89.75999890735501,
+                            33.04137589988072
+                        ],
+                        [
+                            -90.05876066723388,
+                            32.69266851434318
+                        ],
+                        [
+                            -90.40214268995179,
+                            32.911178525525344
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4144,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "CHICASAWS In Alliance and Subjection to the English",
+            "norm_text": "Chicasaws In Alliance and Subjection to the English",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -90.06167068437576,
+                            34.701967303822045
+                        ],
+                        [
+                            -88.19537969084676,
+                            34.89472868857051
+                        ],
+                        [
+                            -87.22149395409882,
+                            34.99650273006659
+                        ],
+                        [
+                            -86.65307060575785,
+                            34.99650273006659
+                        ],
+                        [
+                            -85.87900604607175,
+                            34.95517226221377
+                        ],
+                        [
+                            -85.54920410334833,
+                            34.907457351212955
+                        ],
+                        [
+                            -85.58218429762067,
+                            34.74980139319563
+                        ],
+                        [
+                            -86.12344748597262,
+                            34.74342511396151
+                        ],
+                        [
+                            -87.6327763767892,
+                            34.73545407279186
+                        ],
+                        [
+                            -88.69784265064305,
+                            34.63016429348749
+                        ],
+                        [
+                            -89.9549700558476,
+                            34.4879707947213
+                        ],
+                        [
+                            -90.06167068437576,
+                            34.701967303822045
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4147,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Alibamous",
+            "norm_text": "Alibamous",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -87.00906270275634,
+                            32.857619927112985
+                        ],
+                        [
+                            -86.77044129713882,
+                            32.790779077114045
+                        ],
+                        [
+                            -86.57644015436033,
+                            32.692872598438626
+                        ],
+                        [
+                            -86.34751880588172,
+                            32.532727587676504
+                        ],
+                        [
+                            -85.90131617749121,
+                            32.0242665564726
+                        ],
+                        [
+                            -85.96339654318034,
+                            31.894236261630184
+                        ],
+                        [
+                            -86.4018391258597,
+                            32.431263587948244
+                        ],
+                        [
+                            -86.6443405543328,
+                            32.603030558173685
+                        ],
+                        [
+                            -87.05756298845094,
+                            32.75815553840572
+                        ],
+                        [
+                            -87.00906270275634,
+                            32.857619927112985
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4146,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Talapoofees",
+            "norm_text": "Talapoofees",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -86.60166030292153,
+                            33.049710124139104
+                        ],
+                        [
+                            -86.35915887444844,
+                            32.99603204445917
+                        ],
+                        [
+                            -86.22529808593129,
+                            32.904867217852356
+                        ],
+                        [
+                            -85.96339654318034,
+                            32.732048098638636
+                        ],
+                        [
+                            -85.8275957432354,
+                            32.56216344281367
+                        ],
+                        [
+                            -85.58703432619009,
+                            32.28377381174793
+                        ],
+                        [
+                            -85.58509431476227,
+                            32.18367187886829
+                        ],
+                        [
+                            -85.63165458902913,
+                            32.17546191397143
+                        ],
+                        [
+                            -85.97309660031927,
+                            32.62427409426423
+                        ],
+                        [
+                            -86.22917810878684,
+                            32.790779077114045
+                        ],
+                        [
+                            -86.58420020007144,
+                            32.93092390421763
+                        ],
+                        [
+                            -86.60166030292153,
+                            33.049710124139104
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4149,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "UPPER CREEKS",
+            "norm_text": "Upper Creeks",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -86.43142430013343,
+                            33.551550279834316
+                        ],
+                        [
+                            -86.10162235740998,
+                            33.444776674046786
+                        ],
+                        [
+                            -85.74078023184204,
+                            33.3167989040321
+                        ],
+                        [
+                            -85.20727708920121,
+                            33.09604215122985
+                        ],
+                        [
+                            -85.26353742060698,
+                            32.98708252058171
+                        ],
+                        [
+                            -85.89986116892038,
+                            33.274638464980974
+                        ],
+                        [
+                            -86.47216454011688,
+                            33.47229155655913
+                        ],
+                        [
+                            -86.43142430013343,
+                            33.551550279834316
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4148,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Abeecas or Coufsas",
+            "norm_text": "Abeecas or Coufsas",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -86.67465323289203,
+                            33.93266956641975
+                        ],
+                        [
+                            -86.54273245580265,
+                            33.95841952920664
+                        ],
+                        [
+                            -86.17413028452354,
+                            33.9214015084475
+                        ],
+                        [
+                            -85.48348621623214,
+                            33.871482195614796
+                        ],
+                        [
+                            -85.1711443763588,
+                            33.808638990238784
+                        ],
+                        [
+                            -84.90924283360786,
+                            33.69572766142384
+                        ],
+                        [
+                            -84.95580310787467,
+                            33.611754485753934
+                        ],
+                        [
+                            -85.5921268561881,
+                            33.78284379741823
+                        ],
+                        [
+                            -85.90834871891703,
+                            33.84248338178882
+                        ],
+                        [
+                            -86.27889090162392,
+                            33.860206049183674
+                        ],
+                        [
+                            -86.67077321003644,
+                            33.856984019521846
+                        ],
+                        [
+                            -86.67465323289203,
+                            33.93266956641975
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4134,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Micmacs",
+            "norm_text": "Micmacs",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -63.830999642401174,
+                            46.07768102436496
+                        ],
+                        [
+                            -63.865538471768595,
+                            46.029742257930785
+                        ],
+                        [
+                            -64.37402679301118,
+                            46.274325470141456
+                        ],
+                        [
+                            -64.77122333073649,
+                            46.47026682813105
+                        ],
+                        [
+                            -65.01875160786969,
+                            46.652335673837314
+                        ],
+                        [
+                            -64.94775512528109,
+                            46.702363298416415
+                        ],
+                        [
+                            -64.5390456444333,
+                            46.438540307379014
+                        ],
+                        [
+                            -63.830999642401174,
+                            46.07768102436496
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4138,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "OUTAOUACS or OUTAWAS",
+            "norm_text": "Outaouacs or Outawas",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -91.35793144019064,
+                            46.25010606040295
+                        ],
+                        [
+                            -88.65006524006692,
+                            46.77378484731193
+                        ],
+                        [
+                            -87.3406919635514,
+                            46.34010274870088
+                        ],
+                        [
+                            -86.62773478680997,
+                            46.35903057446862
+                        ],
+                        [
+                            -85.02358113914175,
+                            46.679800953432405
+                        ],
+                        [
+                            -84.1358123469493,
+                            46.684504037274365
+                        ],
+                        [
+                            -84.1975105641673,
+                            46.60920556417673
+                        ],
+                        [
+                            -84.94817220698641,
+                            46.50549900219854
+                        ],
+                        [
+                            -86.18899190881525,
+                            46.136214611929724
+                        ],
+                        [
+                            -87.15559731189738,
+                            46.06015584787018
+                        ],
+                        [
+                            -88.47868130335024,
+                            46.56680410870003
+                        ],
+                        [
+                            -91.13170464372462,
+                            46.00780458757968
+                        ],
+                        [
+                            -91.35793144019064,
+                            46.25010606040295
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4119,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Sakis",
+            "norm_text": "Sakis",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -87.91182893265984,
+                            44.48913090589118
+                        ],
+                        [
+                            -87.58619945289814,
+                            44.35326170239672
+                        ],
+                        [
+                            -87.56563338049214,
+                            44.16300617005334
+                        ],
+                        [
+                            -87.63075927644448,
+                            44.075651294859064
+                        ],
+                        [
+                            -88.02837000962721,
+                            44.41450312751538
+                        ],
+                        [
+                            -87.99923474038535,
+                            44.5025782254791
+                        ],
+                        [
+                            -87.91182893265984,
+                            44.48913090589118
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4122,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "MASCOUTENS",
+            "norm_text": "Mascoutens",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -90.59559426668268,
+                            42.91942854626847
+                        ],
+                        [
+                            -90.13628531628196,
+                            42.874229634284944
+                        ],
+                        [
+                            -89.51244778663319,
+                            42.693102745656894
+                        ],
+                        [
+                            -88.3950245192404,
+                            42.16179099234578
+                        ],
+                        [
+                            -88.43615666405239,
+                            41.97349435331499
+                        ],
+                        [
+                            -89.01886204888912,
+                            42.197351843805
+                        ],
+                        [
+                            -90.68471391377534,
+                            42.70821689169881
+                        ],
+                        [
+                            -90.59559426668268,
+                            42.91942854626847
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4124,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "LOWER CREEKS",
+            "norm_text": "Lower Creeks",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -85.61146519808793,
+                            31.923849652859708
+                        ],
+                        [
+                            -85.2846931658811,
+                            31.764673374717706
+                        ],
+                        [
+                            -84.82766934461283,
+                            31.7607875969292
+                        ],
+                        [
+                            -84.22211278143237,
+                            32.011085654903916
+                        ],
+                        [
+                            -84.1626996846675,
+                            31.937425140914392
+                        ],
+                        [
+                            -84.38207111887624,
+                            31.7957537221598
+                        ],
+                        [
+                            -84.67913660270062,
+                            31.710257642681324
+                        ],
+                        [
+                            -84.97848720563137,
+                            31.624682666235586
+                        ],
+                        [
+                            -85.32582530979526,
+                            31.669424874785925
+                        ],
+                        [
+                            -85.66173781842744,
+                            31.83458946302858
+                        ],
+                        [
+                            -85.61146519808793,
+                            31.923849652859708
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4125,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Deserted Cherakee",
+            "norm_text": "Deserted Cherakee",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -84.6545715723075,
+                            34.384825136814044
+                        ],
+                        [
+                            -84.64200341722264,
+                            34.38953956527709
+                        ],
+                        [
+                            -84.38264239865288,
+                            34.204062891567204
+                        ],
+                        [
+                            -84.26952900288897,
+                            34.1213398206891
+                        ],
+                        [
+                            -84.10957066544508,
+                            34.103366388608286
+                        ],
+                        [
+                            -83.70624714317582,
+                            34.02007123322674
+                        ],
+                        [
+                            -83.73709625111142,
+                            33.9660750211146
+                        ],
+                        [
+                            -84.17012632176312,
+                            34.017230182910424
+                        ],
+                        [
+                            -84.42948734033288,
+                            34.1478200214572
+                        ],
+                        [
+                            -84.70941443085968,
+                            34.34521345845214
+                        ],
+                        [
+                            -84.6545715723075,
+                            34.384825136814044
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4126,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "CREEK INDIANS",
+            "norm_text": "Creek Indians",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -87.19676657811237,
+                            33.58452507720511
+                        ],
+                        [
+                            -86.75802370969483,
+                            33.51596590560348
+                        ],
+                        [
+                            -85.83940582894556,
+                            33.23354086634969
+                        ],
+                        [
+                            -84.88422604249489,
+                            32.88881804509808
+                        ],
+                        [
+                            -83.974748638171,
+                            33.29850340304412
+                        ],
+                        [
+                            -83.87877363570468,
+                            33.141746840695426
+                        ],
+                        [
+                            -84.67399508471146,
+                            32.5234834068072
+                        ],
+                        [
+                            -85.14472962061781,
+                            32.50035947428925
+                        ],
+                        [
+                            -85.7799927321807,
+                            33.000042774736215
+                        ],
+                        [
+                            -87.24246896023922,
+                            33.344330207537965
+                        ],
+                        [
+                            -87.19676657811237,
+                            33.58452507720511
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4129,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "TIMOOQUAS Destroy'd by the Carolinians in 1706",
+            "norm_text": "Timooquas Destroy'd by the Carolinians in 1706",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -82.77491828739751,
+                            29.64607471975359
+                        ],
+                        [
+                            -81.88600695503072,
+                            29.951451798429712
+                        ],
+                        [
+                            -81.71462302205511,
+                            29.550702039112576
+                        ],
+                        [
+                            -82.5464063767634,
+                            29.254076279222357
+                        ],
+                        [
+                            -82.77491828739751,
+                            29.64607471975359
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4099,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Sacannas",
+            "norm_text": "Sacannas",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -81.73690293334194,
+                            30.695809886627252
+                        ],
+                        [
+                            -81.82602257848926,
+                            30.990101516036543
+                        ],
+                        [
+                            -81.68206007478973,
+                            31.277629213182735
+                        ],
+                        [
+                            -81.47868447432535,
+                            31.367424568636892
+                        ],
+                        [
+                            -81.4923951889634,
+                            31.234653350691197
+                        ],
+                        [
+                            -81.58151483411072,
+                            31.217066678181578
+                        ],
+                        [
+                            -81.67291959836436,
+                            31.121259641946473
+                        ],
+                        [
+                            -81.67291959836436,
+                            30.96267251700782
+                        ],
+                        [
+                            -81.60665114428046,
+                            30.682054255409945
+                        ],
+                        [
+                            -81.73690293334194,
+                            30.695809886627252
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4098,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "COUNTRY OF THE APALACHEES Conquered & surrendered to the Carolinians, after two memorable Victories obtain'd over them & the Spaniards in 1702 & 1703 at the Places marked thus",
+            "norm_text": "COUNTRY OF THE APALACHEES Conquered & surrendered to the Carolinians, after two memorable Victories obtain'd over them & the Spaniards in 1702 & 1703 at the Places marked thus [A pair of crossed swords]",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -83.80579264424573,
+                            31.627054057205807
+                        ],
+                        [
+                            -82.78662952281746,
+                            31.774812057745148
+                        ],
+                        [
+                            -82.37073784546332,
+                            31.12370490316016
+                        ],
+                        [
+                            -83.65497478322717,
+                            30.900438270566816
+                        ],
+                        [
+                            -83.80579264424573,
+                            31.627054057205807
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4108,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Cherakee Settlements",
+            "norm_text": "Cherakee Settlements",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -84.20487121923419,
+                            34.117549941604366
+                        ],
+                        [
+                            -82.70632772222422,
+                            34.068769098344546
+                        ],
+                        [
+                            -82.69690292035625,
+                            34.0258187096585
+                        ],
+                        [
+                            -83.11630660348168,
+                            33.96526079544504
+                        ],
+                        [
+                            -83.74305592770281,
+                            33.98284657189154
+                        ],
+                        [
+                            -84.2755572332441,
+                            34.05120111439597
+                        ],
+                        [
+                            -84.20487121923419,
+                            34.117549941604366
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4105,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Lower Cherakees",
+            "norm_text": "Lower Cherakees",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -83.75483693003777,
+                            34.18287217981601
+                        ],
+                        [
+                            -82.74638313016315,
+                            34.24132681236701
+                        ],
+                        [
+                            -82.23030598834107,
+                            34.39171747265045
+                        ],
+                        [
+                            -82.22145630446789,
+                            34.344967042893
+                        ],
+                        [
+                            -82.54610609046843,
+                            34.19846404623794
+                        ],
+                        [
+                            -83.23882902776545,
+                            34.118525271697344
+                        ],
+                        [
+                            -83.75483693003777,
+                            34.10682056821631
+                        ],
+                        [
+                            -83.75483693003777,
+                            34.18287217981601
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4115,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Congarees",
+            "norm_text": "Congarees",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -80.95241163705026,
+                            33.96176901602848
+                        ],
+                        [
+                            -80.99400515125433,
+                            33.977181663189405
+                        ],
+                        [
+                            -80.9506417002756,
+                            34.06739961921473
+                        ],
+                        [
+                            -80.93028742736725,
+                            34.30239417619249
+                        ],
+                        [
+                            -80.87010957702945,
+                            34.30020099744957
+                        ],
+                        [
+                            -80.84975530412108,
+                            34.10258060234518
+                        ],
+                        [
+                            -80.90285340736031,
+                            33.96323700753007
+                        ],
+                        [
+                            -80.95241163705026,
+                            33.96176901602848
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4079,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "CATAW BAS",
+            "norm_text": "Catawbas",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -81.68693539852634,
+                            35.12313629380708
+                        ],
+                        [
+                            -81.30108918165463,
+                            35.4323461033474
+                        ],
+                        [
+                            -80.6816113105303,
+                            35.76335555573315
+                        ],
+                        [
+                            -80.59311447179824,
+                            35.697263226364555
+                        ],
+                        [
+                            -81.0143594241628,
+                            35.53323299337933
+                        ],
+                        [
+                            -81.2232119635704,
+                            35.30822611983175
+                        ],
+                        [
+                            -81.6125980539914,
+                            35.03333180522522
+                        ],
+                        [
+                            -81.68693539852634,
+                            35.12313629380708
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4081,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "CHERAKEES",
+            "norm_text": "Cherakees",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -89.13836921976464,
+                            36.02144992529446
+                        ],
+                        [
+                            -86.55249159201428,
+                            36.39133997552405
+                        ],
+                        [
+                            -85.41442224592014,
+                            36.40701086414143
+                        ],
+                        [
+                            -84.81264374254224,
+                            36.31436434099577
+                        ],
+                        [
+                            -84.33653075016383,
+                            36.02574436632819
+                        ],
+                        [
+                            -84.18962599786866,
+                            35.84661115502743
+                        ],
+                        [
+                            -83.8409484532644,
+                            35.67138608457679
+                        ],
+                        [
+                            -83.11527437566161,
+                            35.63830863580655
+                        ],
+                        [
+                            -83.00730823240853,
+                            35.50153933121478
+                        ],
+                        [
+                            -83.06394620919703,
+                            35.46262546550435
+                        ],
+                        [
+                            -83.71351300549021,
+                            35.47559884728556
+                        ],
+                        [
+                            -84.3577699914595,
+                            35.760483116768704
+                        ],
+                        [
+                            -84.6551193695992,
+                            36.07582888053066
+                        ],
+                        [
+                            -85.77371941117225,
+                            36.2187517830155
+                        ],
+                        [
+                            -89.07288155910291,
+                            35.84087219164457
+                        ],
+                        [
+                            -89.13836921976464,
+                            36.02144992529446
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4067,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Tus carora Indians now remov'd",
+            "norm_text": "Tuscarora Indians now remov'd",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -78.16167327529084,
+                            36.105940732492364
+                        ],
+                        [
+                            -77.61985606176596,
+                            36.03813806952808
+                        ],
+                        [
+                            -77.47546314953222,
+                            35.85555936714687
+                        ],
+                        [
+                            -78.0860388926922,
+                            35.9569203833305
+                        ],
+                        [
+                            -78.16167327529084,
+                            36.105940732492364
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4127,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Souriquol",
+            "norm_text": "Souriquol",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -63.9562129605289,
+                            45.931097721674796
+                        ],
+                        [
+                            -63.22675742598246,
+                            45.81605337240639
+                        ],
+                        [
+                            -62.48655484856978,
+                            45.77671539030933
+                        ],
+                        [
+                            -62.027118766037766,
+                            45.83571194983396
+                        ],
+                        [
+                            -61.92905199988327,
+                            45.75328674013462
+                        ],
+                        [
+                            -62.3454999109503,
+                            45.70077085767535
+                        ],
+                        [
+                            -62.74179711664311,
+                            45.70170907424431
+                        ],
+                        [
+                            -63.41214391542518,
+                            45.755161394241206
+                        ],
+                        [
+                            -63.950839439095766,
+                            45.85536358502968
+                        ],
+                        [
+                            -63.9562129605289,
+                            45.931097721674796
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4096,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "C. Sable Indians",
+            "norm_text": "Cape Sable Indians",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -65.4883802397843,
+                            43.638384167626576
+                        ],
+                        [
+                            -65.17134247523005,
+                            43.890628914746365
+                        ],
+                        [
+                            -65.15522191093069,
+                            44.04725890206129
+                        ],
+                        [
+                            -65.17940275737973,
+                            44.34775271863178
+                        ],
+                        [
+                            -65.10686021803258,
+                            44.37080415040179
+                        ],
+                        [
+                            -65.02625739653573,
+                            44.109023588167595
+                        ],
+                        [
+                            -65.13104106448164,
+                            43.84995371991313
+                        ],
+                        [
+                            -65.31374079320778,
+                            43.63060592504785
+                        ],
+                        [
+                            -65.42121122187027,
+                            43.59948288719426
+                        ],
+                        [
+                            -65.4883802397843,
+                            43.638384167626576
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4076,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "St. John's I ---",
+            "norm_text": "Saint John's Indians",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -68.80861451257984,
+                            47.0411269552527
+                        ],
+                        [
+                            -66.90580460791523,
+                            46.57647359846522
+                        ],
+                        [
+                            -66.9918613372719,
+                            46.442225022403754
+                        ],
+                        [
+                            -67.22708306418022,
+                            46.5251824130764
+                        ],
+                        [
+                            -67.45848004756155,
+                            46.58830314253012
+                        ],
+                        [
+                            -68.1775318306308,
+                            46.65922620536524
+                        ],
+                        [
+                            -68.900408357227,
+                            46.85051601755446
+                        ],
+                        [
+                            -68.80861451257984,
+                            47.0411269552527
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4080,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Gafperfians",
+            "norm_text": "Gafperfians",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -66.04606049693068,
+                            48.29622600647855
+                        ],
+                        [
+                            -65.67703385620267,
+                            48.28546565133333
+                        ],
+                        [
+                            -65.34035218000062,
+                            48.41346443585383
+                        ],
+                        [
+                            -64.81842207060444,
+                            48.72381217873735
+                        ],
+                        [
+                            -64.74344056193063,
+                            48.671410723923564
+                        ],
+                        [
+                            -65.43003594527715,
+                            48.291335217041016
+                        ],
+                        [
+                            -65.72261085167108,
+                            48.17087426203049
+                        ],
+                        [
+                            -66.05341162523204,
+                            48.1983211977665
+                        ],
+                        [
+                            -66.04606049693068,
+                            48.29622600647855
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4137,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Pafsamacadies",
+            "norm_text": "Pafsamacadies",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -68.12520425678206,
+                            45.13896830222851
+                        ],
+                        [
+                            -67.6571904556156,
+                            45.64680841399198
+                        ],
+                        [
+                            -67.64949707806218,
+                            45.7336898244139
+                        ],
+                        [
+                            -67.58025668008139,
+                            45.86956246984058
+                        ],
+                        [
+                            -67.48152500147914,
+                            46.03003578301857
+                        ],
+                        [
+                            -67.37638217491572,
+                            46.02647475681282
+                        ],
+                        [
+                            -67.48921837903256,
+                            45.72115857286021
+                        ],
+                        [
+                            -67.81105800668402,
+                            45.28259791087395
+                        ],
+                        [
+                            -68.01621474144193,
+                            45.112732596199486
+                        ],
+                        [
+                            -68.12520425678206,
+                            45.13896830222851
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4140,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "PROVINCE OF SAGADAHOOK",
+            "norm_text": "Province of Sagadahook",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -69.31660855111275,
+                            45.352045500398155
+                        ],
+                        [
+                            -68.84665440841353,
+                            45.74371717799603
+                        ],
+                        [
+                            -68.48933390322075,
+                            46.17032852861272
+                        ],
+                        [
+                            -68.38058418424903,
+                            46.076109196152636
+                        ],
+                        [
+                            -68.30290581355494,
+                            45.28103611805103
+                        ],
+                        [
+                            -68.2893120986835,
+                            45.229772204604735
+                        ],
+                        [
+                            -68.20289491128634,
+                            45.17298619443157
+                        ],
+                        [
+                            -68.7184850967683,
+                            44.89095759585299
+                        ],
+                        [
+                            -68.90200024753308,
+                            44.795950197924626
+                        ],
+                        [
+                            -69.16804866716032,
+                            44.581956487161186
+                        ],
+                        [
+                            -69.53604994832355,
+                            44.291463436826405
+                        ],
+                        [
+                            -69.31660855111275,
+                            45.352045500398155
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4139,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": null,
+            "map_text": "Penobscots",
+            "norm_text": "Penobscots",
+            "story_link": 1,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -69.58071501147265,
+                            44.49544503530288
+                        ],
+                        [
+                            -68.42136532886342,
+                            45.38751682321614
+                        ],
+                        [
+                            -68.1630847463056,
+                            45.66912959261882
+                        ],
+                        [
+                            -68.06016090513594,
+                            45.629761520036595
+                        ],
+                        [
+                            -68.46991431054724,
+                            45.22498521147889
+                        ],
+                        [
+                            -68.81946697867062,
+                            44.98924198942667
+                        ],
+                        [
+                            -69.15736789118989,
+                            44.70837740882973
+                        ],
+                        [
+                            -69.52439819271943,
+                            44.42891697624337
+                        ],
+                        [
+                            -69.58071501147265,
+                            44.49544503530288
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4160,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "IROQUOIS",
+            "norm_text": "Iroquois",
+            "story_link": null,
+            "frame_link": null,
+            "identity": 3
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -80.84851825442688,
+                            38.9713610579504
+                        ],
+                        [
+                            -74.0013200116872,
+                            45.50493124624333
+                        ],
+                        [
+                            -72.95639567362697,
+                            45.368854409441425
+                        ],
+                        [
+                            -75.77564433374755,
+                            42.315638915448595
+                        ],
+                        [
+                            -80.14561945146754,
+                            38.58999724425445
+                        ],
+                        [
+                            -80.84851825442688,
+                            38.9713610579504
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4161,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "SIX NATIONS",
+            "norm_text": "Six Nations",
+            "story_link": null,
+            "frame_link": null,
+            "identity": 3
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -88.84192049929315,
+                            38.47880220070051
+                        ],
+                        [
+                            -87.25479104379458,
+                            40.78734185669827
+                        ],
+                        [
+                            -80.54574152389972,
+                            46.12435090899287
+                        ],
+                        [
+                            -78.87442160859716,
+                            45.23514777614342
+                        ],
+                        [
+                            -84.57102547277269,
+                            41.085003311878886
+                        ],
+                        [
+                            -88.55206779923309,
+                            38.02079311992211
+                        ],
+                        [
+                            -88.84192049929315,
+                            38.47880220070051
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4346,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Shawanoes",
+            "norm_text": "Shawanoes",
+            "story_link": null,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -76.26249821393381,
+                            41.38172110127436
+                        ],
+                        [
+                            -75.90825838787815,
+                            41.47695425366598
+                        ],
+                        [
+                            -75.87450486458181,
+                            41.42849101798105
+                        ],
+                        [
+                            -76.22861818047032,
+                            41.327744317994636
+                        ],
+                        [
+                            -76.26249821393381,
+                            41.38172110127436
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4361,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "ONONDAGAES",
+            "norm_text": "Onadangas",
+            "story_link": null,
+            "frame_link": null,
+            "identity": 3
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -76.4390883757495,
+                            41.957983402612314
+                        ],
+                        [
+                            -75.80294635820248,
+                            42.95569356503859
+                        ],
+                        [
+                            -75.67160105986368,
+                            42.92021848102847
+                        ],
+                        [
+                            -76.290283420572,
+                            41.898785663863954
+                        ],
+                        [
+                            -76.4390883757495,
+                            41.957983402612314
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4355,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "TUSCARORA",
+            "norm_text": "Tuscorora",
+            "story_link": null,
+            "frame_link": null,
+            "identity": 3
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -75.48561419664105,
+                            41.9149716893832
+                        ],
+                        [
+                            -75.22594087553952,
+                            42.48405317967423
+                        ],
+                        [
+                            -74.91215961163785,
+                            42.90725000120264
+                        ],
+                        [
+                            -74.78568832510177,
+                            42.87345575419457
+                        ],
+                        [
+                            -75.34655726506895,
+                            41.859207191382026
+                        ],
+                        [
+                            -75.48561419664105,
+                            41.9149716893832
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4356,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "ONEYDOES",
+            "norm_text": "Oneydoes",
+            "story_link": null,
+            "frame_link": null,
+            "identity": 3
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -75.98399667916767,
+                            43.11181280602391
+                        ],
+                        [
+                            -74.88972075378709,
+                            44.43084549090098
+                        ],
+                        [
+                            -74.6755172548023,
+                            44.36790405109432
+                        ],
+                        [
+                            -75.73080108576121,
+                            43.033835842055815
+                        ],
+                        [
+                            -75.98399667916767,
+                            43.11181280602391
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4362,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "MOHAWKS",
+            "norm_text": "Mohawks",
+            "story_link": null,
+            "frame_link": null,
+            "identity": 3
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -74.50980336106117,
+                            42.90796891217404
+                        ],
+                        [
+                            -74.16523544894154,
+                            43.45510647123304
+                        ],
+                        [
+                            -73.91803897736835,
+                            44.22515511456745
+                        ],
+                        [
+                            -73.76510684369276,
+                            44.296296492382254
+                        ],
+                        [
+                            -73.89931547263383,
+                            43.45145866230274
+                        ],
+                        [
+                            -74.33832737679658,
+                            42.810960752548155
+                        ],
+                        [
+                            -74.50980336106117,
+                            42.90796891217404
+                        ]
+                    ]
+                ]
+            ]
+        }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+            "id": 4197,
+            "feat_type": 3,
+            "sub_type": 11,
+            "map_source": 12,
+            "date_yr": 1755,
+            "accuracy": 3,
+            "map_text": "Upper Cherakees",
+            "norm_text": "Upper Cherakees",
+            "story_link": null,
+            "frame_link": null,
+            "identity": 2
+        },
+        "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -84.43419119335337,
+                            35.78546633092114
+                        ],
+                        [
+                            -84.14252008986271,
+                            35.73001972524653
+                        ],
+                        [
+                            -83.75222682859791,
+                            35.98648681298143
+                        ],
+                        [
+                            -83.661316440812,
+                            35.915418149634704
+                        ],
+                        [
+                            -83.86797419755891,
+                            35.72872742510025
+                        ],
+                        [
+                            -84.25988278305307,
+                            35.54675890376356
+                        ],
+                        [
+                            -84.49253833493557,
+                            35.6784008475364
+                        ],
+                        [
+                            -84.43419119335337,
+                            35.78546633092114
+                        ]
+                    ]
+                ]
+            ]
+        }
+    }
+]}
