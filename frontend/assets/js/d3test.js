@@ -177,12 +177,46 @@ class StoryMap {
         this.svg.selectAll('.homelands')
             .data(this.pointsFile.features)
             .join("path")
+            .attr('class', 'homelands')
+            .attr('title', d => d.properties.norm_text)
+            .attr("stroke", "black")
+            .attr("fill", "none")
+            .attr("stroke-width", "0")
+            .attr("d", d => lg(d.geometry.coordinates[0][0]));
+
+        this.svg
+            .selectAll(".homelands") // <-- now we can select the paths and get the bbox
+            .each((d, i, nodes) => {
+                // https://stackoverflow.com/questions/74358276/add-title-text-to-the-center-of-path-in-d3
+                const bbox = d3.select(nodes[i]).node().getBBox();
+                const centreX = bbox.x + (bbox.width / 2); // <-- get x centre
+                const centreY = bbox.y + (bbox.height / 2);
+                this.svg
+                    .append("text") // <-- now add the text element
+                    .text(d.properties.norm_text)
+                    .attr("x", centreX)
+                    .attr("y", centreY)
+                    .attr("fill", "#0804ee")
+                    .attr("text-anchor", "middle");
+            });
+        /*
+        this.svg.selectAll('.homelandsText')
+            .data(this.pointsFile.features)
+            .join("text")
+            .text(d => d.properties.norm_text)
+            .attr('class', 'homeText')
+
+            .attr("text-anchor", "middle");
+            */
+        /*this.svg.selectAll('.homelands')
+            .data(this.pointsFile.features)
+            .join("text")
                 .attr('class', 'homelands')
                 .attr("stroke", "black")
-                .attr("fill", "red")
-                .attr("fill-opacity", "0.3")
+                .attr("fill", "none")
                 .attr("stroke-width", "1")
-                .attr("d", d => lg(d.geometry.coordinates[0][0]));
+                .attr("d", d => lg(d.geometry.coordinates[0][0]));*/
+
 
     }
 
@@ -199,9 +233,10 @@ class StoryMap {
             points.push(point);
         }
         this.drawHomelandsIntro();
-        this.map.on("zoomend", function(){
+        this.map.on("zoomend", function () {
             this.drawHomelandsIntro();
         }, this);
+        let bounds = this.map.flyToBounds(this.getStoryFrameBounds(10));
 
         /*console.log(points);
         this.svg.selectAll('path')
@@ -227,8 +262,6 @@ class StoryMap {
             .attr("cy", d => this.map.latLngToLayerPoint([d[1], d[0]]).y);*/
 
         //this.map.on("zoomend", update);
-
-
 
 
         /*this.svg.selectAll('circle')
