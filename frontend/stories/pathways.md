@@ -48,4 +48,5 @@ Europeans found their way along single file Indigenous pathways. Movement, rathe
 
 ![Detail from Fry map of 1754](../assets/img/stories/28a-Fry-1754a.jpg)
 
+![Detail from Mitchell map of XXXX](../assets/img/stories/28b_explanation_legend.jpg)
 :::
