@@ -70,7 +70,6 @@ export class StoryMap {
     }
 
 
-
     /**
      * Load all shape files asynchronously
      */
@@ -308,7 +307,6 @@ export class StoryMap {
     }
 
 
-
     /**
      * Fly the map to the slide's storyframe
      * clear existing layers
@@ -318,14 +316,14 @@ export class StoryMap {
      */
     async triggerSlideMapEvents(slideid) {
         /* Trigger intros */
-        console.log(this.d3Intro.slideIds[slideid + ""]);
-        if (this.d3Intro.slideIds[slideid + ""]){
+
+        if (this.d3Intro.slideIds[slideid + ""]) {
             // This slide triggers an animated slide
             // Clear layers
             this.storyFeatureLayerGroup.clearLayers();
             await this.d3Intro.SectionIntro(this.map, slideid);
-        }else if (slideid != "explore") {
-            if (this.d3Intro.svgDrawn){
+        } else if (slideid != "explore") {
+            if (this.d3Intro.svgDrawn) {
                 // Clear the svg overlay so we can replace with layers
                 this.d3Intro.clearSvg();
             }
@@ -463,14 +461,15 @@ export class StoryMap {
         // Add intersection observer for filters
         observer.observe(document.getElementById("filters"));
 
+        // Init our d3 intro class and pass relevant layer data
         this.d3Intro = new D3intro(this.storyUris);
+        this.d3Intro.linesFeatures.push(this.getSlideById(1041));
+        this.d3Intro.linesFeatures.push(this.getSlideById(1042));
+        this.d3Intro.linesFeatures.push(this.getSlideById(1043));
+        this.d3Intro.linesFeatures.push(this.getSlideById(1044));
         this.svg = await this.d3Intro.loadD3(this.map);
-        /*
-        await this.sleep(700);
-        //await this.playHomelandsIntro();
-        await this.playPathways1Intro();*/
-    }
 
+    }
 
 
     clearFeatureText() {
@@ -716,11 +715,19 @@ export class StoryMap {
     filterFeature(feature, filters) {
         let result = false;
         for (const [field, includeValues] of Object.entries(filters)) {
+            if (
+                field == "id" && field in feature.properties
+            ) {
+                // If there's an id include check that first
+                if (includeValues.includes(feature.properties.id)) {
+                    result = true;
+                    break;
+                }
+            }
             // If they match ALL include rules, set to include
             if (
                 field in feature.properties && includeValues.includes(feature.properties[field])
             ) {
-
                 result = true;
             } else {
                 result = false;

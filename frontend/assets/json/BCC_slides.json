@@ -715,6 +715,70 @@
 
         },
       "features": []
+    },
+    {
+      "id": 1041,
+      "fid": 15,
+      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [3],
+          "map_source": [3]
+        },
+        "excludes": {
+
+        }
+      },
+      "excludes": {
+
+        },
+      "features": []
+    },
+    {
+      "id": 1042,
+      "fid": 15,
+      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [3],
+          "map_source": [7]
+        },
+        "excludes": {}
+      },
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 1043,
+      "fid": 15,
+      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [3],
+          "map_source": [12]
+        },
+        "excludes": {
+           "id": [6065, 6647, 3834, 82916]
+        }
+      },
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 1044,
+      "fid": 15,
+      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [3],
+          "map_source": [19]
+        },
+        "excludes": {
+
+        }
+      },
+      "excludes": {},
+      "features": []
     }
   ]
 }

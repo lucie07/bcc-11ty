@@ -7,7 +7,6 @@ import 'leaflet-textpath';*/
 // https://observablehq.com/@sfu-iat355/intro-to-leaflet-d3-interactivity
 
 
-
 export class D3intro {
     constructor(geometryUris) {
         this.slideIds = {
@@ -17,7 +16,14 @@ export class D3intro {
             "20": "villagerssettlers",
             "30": "lines"
         };
-        this.homelandsFile = null;
+        this.homelandsFeatures = null;
+        this.pathways1Features = null;
+        this.pathways2Features = null;
+        this.villagessettlersFeatures = null;
+        // Array here since we have four frames of data
+        // for lines
+        this.linesFeatures = [];
+
         this.svgDrawn = false;
         this.geometryUris = geometryUris;
         this.startingBounds = {
@@ -86,7 +92,7 @@ export class D3intro {
         map.dragging.enable();
     }
 
-    clearSvg(){
+    clearSvg() {
         this.svg.selectAll("*").remove();
         this.svgDrawn = false;
     }
@@ -121,13 +127,13 @@ export class D3intro {
                     break;
                 case "lines":
                     console.log("lines");
-
+                    await this.playLinesIntro(map);
                     played = true;
                     break;
 
             }
         }
-        if (played){
+        if (played) {
             this.svgDrawn = true;
         }
         return played;
@@ -175,7 +181,7 @@ export class D3intro {
     async drawHomelandsIntro(map) {
 
         this.svg.selectAll('.homelands')
-            .data(this.homelandsFile.features)
+            .data(this.homelandsFeatures.features)
             .join("path")
             .attr('class', 'homelands')
             .attr('title', d => d.properties.norm_text)
@@ -206,11 +212,11 @@ export class D3intro {
     /** Animated intro for the homelands section in D3*/
     async playHomelandsIntro(map, startBounds) {
 
-        if (!this.homelandsFile) {
-            this.homelandsFile = await this.loadShapeFile(this.geometryUris.homelands);
+        if (!this.homelandsFeatures) {
+            this.homelandsFeatures = await this.loadShapeFile(this.geometryUris.homelands);
         }
 
-        let coordinates = this.homelandsFile.features[0].geometry.coordinates[0][0];
+        let coordinates = this.homelandsFeatures.features[0].geometry.coordinates[0][0];
 
         let points = [];
         for (let i = 0; i < coordinates.length; i++) {
@@ -301,8 +307,11 @@ export class D3intro {
         let bounds = map.flyToBounds(L.geoJson(this.startingBounds.pathways1).getBounds());
         await this.sleep(1500);
 
-        let pathwaysFile = await this.loadShapeFile(this.geometryUris.pathways1);
-        console.log(pathwaysFile);
+        if (!this.pathways1Features) {
+            this.pathways1Features = await this.loadShapeFile(this.geometryUris.pathways1);
+        }
+
+
         // .attr('title', d => d.properties.norm_text)
 
         let riverPoints = {
@@ -585,26 +594,28 @@ export class D3intro {
             ]
         };
         let testPoint = [
-            pathwaysFile.features[0].geometry.coordinates[0][0],
+            this.pathways1Features.features[0].geometry.coordinates[0][0],
         ];
         console.log(testPoint);
         // https://medium.com/@louisemoxy/create-a-d3-line-chart-animation-336f1cb7dd61
         this.svg.selectAll('.river')
-            .data(pathwaysFile.features)
+            .data(this.pathways1Features.features)
             .join("path")
-                .attr('class', 'pathways1 river')
-                .attr("stroke", "blue")
-                .attr("fill", "none")
-                .attr("stroke-width", "1.5")
-                .attr("d", d => this.featureToPath(d));
+            .attr('class', 'pathways1 river')
+            .attr("stroke", "blue")
+            .attr("fill", "none")
+            .attr("stroke-width", "1.5")
+            .attr("d", d => this.featureToPath(d));
 
-        await this.svg.selectAll('path.river').each(function(d){d.totalLength = this.getTotalLength();})
+        await this.svg.selectAll('path.river').each(function (d) {
+            d.totalLength = this.getTotalLength();
+        })
             .attr("stroke-dashoffset", d => d.totalLength)
             .attr("stroke-dasharray", d => d.totalLength)
             .transition()
-                .duration(2500)
-                .attr("stroke-dashoffset", 0)
-                .end();
+            .duration(2500)
+            .attr("stroke-dashoffset", 0)
+            .end();
 
         const settlements = this.svg.selectAll('circle')
             .attr("class", "Dots")
@@ -632,8 +643,6 @@ export class D3intro {
             .attr('r', 2)
             .end();
 
-         await this.sleep(1500);
-         this.clearSvg();
 
     }
 
@@ -641,8 +650,45 @@ export class D3intro {
 
     }
 
-    async playLinesIntro() {
+    async drawLines(features, duration, colour, majorClass, minorClass) {
+        this.svg.selectAll('.' + minorClass)
+            .data(features)
+            .join("path")
+            .attr('class', majorClass + ' ' + minorClass)
+            .attr("stroke", colour)
+            .attr("fill", "none")
+            .attr("stroke-width", "1")
+            .attr("d", d => this.featureToPath(d));
 
+        return this.svg.selectAll('path.' + minorClass).each(function (d) {
+            d.totalLength = this.getTotalLength();
+        })
+            .attr("stroke-dashoffset", d => d.totalLength)
+            .attr("stroke-dasharray", d => d.totalLength)
+            .transition()
+            .duration(duration)
+            .attr("stroke-dashoffset", 0)
+            .end();
+    }
+
+    async playLinesIntro(map) {
+        let drawDuration = 2500;
+        let colour = "red";
+        let majorClass = "lines";
+        let minorClass = "border";
+        let frameDelay = 1000;
+
+        if (this.linesFeatures && this.linesFeatures.length > 0) {
+            for (let f = 0; f < this.linesFeatures.length; f++){
+                //console.log(this.linesFeatures[f]);
+                await this.drawLines(
+                    this.linesFeatures[f].features, drawDuration, colour, majorClass, minorClass
+                );
+
+                await this.sleep(frameDelay);
+            }
+
+        }
     }
 }
 

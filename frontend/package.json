@@ -18,7 +18,7 @@
   "scripts": {
     "test": "exit 0",
     "assets:download": "cd assets && npm ci",
-    "build": "npx @11ty/eleventy",
+    "build": "npx webpack && npx @11ty/eleventy",
     "clean": "rm -rf _site",
     "rebuild": "npm run clean && npm run build",
     "rebuild:full": "npm run assets:download && npm run build",
