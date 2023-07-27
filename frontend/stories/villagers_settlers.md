@@ -62,10 +62,9 @@ Jefferies’ map is concerned with larger spaces, counties and townships that ar
 ::: slide 28
 Abraham Bradley’s _A Map of the United States_ shows territorial consolidation on an even larger scale, but the layering of landscapes is still present. The central council fire of Onondaga is clearly positioned above Canandaigua, Seneca and Cayuga Lakes. Yet this historically important centre of the Longhouse is shown captured within a neat range of townships and surrounded by place names drawn from classical and Anglophone sources. Bradley’s map presented a landscape being transformed by the creation of ordered lines of property, the extension of the jurisdiction of American government, the emergence of a new infrastructure of communication in the form of post roads.
 
+![Detail from Bradley map of 1796](../assets/img/stories/22-Bradley-1796a.jpg)
 :::
 
 ::: slide 29  
 Bradley’s map shows state-driven colonialism that created the conditions for the free movement of settlers, and to constrain the movement of Native peoples. As John Adams noted in remarks on the basis of American power: ‘If you make enquiry into the circumstances of the different parts of America, at this day; you find the people in all the States pushing their settlements out into the wilderness, upon the frontiers, cutting down the woods, and subduing new lands, with as much eagerness and rapidity, as they used to do in former times of war or peace’.
-
-![Detail from Bradley map of 1796](../assets/img/stories/22-Bradley-1796a.jpg)
 :::
