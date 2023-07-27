@@ -22,7 +22,7 @@
     "cms:snapshot:apply": "npm run pkg --service=cms run snapshot:apply ./snapshots/${npm_config_snapshot}.yaml"
   },
   "scripts": {
-    "serve": "npm run serve -w frontend",
+    "serve": "cd frontend && npx webpack && cd .. && npm run serve -w frontend",
     "rebuild": "npm ci && npm run rebuild:full -w frontend",
     "lint": "eslint **/_includes/",
     "lint:fix": "npm run lint -- --fix",
