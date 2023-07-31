@@ -16,13 +16,13 @@ export class D3intro {
             "20": "villagerssettlers",
             "30": "lines"
         };
-        this.homelandsFeatures = null;
-        this.pathways1Features = null;
-        this.pathways2Features = null;
-        this.villagessettlersFeatures = null;
+        this.homelandsSlide = null;
+        this.pathways1Slide = null;
+        this.pathways2Slide = null;
+        this.villagessettlersSlide = null;
         // Array here since we have four frames of data
         // for lines
-        this.linesFeatures = [];
+        this.linesSlide = [];
 
         this.svgDrawn = false;
         this.geometryUris = geometryUris;
@@ -178,17 +178,17 @@ export class D3intro {
         return pathString;
     }
 
-    async drawHomelandsIntro(map) {
+    async drawHomelandsIntro(map, features) {
 
         this.svg.selectAll('.homelands')
-            .data(this.homelandsFeatures.features)
+            .data(features)
             .join("path")
             .attr('class', 'homelands')
             .attr('title', d => d.properties.norm_text)
             .attr("stroke", "black")
             .attr("fill", "none")
             .attr("stroke-width", "0")
-            .attr("d", d => this.featureLineGenerator(d.geometry.coordinates[0][0]));
+            .attr("d", d => this.featureToPath(d));
 
         this.svg
             .selectAll(".homelands") // <-- now we can select the paths and get the bbox
@@ -210,19 +210,17 @@ export class D3intro {
     }
 
     /** Animated intro for the homelands section in D3*/
-    async playHomelandsIntro(map, startBounds) {
+    async playHomelandsIntro(map, slides) {
 
-        if (!this.homelandsFeatures) {
-            this.homelandsFeatures = await this.loadShapeFile(this.geometryUris.homelands);
+        if (!this.homelandsLabels) {
+            this.homelandsLabels = await this.loadShapeFile(this.geometryUris.homelands);
         }
 
-        let coordinates = this.homelandsFeatures.features[0].geometry.coordinates[0][0];
-
-        let points = [];
+      /*  let points = [];
         for (let i = 0; i < coordinates.length; i++) {
             let point = map.latLngToLayerPoint([coordinates[i][1], coordinates[i][0]]);
             points.push(point);
-        }
+        }*/
         //this.drawHomelandsIntro();
         /*map.on("zoomend", function () {
             this.drawHomelandsIntro();
@@ -232,7 +230,7 @@ export class D3intro {
 
         map.flyToBounds(L.geoJson(this.startingBounds.homelands).getBounds());
         await this.sleep(1000);
-        await this.drawHomelandsIntro();
+        await this.drawHomelandsIntro(map, this.homelandsSlide.features);
 
         /*console.log(points);
         this.svg.selectAll('path')
@@ -307,56 +305,55 @@ export class D3intro {
         let bounds = map.flyToBounds(L.geoJson(this.startingBounds.pathways1).getBounds());
         await this.sleep(1500);
 
-        if (!this.pathways1Features) {
-            this.pathways1Features = await this.loadShapeFile(this.geometryUris.pathways1);
+        if (!this.pathways1Slide && this.pathways1Slide.length > 0) {
+
+
+            // https://medium.com/@louisemoxy/create-a-d3-line-chart-animation-336f1cb7dd61
+            this.svg.selectAll('.river')
+                .data(this.pathways1Slide.features)
+                .join("path")
+                .attr('class', 'pathways1 river')
+                .attr("stroke", "blue")
+                .attr("fill", "none")
+                .attr("stroke-width", "1.5")
+                .attr("d", d => this.featureToPath(d));
+
+            await this.svg.selectAll('path.river').each(function (d) {
+                d.totalLength = this.getTotalLength();
+            })
+                .attr("stroke-dashoffset", d => d.totalLength)
+                .attr("stroke-dasharray", d => d.totalLength)
+                .transition()
+                .duration(2500)
+                .attr("stroke-dashoffset", 0)
+                .end();
+            /*
+                    const settlements = this.svg.selectAll('circle')
+                        .attr("class", "Dots")
+                        .data(riverPoints.features)
+                        .join('circle')
+                        .attr("class", "pathways1 settlements")
+                        .attr("fill", "steelblue")
+                        .attr("stroke", "black")
+                        //Leaflet has to take control of projecting points. Here we are feeding the latitude and longitude coordinates to
+                        //leaflet so that it can project them on the coordinates of the view. Notice, we have to reverse lat and lon.
+                        //Finally, the returned conversion produces an x and y point. We have to select the the desired one using .x or .y
+                        .attr("cx", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x)
+                        .attr("cy", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y)
+                        .attr("r", 2);
+
+                    await settlements
+                        .transition()
+                        .duration(500)
+                        .attr('r', 5)
+                        .end();
+
+                    await settlements
+                        .transition()
+                        .duration(500)
+                        .attr('r', 2)
+                        .end();*/
         }
-
-        // https://medium.com/@louisemoxy/create-a-d3-line-chart-animation-336f1cb7dd61
-        this.svg.selectAll('.river')
-            .data(this.pathways1Features.features)
-            .join("path")
-            .attr('class', 'pathways1 river')
-            .attr("stroke", "blue")
-            .attr("fill", "none")
-            .attr("stroke-width", "1.5")
-            .attr("d", d => this.featureToPath(d));
-
-        await this.svg.selectAll('path.river').each(function (d) {
-            d.totalLength = this.getTotalLength();
-        })
-            .attr("stroke-dashoffset", d => d.totalLength)
-            .attr("stroke-dasharray", d => d.totalLength)
-            .transition()
-            .duration(2500)
-            .attr("stroke-dashoffset", 0)
-            .end();
-/*
-        const settlements = this.svg.selectAll('circle')
-            .attr("class", "Dots")
-            .data(riverPoints.features)
-            .join('circle')
-            .attr("class", "pathways1 settlements")
-            .attr("fill", "steelblue")
-            .attr("stroke", "black")
-            //Leaflet has to take control of projecting points. Here we are feeding the latitude and longitude coordinates to
-            //leaflet so that it can project them on the coordinates of the view. Notice, we have to reverse lat and lon.
-            //Finally, the returned conversion produces an x and y point. We have to select the the desired one using .x or .y
-            .attr("cx", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x)
-            .attr("cy", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y)
-            .attr("r", 2);
-
-        await settlements
-            .transition()
-            .duration(500)
-            .attr('r', 5)
-            .end();
-
-        await settlements
-            .transition()
-            .duration(500)
-            .attr('r', 2)
-            .end();*/
-
 
     }
 
@@ -392,11 +389,11 @@ export class D3intro {
         let minorClass = "border";
         let frameDelay = 1000;
 
-        if (this.linesFeatures && this.linesFeatures.length > 0) {
-            for (let f = 0; f < this.linesFeatures.length; f++){
+        if (this.linesSlide && this.linesSlide.length > 0) {
+            for (let f = 0; f < this.linesSlide.length; f++){
                 //console.log(this.linesFeatures[f]);
                 await this.drawLines(
-                    this.linesFeatures[f].features, drawDuration, colour, majorClass, minorClass
+                    this.linesSlide[f].features, drawDuration, colour, majorClass, minorClass
                 );
 
                 await this.sleep(frameDelay);

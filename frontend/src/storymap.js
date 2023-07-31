@@ -321,7 +321,7 @@ export class StoryMap {
             // This slide triggers an animated slide
             // Clear layers
             this.storyFeatureLayerGroup.clearLayers();
-            await this.d3Intro.SectionIntro(this.map, slideid);
+            await this.d3Intro.SectionIntro(this.map, slideid, this.slides);
         } else if (slideid != "explore") {
             if (this.d3Intro.svgDrawn) {
                 // Clear the svg overlay so we can replace with layers
@@ -463,10 +463,15 @@ export class StoryMap {
 
         // Init our d3 intro class and pass relevant layer data
         this.d3Intro = new D3intro(this.storyUris);
-        this.d3Intro.linesFeatures.push(this.getSlideById(1041));
-        this.d3Intro.linesFeatures.push(this.getSlideById(1042));
-        this.d3Intro.linesFeatures.push(this.getSlideById(1043));
-        this.d3Intro.linesFeatures.push(this.getSlideById(1044));
+        this.d3Intro.homelandsSlide =this.getSlideById(102);
+        this.d3Intro.pathways1Slide = this.getSlideById(1031);
+        this.d3Intro.pathways2Slide = this.getSlideById(1032);
+        this.d3Intro.villagessettlersSlide = this.getSlideById(104);
+        this.d3Intro.linesSlide.push(this.getSlideById(1051));
+        this.d3Intro.linesSlide.push(this.getSlideById(1052));
+        this.d3Intro.linesSlide.push(this.getSlideById(1053));
+        this.d3Intro.linesSlide.push(this.getSlideById(1054));
+        
         this.svg = await this.d3Intro.loadD3(this.map);
 
     }
