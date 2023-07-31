@@ -471,7 +471,7 @@ export class StoryMap {
         this.d3Intro.linesSlide.push(this.getSlideById(1052));
         this.d3Intro.linesSlide.push(this.getSlideById(1053));
         this.d3Intro.linesSlide.push(this.getSlideById(1054));
-        
+
         this.svg = await this.d3Intro.loadD3(this.map);
 
     }

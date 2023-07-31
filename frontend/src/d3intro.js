@@ -115,7 +115,7 @@ export class D3intro {
                     break;
 
                 case "pathways2":
-                    console.log("pathways1");
+                    console.log("pathways2");
 
                     played = true;
                     break;
@@ -295,20 +295,18 @@ export class D3intro {
 
     }
 
-    // todo for d3:
-    // split into its own animatedintro library
-    // single function using switch to handle all shape types infeatures
-    // for: d => this.multipolygonToPath(d.geometry.coordinates[0])
-    // Maybe use layer data depending on dat set?
-
+    /**
+     * The D3 intro for the first pathways section
+     * Rivers drawn using dash css method: https://medium.com/@louisemoxy/create-a-d3-line-chart-animation-336f1cb7dd61
+     * @param map our leaflet map
+     * @return {Promise<void>}
+     */
     async playPathways1Intro(map) {
         let bounds = map.flyToBounds(L.geoJson(this.startingBounds.pathways1).getBounds());
         await this.sleep(1500);
 
-        if (!this.pathways1Slide && this.pathways1Slide.length > 0) {
+        if (!this.pathways1Slide && this.pathways1Slide.features.length > 0) {
 
-
-            // https://medium.com/@louisemoxy/create-a-d3-line-chart-animation-336f1cb7dd61
             this.svg.selectAll('.river')
                 .data(this.pathways1Slide.features)
                 .join("path")
