@@ -554,6 +554,7 @@ layout: base.liquid
     let startLng = {{ bounds[0].lng }};
     let startZoom = {{ bounds[0].zoom }};
 
+    errorobj = null;
     let storyURIs = {
         storyFrame: "{{ '/assets/json/BCC_storyframe.json' | url }}",
         slides: "{{ '/assets/json/BCC_slides.json' | url }}",
@@ -567,4 +568,3 @@ layout: base.liquid
 </script>
 
 <script defer type="text/javascript" src="{{ '/assets/js/bcc/main.js' | url }}"></script>
-<!--<script defer type="text/javascript" src="{{ '/assets/js/d3test.js' | url }}">-->

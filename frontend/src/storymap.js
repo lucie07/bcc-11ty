@@ -316,15 +316,17 @@ export class StoryMap {
      */
     async triggerSlideMapEvents(slideid) {
         /* Trigger intros */
-        console.log(slideid);
+        //console.log(slideid);
         if (this.d3Intro.slideIds[slideid + ""]) {
             // This slide triggers an animated slide
             // Clear layers
             this.storyFeatureLayerGroup.clearLayers();
-            await this.d3Intro.SectionIntro(this.map, slideid, this.slides);
+            this.d3Intro.SectionIntro(this.map, slideid, this.slides);
         } else if (slideid != "explore") {
+            console.log(this.d3Intro.svgDrawn);
             if (this.d3Intro.svgDrawn) {
                 // Clear the svg overlay so we can replace with layers
+                this.d3Intro.stopAll();
                 this.d3Intro.clearSvg();
             }
             let slide = this.getSlideById(slideid);
@@ -349,16 +351,12 @@ export class StoryMap {
                         this.fadeLayerLeaflet(slide.layer, 0, 0.8, 0.2, 0.01);
                         this.map.off('moveend', slideUpdate);
                     }.bind(this);
-
                     this.map.on('moveend', slideUpdate);
-
                 }
-
                 this.lastSlideDisplayed = slide;
 
             }
         } else if (slideid == "explore") {
-
             this.storyFeatureLayerGroup.clearLayers();
             this.loadExploreLayer();
         }
@@ -467,7 +465,7 @@ export class StoryMap {
                     if (entry.target.dataset.isActive){
                         entry.target.removeAttribute("data-isActive");
                         this.storyFeatureLayerGroup.clearLayers();
-                        this.d3Intro.clearSvg();
+
                     }
                     //console.log(entry);
                 }
@@ -475,7 +473,7 @@ export class StoryMap {
 
 
         }.bind(this), {
-            threshold: [1]
+            threshold: [0.75]
         });
 
 

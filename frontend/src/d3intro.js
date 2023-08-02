@@ -24,7 +24,9 @@ export class D3intro {
         // for lines
         this.linesSlide = [];
 
+
         this.svgDrawn = false;
+        this.introRunning = false;
         this.geometryUris = geometryUris;
         this.startingBounds = {
             "homelands": {
@@ -140,49 +142,53 @@ export class D3intro {
         map.dragging.enable();
     }
 
+    stopAll(){
+        this.introRunning = false;
+        // todo stop path drawing transition
+        this.svg.selectAll("*").interrupt();
+    }
+
     clearSvg() {
         this.svg.selectAll("*").remove();
         this.svgDrawn = false;
     }
 
     async SectionIntro(map, slideid) {
-        let played = false;
-        if (this.slideIds[slideid + ""]) {
+
+        if (this.slideIds[slideid + ""] && !this.introRunning) {
+            let introRun = false;
+            this.introRunning = true;
+            if (this.svgDrawn){
+                // Clear any existing transitions and elements
+                this.stopAll();
+                this.clearSvg();
+            }
             switch (this.slideIds[slideid + ""]) {
                 case "homelands":
                     console.log("homelands");
-                    // this.getStoryFrameBounds(10)
-                    await this.playHomelandsIntro(map);
-                    played = true;
+                    introRun = await this.playHomelandsIntro(map);
                     break;
-
                 case "pathways1":
                     console.log("pathways1");
-                    await this.playPathways1Intro(map);
-                    played = true;
+                    introRun = await this.playPathways1Intro(map);
                     break;
                 case "pathways2":
                     console.log("pathways2");
-                    await this.playPathways2Intro(map);
-                    played = true;
+                    introRun = await this.playPathways2Intro(map);
                     break;
                 case "villagerssettlers":
                     console.log("settlers");
-                    await this.playvillagerssettlersSlide(map);
-                    played = true;
+                    introRun = await this.playvillagerssettlersSlide(map);
                     break;
                 case "lines":
                     console.log("lines");
-                    await this.playLinesIntro(map);
-                    played = true;
+                    introRun = await this.playLinesIntro(map);
                     break;
-
             }
+
+            this.svgDrawn = introRun;
         }
-        if (played) {
-            this.svgDrawn = true;
-        }
-        return played;
+        return this.svgDrawn;
     }
 
     async loadShapeFile(shape_url) {
@@ -338,7 +344,7 @@ export class D3intro {
                 .attr("cy", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y)
                 .attr("r", 5);*/
 
-
+            return true;
     }
 
     /**
@@ -373,6 +379,7 @@ export class D3intro {
                 .end();
 
         }
+        return true;
 
     }
 
@@ -393,6 +400,7 @@ export class D3intro {
                         break;
                     case "Point":
                         splitFeatures.points.push(features[f]);
+
                         break;
                 }
             }
@@ -459,21 +467,20 @@ export class D3intro {
     }
 
     async playvillagerssettlersSlide(map) {
-        this.clearSvg();
         let bounds = map.flyToBounds(L.geoJson(this.startingBounds.villagerssettlers).getBounds());
         await this.sleep(1500);
         if (!this.villagerssettlersSlide || this.villagerssettlersSlide.features.length == 0) {
             return false;
         }
+
         let splitFeatures = D3intro.splitFeatures(this.villagerssettlersSlide.features);
-        // console.log(splitFeatures.points);
-        // .attr("stroke", "black")
+        //console.log(splitFeatures.points);
         const settlersites = await this.svg.selectAll('circle.villagerssettlers')
             .data(splitFeatures.points)
             .join('circle')
             .attr("class", "villagerssettlers")
             .attr("fill", function (d) {
-                if (d.properties.sub_type && d.properties.sub_type == 12) {
+                if (d.properties && d.properties.sub_type == 12) {
                     return "red";
                 }
                 return "green";
@@ -486,16 +493,11 @@ export class D3intro {
             .duration(1000)
             .end();
 
-        /*
-        .transition()
-            .attr('r', 3)
-            .duration(1000)
-            .end();
-         */
+
         let dipsites = [];
         for (let p = 0; p < splitFeatures.points.length; p++) {
             let point = splitFeatures.points[p];
-            if (point.properties && point.properties.sub_type == 12) {
+            if (point.properties && point.properties.sub_type && point.properties.sub_type == 12) {
                 dipsites.push(point);
             }
         }
@@ -511,15 +513,15 @@ export class D3intro {
             .attr("cy", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y)
             .attr("r", 3);
 
-        await this.pulseTransition();
-
-
+        this.pulseTransition();
+        return true;
     }
 
     async pulseTransition() {
 
         // .attr("opacity", "0.5")
-        await this.svg.selectAll('circle.villagerssettlers.pulse')
+        while (this.introRunning){
+            await this.svg.selectAll('circle.villagerssettlers.pulse')
             .attr("r", 3)
             .attr("opacity", "0")
             .attr("fill", "black")
@@ -534,8 +536,10 @@ export class D3intro {
             .duration(500)
             .attr("opacity", "0")
             .end();
+        }
 
-        return this.pulseTransition();
+
+        return true;
     }
 
     async drawLines(features, duration, colour, majorClass, minorClass) {
@@ -557,6 +561,7 @@ export class D3intro {
             .duration(duration)
             .attr("stroke-dashoffset", 0)
             .end();
+
     }
 
     async playLinesIntro(map) {
@@ -577,6 +582,7 @@ export class D3intro {
             }
 
         }
+        return true;
     }
 }
 
