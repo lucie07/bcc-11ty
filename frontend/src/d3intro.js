@@ -19,7 +19,7 @@ export class D3intro {
         this.homelandsSlide = null;
         this.pathways1Slide = null;
         this.pathways2Slide = null;
-        this.villagessettlersSlide = null;
+        this.villagerssettlersSlide = null;
         // Array here since we have four frames of data
         // for lines
         this.linesSlide = [];
@@ -55,6 +55,30 @@ export class D3intro {
                 "type": "Feature",
                 "properties": {
                     "id": null,
+                    "FID": 15,
+                    "Narr_ID": null,
+                    "Seq_ID": null,
+                    "Desc": "smaller_continental"
+                },
+                "geometry": {
+                    "type": "MultiPolygon",
+                    "coordinates": [
+                        [
+                            [
+                                [-64.956051523342381, 48.693292043680088],
+                                [-65.110629444043951, 28.186892930726643],
+                                [-104.228439847563948, 28.299022049289441],
+                                [-104.146277556994463, 48.598142453129832],
+                                [-64.956051523342381, 48.693292043680088]
+                            ]
+                        ]
+                    ]
+                }
+            },
+            "pathways2": {
+                "type": "Feature",
+                "properties": {
+                    "id": null,
                     "FID": 10,
                     "Narr_ID": 1,
                     "Seq_ID": 50,
@@ -70,6 +94,30 @@ export class D3intro {
                                 [-71.80139894399737, 37.05857933377866],
                                 [-80.029020554100995, 37.079756393203311],
                                 [-80.002479839229679, 40.168441182885317]
+                            ]
+                        ]
+                    ]
+                }
+            },
+            "villagerssettlers": {
+                "type": "Feature",
+                "properties": {
+                    "id": null,
+                    "FID": 12,
+                    "Narr_ID": 1,
+                    "Seq_ID": 90,
+                    "Desc": "Extent of Indigenous references in 12 Mitchell"
+                },
+                "geometry": {
+                    "type": "MultiPolygon",
+                    "coordinates": [
+                        [
+                            [
+                                [-60.375517055951661, 50.495155542044799],
+                                [-60.311892185297758, 27.407898583362975],
+                                [-109.071321137306086, 27.405734834799336],
+                                [-108.827782021299925, 50.546067470988127],
+                                [-60.375517055951661, 50.495155542044799]
                             ]
                         ]
                     ]
@@ -113,16 +161,14 @@ export class D3intro {
                     await this.playPathways1Intro(map);
                     played = true;
                     break;
-
                 case "pathways2":
                     console.log("pathways2");
-
+                    await this.playPathways2Intro(map);
                     played = true;
                     break;
-
                 case "villagerssettlers":
                     console.log("settlers");
-
+                    await this.playvillagerssettlersSlide(map);
                     played = true;
                     break;
                 case "lines":
@@ -216,11 +262,11 @@ export class D3intro {
             this.homelandsLabels = await this.loadShapeFile(this.geometryUris.homelands);
         }
 
-      /*  let points = [];
-        for (let i = 0; i < coordinates.length; i++) {
-            let point = map.latLngToLayerPoint([coordinates[i][1], coordinates[i][0]]);
-            points.push(point);
-        }*/
+        /*  let points = [];
+          for (let i = 0; i < coordinates.length; i++) {
+              let point = map.latLngToLayerPoint([coordinates[i][1], coordinates[i][0]]);
+              points.push(point);
+          }*/
         //this.drawHomelandsIntro();
         /*map.on("zoomend", function () {
             this.drawHomelandsIntro();
@@ -305,7 +351,7 @@ export class D3intro {
         let bounds = map.flyToBounds(L.geoJson(this.startingBounds.pathways1).getBounds());
         await this.sleep(1500);
 
-        if (!this.pathways1Slide && this.pathways1Slide.features.length > 0) {
+        if (this.pathways1Slide && this.pathways1Slide.features.length > 0) {
 
             this.svg.selectAll('.river')
                 .data(this.pathways1Slide.features)
@@ -325,38 +371,171 @@ export class D3intro {
                 .duration(2500)
                 .attr("stroke-dashoffset", 0)
                 .end();
-            /*
-                    const settlements = this.svg.selectAll('circle')
-                        .attr("class", "Dots")
-                        .data(riverPoints.features)
-                        .join('circle')
-                        .attr("class", "pathways1 settlements")
-                        .attr("fill", "steelblue")
-                        .attr("stroke", "black")
-                        //Leaflet has to take control of projecting points. Here we are feeding the latitude and longitude coordinates to
-                        //leaflet so that it can project them on the coordinates of the view. Notice, we have to reverse lat and lon.
-                        //Finally, the returned conversion produces an x and y point. We have to select the the desired one using .x or .y
-                        .attr("cx", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x)
-                        .attr("cy", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y)
-                        .attr("r", 2);
 
-                    await settlements
-                        .transition()
-                        .duration(500)
-                        .attr('r', 5)
-                        .end();
-
-                    await settlements
-                        .transition()
-                        .duration(500)
-                        .attr('r', 2)
-                        .end();*/
         }
 
     }
 
-    async playPathways2Intro() {
+    static splitFeatures(features) {
+        let splitFeatures = {
+            "points": [],
+            "polys": [],
+            "lines": []
+        };
+        for (let f in features) {
+            if (features[f].geometry && features[f].geometry.type) {
+                switch (features[f].geometry.type) {
+                    case "MultiPolygon":
+                        splitFeatures.polys.push(features[f]);
+                        break;
+                    case "MultiLineString":
+                        splitFeatures.lines.push(features[f]);
+                        break;
+                    case "Point":
+                        splitFeatures.points.push(features[f]);
+                        break;
+                }
+            }
+        }
 
+        return splitFeatures;
+    }
+
+    /**
+     *  Pathways 2 intro (slide 14)
+     * @param map
+     * @return {Promise<boolean>}
+     */
+    async playPathways2Intro(map) {
+        let bounds = map.flyToBounds(L.geoJson(this.startingBounds.pathways2).getBounds());
+        await this.sleep(1500);
+
+        if (!this.pathways2Slide || this.pathways2Slide.features.length == 0) {
+            return false;
+        }
+
+        let splitFeatures = D3intro.splitFeatures(this.pathways2Slide.features);
+
+
+        if (splitFeatures.lines && splitFeatures.lines.length > 0) {
+            this.svg.selectAll('.road')
+                .data(this.pathways1Slide.features)
+                .join("path")
+                .attr('class', 'pathways2 road')
+                .attr("stroke", "brown")
+                .attr("fill", "none")
+                .attr("stroke-width", "1")
+                .attr("d", d => this.featureToPath(d));
+
+            await this.svg.selectAll('path.road').each(function (d) {
+                d.totalLength = this.getTotalLength();
+            })
+                .attr("stroke-dashoffset", d => d.totalLength)
+                .attr("stroke-dasharray", d => d.totalLength)
+                .transition()
+                .duration(2500)
+                .attr("stroke-dashoffset", 0)
+                .end();
+        }
+
+
+        if (splitFeatures.points && splitFeatures.points.length > 0) {
+            const dipsites = this.svg.selectAll('circle.pathways2')
+                .data(splitFeatures.points)
+                .join('circle')
+                .attr("class", "pathways2 dipsites")
+                .attr("fill", "red")
+                .attr("stroke", "black")
+                .attr("cx", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x)
+                .attr("cy", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y)
+                .attr("r", 20)
+                .transition()
+                .attr('r', 5)
+                .duration(1000)
+                .end();
+        }
+        return true;
+
+    }
+
+    async playvillagerssettlersSlide(map) {
+        this.clearSvg();
+        let bounds = map.flyToBounds(L.geoJson(this.startingBounds.villagerssettlers).getBounds());
+        await this.sleep(1500);
+        if (!this.villagerssettlersSlide || this.villagerssettlersSlide.features.length == 0) {
+            return false;
+        }
+        let splitFeatures = D3intro.splitFeatures(this.villagerssettlersSlide.features);
+        // console.log(splitFeatures.points);
+        // .attr("stroke", "black")
+        const settlersites = await this.svg.selectAll('circle.villagerssettlers')
+            .data(splitFeatures.points)
+            .join('circle')
+            .attr("class", "villagerssettlers")
+            .attr("fill", function (d) {
+                if (d.properties.sub_type && d.properties.sub_type == 12) {
+                    return "red";
+                }
+                return "green";
+            })
+            .attr("cx", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x)
+            .attr("cy", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y)
+            .attr("r", 20)
+            .transition()
+            .attr('r', 3)
+            .duration(1000)
+            .end();
+
+        /*
+        .transition()
+            .attr('r', 3)
+            .duration(1000)
+            .end();
+         */
+        let dipsites = [];
+        for (let p = 0; p < splitFeatures.points.length; p++) {
+            let point = splitFeatures.points[p];
+            if (point.properties && point.properties.sub_type == 12) {
+                dipsites.push(point);
+            }
+        }
+
+        //console.log(dipsites);
+        let pulses = this.svg.selectAll('circle.villagerssettlers.pulse')
+            .data(dipsites)
+            .join('circle')
+            .attr("class", "villagerssettlers pulse")
+            .attr("fill", "black")
+            .attr("opacity", "0.5")
+            .attr("cx", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x)
+            .attr("cy", d => map.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y)
+            .attr("r", 3);
+
+        await this.pulseTransition();
+
+
+    }
+
+    async pulseTransition() {
+
+        // .attr("opacity", "0.5")
+        await this.svg.selectAll('circle.villagerssettlers.pulse')
+            .attr("r", 3)
+            .attr("opacity", "0")
+            .attr("fill", "black")
+            .transition()
+            .duration(1000)
+            .attr("r", 10)
+            .attr("opacity", "0.5")
+            .styleTween("fill", function () {
+                return d3.interpolateRgb("black", "red");
+            })
+            .transition()
+            .duration(500)
+            .attr("opacity", "0")
+            .end();
+
+        return this.pulseTransition();
     }
 
     async drawLines(features, duration, colour, majorClass, minorClass) {
@@ -388,7 +567,7 @@ export class D3intro {
         let frameDelay = 1000;
 
         if (this.linesSlide && this.linesSlide.length > 0) {
-            for (let f = 0; f < this.linesSlide.length; f++){
+            for (let f = 0; f < this.linesSlide.length; f++) {
                 //console.log(this.linesFeatures[f]);
                 await this.drawLines(
                     this.linesSlide[f].features, drawDuration, colour, majorClass, minorClass

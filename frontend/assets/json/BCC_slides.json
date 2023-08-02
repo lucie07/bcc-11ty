@@ -1119,14 +1119,25 @@
     },
     {
       "id": 104,
-      "fid": 15,
+      "fid": 12,
       "points": {
         "includes": {
-          "sub_type": [12]
+          "sub_type": [
+            4,
+            10,
+            12
+          ]
+        },
+        "excludes": {
+          "identity": [
+            1
+          ]
         }
       },
-      "lines": { },
-      "excludes": {  },
+      "polys": {
+        "includes": {},
+        "excludes": {}
+      },
       "features": []
     },
     {
@@ -1135,16 +1146,18 @@
       "points": {},
       "lines": {
         "includes": {
-          "sub_type": [3],
-          "map_source": [3]
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            3
+          ]
         },
         "excludes": {
-
         }
       },
       "excludes": {
-
-        },
+      },
       "features": []
     },
     {

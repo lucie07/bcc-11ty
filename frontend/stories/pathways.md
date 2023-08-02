@@ -1,7 +1,5 @@
 ::: slide 14
 
-## 2. Pathways
-
 **_Pathways were connections between places and peoples._**
 
 For the Haudenosaunee, the path was a powerful metaphor. It represented a connection between peoples, and defined the purposes of movement – hunting, trading, travelling to a diplomatic council or going to war. Where a diplomatic relationship was in good health, the path was described as ‘clear’ and ‘open’; and where that relationship had lapsed or been marred by conflict, the path was described as ‘grown over’, which required a diplomatic council to ‘sweep the path clean’. Paths were not interchangeable: peace and war paths were kept separate. According to the diplomat Conrad Weiser, there was ‘the usual Road that ambassadors travel’. The Haudenosaunee represented paths on wampum belts. The two- row belt (Gä•sweñta in Onondaga) used two strips of purple beads on a white ground to represent the parallel paths of the Haudenosaunee and the European peoples who settled among them. Friendship belts connected two figures with a pathway between them, symbolising free movement and open communication. Diplomatic councils began with the greeting at the Edge of the Woods and the ritual cleansing of travellers, including the removal of briars and thorns that were picked up on paths leading to the council.

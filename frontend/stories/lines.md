@@ -1,6 +1,5 @@
 ::: slide 30
 
-## 4. Lines
 
 The Royal Charters that created colonies out of undefined expanses of territory that were claimed on the basis of discovery included expansive and unbounded descriptions of colonial space. The second Charter of Virginia (1609) stipulated that the colony included,
 

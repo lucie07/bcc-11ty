@@ -316,7 +316,7 @@ export class StoryMap {
      */
     async triggerSlideMapEvents(slideid) {
         /* Trigger intros */
-
+        console.log(slideid);
         if (this.d3Intro.slideIds[slideid + ""]) {
             // This slide triggers an animated slide
             // Clear layers
@@ -446,14 +446,39 @@ export class StoryMap {
         this.initAllFeaturesLayer();
 
         this.getSlideElements();
-        let observer = new IntersectionObserver(function (entries) {
-            //console.log(entries[0].target.dataset);
-            if (entries[0].isIntersecting === true)
-                this.triggerSlideMapEvents(entries[0].target.dataset.slideid);
-        }.bind(this), {threshold: [1]});
+        let observerTimeouts = {};
+        /* This observer controls the scrolling behaviour:
+        - triggering slides and animations
+        - clearing the map layers and svg after a triggered slide is no longer visible
+        (Timeout is to stop fast scrolling triggering slides as it goes past)
+         */
+        let observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting === true && entry.target.dataset.slideid) {
+                    observerTimeouts[entry.target.dataset.slideid] = setTimeout(function() {
+                        entry.target.dataset.isActive = 'true';
+                        this.triggerSlideMapEvents(entry.target.dataset.slideid);
+                    }.bind(this), 1000);
+
+                } else if (!entry.isVisible) {
+                    if (entry.target.dataset.slideid in observerTimeouts){
+                        clearTimeout(observerTimeouts[entry.target.dataset.slideid]);
+                    }
+                    if (entry.target.dataset.isActive){
+                        entry.target.removeAttribute("data-isActive");
+                        this.storyFeatureLayerGroup.clearLayers();
+                        this.d3Intro.clearSvg();
+                    }
+                    //console.log(entry);
+                }
+            });
 
 
-        // Add for temporary debugging, will be used for filter
+        }.bind(this), {
+            threshold: [1]
+        });
+
+
         //this.storyFeatureLayerGroup.addLayer(this.allFeaturesLayer);
         for (let s = 0; s < this.slideElements.length; s++) {
             observer.observe(this.slideElements[s]);
@@ -463,10 +488,10 @@ export class StoryMap {
 
         // Init our d3 intro class and pass relevant layer data
         this.d3Intro = new D3intro(this.storyUris);
-        this.d3Intro.homelandsSlide =this.getSlideById(102);
+        this.d3Intro.homelandsSlide = this.getSlideById(102);
         this.d3Intro.pathways1Slide = this.getSlideById(1031);
         this.d3Intro.pathways2Slide = this.getSlideById(1032);
-        this.d3Intro.villagessettlersSlide = this.getSlideById(104);
+        this.d3Intro.villagerssettlersSlide = this.getSlideById(104);
         this.d3Intro.linesSlide.push(this.getSlideById(1051));
         this.d3Intro.linesSlide.push(this.getSlideById(1052));
         this.d3Intro.linesSlide.push(this.getSlideById(1053));
