@@ -319,6 +319,7 @@ export class StoryMap {
 
   pointToLayer(feature, latlng) {
     //console.log(latlng);
+
     switch (feature.properties.sub_type) {
       // Indigenous : Circle - Red - point down
       case 1:
@@ -440,7 +441,7 @@ export class StoryMap {
       slide.layer = this.L.geoJSON(slide.features, {
         // Stopping style override here
         //style: this.defaultLineStyle,
-        pointToLayer: this.pointToLayer,
+        pointToLayer: this.pointToLayer.bind(this),
         onEachFeature: this.onEachFeature.bind(this),
       });
     }
@@ -449,7 +450,7 @@ export class StoryMap {
   initAllFeaturesLayer() {
     this.allFeaturesLayer = this.L.geoJSON(this.allFeatures, {
       //style: this.defaultLineStyle,
-      pointToLayer: this.pointToLayer,
+      pointToLayer: this.pointToLayer.bind(this),
       onEachFeature: this.onEachFeature.bind(this),
     });
   }
@@ -505,7 +506,6 @@ export class StoryMap {
       this.storyFeatureLayerGroup.clearLayers();
       this.d3Intro.SectionIntro(this.map, slideid, this.slides);
     } else if (slideid != "explore") {
-      console.log(this.d3Intro.svgDrawn);
       if (this.d3Intro.svgDrawn) {
         // Clear the svg overlay so we can replace with layers
         this.d3Intro.stopAll();
@@ -543,15 +543,17 @@ export class StoryMap {
     }
   }
 
-  async initMap(L, lat, lng, zoom) {
+  async initMap(lat, lng, zoom) {
     this.map = this.L.map("basemap", {
       scrollWheelZoom: false,
       zoomControl: false,
     });
 
-    this.L.controthis.L.zoom({
-      position: "bottomleft",
-    }).addTo(this.map);
+    this.L.control
+      .zoom({
+        position: "bottomleft",
+      })
+      .addTo(this.map);
 
     // Establish baselayers group
     /*this.osmLayer = this.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -608,11 +610,9 @@ export class StoryMap {
 
     // Create Layer Switcher
 
-    this.L.controthis.L.layers(
-      baseLayers,
-      {},
-      { position: "bottomleft", collapsed: false }
-    ).addTo(this.map);
+    this.L.control
+      .layers(baseLayers, {}, { position: "bottomleft", collapsed: false })
+      .addTo(this.map);
 
     // Initial view
     // This could be changed based on get string etc.
