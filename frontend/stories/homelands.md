@@ -23,7 +23,8 @@ The land was political. Haudenosaunee oral tradition drew the land and its histo
 ::: slide 8  
 Indigenous peoples were map-makers, but these maps were carried in the mind and then sketched with charcoal on hide or bark, or drawn with a stick in soft soil or the ashes of a fire. Colonial officials copied these maps, which allow us to glimpse the ways in which Indigenous nations saw themselves in relation to other peoples. The famous Catawba deerskin map portrayed two contrasting ways of being on the land: the villages and towns of the Catawba are represented as a network of circles connected by paths, while the British colonial city of Charlestown is shown as a grid system of streets. The relative size of circles (a sacred shape in Indigenous culture) denotes the importance and power of each nation; the paths linking them represent connections of kinship, trade and alliance.
 
-![Catawba deerskin map](../assets/img/stories/7-Catawba-deerskin-map.jpg):::
+![Catawba deerskin map](../assets/img/stories/7-Catawba-deerskin-map.jpg)
+:::
 
 ::: slide 9  
 _Haudenosaunee_ can be translated as the ‘whole house’, and their landsin what is now New York state were conceived as a metaphorical Longhouse with ‘doors’ facing east and west. The Seneca guarded the western door and the Mohawk the eastern one that faced toward the British colonies. Between them were the Cayuga, Onondaga and the Oneida. The longhouse and its nations are represented on the Hiawatha Belt that shows the nations of the Confederacy gathered under the Great Law. The central image of a white pine symbolises the tree of peace around which the nations shelter, and the location of the central council fire at Onondaga.
@@ -34,14 +35,12 @@ _Haudenosaunee_ can be translated as the ‘whole house’, and their landsin wh
 ::: slide 10  
 British mapmakers took care in noting the positions of each nation and territorial extent of the Confederacy as a whole. In John Mitchell’s map of the British and French territories in North America, the label ‘Six Nations or Iroquois’ cuts across Virginia, Pennsylvania, New York, and north of the Great Lakes. Mitchell also identified the Haudenosaunee’s much smaller original homeland _Irocoisia_, centred on Lake Champlain.
 
-
 ![Detail from Mitchell map of 1755](../assets/img/stories/9a-Mitchell-1755c.jpg)
 ![Detail from Bowen map of 1772](../assets/img/stories/9b-Bowen-1772e.jpg)
 :::
 
 ::: slide 11  
 Yet this was not a wholly peaceful landscape. In response to the effects of European soldiers, traders and settlers the Haudenosaunee carried out campaigns against neighbouring nations, seeking captives and access to new hunting lands. In 1657, a missionary observed that the villages and towns of the Five Nations contained ‘more foreigners than natives of the country’. For the British, the Haudenosaunee were like themselves: an expanding commercial and military power that brought other nations under their control and, as allies of the Crown, into Britain’s imperial network. This myth of ‘Iroquois empire’ was used by the British to bolster their own power in interior spaces where Indigenous nations were fully sovereign.
-
 
 ![Detail from Mitchell map of 1755](../assets/img/stories/10-Mitchell-1755e.jpg)
 :::
