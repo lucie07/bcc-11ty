@@ -12,6 +12,9 @@ export class StoryMap {
     this.layerGroups = {};
     this.storyFrames = [];
 
+    // Geojson feature types
+    this.featureTypes = ["points", "lines", "polys"];
+
     // Map parameters
     this.mapMinZoom = 1;
     this.mapMaxZoom = 11;
@@ -57,9 +60,6 @@ export class StoryMap {
       fill: "black",
       "font-family": "EB Garamond, serif",
       "font-weight": "bold",
-
-      //'textLength': 300,
-      //'lengthAdjust': 'spacing',
       dx: "15%",
     };
     this.initStyles();
@@ -85,6 +85,30 @@ export class StoryMap {
       18: "Russell, 1794",
       19: "Bradley, 1796",
     };
+
+    // Explore/filter variables
+
+    this.exploreFilterControl = {
+      id: 0,
+      fid: 0, // We should look at this
+      sub_type: [[], [], [], [], [], [], [], [], [], [], [], [], []],
+      maps: [],
+      lines: {
+        includes: {},
+        excludes: {},
+      },
+      points: {
+        includes: {},
+        excludes: {},
+      },
+      polys: {
+        includes: {},
+        excludes: {},
+      },
+      excludes: {},
+      features: [],
+    };
+    this.initExploreFilters();
   }
 
   initStyles() {
@@ -291,11 +315,11 @@ export class StoryMap {
         //}
 
         /*let frame_link = feature.properties.frame_link;
-                                    if (shapesByFrameLink[frame_link]) {
-                                        shapesByFrameLink[frame_link].push(feature);
-                                    } else {
-                                        shapesByFrameLink[frame_link] = [feature]
-                                    }*/
+                                            if (shapesByFrameLink[frame_link]) {
+                                                shapesByFrameLink[frame_link].push(feature);
+                                            } else {
+                                                shapesByFrameLink[frame_link] = [feature]
+                                            }*/
       }
     }
 
@@ -318,8 +342,6 @@ export class StoryMap {
   }
 
   pointToLayer(feature, latlng) {
-    //console.log(latlng);
-
     switch (feature.properties.sub_type) {
       // Indigenous : Circle - Red - point down
       case 1:
@@ -557,8 +579,8 @@ export class StoryMap {
 
     // Establish baselayers group
     /*this.osmLayer = this.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(this.map);*/
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(this.map);*/
 
     this.overlay = this.L.tileLayer(
       "https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}",
@@ -633,10 +655,10 @@ export class StoryMap {
     this.getSlideElements();
     let observerTimeouts = {};
     /* This observer controls the scrolling behaviour:
-        - triggering slides and animations
-        - clearing the map layers and svg after a triggered slide is no longer visible
-        (Timeout is to stop fast scrolling triggering slides as it goes past)
-         */
+            - triggering slides and animations
+            - clearing the map layers and svg after a triggered slide is no longer visible
+            (Timeout is to stop fast scrolling triggering slides as it goes past)
+             */
     let observer = new IntersectionObserver(
       function (entries) {
         entries.forEach((entry) => {
@@ -836,24 +858,24 @@ export class StoryMap {
             layer.setStyle(this.lineRiverRouteStyle);
 
             /* this.textFeatures[feature.properties.id] = {
-                             orientation: testDirection(feature),
-                             text: feature.properties.norm_text
-                         }*/
+                                         orientation: testDirection(feature),
+                                         text: feature.properties.norm_text
+                                     }*/
 
             /*layer.setText(feature.properties.norm_text,
-                            {
-                                orientation: testDirection(feature), offset: 5, center: true,
-                                attributes: {
-                                    'fill': 'black',
-                                    'font-family': 'EB Garamond, serif',
-                                    'font-weight': 'bold',
-                                    'font-size': '7px',
-                                    //'textLength': 300,
-                                    //'lengthAdjust': 'spacing',
-                                    'dx': '15%',
-                                }
-                            }
-                        );*/
+                                        {
+                                            orientation: testDirection(feature), offset: 5, center: true,
+                                            attributes: {
+                                                'fill': 'black',
+                                                'font-family': 'EB Garamond, serif',
+                                                'font-weight': 'bold',
+                                                'font-size': '7px',
+                                                //'textLength': 300,
+                                                //'lengthAdjust': 'spacing',
+                                                'dx': '15%',
+                                            }
+                                        }
+                                    );*/
             break;
           case 9:
             layer.setStyle(this.lineMiscStyle);
@@ -910,29 +932,220 @@ export class StoryMap {
       let storyFeatures = await this.loadShapes([this.storyUris.lines]);
 
       for (let f = 0; f < storyFeatures.length; f++) {
-        this.addFeatureToSlideGroups("LINE", storyFeatures[f]);
+        this.addFeatureToAllSlides("lines", storyFeatures[f]);
         // todo add feature to river labels group here
         // Then use this layer only
       }
 
       storyFeatures = await this.loadShapes([this.storyUris.points]);
       for (let f = 0; f < storyFeatures.length; f++) {
-        this.addFeatureToSlideGroups("POINT", storyFeatures[f]);
+        this.addFeatureToAllSlides("points", storyFeatures[f]);
       }
 
       storyFeatures = await this.loadShapes([this.storyUris.polys]);
       for (let f = 0; f < storyFeatures.length; f++) {
-        this.addFeatureToSlideGroups("POLY", storyFeatures[f]);
+        this.addFeatureToAllSlides("polys", storyFeatures[f]);
       }
 
       storyFeatures = await this.loadShapeFile([this.storyUris.indigenous]);
 
       for (let f = 0; f < storyFeatures.features.length; f++) {
-        this.addFeatureToSlideGroups("INDIGENOUS", storyFeatures.features[f]);
+        this.addFeatureToAllSlides("indigenous", storyFeatures.features[f]);
       }
     }
   }
 
+  /** Add a single criteria value to our search filters */
+  addExploreFilter(featureType, criteria, filterValue, include) {
+    //console.log(this.exploreFilterSlide[featureType]);
+    if (this.exploreFilterControl[featureType]) {
+      let value = parseInt(filterValue);
+      if (!this.exploreFilterControl[featureType].includes[criteria]) {
+        this.exploreFilterControl[featureType].includes[criteria] = [];
+      }
+      const index =
+        this.exploreFilterControl[featureType].includes[criteria].indexOf(
+          value
+        );
+      // If we're including and it isn't there already
+      if (include && index < 0) {
+        this.exploreFilterControl[featureType].includes[criteria].push(value);
+      } else {
+        // Remove
+        // If value already in filters, turn off
+
+        console.log(this.exploreFilterControl[featureType].includes.identity);
+        // Special case for sub_type, don't remove if we still have identity values
+        if (
+          index > -1 &&
+          (criteria != "sub_type" ||
+            !this.exploreFilterControl[featureType].includes.identity ||
+            this.exploreFilterControl[featureType].includes.identity.length ==
+              0)
+        ) {
+          console.log(index);
+          this.exploreFilterControl[featureType].includes[criteria].splice(
+            index,
+            1
+          );
+        }
+      }
+    }
+  }
+
+  /**
+   * Attach click events to control the explore controls
+   *
+   */
+  initExploreFilters() {
+    // Map filters
+    let mapFilters = document.querySelectorAll("input.map_filter");
+    if (mapFilters) {
+      for (let f = 0; f < mapFilters.length; f++) {
+        mapFilters[f].addEventListener("click", this.filterClick.bind(this));
+        /*mapFilters[f].addEventListener('click', function (e) {
+                    let dataset = e.target.dataset;
+                    console.log(dataset);
+                    if (dataset) {
+                        if (dataset.featuretype == "all") {
+                            for (let t = 0; t < this.featureTypes.length; t++) {
+                                this.addExploreFilter(
+                                    this.featureTypes[t],
+                                    dataset.criteria,
+                                    dataset.filtervalue,
+                                    true
+                                );
+                            }
+
+                        } else {
+                            this.addExploreFilter(
+                                dataset.featuretype,
+                                dataset.criteria,
+                                dataset.filtervalue,
+                                true
+                            );
+                        }
+
+                        this.applyExploreFilters();
+                    }
+
+                }.bind(this));*/
+      }
+    }
+
+    // Subtype filters (borders, land routes, etc.)
+    let subtypeFilters = document.querySelectorAll("input.explore_filter");
+    if (subtypeFilters) {
+      for (let f = 0; f < subtypeFilters.length; f++) {
+        subtypeFilters[f].addEventListener(
+          "click",
+          this.filterClick.bind(this)
+        );
+      }
+    }
+  }
+
+  addFilterByFeatureType(featuretype, criteria, filtervalue, checked) {
+    if (featuretype == "all") {
+      for (let t = 0; t < this.featureTypes.length; t++) {
+        this.addExploreFilter(
+          this.featureTypes[t],
+          criteria,
+          filtervalue,
+          checked
+        );
+      }
+    } else {
+      this.addExploreFilter(featuretype, criteria, filtervalue, checked);
+    }
+  }
+
+  filterClick(e) {
+    let dataset = e.target.dataset;
+    //console.log(dataset);
+    if (dataset) {
+      // [{"sub_type":3, "identity":[2,3,4]}]
+      let featuretype = dataset.featuretype;
+      let criteria = dataset.criteria;
+      let filterValue = dataset.filtervalue;
+      if (criteria == "sub_type") {
+        const values = JSON.parse(dataset.filtervalue);
+        if (values.sub_type) {
+          filterValue = values.sub_type;
+        }
+        // Add identities
+        for (let t = 0; t < values.identity.length; t++) {
+          this.addFilterByFeatureType(
+            featuretype,
+            "identity",
+            values.identity[t],
+            e.target.checked
+          );
+        }
+      }
+      this.addFilterByFeatureType(
+        featuretype,
+        criteria,
+        filterValue,
+        e.target.checked
+      );
+      this.applyExploreFilters();
+    }
+  }
+
+  /**
+   * Apply
+   * @return filters in slide format
+   */
+  applyExploreFilters() {
+    // includeFeature(feature, featureType, slide)
+    console.log(this.exploreFilterControl);
+    let filteredFeatures = [];
+    if (this.allFeatures) {
+      //console.log(this.exploreFilterSlide);
+      this.allFeatures.forEach(
+        function (item) {
+          if (
+            this.includeFeature(
+              item,
+              this.geometryToFeatureType(item),
+              this.exploreFilterControl
+            )
+          ) {
+            filteredFeatures.push(item);
+          }
+        }.bind(this)
+      );
+    }
+    console.log(filteredFeatures);
+  }
+
+  /**
+   * Convert a geometry type to the feature types in slides
+   * e.g. points, polys
+   * @param feature
+   * @return {string}
+   */
+  geometryToFeatureType(feature) {
+    if (feature && feature.geometry && feature.geometry.type) {
+      switch (feature.geometry.type) {
+        case "MultiLineString":
+          return "lines";
+        case "MultiPolygon":
+          return "polys";
+        case "Point":
+          return "points";
+      }
+    }
+  }
+
+  /** Apply filter logic to feature of one type
+   * To be included it must pass all inclcudes (e.g sub type 12 and map_type 5)
+   * If filters passed are for excludes, then a true result means exclude this feature
+   * @param feature
+   * @param filters filters for this type
+   * @return {boolean} Include
+   */
   filterFeature(feature, filters) {
     let result = false;
     for (const [field, includeValues] of Object.entries(filters)) {
@@ -957,57 +1170,64 @@ export class StoryMap {
     return result;
   }
 
-  /*
-    isFeatureIncluded(
-        featureType, feature, lineIncludes, lineExcludes, polyIncludes, polyExcludes,
-        pointIncludes, pointExcludes, indigenousIncludes
-    ) {
-        let includeFeature = false;
-        switch (featureType) {
-            case "LINE":
-
-                if (lineIncludes) {
-                    includeFeature = this.filterFeature(feature, lineIncludes);
-
-                }
-                if (lineExcludes && includeFeature === true) {
-                    includeFeature = !this.filterFeature(feature, lineExcludes);
-                }
-
-                break;
-
-            case "POLY":
-
-                if (pointIncludes) {
-                    includeFeature = this.filterFeature(feature, polyIncludes);
-                }
-                if (polyExcludes && includeFeature === true) {
-                    includeFeature = !this.filterFeature(feature, polyExcludes);
-                }
-
-                break;
-            case "POINT":
-
-                if (pointIncludes) {
-                    includeFeature = this.filterFeature(feature, pointIncludes);
-                    console.log('included');
-                }
-                if (pointExcludes && includeFeature === true) {
-                    includeFeature = !this.filterFeature(feature, pointExcludes);
-
-                }
-
-                break;
-            case "INDIGENOUS":
-                if (indigenousIncludes) {
-                    includeFeature = this.filterFeature(feature, indigenousIncludes);
-                }
-                break
-            default:
-                break;
+  /**
+   * Apply filter criteria to a feature to see if it should be included in this
+   * slide (or search)
+   * @param feature
+   * @param featureType
+   * @param slide
+   * @return {boolean} include in feature
+   */
+  includeFeature(feature, featureType, slide) {
+    let includeFeature = false;
+    switch (featureType) {
+      case "lines":
+        if (slide.lines) {
+          if (slide.lines.includes) {
+            includeFeature = this.filterFeature(feature, slide.lines.includes);
+          }
+          if (slide.lines.excludes && includeFeature === true) {
+            includeFeature = !this.filterFeature(feature, slide.lines.excludes);
+          }
         }
-        return includeFeature;
-    }*/
+        break;
+
+      case "polys":
+        if (slide.polys) {
+          if (slide.polys.includes) {
+            includeFeature = this.filterFeature(feature, slide.polys.includes);
+          }
+          if (slide.polys.excludes && includeFeature === true) {
+            includeFeature = !this.filterFeature(feature, slide.polys.excludes);
+          }
+        }
+        break;
+      case "points":
+        if (slide.points) {
+          if (slide.points.includes) {
+            includeFeature = this.filterFeature(feature, slide.points.includes);
+          }
+          if (slide.points.excludes && includeFeature === true) {
+            includeFeature = !this.filterFeature(
+              feature,
+              slide.points.excludes
+            );
+          }
+        }
+        break;
+      case "indigenous":
+        if (slide.indigenous) {
+          includeFeature = this.filterFeature(
+            feature,
+            slide.indigenous.includes
+          );
+        }
+        break;
+      default:
+        break;
+    }
+    return includeFeature;
+  }
 
   /**
    * Add the feature to as many slide groups
@@ -1016,81 +1236,11 @@ export class StoryMap {
    * @param featureType point, poly, line
    * @param feature the feature to assign
    */
-  addFeatureToSlideGroups(featureType, feature) {
+  addFeatureToAllSlides(featureType, feature) {
     for (let s = 0; s < this.slides.length; s++) {
       // Foreach slide rule
       let slide = this.slides[s];
-      let includeFeature = false;
-      switch (featureType) {
-        case "LINE":
-          if (slide.lines) {
-            if (slide.lines.includes) {
-              includeFeature = this.filterFeature(
-                feature,
-                slide.lines.includes
-              );
-            }
-            if (slide.lines.excludes && includeFeature === true) {
-              includeFeature = !this.filterFeature(
-                feature,
-                slide.lines.excludes
-              );
-            }
-          }
-          break;
-
-        case "POLY":
-          if (slide.polys) {
-            if (slide.polys.includes) {
-              includeFeature = this.filterFeature(
-                feature,
-                slide.polys.includes
-              );
-            }
-            if (slide.polys.excludes && includeFeature === true) {
-              includeFeature = !this.filterFeature(
-                feature,
-                slide.polys.excludes
-              );
-            }
-          }
-          break;
-        case "POINT":
-          if (slide.points) {
-            if (slide.points.includes) {
-              includeFeature = this.filterFeature(
-                feature,
-                slide.points.includes
-              );
-            }
-            if (slide.points.excludes && includeFeature === true) {
-              includeFeature = !this.filterFeature(
-                feature,
-                slide.points.excludes
-              );
-              /*for (const [field, value] of Object.entries(feature.properties)) {
-                                if (
-                                    field in slide.points.excludes &&
-                                    slide.points.excludes[field].includes(value)
-                                ) {
-                                    includeFeature = false;
-                                    break;
-                                }
-                            }*/
-            }
-          }
-          break;
-        case "INDIGENOUS":
-          if (slide.indigenous) {
-            includeFeature = this.filterFeature(
-              feature,
-              slide.indigenous.includes
-            );
-          }
-          break;
-        default:
-          break;
-      }
+      let includeFeature = this.includeFeature(feature, featureType, slide);
       if (includeFeature) {
         slide.features.push(feature);
       }
@@ -1098,53 +1248,53 @@ export class StoryMap {
   }
 
   /*
-    addFeatureToSlideGroups(featureType, feature) {
-        for (let s = 0; s < this.slides.length; s++) {
-            // Foreach slide rule
-            let slide = this.slides[s];
-            if (slide && feature != null) {
-                let lineIncludes = null;
-                let lineExcludes = null;
-                let polyIncludes = null;
-                let polyExcludes = null;
-                let pointIncludes = null;
-                let pointExcludes  = null;
-                let indigenousIncludes = null;
+      addFeatureToSlideGroups(featureType, feature) {
+          for (let s = 0; s < this.slides.length; s++) {
+              // Foreach slide rule
+              let slide = this.slides[s];
+              if (slide && feature != null) {
+                  let lineIncludes = null;
+                  let lineExcludes = null;
+                  let polyIncludes = null;
+                  let polyExcludes = null;
+                  let pointIncludes = null;
+                  let pointExcludes  = null;
+                  let indigenousIncludes = null;
 
-                if (slide.lines) {
-                    lineIncludes = slide.lines.includes;
-                    lineExcludes = slide.lines.excludes;
-                }
+                  if (slide.lines) {
+                      lineIncludes = slide.lines.includes;
+                      lineExcludes = slide.lines.excludes;
+                  }
 
-                if (slide.polys){
-                    polyIncludes = slide.polys.includes;
-                    polyExcludes = slide.polys.excludes;
-                }
+                  if (slide.polys){
+                      polyIncludes = slide.polys.includes;
+                      polyExcludes = slide.polys.excludes;
+                  }
 
-                if (slide.points != null){
-                    if (slide.points.includes !=null){
-                      pointIncludes = slide.points.includes;
-                       console.log(slide.points.includes.length);
-                    }
-                    if (slide.points.excludes !=null && slide.points.excludes.length > 0){
-                        pointExcludes = slide.points.excludes;
-                    }
+                  if (slide.points != null){
+                      if (slide.points.includes !=null){
+                        pointIncludes = slide.points.includes;
+                         console.log(slide.points.includes.length);
+                      }
+                      if (slide.points.excludes !=null && slide.points.excludes.length > 0){
+                          pointExcludes = slide.points.excludes;
+                      }
 
 
-                }
+                  }
 
-                let includeFeature = this.isFeatureIncluded(
-                    featureType, feature, lineIncludes, lineExcludes,
-                    polyIncludes, polyExcludes,
-                    pointIncludes, pointExcludes, indigenousIncludes
-                )
+                  let includeFeature = this.isFeatureIncluded(
+                      featureType, feature, lineIncludes, lineExcludes,
+                      polyIncludes, polyExcludes,
+                      pointIncludes, pointExcludes, indigenousIncludes
+                  )
 
-                if (includeFeature) {
-                    slide.features.push(feature);
-                }
-            }
-        }
-    }*/
+                  if (includeFeature) {
+                      slide.features.push(feature);
+                  }
+              }
+          }
+      }*/
 
   // Explore and filter functionality
 
