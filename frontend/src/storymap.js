@@ -1195,25 +1195,6 @@ export class StoryMap {
     console.log(filteredFeatures);
   }
 
-  /**
-   * Convert a geometry type to the feature types in slides
-   * e.g. points, polys
-   * @param feature
-   * @return {string}
-   */
-  geometryToFeatureType(feature) {
-    if (feature && feature.geometry && feature.geometry.type) {
-      switch (feature.geometry.type) {
-        case "MultiLineString":
-          return "lines";
-        case "MultiPolygon":
-          return "polys";
-        case "Point":
-          return "points";
-      }
-    }
-  }
-
   /** Apply filter logic to feature of one type
    * To be included it must pass all inclcudes (e.g sub type 12 and map_type 5)
    * If filters passed are for excludes, then a true result means exclude this feature
