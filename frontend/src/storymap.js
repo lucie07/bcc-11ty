@@ -316,11 +316,11 @@ export class StoryMap {
         //}
 
         /*let frame_link = feature.properties.frame_link;
-                                                    if (shapesByFrameLink[frame_link]) {
-                                                        shapesByFrameLink[frame_link].push(feature);
-                                                    } else {
-                                                        shapesByFrameLink[frame_link] = [feature]
-                                                    }*/
+                                                            if (shapesByFrameLink[frame_link]) {
+                                                                shapesByFrameLink[frame_link].push(feature);
+                                                            } else {
+                                                                shapesByFrameLink[frame_link] = [feature]
+                                                            }*/
       }
     }
 
@@ -346,46 +346,46 @@ export class StoryMap {
     switch (feature.properties.sub_type) {
       // Indigenous : Circle - Red - point down
       case 1:
+        return this.L.circleMarker(latlng, {
+          radius: 4,
+          fillColor: "#0000ff",
+          color: "#000",
+          weight: 0.5,
+          opacity: 1,
+          fillOpacity: 1,
+          bubblingMouseEvents: true,
+        });
+      // Settlement : Squares - dark green - point up
+      case 4:
+        // Capture Indig vs Haudenasnee
+        switch (feature.properties.identity) {
+          case 1:
+            // European - Green Squre
+            return new this.L.RegularPolygonMarker(latlng, {
+              numberOfSides: 4,
+              rotation: -45,
+              radius: 5,
+              //this.L.Path style options
+              fill: true,
+              fillColor: "#124d20",
+              color: "#124d20",
+              weight: 0.5,
+              fillOpacity: 1,
+              stroke: true,
+              bubblingMouseEvents: true,
+            });
+          // Default - Indigenous Red circle - everything else
+          default:
             return this.L.circleMarker(latlng, {
-              radius: 4,
-              fillColor: "#0000ff",
-              color: "#000",
+              radius: 5,
+              fillColor: "#ff0000",
+              color: "#ff000",
               weight: 0.5,
               opacity: 1,
               fillOpacity: 1,
               bubblingMouseEvents: true,
             });
-      // Settlement : Squares - dark green - point up
-      case 4:
-            // Capture Indig vs Haudenasnee
-            switch (feature.properties.identity) {
-              case 1:
-                // European - Green Squre
-                    return new this.L.RegularPolygonMarker(latlng, {
-                      numberOfSides: 4,
-                      rotation: -45,
-                      radius: 5,
-                      //this.L.Path style options
-                      fill: true,
-                      fillColor: "#124d20",
-                      color: "#124d20",
-                      weight: 0.5,
-                      fillOpacity: 1,
-                      stroke: true,
-                    bubblingMouseEvents: true 
-                    })
-                // Default - Indigenous Red circle - everything else
-              default:
-                      return this.L.circleMarker(latlng, {
-                      radius: 5,
-                      fillColor: "#ff0000",
-                      color: "#ff000",
-                      weight: 0.5,
-                      opacity: 1,
-                      fillOpacity: 1,
-                      bubblingMouseEvents: true
-                      });
-            }
+        }
       // Land route -
       case 5:
         return this.L.circleMarker(latlng, {
@@ -453,30 +453,30 @@ export class StoryMap {
       // Toponym
       // Purple - to differentiate!
       case 10:
-            // Capture Indig vs Haudenasnee
-            switch (feature.properties.identity) {      
-              case 1:
-                return this.L.circleMarker(latlng, {
-                  radius: 5,
-                  fillColor: "#800080",
-                  color: "#800080",
-                  weight: 1,
-                  opacity: 1,
-                  fillOpacity: 0.6,
-                  bubblingMouseEvents: true,
-                });          
-              default:
-                return this.L.circleMarker(latlng, {
-                  radius: 5,
-                  fillColor: "#FFFF00",
-                  color: "#FFFF00",
-                  weight: 0.5,
-                  opacity: 1,
-                  fillOpacity: 1,
-                  bubblingMouseEvents: true,
-                });
-            }
-        default:
+        // Capture Indig vs Haudenasnee
+        switch (feature.properties.identity) {
+          case 1:
+            return this.L.circleMarker(latlng, {
+              radius: 5,
+              fillColor: "#800080",
+              color: "#800080",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.6,
+              bubblingMouseEvents: true,
+            });
+          default:
+            return this.L.circleMarker(latlng, {
+              radius: 5,
+              fillColor: "#FFFF00",
+              color: "#FFFF00",
+              weight: 0.5,
+              opacity: 1,
+              fillOpacity: 1,
+              bubblingMouseEvents: true,
+            });
+        }
+      default:
         return this.L.circleMarker(latlng, {
           radius: 4,
           fillColor: "#000ff",
@@ -488,7 +488,6 @@ export class StoryMap {
         });
     }
   }
-  
 
   initStoryFeatureLayers() {
     for (let s = 0; s < this.slides.length; s++) {
@@ -612,8 +611,8 @@ export class StoryMap {
 
     // Establish baselayers group
     /*this.osmLayer = this.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                }).addTo(this.map);*/
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(this.map);*/
 
     this.overlay = this.L.tileLayer(
       "https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}",
@@ -688,10 +687,10 @@ export class StoryMap {
     this.getSlideElements();
     let observerTimeouts = {};
     /* This observer controls the scrolling behaviour:
-                - triggering slides and animations
-                - clearing the map layers and svg after a triggered slide is no longer visible
-                (Timeout is to stop fast scrolling triggering slides as it goes past)
-                 */
+                    - triggering slides and animations
+                    - clearing the map layers and svg after a triggered slide is no longer visible
+                    (Timeout is to stop fast scrolling triggering slides as it goes past)
+                     */
     let observer = new IntersectionObserver(
       function (entries) {
         entries.forEach((entry) => {
@@ -891,24 +890,24 @@ export class StoryMap {
             layer.setStyle(this.lineRiverRouteStyle);
 
             /* this.textFeatures[feature.properties.id] = {
-                                                     orientation: testDirection(feature),
-                                                     text: feature.properties.norm_text
-                                                 }*/
+                                                                 orientation: testDirection(feature),
+                                                                 text: feature.properties.norm_text
+                                                             }*/
 
             /*layer.setText(feature.properties.norm_text,
-                                                    {
-                                                        orientation: testDirection(feature), offset: 5, center: true,
-                                                        attributes: {
-                                                            'fill': 'black',
-                                                            'font-family': 'EB Garamond, serif',
-                                                            'font-weight': 'bold',
-                                                            'font-size': '7px',
-                                                            //'textLength': 300,
-                                                            //'lengthAdjust': 'spacing',
-                                                            'dx': '15%',
-                                                        }
-                                                    }
-                                                );*/
+                                                                {
+                                                                    orientation: testDirection(feature), offset: 5, center: true,
+                                                                    attributes: {
+                                                                        'fill': 'black',
+                                                                        'font-family': 'EB Garamond, serif',
+                                                                        'font-weight': 'bold',
+                                                                        'font-size': '7px',
+                                                                        //'textLength': 300,
+                                                                        //'lengthAdjust': 'spacing',
+                                                                        'dx': '15%',
+                                                                    }
+                                                                }
+                                                            );*/
             break;
           case 9:
             layer.setStyle(this.lineMiscStyle);
@@ -1006,35 +1005,35 @@ export class StoryMap {
     }
 
     /*if (this.exploreFilterControl[featureType]) {
-
-          if (!this.exploreFilterControl[featureType].includes[criteria]) {
-            this.exploreFilterControl[featureType].includes[criteria] = [];
-          }
-          const index =
-            this.exploreFilterControl[featureType].includes[criteria].indexOf(
-              value
-            );
-          // If we're including and it isn't there already
-          if (include && index < 0) {
-            this.exploreFilterControl[featureType].includes[criteria].push(value);
-          } else {
-            // Remove
-            // If value already in filters, turn off
-
-            console.log(this.exploreFilterControl[featureType].includes.identity);
-            // Special case for sub_type, don't remove if we still have identity values
-            if (
-              index > -1 &&
-              (criteria != "sub_type" ||
-                !this.exploreFilterControl[featureType].includes.identity ||
-                this.exploreFilterControl[featureType].includes.identity.length ==
-                  0)
-            ) {
-              console.log(index);
-
-            }
-          }
-        }*/
+    
+              if (!this.exploreFilterControl[featureType].includes[criteria]) {
+                this.exploreFilterControl[featureType].includes[criteria] = [];
+              }
+              const index =
+                this.exploreFilterControl[featureType].includes[criteria].indexOf(
+                  value
+                );
+              // If we're including and it isn't there already
+              if (include && index < 0) {
+                this.exploreFilterControl[featureType].includes[criteria].push(value);
+              } else {
+                // Remove
+                // If value already in filters, turn off
+    
+                console.log(this.exploreFilterControl[featureType].includes.identity);
+                // Special case for sub_type, don't remove if we still have identity values
+                if (
+                  index > -1 &&
+                  (criteria != "sub_type" ||
+                    !this.exploreFilterControl[featureType].includes.identity ||
+                    this.exploreFilterControl[featureType].includes.identity.length ==
+                      0)
+                ) {
+                  console.log(index);
+    
+                }
+              }
+            }*/
   }
 
   /**
@@ -1051,32 +1050,32 @@ export class StoryMap {
           this.mapFilterClickEvent.bind(this)
         );
         /*mapFilters[f].addEventListener('click', function (e) {
-                            let dataset = e.target.dataset;
-                            console.log(dataset);
-                            if (dataset) {
-                                if (dataset.featuretype == "all") {
-                                    for (let t = 0; t < this.featureTypes.length; t++) {
-                                        this.addExploreFilter(
-                                            this.featureTypes[t],
-                                            dataset.criteria,
-                                            dataset.filtervalue,
-                                            true
-                                        );
+                                    let dataset = e.target.dataset;
+                                    console.log(dataset);
+                                    if (dataset) {
+                                        if (dataset.featuretype == "all") {
+                                            for (let t = 0; t < this.featureTypes.length; t++) {
+                                                this.addExploreFilter(
+                                                    this.featureTypes[t],
+                                                    dataset.criteria,
+                                                    dataset.filtervalue,
+                                                    true
+                                                );
+                                            }
+        
+                                        } else {
+                                            this.addExploreFilter(
+                                                dataset.featuretype,
+                                                dataset.criteria,
+                                                dataset.filtervalue,
+                                                true
+                                            );
+                                        }
+        
+                                        this.applyExploreFilters();
                                     }
-
-                                } else {
-                                    this.addExploreFilter(
-                                        dataset.featuretype,
-                                        dataset.criteria,
-                                        dataset.filtervalue,
-                                        true
-                                    );
-                                }
-
-                                this.applyExploreFilters();
-                            }
-
-                        }.bind(this));*/
+        
+                                }.bind(this));*/
       }
     }
 
@@ -1336,53 +1335,53 @@ export class StoryMap {
   }
 
   /*
-        addFeatureToSlideGroups(featureType, feature) {
-            for (let s = 0; s < this.slides.length; s++) {
-                // Foreach slide rule
-                let slide = this.slides[s];
-                if (slide && feature != null) {
-                    let lineIncludes = null;
-                    let lineExcludes = null;
-                    let polyIncludes = null;
-                    let polyExcludes = null;
-                    let pointIncludes = null;
-                    let pointExcludes  = null;
-                    let indigenousIncludes = null;
-
-                    if (slide.lines) {
-                        lineIncludes = slide.lines.includes;
-                        lineExcludes = slide.lines.excludes;
-                    }
-
-                    if (slide.polys){
-                        polyIncludes = slide.polys.includes;
-                        polyExcludes = slide.polys.excludes;
-                    }
-
-                    if (slide.points != null){
-                        if (slide.points.includes !=null){
-                          pointIncludes = slide.points.includes;
-                           console.log(slide.points.includes.length);
-                        }
-                        if (slide.points.excludes !=null && slide.points.excludes.length > 0){
-                            pointExcludes = slide.points.excludes;
-                        }
-
-
-                    }
-
-                    let includeFeature = this.isFeatureIncluded(
-                        featureType, feature, lineIncludes, lineExcludes,
-                        polyIncludes, polyExcludes,
-                        pointIncludes, pointExcludes, indigenousIncludes
-                    )
-
-                    if (includeFeature) {
-                        slide.features.push(feature);
-                    }
-                }
-            }
-        }*/
+          addFeatureToSlideGroups(featureType, feature) {
+              for (let s = 0; s < this.slides.length; s++) {
+                  // Foreach slide rule
+                  let slide = this.slides[s];
+                  if (slide && feature != null) {
+                      let lineIncludes = null;
+                      let lineExcludes = null;
+                      let polyIncludes = null;
+                      let polyExcludes = null;
+                      let pointIncludes = null;
+                      let pointExcludes  = null;
+                      let indigenousIncludes = null;
+  
+                      if (slide.lines) {
+                          lineIncludes = slide.lines.includes;
+                          lineExcludes = slide.lines.excludes;
+                      }
+  
+                      if (slide.polys){
+                          polyIncludes = slide.polys.includes;
+                          polyExcludes = slide.polys.excludes;
+                      }
+  
+                      if (slide.points != null){
+                          if (slide.points.includes !=null){
+                            pointIncludes = slide.points.includes;
+                             console.log(slide.points.includes.length);
+                          }
+                          if (slide.points.excludes !=null && slide.points.excludes.length > 0){
+                              pointExcludes = slide.points.excludes;
+                          }
+  
+  
+                      }
+  
+                      let includeFeature = this.isFeatureIncluded(
+                          featureType, feature, lineIncludes, lineExcludes,
+                          polyIncludes, polyExcludes,
+                          pointIncludes, pointExcludes, indigenousIncludes
+                      )
+  
+                      if (includeFeature) {
+                          slide.features.push(feature);
+                      }
+                  }
+              }
+          }*/
 
   // Explore and filter functionality
 
