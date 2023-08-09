@@ -346,30 +346,46 @@ export class StoryMap {
     switch (feature.properties.sub_type) {
       // Indigenous : Circle - Red - point down
       case 1:
-        return this.L.circleMarker(latlng, {
-          radius: 4,
-          fillColor: "#0000ff",
-          color: "#000",
-          weight: 0.5,
-          opacity: 1,
-          fillOpacity: 1,
-          bubblingMouseEvents: true,
-        });
+            return this.L.circleMarker(latlng, {
+              radius: 4,
+              fillColor: "#0000ff",
+              color: "#000",
+              weight: 0.5,
+              opacity: 1,
+              fillOpacity: 1,
+              bubblingMouseEvents: true,
+            });
       // Settlement : Squares - dark green - point up
       case 4:
-        return new this.L.RegularPolygonMarker(latlng, {
-          numberOfSides: 4,
-          rotation: -45,
-          radius: 5,
-          //this.L.Path style options
-          fill: true,
-          fillColor: "#124d20",
-          color: "#124d20",
-          weight: 0.5,
-          fillOpacity: 1,
-          stroke: true,
-          bubblingMouseEvents: true,
-        });
+            // Capture Indig vs Haudenasnee
+            switch (feature.properties.identity) {
+              case 1:
+                // European - Green Squre
+                    return new this.L.RegularPolygonMarker(latlng, {
+                      numberOfSides: 4,
+                      rotation: -45,
+                      radius: 5,
+                      //this.L.Path style options
+                      fill: true,
+                      fillColor: "#124d20",
+                      color: "#124d20",
+                      weight: 0.5,
+                      fillOpacity: 1,
+                      stroke: true,
+                    bubblingMouseEvents: true 
+                    })
+                // Default - Indigenous Red circle - everything else
+              default:
+                      return this.L.circleMarker(latlng, {
+                      radius: 5,
+                      fillColor: "#ff0000",
+                      color: "#ff000",
+                      weight: 0.5,
+                      opacity: 1,
+                      fillOpacity: 1,
+                      bubblingMouseEvents: true
+                      });
+            }
       // Land route -
       case 5:
         return this.L.circleMarker(latlng, {
@@ -435,21 +451,36 @@ export class StoryMap {
         });
 
       // Toponym
+      // Purple - to differentiate!
       case 10:
+            // Capture Indig vs Haudenasnee
+            switch (feature.properties.identity) {      
+              case 1:
+                return this.L.circleMarker(latlng, {
+                  radius: 5,
+                  fillColor: "#800080",
+                  color: "#800080",
+                  weight: 1,
+                  opacity: 1,
+                  fillOpacity: 0.6,
+                  bubblingMouseEvents: true,
+                });          
+              default:
+                return this.L.circleMarker(latlng, {
+                  radius: 5,
+                  fillColor: "#FFFF00",
+                  color: "#FFFF00",
+                  weight: 0.5,
+                  opacity: 1,
+                  fillOpacity: 1,
+                  bubblingMouseEvents: true,
+                });
+            }
+        default:
         return this.L.circleMarker(latlng, {
           radius: 4,
-          fillColor: "#ff0000",
-          color: "#ff0000",
-          weight: 1,
-          opacity: 1,
-          fillOpacity: 0.6,
-          bubblingMouseEvents: true,
-        });
-      default:
-        return this.L.circleMarker(latlng, {
-          radius: 4,
-          fillColor: "#787878",
-          color: "#000",
+          fillColor: "#000ff",
+          color: "#oooff",
           weight: 0.5,
           opacity: 1,
           fillOpacity: 1,
@@ -457,6 +488,7 @@ export class StoryMap {
         });
     }
   }
+  
 
   initStoryFeatureLayers() {
     for (let s = 0; s < this.slides.length; s++) {
