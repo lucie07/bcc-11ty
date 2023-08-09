@@ -1,34 +1,30 @@
 /*jshint esversion: 8 */
 
-
-import {StoryMap} from "./storymap.js";
-
-let geojson_uri = [];
-let shapeLayers = null;
-let shapesByFrameLink = {};
+import { StoryMap } from "./storymap.js";
 
 //Custom Canvas Renderer);
 
 // Rough tests whether line is east-west or west-east for purposes of text orintation
-function testDirection(geom) {
-    var orientation;
-    if (geom.geometry.coordinates[0][0][0] > geom.geometry.coordinates[0][(geom.geometry.coordinates[0].length - 1)][0]) {
-        orientation = 180;
-        return orientation;
-    } else {
-        orientation = 0;
-        return orientation;
-    }
+/*function testDirection(geom) {
+  var orientation;
+  if (
+    geom.geometry.coordinates[0][0][0] >
+    geom.geometry.coordinates[0][geom.geometry.coordinates[0].length - 1][0]
+  ) {
+    orientation = 180;
+    return orientation;
+  } else {
+    orientation = 0;
+    return orientation;
+  }
+}*/
+
+/* eslint-disable */
+
+function loadStoryMap(storyURIs, L, d3, startLat, startLng, startZoom) {
+  let storyMap = new StoryMap(storyURIs, L, d3);
+  storyMap.initMap(startLat, startLng, startZoom);
+  return storyMap;
 }
 
-function loadStoryMap(storyuris) {
-    let storyMap = new StoryMap(
-        storyuris
-    );
-    return storyMap;
-}
-let storyMap = new StoryMap(
-        storyURIs
-    );
-
-storyMap.initMap(L, startLat, startLng, startZoom);
+/* eslint-enable */

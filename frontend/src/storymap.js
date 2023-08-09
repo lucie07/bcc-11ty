@@ -93,6 +93,8 @@ export class StoryMap {
       fid: 0, // We should look at this
       sub_type: [[], [], [], [], [], [], [], [], [], [], [], [], []],
       maps: [],
+      features: [],
+
       lines: {
         includes: {},
         excludes: {},
@@ -106,7 +108,6 @@ export class StoryMap {
         excludes: {},
       },
       excludes: {},
-      features: [],
     };
     this.initExploreFilters();
   }
@@ -315,11 +316,11 @@ export class StoryMap {
         //}
 
         /*let frame_link = feature.properties.frame_link;
-                                            if (shapesByFrameLink[frame_link]) {
-                                                shapesByFrameLink[frame_link].push(feature);
-                                            } else {
-                                                shapesByFrameLink[frame_link] = [feature]
-                                            }*/
+                                                    if (shapesByFrameLink[frame_link]) {
+                                                        shapesByFrameLink[frame_link].push(feature);
+                                                    } else {
+                                                        shapesByFrameLink[frame_link] = [feature]
+                                                    }*/
       }
     }
 
@@ -579,8 +580,8 @@ export class StoryMap {
 
     // Establish baselayers group
     /*this.osmLayer = this.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(this.map);*/
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(this.map);*/
 
     this.overlay = this.L.tileLayer(
       "https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}",
@@ -655,10 +656,10 @@ export class StoryMap {
     this.getSlideElements();
     let observerTimeouts = {};
     /* This observer controls the scrolling behaviour:
-            - triggering slides and animations
-            - clearing the map layers and svg after a triggered slide is no longer visible
-            (Timeout is to stop fast scrolling triggering slides as it goes past)
-             */
+                - triggering slides and animations
+                - clearing the map layers and svg after a triggered slide is no longer visible
+                (Timeout is to stop fast scrolling triggering slides as it goes past)
+                 */
     let observer = new IntersectionObserver(
       function (entries) {
         entries.forEach((entry) => {
@@ -858,24 +859,24 @@ export class StoryMap {
             layer.setStyle(this.lineRiverRouteStyle);
 
             /* this.textFeatures[feature.properties.id] = {
-                                         orientation: testDirection(feature),
-                                         text: feature.properties.norm_text
-                                     }*/
+                                                     orientation: testDirection(feature),
+                                                     text: feature.properties.norm_text
+                                                 }*/
 
             /*layer.setText(feature.properties.norm_text,
-                                        {
-                                            orientation: testDirection(feature), offset: 5, center: true,
-                                            attributes: {
-                                                'fill': 'black',
-                                                'font-family': 'EB Garamond, serif',
-                                                'font-weight': 'bold',
-                                                'font-size': '7px',
-                                                //'textLength': 300,
-                                                //'lengthAdjust': 'spacing',
-                                                'dx': '15%',
-                                            }
-                                        }
-                                    );*/
+                                                    {
+                                                        orientation: testDirection(feature), offset: 5, center: true,
+                                                        attributes: {
+                                                            'fill': 'black',
+                                                            'font-family': 'EB Garamond, serif',
+                                                            'font-weight': 'bold',
+                                                            'font-size': '7px',
+                                                            //'textLength': 300,
+                                                            //'lengthAdjust': 'spacing',
+                                                            'dx': '15%',
+                                                        }
+                                                    }
+                                                );*/
             break;
           case 9:
             layer.setStyle(this.lineMiscStyle);
@@ -956,41 +957,52 @@ export class StoryMap {
   }
 
   /** Add a single criteria value to our search filters */
-  addExploreFilter(featureType, criteria, filterValue, include) {
+  addSubtypeFilter(subtypeValue, filterValue, include) {
     //console.log(this.exploreFilterSlide[featureType]);
-    if (this.exploreFilterControl[featureType]) {
-      let value = parseInt(filterValue);
-      if (!this.exploreFilterControl[featureType].includes[criteria]) {
-        this.exploreFilterControl[featureType].includes[criteria] = [];
-      }
+    if (
+      this.exploreFilterControl.sub_type &&
+      this.exploreFilterControl.sub_type.length >= filterValue
+    ) {
       const index =
-        this.exploreFilterControl[featureType].includes[criteria].indexOf(
-          value
-        );
-      // If we're including and it isn't there already
+        this.exploreFilterControl.sub_type[subtypeValue].indexOf(filterValue);
       if (include && index < 0) {
-        this.exploreFilterControl[featureType].includes[criteria].push(value);
-      } else {
-        // Remove
-        // If value already in filters, turn off
-
-        console.log(this.exploreFilterControl[featureType].includes.identity);
-        // Special case for sub_type, don't remove if we still have identity values
-        if (
-          index > -1 &&
-          (criteria != "sub_type" ||
-            !this.exploreFilterControl[featureType].includes.identity ||
-            this.exploreFilterControl[featureType].includes.identity.length ==
-              0)
-        ) {
-          console.log(index);
-          this.exploreFilterControl[featureType].includes[criteria].splice(
-            index,
-            1
-          );
-        }
+        this.exploreFilterControl.sub_type[subtypeValue].push(filterValue);
+      } else if (!include) {
+        // Remove from array
+        this.exploreFilterControl.sub_type[subtypeValue].splice(index, 1);
       }
     }
+
+    /*if (this.exploreFilterControl[featureType]) {
+
+          if (!this.exploreFilterControl[featureType].includes[criteria]) {
+            this.exploreFilterControl[featureType].includes[criteria] = [];
+          }
+          const index =
+            this.exploreFilterControl[featureType].includes[criteria].indexOf(
+              value
+            );
+          // If we're including and it isn't there already
+          if (include && index < 0) {
+            this.exploreFilterControl[featureType].includes[criteria].push(value);
+          } else {
+            // Remove
+            // If value already in filters, turn off
+
+            console.log(this.exploreFilterControl[featureType].includes.identity);
+            // Special case for sub_type, don't remove if we still have identity values
+            if (
+              index > -1 &&
+              (criteria != "sub_type" ||
+                !this.exploreFilterControl[featureType].includes.identity ||
+                this.exploreFilterControl[featureType].includes.identity.length ==
+                  0)
+            ) {
+              console.log(index);
+
+            }
+          }
+        }*/
   }
 
   /**
@@ -1002,34 +1014,37 @@ export class StoryMap {
     let mapFilters = document.querySelectorAll("input.map_filter");
     if (mapFilters) {
       for (let f = 0; f < mapFilters.length; f++) {
-        mapFilters[f].addEventListener("click", this.filterClick.bind(this));
+        mapFilters[f].addEventListener(
+          "click",
+          this.mapFilterClickEvent.bind(this)
+        );
         /*mapFilters[f].addEventListener('click', function (e) {
-                    let dataset = e.target.dataset;
-                    console.log(dataset);
-                    if (dataset) {
-                        if (dataset.featuretype == "all") {
-                            for (let t = 0; t < this.featureTypes.length; t++) {
-                                this.addExploreFilter(
-                                    this.featureTypes[t],
-                                    dataset.criteria,
-                                    dataset.filtervalue,
-                                    true
-                                );
+                            let dataset = e.target.dataset;
+                            console.log(dataset);
+                            if (dataset) {
+                                if (dataset.featuretype == "all") {
+                                    for (let t = 0; t < this.featureTypes.length; t++) {
+                                        this.addExploreFilter(
+                                            this.featureTypes[t],
+                                            dataset.criteria,
+                                            dataset.filtervalue,
+                                            true
+                                        );
+                                    }
+
+                                } else {
+                                    this.addExploreFilter(
+                                        dataset.featuretype,
+                                        dataset.criteria,
+                                        dataset.filtervalue,
+                                        true
+                                    );
+                                }
+
+                                this.applyExploreFilters();
                             }
 
-                        } else {
-                            this.addExploreFilter(
-                                dataset.featuretype,
-                                dataset.criteria,
-                                dataset.filtervalue,
-                                true
-                            );
-                        }
-
-                        this.applyExploreFilters();
-                    }
-
-                }.bind(this));*/
+                        }.bind(this));*/
       }
     }
 
@@ -1039,84 +1054,144 @@ export class StoryMap {
       for (let f = 0; f < subtypeFilters.length; f++) {
         subtypeFilters[f].addEventListener(
           "click",
-          this.filterClick.bind(this)
+          this.subtypeFilterClickEvent.bind(this)
         );
       }
     }
   }
 
-  addFilterByFeatureType(featuretype, criteria, filtervalue, checked) {
-    if (featuretype == "all") {
-      for (let t = 0; t < this.featureTypes.length; t++) {
-        this.addExploreFilter(
-          this.featureTypes[t],
-          criteria,
-          filtervalue,
-          checked
-        );
+  mapFilterClickEvent(e) {
+    let dataset = e.target.dataset;
+    if (dataset) {
+      const filterValue = parseInt(dataset.filtervalue);
+      const index = this.exploreFilterControl.maps.indexOf(filterValue);
+      if (index < 0) {
+        this.exploreFilterControl.maps.push(filterValue);
+      } else {
+        this.exploreFilterControl.maps.splice(index, 1);
       }
-    } else {
-      this.addExploreFilter(featuretype, criteria, filtervalue, checked);
+      this.applyExploreFilters();
     }
   }
 
-  filterClick(e) {
+  subtypeFilterClickEvent(e) {
     let dataset = e.target.dataset;
     //console.log(dataset);
     if (dataset) {
       // [{"sub_type":3, "identity":[2,3,4]}]
-      let featuretype = dataset.featuretype;
-      let criteria = dataset.criteria;
-      let filterValue = dataset.filtervalue;
-      if (criteria == "sub_type") {
-        const values = JSON.parse(dataset.filtervalue);
-        if (values.sub_type) {
-          filterValue = values.sub_type;
-        }
+      const values = JSON.parse(dataset.filtervalue);
+      if (values.sub_type) {
+        let subtypeValue = values.sub_type;
         // Add identities
         for (let t = 0; t < values.identity.length; t++) {
-          this.addFilterByFeatureType(
-            featuretype,
-            "identity",
+          this.addSubtypeFilter(
+            subtypeValue,
             values.identity[t],
             e.target.checked
           );
         }
       }
-      this.addFilterByFeatureType(
-        featuretype,
-        criteria,
-        filterValue,
-        e.target.checked
-      );
       this.applyExploreFilters();
     }
   }
 
   /**
-   * Apply
+   * Apply map and subtype filters to our full dataset
    * @return filters in slide format
    */
   applyExploreFilters() {
-    // includeFeature(feature, featureType, slide)
-    console.log(this.exploreFilterControl);
+    this.storyFeatureLayerGroup.clearLayers();
+    // Filter by subtype first
     let filteredFeatures = [];
+    let subtypeFeatures = [];
     if (this.allFeatures) {
-      //console.log(this.exploreFilterSlide);
+      console.log(this.exploreFilterControl.sub_type);
       this.allFeatures.forEach(
         function (item) {
+          let subtypeIndex = -1;
           if (
-            this.includeFeature(
-              item,
-              this.geometryToFeatureType(item),
-              this.exploreFilterControl
-            )
+            item.properties &&
+            this.exploreFilterControl.sub_type[0].length > 0
+          ) {
+            // All features
+            subtypeIndex = 0;
+          } else if (item.properties && item.properties.sub_type) {
+            subtypeIndex = item.properties.sub_type;
+          }
+          if (
+            item.properties &&
+            item.properties.identity &&
+            this.exploreFilterControl.sub_type[subtypeIndex].indexOf(
+              item.properties.identity
+            ) > -1
+          ) {
+            subtypeFeatures.push(item);
+          }
+        }.bind(this)
+      );
+    }
+
+    if (this.exploreFilterControl.maps.length > 0) {
+      // if it's empty, apply any map
+      let iterateFeatures = this.allFeatures;
+      if (subtypeFeatures.length > 0) {
+        // If we have a subset, apply map filter to that subset
+        iterateFeatures = subtypeFeatures;
+      }
+      iterateFeatures.forEach(
+        function (item) {
+          if (
+            item.properties &&
+            item.properties.map_source &&
+            this.exploreFilterControl.maps.indexOf(item.properties.map_source) >
+              -1
           ) {
             filteredFeatures.push(item);
           }
         }.bind(this)
       );
+    } else {
+      filteredFeatures = subtypeFeatures;
     }
+
+    if (filteredFeatures && filteredFeatures.length > 0) {
+      // EH: commented out pending review
+      //     // sort the checkboxes
+      //     if (document.querySelectorAll("input.explore_filter:checked").length == 0) {
+      //         // IF we've got one or the other not checked, maps of subtypes
+      //         let exploreFilters = document.querySelectorAll("input.explore_filter");
+      //         let availableSubtypes = [];
+      //         filteredFeatures.forEach(function (item) {
+      //             if (item.properties && item.properties.sub_type && availableSubtypes.indexOf(item.properties.sub_type) == -1) {
+      //                 availableSubtypes.push(item.properties.sub_type);
+      //                 /*for (let e = 0; e<exploreFilters.length;e++){
+      //                     const values = JSON.parse(exploreFilters[e].dataset.filtervalue);
+      //                     if (item.properties.sub_type == values.sub_type && !exploreFilters[e].checked){
+      //
+      //                         exploreFilters[e].checked = true;
+      //                         break;
+      //                     }
+      //                 }*/
+      //             }
+      //
+      //         }.bind(this));
+      //     }
+
+      // IF we've got selected maps, but no subtypes
+      // Go through our subset and check every relevant subtype
+
+      // IF we've got selected subtype but not maps
+      // go through subset and enable any maps we find.
+
+      // ONLY show the layer if we've got something at the end.
+      this.exploreFeaturesLayer = this.L.geoJSON(filteredFeatures, {
+        //style: this.defaultLineStyle,
+        pointToLayer: this.pointToLayer.bind(this),
+        onEachFeature: this.onEachFeature.bind(this),
+      });
+      this.storyFeatureLayerGroup.addLayer(this.exploreFeaturesLayer);
+    }
+
     console.log(filteredFeatures);
   }
 
@@ -1248,53 +1323,53 @@ export class StoryMap {
   }
 
   /*
-      addFeatureToSlideGroups(featureType, feature) {
-          for (let s = 0; s < this.slides.length; s++) {
-              // Foreach slide rule
-              let slide = this.slides[s];
-              if (slide && feature != null) {
-                  let lineIncludes = null;
-                  let lineExcludes = null;
-                  let polyIncludes = null;
-                  let polyExcludes = null;
-                  let pointIncludes = null;
-                  let pointExcludes  = null;
-                  let indigenousIncludes = null;
+        addFeatureToSlideGroups(featureType, feature) {
+            for (let s = 0; s < this.slides.length; s++) {
+                // Foreach slide rule
+                let slide = this.slides[s];
+                if (slide && feature != null) {
+                    let lineIncludes = null;
+                    let lineExcludes = null;
+                    let polyIncludes = null;
+                    let polyExcludes = null;
+                    let pointIncludes = null;
+                    let pointExcludes  = null;
+                    let indigenousIncludes = null;
 
-                  if (slide.lines) {
-                      lineIncludes = slide.lines.includes;
-                      lineExcludes = slide.lines.excludes;
-                  }
+                    if (slide.lines) {
+                        lineIncludes = slide.lines.includes;
+                        lineExcludes = slide.lines.excludes;
+                    }
 
-                  if (slide.polys){
-                      polyIncludes = slide.polys.includes;
-                      polyExcludes = slide.polys.excludes;
-                  }
+                    if (slide.polys){
+                        polyIncludes = slide.polys.includes;
+                        polyExcludes = slide.polys.excludes;
+                    }
 
-                  if (slide.points != null){
-                      if (slide.points.includes !=null){
-                        pointIncludes = slide.points.includes;
-                         console.log(slide.points.includes.length);
-                      }
-                      if (slide.points.excludes !=null && slide.points.excludes.length > 0){
-                          pointExcludes = slide.points.excludes;
-                      }
+                    if (slide.points != null){
+                        if (slide.points.includes !=null){
+                          pointIncludes = slide.points.includes;
+                           console.log(slide.points.includes.length);
+                        }
+                        if (slide.points.excludes !=null && slide.points.excludes.length > 0){
+                            pointExcludes = slide.points.excludes;
+                        }
 
 
-                  }
+                    }
 
-                  let includeFeature = this.isFeatureIncluded(
-                      featureType, feature, lineIncludes, lineExcludes,
-                      polyIncludes, polyExcludes,
-                      pointIncludes, pointExcludes, indigenousIncludes
-                  )
+                    let includeFeature = this.isFeatureIncluded(
+                        featureType, feature, lineIncludes, lineExcludes,
+                        polyIncludes, polyExcludes,
+                        pointIncludes, pointExcludes, indigenousIncludes
+                    )
 
-                  if (includeFeature) {
-                      slide.features.push(feature);
-                  }
-              }
-          }
-      }*/
+                    if (includeFeature) {
+                        slide.features.push(feature);
+                    }
+                }
+            }
+        }*/
 
   // Explore and filter functionality
 

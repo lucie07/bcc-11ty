@@ -1,6 +1,5 @@
 ::: slide 30
 
-
 The Royal Charters that created colonies out of undefined expanses of territory that were claimed on the basis of discovery included expansive and unbounded descriptions of colonial space. The second Charter of Virginia (1609) stipulated that the colony included,
 
 _all those Lands, Countries, and Territories, situate, lying, and being in that Part of America, called Virginia, from the Point of Land, called Cape or Point Comfort, all along the Sea Coast to the Northward, two hundred miles, and from the said Point of Cape Comfort, all along the Sea Coast to the Southward, two hundred Miles, and all that Space and Circuit of Land, lying from the Sea Coast of the Precinct aforesaid, up into the Land throughout from Sea to Sea, West and Northwest;_
