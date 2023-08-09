@@ -21,10 +21,8 @@ import { StoryMap } from "./storymap.js";
 
 /* eslint-disable */
 
-function loadStoryMap(storyURIs, L, d3, startLat, startLng, startZoom) {
-  let storyMap = new StoryMap(storyURIs, L, d3);
-  storyMap.initMap(startLat, startLng, startZoom);
-  return storyMap;
-}
+let storyMap = new StoryMap(storyURIs, L, d3);
+storyMap.initMap(startLat, startLng, startZoom);
+//return storyMap;
 
 /* eslint-enable */
